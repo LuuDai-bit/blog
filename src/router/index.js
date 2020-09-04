@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import App from '@/App'
+import CurriculumVitae from '@/components/CurriculumVitae'
 import BlogPost from '@/views/BlogPost'
+import ErrorPage from '@/views/ErrorPage'
 
 Vue.use(Router)
 
@@ -10,18 +11,23 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'App',
-      component: App
+      name: 'CurriculumVitae',
+      component: CurriculumVitae
+    },
+    {
+      path: '/portfolio',
+      name: 'CurriculumVitae',
+      component: CurriculumVitae
     },
     {
       path: '/post',
       name: 'Post',
       component: BlogPost
     },
-    // {
-    //   path: '*',
-    //   naem: 'Error 404',
-    //   component: ErrorPageComponent
-    // }
+    {
+      path: '*',
+      name: 'Error 404',
+      component: ErrorPage
+    }
   ]
 })

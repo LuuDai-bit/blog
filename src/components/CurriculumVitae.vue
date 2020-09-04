@@ -105,7 +105,7 @@
 <script>
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas'
-import user from '@/cv.js'
+import user from '@/data/cv.js'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faAddressBook, faUser, faMobile, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 

@@ -1,19 +1,17 @@
 <template>
   <div id="app">
     <HeaderComponent></HeaderComponent>
-    <CurriculumVitae></CurriculumVitae>
+    <router-view />
     <FooterComponent></FooterComponent>
   </div>
 </template>
 
 <script>
-import CurriculumVitae from './components/CurriculumVitae'
 import HeaderComponent from './components/HeaderComponent'
 import FooterComponent from './components/FooterComponent'
 export default {
   name: 'App',
   components: {
-    CurriculumVitae,
     HeaderComponent,
     FooterComponent
   }

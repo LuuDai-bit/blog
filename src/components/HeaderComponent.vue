@@ -8,16 +8,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <router-link class="nav-link" to="/portfolio">Portfolio</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">CV</a>
+          <router-link class="nav-link" to="/portfolio">CV</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Post</a>
+          <router-link class="nav-link" to="/post">Post</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About me</a>
+          <router-link class="nav-link" to="/blabla">About me</router-link>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
