@@ -1,3 +1,4 @@
 <h1>Post Detail</h1>
 <h3><%= @post.subject %></h3>
 <div class="trix-content"><%= @post.content %></div>
+<%= link_to 'Destroy', admin_post_path(@post), method: :delete %>

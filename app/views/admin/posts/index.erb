@@ -11,7 +11,11 @@
       <tr>
         <td><%= post.subject %></td>
         <td><%= post.author&.name || 'NO AUTHOR' %></td>
-        <td><%= link_to 'Detail', admin_post_path(post) %></td>
+        <td>
+          <%= link_to 'Detail', admin_post_path(post) %>
+          <%= link_to 'Edit', edit_admin_post_path(post) %>
+          <%= link_to 'Destroy', admin_post_path(post), method: :delete %>
+        </td>
       </tr>
     <% end %>
   </table>

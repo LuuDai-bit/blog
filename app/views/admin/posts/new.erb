@@ -1,11 +1,5 @@
 <h1>Create New Post</h1>
 
 <%= form_with url: admin_posts_path, method: :post, scope: :post do |form| %>
-  <%= form.label :subject, 'Subject' %>
-  <%= form.text_field :subject %>
-
-  <%= form.label :content, 'Content' %>
-  <%= form.rich_text_area :content %>
-
-  <%= form.submit %>
+  <%= render partial: 'form', locals: { form: form } %>
 <% end %>
