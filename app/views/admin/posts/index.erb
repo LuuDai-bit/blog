@@ -1,0 +1,17 @@
+<h1>List Post</h1>
+<% if @posts.present? %>
+  <table>
+    <tr>
+      <th>Subject</th>
+      <th>Author</th>
+    </tr>
+    <% @posts.each do |post| %>
+      <tr>
+        <td>post.subject</td>
+        <td>post.user&.name || 'NO AUTHOR'</td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  'NO POSTS'
+<% end %>
