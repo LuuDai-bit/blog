@@ -1,0 +1,11 @@
+<h1>Create New User</h1>
+
+<%= form_with url: admin_users_path, method: :post, scope: :user do |form| %>
+  <%= form.label :name, 'UserName' %>
+  <%= form.text_field :name %>
+
+  <%= form.label :email, 'Email' %>
+  <%= form.text_field :email %>
+
+  <%= form.submit %>
+<% end %>
