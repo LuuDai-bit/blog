@@ -1,14 +1,17 @@
 <h1>List Post</h1>
+<%= link_to('New Post', new_admin_post_path) %>
 <% if @posts.present? %>
   <table>
     <tr>
       <th>Subject</th>
       <th>Author</th>
+      <th></th>
     </tr>
     <% @posts.each do |post| %>
       <tr>
-        <td>post.subject</td>
-        <td>post.user&.name || 'NO AUTHOR'</td>
+        <td><%= post.subject %></td>
+        <td><%= post.author&.name || 'NO AUTHOR' %></td>
+        <td><%= link_to 'Detail', admin_post_path(post) %></td>
       </tr>
     <% end %>
   </table>

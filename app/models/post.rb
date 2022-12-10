@@ -1,3 +1,8 @@
 class Post < ApplicationRecord
-  validates :subject, :content, presence: true
+  has_rich_text :content
+
+  belongs_to :author, class_name: User.name,
+                      primary_key: :id, foreign_key: :user_id, optional: true
+
+  validates :subject, presence: true
 end
