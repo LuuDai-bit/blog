@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { sessions: 'sessions' }
   root 'admin/dashboard#index'
 
   namespace :admin do

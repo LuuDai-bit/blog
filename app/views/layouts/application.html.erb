@@ -11,7 +11,10 @@
   </head>
 
   <body>
+    <span class="notice <%= 'hidden' unless notice.present? %>"><%= notice %></span>
+    <span class="alert <%= 'hidden' unless notice.present? %>"><%= alert %></span>
     <div class="container">
+      <%= link_to 'Logout', destroy_user_session_path, class: 'float-end', method: :delete %>
       <%= yield %>
     </div>
   </body>

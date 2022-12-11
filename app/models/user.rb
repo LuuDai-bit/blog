@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :validatable, :lockable, :trackable
   USER_WHITELIST_ATTRIBUTES = %i[name email].freeze
 
   validates :name, :email, presence: true

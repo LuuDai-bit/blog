@@ -1,4 +1,9 @@
+/* ...
+ *= require_self
+ *= require_tree .
+ */
+
 @import "bootstrap/scss/bootstrap";
 @import "trix/dist/trix";
-@import "./custom.scss";
 @import "./sizing.scss";
+@import "./custom.scss";
