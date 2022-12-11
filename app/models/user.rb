@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable, :lockable, :trackable
-  USER_WHITELIST_ATTRIBUTES = %i[name email].freeze
+  USER_WHITELIST_ATTRIBUTES = %i[name email password password_confirmation].freeze
 
   validates :name, :email, presence: true
   validates :email, uniqueness: { case_sensitive: false }

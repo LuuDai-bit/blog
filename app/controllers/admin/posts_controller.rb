@@ -15,8 +15,10 @@ class Admin::PostsController < Admin::AdminController
     @post = Post.new post_params
 
     if @post.save
+      flash[:notice] = 'Post create successfully'
       redirect_to admin_posts_path
     else
+      flash[:alert] = 'Post create failed'
       render :new
     end
   end
@@ -25,8 +27,10 @@ class Admin::PostsController < Admin::AdminController
 
   def update
     if @post.update(post_params)
+      flash[:notice] = 'User create successfully'
       redirect_to admin_posts_path
     else
+      flash[:alert] = 'Post create failed'
       render :edit
     end
   end
@@ -36,6 +40,8 @@ class Admin::PostsController < Admin::AdminController
       redirect_to admin_posts_path
     else
       # Message here
+      flash[:alert] = 'Post destroy failed'
+      render :index
     end
   end
 
