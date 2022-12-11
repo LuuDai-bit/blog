@@ -1,4 +1,11 @@
 <h1>Post Detail</h1>
 <h3><%= @post.subject %></h3>
-<div class="trix-content"><%= @post.content %></div>
-<%= link_to 'Destroy', admin_post_path(@post), method: :delete %>
+<p class="form-text text-muted">
+  <span><%= @post.updated_at.strftime('%d-%m-%Y') %>&#8195;</span>
+
+  <span><%= @post.author || 'NO AUTHOR' %></span>
+</p>
+<div class="content-area">
+  <main class="trix-content site-main"><%= @post.content %></main>
+</div>
+<%= link_to 'Destroy', admin_post_path(@post), method: :delete, class: 'btn btn-danger' %>

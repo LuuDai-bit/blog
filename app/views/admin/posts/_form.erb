@@ -1,7 +1,11 @@
-<%= form.label :subject, 'Subject' %>
-<%= form.text_field :subject %>
+<div class="form-group">
+  <%= form.label :subject, 'Subject' %>
+  <%= form.text_field :subject, class: 'form-control', placeholder: 'Suject' %>
+</div>
 
-<%= form.label :content, 'Content' %>
-<%= form.rich_text_area :content %>
+<div class="form-group">
+  <%= form.label :content, 'Content' %>
+  <%= form.rich_text_area :content, class: 'min-vh-60' %>
+</div>
 
-<%= form.submit %>
+<%= form.submit('Create', class: 'btn btn-primary') %>

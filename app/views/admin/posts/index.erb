@@ -1,20 +1,20 @@
 <h1>List Post</h1>
-<%= link_to('New Post', new_admin_post_path) %>
+<%= link_to('New Post', new_admin_post_path, class: 'btn btn-primary') %>
 <% if @posts.present? %>
-  <table>
+  <table class="table">
     <tr>
-      <th>Subject</th>
-      <th>Author</th>
-      <th></th>
+      <th class="col">Subject</th>
+      <th class="col">Author</th>
+      <th class="col">Action</th>
     </tr>
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.subject %></td>
         <td><%= post.author&.name || 'NO AUTHOR' %></td>
         <td>
-          <%= link_to 'Detail', admin_post_path(post) %>
-          <%= link_to 'Edit', edit_admin_post_path(post) %>
-          <%= link_to 'Destroy', admin_post_path(post), method: :delete %>
+          <%= link_to 'Detail', admin_post_path(post), class: 'btn btn-light' %>
+          <%= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-light' %>
+          <%= link_to 'Destroy', admin_post_path(post), method: :delete, class: 'btn btn-danger' %>
         </td>
       </tr>
     <% end %>

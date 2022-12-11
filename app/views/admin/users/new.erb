@@ -1,11 +1,16 @@
 <h1>Create New User</h1>
 
 <%= form_with url: admin_users_path, method: :post, scope: :user do |form| %>
-  <%= form.label :name, 'UserName' %>
-  <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :name, 'UserName' %>
+    <%= form.text_field :name, class: 'form-control', placeholder: 'User name' %>
+  </div>
 
-  <%= form.label :email, 'Email' %>
-  <%= form.text_field :email %>
+  <div class="form-group">
+    <%= form.label :email, 'Email' %>
+    <%= form.text_field :email, class: 'form-control', placeholder: 'User name' %>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
 
-  <%= form.submit %>
+  <%= form.submit('Create', class: 'btn btn-primary') %>
 <% end %>
