@@ -1,1 +1,3 @@
-class UserController < ApplicationController; end
+class User::UserController < ApplicationController
+  layout 'user/application'
+end

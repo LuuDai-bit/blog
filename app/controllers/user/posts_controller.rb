@@ -1,6 +1,6 @@
-class PostsController < UserController
+class User::PostsController < User::UserController
   def index
-    @pagy, @posts = pagy(Post.includes(:author))
+    @pagy, @posts = pagy(Post.includes(:author).order(created_at: :desc))
   end
 
   def show
