@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'sessions' }
   root 'user/posts#index'
+  get '/about', to: 'home#about'
+  get '/contact', to: 'home#contact'
 
   namespace :admin do
     resources :users, only: %i[show edit update new create]
