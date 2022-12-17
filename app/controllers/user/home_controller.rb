@@ -1,4 +1,4 @@
-class HomeController < UserController
+class User::HomeController < User::UserController
   def about; end
 
   def contact; end

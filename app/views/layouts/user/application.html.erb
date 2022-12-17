@@ -12,7 +12,11 @@
 
   <body>
     <div>
+      <!-- Navigation-->
+      <%= render partial: 'shared/nav_bar' %>
       <%= yield %>
+      <!-- Footer-->
+      <%= render partial: 'shared/footer' %>
     </div>
   </body>
 </html>
