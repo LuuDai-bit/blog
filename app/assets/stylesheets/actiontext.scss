@@ -10,7 +10,7 @@
 // images in galleries will be squished by the max-width: 33%; rule.
 .trix-content {
   h1 {
-    margin-bottom: 5px;
+    margin-bottom: 5px !important;
   }
   .attachment-gallery {
     > action-text-attachment,
