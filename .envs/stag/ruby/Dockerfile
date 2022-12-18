@@ -2,12 +2,12 @@ FROM ruby:3.1.2-slim-buster
 
 RUN apt-get update -qq && apt-get install -y build-essential postgresql-contrib libpq-dev postgresql-client
 
-RUN mkdir /simple-blog
-WORKDIR /simple-blog
+RUN mkdir /blog
+WORKDIR /blog
 
 RUN gem install bundler -no-rdoc -no-ri
-COPY Gemfile /simple-blog/Gemfile
-COPY Gemfile.lock /simple-blog/Gemfile.lock
+COPY Gemfile /blog/Gemfile
+COPY Gemfile.lock /blog/Gemfile.lock
 RUN bundle install -j 4
 
 # Add a script to be executed every time the container starts.
