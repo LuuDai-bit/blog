@@ -1,4 +1,4 @@
-FROM ruby:3.1.2-slim-buster
+FROM ruby:3.0.0-slim-buster
 
 RUN apt-get update -qq && apt-get install -y build-essential postgresql-contrib libpq-dev postgresql-client
 
