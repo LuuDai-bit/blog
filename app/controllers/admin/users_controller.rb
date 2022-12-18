@@ -11,7 +11,7 @@ class Admin::UsersController < Admin::AdminController
     @user = User.new user_params
 
     if @user.save
-      flash[:notice] = 'User create successfully'
+      flash[:notice] = 'User created'
       redirect_to root_path
     else
       flash[:alert] = 'User create failed'

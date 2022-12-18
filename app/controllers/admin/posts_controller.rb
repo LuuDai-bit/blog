@@ -15,7 +15,7 @@ class Admin::PostsController < Admin::AdminController
     @post = Post.new post_params
 
     if @post.save
-      flash[:notice] = 'Post create successfully'
+      flash[:notice] = 'Post created'
       redirect_to admin_posts_path
     else
       flash[:alert] = 'Post create failed'
@@ -27,10 +27,10 @@ class Admin::PostsController < Admin::AdminController
 
   def update
     if @post.update(post_params)
-      flash[:notice] = 'User create successfully'
+      flash[:notice] = 'Post updated'
       redirect_to admin_posts_path
     else
-      flash[:alert] = 'Post create failed'
+      flash[:alert] = 'Post update failed'
       render :edit
     end
   end
