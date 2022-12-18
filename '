@@ -17,7 +17,6 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | b
 RUN nvm install v14.16.0
 RUN npm install --global yarn
 RUN yarn
-SHELL ["/bin/sh", "-c"]
 RUN rails action_text:install
 
 # Add a script to be executed every time the container starts.
