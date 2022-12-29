@@ -1,6 +1,10 @@
 FROM ruby:3.0.0-slim-buster
 
-RUN apt-get update -qq && apt-get install -y build-essential postgresql-contrib libpq-dev postgresql-client
+RUN apt-get update -qq && apt-get install -y build-essential \
+postgresql-contrib \
+libpq-dev \
+postgresql-client \
+imagemagick
 
 RUN mkdir /blog
 WORKDIR /blog
@@ -13,7 +17,7 @@ RUN bundle install -j 4
 # Install nodejs
 RUN apt-get install -y curl
 SHELL ["/bin/bash", "--login", "-c"]
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash 
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 RUN nvm install v14.16.0
 RUN npm install --global yarn
 RUN yarn
