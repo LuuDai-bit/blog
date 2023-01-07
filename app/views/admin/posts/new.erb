@@ -1,5 +1,8 @@
 <h1>Create New Post</h1>
 
-<%= form_with url: admin_posts_path, method: :post, scope: :post do |form| %>
+<%= form_with url: admin_posts_path,
+              method: :post,
+              scope: :post,
+              data: { controller: 'emoji-picker' } do |form| %>
   <%= render partial: 'form', locals: { form: form } %>
 <% end %>
