@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/contact', to: 'user/home#contact'
 
   namespace :admin do
+    root 'dashboard#index'
+    get '/', to: 'dashboard#index'
+
     resources :users, only: %i[show edit update new create]
     resources :posts
   end
