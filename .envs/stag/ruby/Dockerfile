@@ -12,7 +12,7 @@ WORKDIR /blog
 RUN gem install bundler -no-rdoc -no-ri
 COPY Gemfile /blog/Gemfile
 COPY Gemfile.lock /blog/Gemfile.lock
-RUN bundle install -j 4
+RUN bundle install
 
 # Install nodejs
 RUN apt-get install -y curl
