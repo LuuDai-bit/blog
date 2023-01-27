@@ -16,3 +16,14 @@
   color: white;
   margin: 0;
 }
+
+.admin-container {
+  display: inline-block;
+  flex: 1;
+  margin: 10px;
+}
+
+.flex-parent-container {
+  display: flex;
+  width: 100%;
+}

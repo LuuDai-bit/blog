@@ -17,12 +17,14 @@
     <% elsif alert.present? %>
       <p class="alert"><%= alert %></p>
     <% end %>
-    <div class="container">
-      <% if user_signed_in? %>
-        <%= link_to 'Logout', destroy_user_session_path, class: 'float-end', method: :delete %>
-      <% end %>
 
-      <%= yield %>
+    <div class="flex-parent-container">
+      <!-- The sidebar -->
+      <%= render partial: 'shared/sidebar' if user_signed_in? %>
+
+      <div class="admin-container">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
