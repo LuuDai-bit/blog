@@ -52,6 +52,6 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def post_params
-    params.require(:post).permit(:subject, :content, :status)
+    params.require(:post).permit(:subject, :content, :status).merge(user_id: current_user.id)
   end
 end
