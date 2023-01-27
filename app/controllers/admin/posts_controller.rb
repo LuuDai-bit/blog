@@ -2,7 +2,7 @@ class Admin::PostsController < Admin::AdminController
   before_action :load_post, only: %i[show edit update destroy]
 
   def index
-    @pagy, @posts = pagy(Post.includes(:author).order(created_at: :desc))
+    @pagy, @posts = pagy(Post.order_by_status.includes(:author))
   end
 
   def show; end
