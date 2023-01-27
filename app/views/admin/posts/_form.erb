@@ -14,5 +14,15 @@
   } %>
 </div>
 
-<%= form.submit('Create', class: 'btn btn-primary') %>
-<%= link_to('Cancel', admin_posts_path, class: 'btn btn-primary') %>
+<div class="form-group">
+  <%= form.label :status, 'Status' %>
+  <div>
+    <% Settings.enum.post.status.to_h.values.each do |status| %>
+      <%= form.radio_button :status, status %>
+      <%= status %>
+    <% end %>
+  </div>
+</div>
+
+<%= form.submit('Save', class: 'btn btn-primary') %>
+<%= link_to('Cancel', admin_posts_path, class: 'btn') %>
