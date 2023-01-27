@@ -1,27 +1,23 @@
 <h1>List Post</h1>
+<%= render partial: 'search' %>
 <%= link_to('New Post', new_admin_post_path, class: 'btn btn-primary') %>
 <% if @posts.present? %>
   <table class="table">
-    <tr>
-      <th class="col">Subject</th>
-      <th class="col">Author</th>
-      <th class="col">Status</th>
-      <th class="col">Action</th>
-    </tr>
-    <% @posts.each do |post| %>
+    <thead>
       <tr>
-        <td><%= post.subject.truncate 50 %></td>
-        <td><%= post.author&.name || 'NO AUTHOR' %></td>
-        <td><%= status_badges post.status %></td>
-        <td>
-          <%= link_to 'Detail', admin_post_path(post), class: 'btn btn-light' %>
-          <%= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-light' %>
-          <%= link_to 'Destroy', admin_post_path(post), method: :delete, class: 'btn btn-danger' %>
-        </td>
+        <th class="col">Subject</th>
+        <th class="col">Author</th>
+        <th class="col">Status</th>
+        <th class="col">Action</th>
       </tr>
-    <% end %>
+    </thead>
+    <tbody id="admin-posts">
+      <%= render @posts %>
+    </tbody>
   </table>
-  <%== pagy_bootstrap_nav(@pagy) %>
+  <div id="admin-posts-paginate">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
 <% else %>
   'NO POSTS'
 <% end %>

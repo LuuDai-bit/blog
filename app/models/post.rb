@@ -19,4 +19,10 @@ class Post < ApplicationRecord
 
     order(Arel.sql(sql))
   end
+
+  scope :by_subject, ->(search_text) do
+    return if search_text.blank?
+
+    where('posts.subject LIKE ?', '%' + search_text + '%')
+  end
 end

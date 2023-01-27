@@ -1,0 +1,10 @@
+<tr>
+  <td><%= post.subject.truncate 50 %></td>
+  <td><%= post.author&.name || 'NO AUTHOR' %></td>
+  <td><%= status_badges post.status %></td>
+  <td>
+    <%= link_to 'Detail', admin_post_path(post), class: 'btn btn-light' %>
+    <%= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-light' %>
+    <%= link_to 'Destroy', admin_post_path(post), method: :delete, class: 'btn btn-danger' %>
+  </td>
+</tr>
