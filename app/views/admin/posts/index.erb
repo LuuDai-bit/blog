@@ -10,7 +10,7 @@
     </tr>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.subject %></td>
+        <td><%= post.subject.truncate 50 %></td>
         <td><%= post.author&.name || 'NO AUTHOR' %></td>
         <td><%= status_badges post.status %></td>
         <td>
