@@ -17,8 +17,10 @@ gem 'devise'
 gem 'stimulus-rails'
 gem 'aws-sdk-s3'
 gem 'config'
+gem 'whenever', require: false
+gem 'sidekiq'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
