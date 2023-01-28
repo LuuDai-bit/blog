@@ -1,0 +1,7 @@
+<h1>Create New Remind</h1>
+
+<%= form_with url: admin_reminds_path,
+              method: :post,
+              scope: :remind do |form| %>
+  <%= render partial: 'form', locals: { form: form } %>
+<% end %>

@@ -1,0 +1,23 @@
+<h1>List Remind</h1>
+<%= link_to('New remind', new_admin_remind_path, class: 'btn btn-primary') %>
+<% if @reminds.present? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="col">Title</th>
+        <th class="col">Content</th>
+        <th class="col">Day</th>
+        <th class="col">Time</th>
+        <th class="col">Only Once</th>
+      </tr>
+    </thead>
+    <tbody id="admin-reminds">
+      <%= render @reminds %>
+    </tbody>
+  </table>
+  <div id="admin-reminds-paginate">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+<% else %>
+  'NO REMINDS'
+<% end %>

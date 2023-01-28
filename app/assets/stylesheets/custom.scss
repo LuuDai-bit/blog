@@ -32,8 +32,26 @@
   width: 35vw !important;
 }
 
+.form-select {
+  &-time {
+    display: inline !important;
+    width: 30% !important;
+  }
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
 @media screen and (max-width: 1200px) {
   .input-group-35vw{
     width: 100% !important;
+  }
+
+  .form-select {
+    &-time {
+      display: inline !important;
+      width: 48% !important;
+    }
   }
 }

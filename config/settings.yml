@@ -3,3 +3,17 @@ enum:
     status:
       publish: publish
       draft: draft
+
+models:
+  remind:
+    day:
+      monday: 'Mon'
+      tuesday: 'Tue'
+      wenesday: 'Wed'
+      thursday: 'Thu'
+      friday: 'Fri'
+      saturday: 'Sat'
+      sunday: 'Sun'
+      day_of_week: 'Mon, Tue, Wed, Thu, Fri, Sat, Sun'
+      working_day: 'Mon, Tue, Wed, Thu, Fri'
+      weekend: 'Sat, Sun'
