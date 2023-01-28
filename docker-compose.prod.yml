@@ -49,6 +49,16 @@ services:
     networks:
       - internal
 
+  redis:
+    image: redis:5.0.3
+    env_file:
+      - .env.docker
+    ports:
+      - 6379:6379
+    command: ["bash", "-c", "docker-entrypoint.sh --requirepass $${REDIS_PASSWORD}"]
+    networks:
+      - internal
+
 networks:
   internal:
     driver: bridge
