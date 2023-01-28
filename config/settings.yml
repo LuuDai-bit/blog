@@ -5,7 +5,7 @@ enum:
       draft: draft
 
 models:
-  remind:
+  reminder:
     day:
       monday: 'Mon'
       tuesday: 'Tue'

@@ -3,6 +3,6 @@
   <%= link_to 'Home', admin_root_path, class: "#{'active' if current_page?(admin_root_path)}" %>
   <%= link_to 'New User', new_admin_user_path, class: "#{'active' if current_page?(new_admin_user_path)}" %>
   <%= link_to 'Posts', admin_posts_path, class: "#{'active' if current_page?(admin_posts_path)}" %>
-  <%= link_to 'Reminds', admin_reminds_path, class: "#{'active' if current_page?(admin_reminds_path)}" %>
+  <%= link_to 'Reminds', admin_reminders_path, class: "#{'active' if current_page?(admin_reminders_path)}" %>
   <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'danger-action' %>
 </div>

@@ -1,7 +1,0 @@
-<h1>Edit Remind</h1>
-
-<%= form_with url: admin_remind_path(@remind),
-              method: :patch,
-              scope: :remind do |form| %>
-  <%= render partial: 'form', locals: { form: form } %>
-<% end %>

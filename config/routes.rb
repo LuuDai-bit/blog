@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
     resources :users, only: %i[show edit update new create]
     resources :posts
-    resources :reminds, only: %i[index edit update new create destroy]
+    resources :reminders, only: %i[index edit update new create destroy]
   end
 
   namespace :user do

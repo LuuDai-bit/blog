@@ -11,7 +11,7 @@
 <div class="form-group">
   <%= form.label :day, 'Select Day' %>
   <%= form.collection_select :day,
-                             Settings.models.remind.day.to_h.values,
+                             Settings.models.reminder.day.to_h.values,
                              :to_s,
                              :to_s,
                              {},
@@ -37,4 +37,4 @@
 </div>
 
 <%= form.submit('Save', class: 'btn btn-primary') %>
-<%= link_to('Cancel', admin_reminds_path, class: 'btn btn-secondary') %>
+<%= link_to('Cancel', admin_reminders_path, class: 'btn btn-secondary') %>
