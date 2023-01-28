@@ -1,11 +1,15 @@
 <div class="form-group">
   <%= form.label :title, 'Title' %>
   <%= form.text_field :title, class: 'form-control', placeholder: 'Title' %>
+
+  <%= display_error @reminder, :title, 'Title' %>
 </div>
 
 <div class="form-group">
   <%= form.label :content, 'Content' %>
   <%= form.text_field :content, class: 'form-control', placeholder: 'Content' %>
+
+  <%= display_error @reminder, :content, 'Content' %>
 </div>
 
 <div class="form-group">
@@ -17,6 +21,8 @@
                              {},
                              class: 'form-select',
                              multiple: true %>
+
+  <%= display_error @reminder, :day, 'Day' %>
 </div>
 
 <div class="form-group">
@@ -34,6 +40,9 @@
                              :to_s,
                              {},
                              class: 'form-select form-select-time' %>
+
+  <%= display_error @reminder, :hour, 'Hour' %>
+  <%= display_error @reminder, :minute, 'Minute' %>
 </div>
 
 <%= form.submit('Save', class: 'btn btn-primary') %>

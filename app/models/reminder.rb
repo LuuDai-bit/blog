@@ -3,4 +3,5 @@ class Reminder < ApplicationRecord
 
   validates :content, :day, :hour, :minute, presence: true
   validates :only_once, inclusion: [true, false]
+  validates :content, length: { minimun: 1, maximum: 60 }
 end
