@@ -4,7 +4,11 @@ RUN apt-get update -qq && apt-get install -y build-essential \
 postgresql-contrib \
 libpq-dev \
 postgresql-client \
-imagemagick
+imagemagick \
+cron \
+systemd
+
+RUN systemctl enable cron
 
 RUN mkdir /blog
 WORKDIR /blog
