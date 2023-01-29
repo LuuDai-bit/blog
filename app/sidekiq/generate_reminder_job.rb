@@ -13,7 +13,7 @@ class GenerateReminderJob
       user = user_reminder.user
       execute_time = current_time.since(reminder.hour).since(reminder.minute)
 
-      ExecuteReminderJob.perform_at(execute_time, reminder.content, user.phone_number)
+      ExecuteReminderJob.perform_at(execute_time, user_reminder.reminder_id, user_reminder.user_id)
     end
   end
 end

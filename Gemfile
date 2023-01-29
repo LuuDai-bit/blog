@@ -16,6 +16,7 @@ gem 'image_processing', '~> 1.2'
 gem 'devise'
 gem 'stimulus-rails'
 gem 'aws-sdk-s3'
+gem 'aws-sdk-sns'
 gem 'config'
 gem 'whenever', require: false
 gem 'sidekiq'
