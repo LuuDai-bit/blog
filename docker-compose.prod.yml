@@ -51,7 +51,7 @@ services:
       - internal
 
   redis:
-    image: redis:5.0.3
+    image: redis:7.0.8
     env_file:
       - .env.docker
     ports:
@@ -63,21 +63,20 @@ services:
   sidekiq:
     container_name: blog_sidekiq
     image: blog_image:latest
-    command: bash -c "bundle install
-                      && bundle exec rails db:prepare
-                      && bundle exec rails db:migrate
-                      && whenever --update-crontab
-                      && sudo service cron restart
-                      && bundle exec sidekiq"
+    command: "bundle exec sidekiq"
     volumes:
-      - .:/harada-blog-backend
+      - .:/blog
     depends_on:
       - postgres
       - redis
       - app
     networks:
       - internal
-    tty: true
+    environment:
+      - RAILS_ENV=production
+      - REDIS_URL=redis://:luudai198@redis:6379/12
+    env_file:
+      - .env
 
 networks:
   internal:
