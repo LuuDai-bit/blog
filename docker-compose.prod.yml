@@ -72,9 +72,9 @@ services:
     volumes:
       - .:/harada-blog-backend
     depends_on:
-      - mysql
+      - postgres
       - redis
-      - web
+      - app
     networks:
       - internal
     tty: true
