@@ -54,7 +54,7 @@ class Admin::RemindersController < Admin::AdminController
     params.require(:reminder).permit(:title, :content, :hour, :minute, :only_once, day: []).tap do |param|
       param[:day].reject! { |day| day.empty? }
       # Fix this when have time
-      if param[:hour] >= 7
+      if param[:hour].to_i >= 7
         param[:hour] = param[:hour].to_i - 7
       else
         param[:hour] = 24 - (param[:hour].to_i - 7)
