@@ -2,11 +2,14 @@ class GenerateReminderJob
   include Sidekiq::Job
 
   def perform
-    user_reminders = UserReminder.all.inlcudes(:user, :reminder)
+    user_reminders = UserReminder.all.includes(:user, :reminder)
     current_time = Time.now
 
     user_reminders.each do |user_reminder|
       reminder = user_reminder.reminder
+
+      next if reminder.day.exclude?(current_time.strftime('%a'))
+
       user = user_reminder.user
       execute_time = current_time.since(reminder.hour).since(reminder.minute)
 
