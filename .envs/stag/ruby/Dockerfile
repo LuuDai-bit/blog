@@ -8,7 +8,7 @@ imagemagick \
 cron \
 systemd
 
-RUN systemctl enable cron
+RUN service cron start
 
 RUN mkdir /blog
 WORKDIR /blog
