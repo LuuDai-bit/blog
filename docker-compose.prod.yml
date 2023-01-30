@@ -17,6 +17,7 @@ services:
       - internal
     environment:
       - RAILS_ENV=production
+      - REDIS_URL=redis://:luudai198@redis:6379/12
     env_file:
       - .env
 
