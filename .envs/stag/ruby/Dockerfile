@@ -5,10 +5,11 @@ postgresql-contrib \
 libpq-dev \
 postgresql-client \
 imagemagick \
+sudo \
 cron \
 systemd
 
-RUN service cron start
+RUN systemctl enable cron
 
 RUN mkdir /blog
 WORKDIR /blog
