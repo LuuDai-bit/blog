@@ -2,8 +2,8 @@
 
 bundle check || bundle install --binstubs="$BUNDLE_BIN"
 
-exec "$@"
-
-whenever --update-crontab --set environment='production'
+whenever --update-crontab --set
 sudo service cron restart
 bundle exec sidekiq -e production
+
+exec "$@"
