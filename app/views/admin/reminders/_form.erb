@@ -1,0 +1,49 @@
+<div class="form-group">
+  <%= form.label :title, 'Title' %>
+  <%= form.text_field :title, class: 'form-control', placeholder: 'Title' %>
+
+  <%= display_error @reminder, :title, 'Title' %>
+</div>
+
+<div class="form-group">
+  <%= form.label :content, 'Content' %>
+  <%= form.text_field :content, class: 'form-control', placeholder: 'Content' %>
+
+  <%= display_error @reminder, :content, 'Content' %>
+</div>
+
+<div class="form-group">
+  <%= form.label :day, 'Select Day' %>
+  <%= form.collection_select :day,
+                             Settings.models.reminder.day.to_h.values,
+                             :to_s,
+                             :to_s,
+                             {},
+                             class: 'form-select',
+                             multiple: true %>
+
+  <%= display_error @reminder, :day, 'Day' %>
+</div>
+
+<div class="form-group">
+  <%= form.label :time, 'Time' %>
+  <%= form.collection_select :hour,
+                             (0..23).to_a,
+                             :to_s,
+                             :to_s,
+                             {},
+                             class: 'form-select form-select-time' %>
+  <span>:</span>
+  <%= form.collection_select :minute,
+                             (0..59).to_a,
+                             :to_s,
+                             :to_s,
+                             {},
+                             class: 'form-select form-select-time' %>
+
+  <%= display_error @reminder, :hour, 'Hour' %>
+  <%= display_error @reminder, :minute, 'Minute' %>
+</div>
+
+<%= form.submit('Save', class: 'btn btn-primary') %>
+<%= link_to('Cancel', admin_reminders_path, class: 'btn btn-secondary') %>

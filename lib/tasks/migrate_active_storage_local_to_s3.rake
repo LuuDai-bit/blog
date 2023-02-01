@@ -5,7 +5,7 @@ namespace :migrate_active_storage_local_to_s3 do
 
   task migrate: :environment do
     # create connect to bucket
-    credentials = Aws::Credentials.new(Rails.application.credentials.dig(:aws, :access_key_id), Rails.application.credentials.dig(:aws, :secret_access_key))
+    credentials = Aws::Credentials.new(Rails.application.credentials.dig(:aws, :s3, :access_key_id), Rails.application.credentials.dig(:aws, :s3, :secret_access_key))
     s3 = Aws::S3::Resource.new(region: ENV.fetch('S3_REGION'), credentials: credentials)
     bucket = s3.bucket(ENV.fetch('S3_BUCKET'))
 

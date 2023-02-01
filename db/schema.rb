@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_27_021533) do
+ActiveRecord::Schema.define(version: 2023_01_28_141034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,26 @@ ActiveRecord::Schema.define(version: 2023_01_27_021533) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "reminders", force: :cascade do |t|
+    t.string "title"
+    t.string "content", limit: 60, null: false
+    t.json "day", null: false
+    t.string "hour", null: false
+    t.string "minute", null: false
+    t.boolean "only_once", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_reminders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "reminder_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reminder_id"], name: "index_user_reminders_on_reminder_id"
+    t.index ["user_id"], name: "index_user_reminders_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", limit: 50, null: false
     t.string "email", null: false
@@ -98,6 +118,7 @@ ActiveRecord::Schema.define(version: 2023_01_27_021533) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.string "phone_number", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -109,4 +130,6 @@ ActiveRecord::Schema.define(version: 2023_01_27_021533) do
   add_foreign_key "post_categories", "categories"
   add_foreign_key "post_categories", "posts"
   add_foreign_key "posts", "users"
+  add_foreign_key "user_reminders", "reminders"
+  add_foreign_key "user_reminders", "users"
 end
