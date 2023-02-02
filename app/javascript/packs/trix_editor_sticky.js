@@ -1,4 +1,4 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", () => {
   var trix_toolbar = document.getElementById('trix-toolbar-1');
 
   if(trix_toolbar) {
