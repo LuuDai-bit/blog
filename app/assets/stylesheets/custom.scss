@@ -51,6 +51,17 @@
   color: red;
 }
 
+.content-input {
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.sticky {
+  position: fixed;
+  background-color: var(--bs-body-bg);
+  width: 100%
+}
+
 @media screen and (max-width: 1200px) {
   .input-group-35vw{
     width: 100% !important;

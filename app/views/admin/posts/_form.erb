@@ -7,11 +7,13 @@
   emoji_picker_target: "pickerContainer"
 } %>
 
-<div class="form-group">
-  <%= form.label :content, 'Content' %>
-  <%= form.rich_text_area :content, class: 'min-vh-60', data: {
-    emoji_picker_target: "trixEditor"
-  } %>
+<div class="form-group content-input" id="trix-content-editor">
+  <%= form.label :content, 'Content', id: 'content-label' %>
+  <div>
+    <%= form.rich_text_area :content, class: 'min-vh-60', data: {
+      emoji_picker_target: "trixEditor"
+    } %>
+  </div>
 </div>
 
 <div class="form-group">
