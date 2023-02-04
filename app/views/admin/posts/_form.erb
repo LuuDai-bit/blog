@@ -11,7 +11,7 @@
   <%= form.label :content, 'Content', id: 'content-label' %>
   <div>
     <%= form.rich_text_area :content, class: 'min-vh-60', data: {
-      emoji_picker_target: "trixEditor"
+      emoji_picker_target: "trixEditor", controller: "trix-toolbar"
     } %>
   </div>
 </div>

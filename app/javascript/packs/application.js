@@ -9,7 +9,6 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "@fortawesome/fontawesome-free/css/all"
 import "controllers"
-import "./trix_editor_sticky.js"
 
 Rails.start()
 Turbolinks.start()
