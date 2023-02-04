@@ -22,7 +22,9 @@ class Admin::RemindersController < Admin::AdminController
     end
   end
 
-  def edit; end
+  def edit
+    @reminder.hour = (@reminder.hour - @reminder.original_timezone)%24
+  end
 
   def update
     if @reminder.update(reminder_params)
