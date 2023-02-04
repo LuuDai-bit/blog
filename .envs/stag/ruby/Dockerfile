@@ -4,7 +4,7 @@ RUN apt-get update -qq && apt-get install -y build-essential \
 postgresql-contrib \
 libpq-dev \
 postgresql-client \
-imagemagick vim\
+imagemagick vim \
 sudo \
 cron \
 systemd
