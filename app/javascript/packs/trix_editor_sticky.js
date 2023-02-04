@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   var trix_toolbar = document.getElementById('trix-toolbar-1');
 
   if(trix_toolbar) {
-    console.log('haha');
     trix_editor = document.getElementById('trix-content-editor');
     trix_editor.onscroll = function() {stickyScroll()};
 
