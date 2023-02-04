@@ -59,6 +59,10 @@ class Admin::RemindersController < Admin::AdminController
       else
         param[:hour] = 24 - (param[:hour].to_i - 7)
       end
+
+      param[:day] = param[:day].map do |day|
+                      Settings.models.reminder.day.send("#{day}")
+                    end.flatten.uniq
     end
   end
 end

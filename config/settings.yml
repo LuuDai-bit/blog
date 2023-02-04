@@ -7,6 +7,9 @@ enum:
 models:
   reminder:
     day:
+      day_of_week: [Mon, Tue, Wed, Thu, Fri, Sat, Sun]
+      working_day: [Mon, Tue, Wed, Thu, Fri]
+      weekend: [Sat, Sun]
       monday: 'Mon'
       tuesday: 'Tue'
       wenesday: 'Wed'
@@ -14,6 +17,3 @@ models:
       friday: 'Fri'
       saturday: 'Sat'
       sunday: 'Sun'
-      day_of_week: 'Mon, Tue, Wed, Thu, Fri, Sat, Sun'
-      working_day: 'Mon, Tue, Wed, Thu, Fri'
-      weekend: 'Sat, Sun'

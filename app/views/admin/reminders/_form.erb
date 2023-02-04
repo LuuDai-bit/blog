@@ -15,9 +15,9 @@
 <div class="form-group">
   <%= form.label :day, 'Select Day' %>
   <%= form.collection_select :day,
-                             Settings.models.reminder.day.to_h.values,
+                             Settings.models.reminder.day.to_h.keys.map(&:to_s),
                              :to_s,
-                             :to_s,
+                             :humanize,
                              {},
                              class: 'form-select',
                              multiple: true %>
