@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import EmojiPickerController from "./emoji_picker_controller"
 application.register("emoji-picker", EmojiPickerController)
+
+import RegisterTimeController from "./register_time_controller"
+application.register("register-time", RegisterTimeController)

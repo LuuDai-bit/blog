@@ -51,15 +51,11 @@ class Admin::RemindersController < Admin::AdminController
   end
 
   def reminder_params
-    params.require(:reminder).permit(:title, :content, :hour, :minute, :only_once, day: []).tap do |param|
-      param[:day].reject! { |day| day.empty? }
-      # Fix this when have time
-      if param[:hour].to_i >= 7
-        param[:hour] = param[:hour].to_i - 7
-      else
-        param[:hour] = 24 - (param[:hour].to_i - 7)
-      end
+    original_timezone = params[:reminder][:original_timezone].to_i
+    params.require(:reminder).permit(:title, :content, :hour, :minute, :only_once, :original_timezone, day: []).tap do |param|
+      param[:hour] = (24 + param[:hour].to_i + original_timezone)%24
 
+      param[:day].reject! { |day| day.empty? }
       param[:day] = param[:day].map do |day|
                       Settings.models.reminder.day.send("#{day}")
                     end.flatten.uniq

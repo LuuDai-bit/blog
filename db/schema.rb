@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_02_090138) do
+ActiveRecord::Schema.define(version: 2023_02_04_045219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,11 +83,12 @@ ActiveRecord::Schema.define(version: 2023_02_02_090138) do
     t.string "title"
     t.string "content", limit: 60, null: false
     t.json "day", null: false
-    t.string "hour", null: false
-    t.string "minute", null: false
+    t.integer "hour", null: false
+    t.integer "minute", null: false
     t.boolean "only_once", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "original_timezone", default: 0
   end
 
   create_table "user_reminders", force: :cascade do |t|
