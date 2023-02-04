@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbolinks:load", () => {
   var trix_toolbar = document.getElementById('trix-toolbar-1');
 
   if(trix_toolbar) {
