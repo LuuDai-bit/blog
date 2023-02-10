@@ -1,5 +1,5 @@
 <tr>
-  <td><%= reminder.title.truncate 10 %></td>
+  <td><%= reminder.title.truncate 50 %></td>
   <td><%= reminder.content.truncate 50 %></td>
   <td><%= day_format(reminder.day) %></td>
   <td><%= time_format((reminder.hour - reminder.original_timezone)%24, reminder.minute) %></td>
