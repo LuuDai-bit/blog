@@ -7,5 +7,7 @@ class ExecuteReminderJob
 
     # SendSmsService.run(user.phone_number, reminder.content)
     SendReminderEmailService.run(reminder.title, reminder.content)
+
+    reminder.destroy! if reminder.only_once
   end
 end
