@@ -1,4 +1,31 @@
 <h1>This is administration page</p>
 
-<%= link_to('New User', new_admin_user_path, class: 'btn btn-primary') %>
-<%= link_to('List Posts', admin_posts_path, class: 'btn btn-primary') %>
+<div class="dashboard-card">
+  <div class="statistic-title">
+    <span>Post per week</span>
+  </div>
+
+  <div class="statistic-data">
+    <span><%= @post_per_week || '-' %></span>
+  </div>
+</div>
+
+<div class="dashboard-card">
+  <div class="statistic-title">
+    <span>Post per month</span>
+  </div>
+
+  <div class="statistic-data">
+    <span><%= @post_per_month || '-' %></span>
+  </div>
+</div>
+
+<div class="dashboard-card">
+  <div class="statistic-title">
+    <span>Server Cost</span>
+  </div>
+
+  <div class="statistic-data">
+    <span>$<%= @server_cost || '-' %></span>
+  </div>
+</div>
