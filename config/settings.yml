@@ -17,3 +17,7 @@ models:
       friday: 'Fri'
       saturday: 'Sat'
       sunday: 'Sun'
+  post:
+    statistic:
+      post_per_week: post_per_week
+      post_per_month: post_per_month
