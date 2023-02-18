@@ -1,10 +1,11 @@
 /* ...
  *= require_self
  *= require_tree .
+ *= toastr
  */
 
-@import "bootstrap/scss/bootstrap";
 @import "trix/dist/trix";
+@import "toastr";
 @import "./sizing.scss";
 @import "./custom.scss";
 @import "./badge.scss";

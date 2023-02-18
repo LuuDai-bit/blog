@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "@fortawesome/fontawesome-free/css/all"
 import "controllers"
+import "../../assets/stylesheets/application"
 
 Rails.start()
 Turbolinks.start()
@@ -18,4 +19,5 @@ require('jquery')
 require("trix")
 require("@rails/actiontext")
 
+global.toastr = require("toastr")
 window.bootstrap = require("bootstrap");

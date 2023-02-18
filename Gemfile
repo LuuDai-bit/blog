@@ -20,6 +20,7 @@ gem 'aws-sdk-sns'
 gem 'config'
 gem 'whenever', require: false
 gem 'sidekiq'
+gem 'toastr-rails'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

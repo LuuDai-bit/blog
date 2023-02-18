@@ -12,11 +12,7 @@
   </head>
 
   <body>
-    <% if notice.present? %>
-      <p class="notice"><%= notice %></p>
-    <% elsif alert.present? %>
-      <p class="custom-alert"><%= alert %></p>
-    <% end %>
+    <%= toastr_flash %>
 
     <div class="flex-parent-container">
       <!-- The sidebar -->
