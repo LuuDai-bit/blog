@@ -16,4 +16,9 @@ module ApplicationHelper
       flash_messages << text.html_safe if message
     end.join("\n").html_safe
   end
+
+  def current_controller?(options)
+    path = request.original_fullpath
+    path.include?(options)
+  end
 end
