@@ -6,6 +6,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta property="og:title" content="Luu Dai - Code de hoc Blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content='<%= asset_path('codedehoc-thumbnail.jpeg') %>'/>
+    <meta property="og:url" content="https://www.codedehoc.click" />
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('open-window.png') %>
