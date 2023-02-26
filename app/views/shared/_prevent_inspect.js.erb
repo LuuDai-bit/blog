@@ -1,0 +1,53 @@
+<script type='text/javascript'>
+  var message = "NoRightClicking";
+  function defeatIE() {
+    if (document.all) {
+      (message);
+      return false;
+    }
+  }
+  function defeatNS(e) {
+    if (document.layers || (document.getElementById && !document.all)) {
+      if (e.which == 2 || e.which == 3) {
+        (message);
+        return false;
+      }
+    }
+  }
+  if (document.layers) {
+    document.captureEvents(Event.MOUSEDOWN);
+    document.onmousedown = defeatNS;
+  } else {
+    document.onmouseup = defeatNS;
+    document.oncontextmenu = defeatIE;
+  }
+  document.oncontextmenu = new Function("return false")
+</script>
+
+<script type='text/javascript'>
+  const CTRL_BTN = '17';
+  const U_BTN = '85';
+  const F12_BTN = '123';
+
+  checkCtrl = false;
+
+  $('*').keydown(function(e) {
+    if (e.keyCode == CTRL_BTN) {
+      checkCtrl = true
+    }
+  }).keyup(function(ev) {
+    if (ev.keyCode == CTRL_BTN) {
+      checkCtrl = false
+    }
+  }).keydown(function(event) {
+    if (checkCtrl) {
+      if (event.keyCode == U_BTN) {
+        return false;
+      }
+    }
+  }).keydown(function(event) {
+    if (event.keyCode == F12_BTN) {
+      return false
+    }
+  })
+</script>

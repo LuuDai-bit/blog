@@ -9,6 +9,9 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('open-window.png') %>
+    <% if Rails.env.production? %>
+      <%= render partial: 'shared/prevent_inspect' %>
+    <% end %>
   </head>
 
   <body>
@@ -19,5 +22,9 @@
       <!-- Footer-->
       <%= render partial: 'shared/footer' %>
     </div>
+
+    <% if Rails.env.production? %>
+      <%= render partial: 'shared/prevent_inspect.js.erb' %>
+    <% end %>
   </body>
 </html>
