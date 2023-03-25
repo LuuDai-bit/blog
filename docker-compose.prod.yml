@@ -65,6 +65,7 @@ services:
     container_name: blog_sidekiq
     image: blog_image:latest
     command: bash -c "bundle i && service cron start && whenever && whenever --update-crontab && bundle exec sidekiq"
+    restart: always
     volumes:
       - .:/blog
     depends_on:
