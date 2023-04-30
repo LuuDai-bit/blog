@@ -3,17 +3,20 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
     const trixToolbar = document.querySelectorAll('[id^=trix-toolbar]')[0];
-
     const trixEditor = document.getElementById('trix-content-editor');
-    trixEditor.onscroll = function() {stickyScroll()};
+    const adminContainer = document.getElementsByClassName('admin-container')[0];
 
-    var distanceToolbarToTop = trixToolbar.offsetTop;
-    var distanceEditorToTop = trixEditor.offsetTop;
-    var sticky = distanceEditorToTop - distanceToolbarToTop;
-
-    var contentLabelToTop = document.getElementById('content-label').offsetTop;
+    trixEditor.onscroll = function() {stickyScroll()}
+    adminContainer.onscroll = function() {stickyScroll()}
 
     function stickyScroll() {
+      var distanceToolbarToTop = trixToolbar.offsetTop;
+      var distanceEditorToTop = trixEditor.offsetTop;
+      var sticky = distanceToolbarToTop - distanceEditorToTop;
+      var scrolled = adminContainer.scrollTop === 0 ? 0 : adminContainer.scrollTop + window.scrollY;
+      var contentLabelToTop = document.getElementById('content-label').offsetTop - scrolled;
+      console.log(distanceEditorToTop, distanceToolbarToTop, trixEditor.scrollTop, contentLabelToTop);
+
       if(trixEditor.scrollTop > sticky){
         trixToolbar.classList.add('sticky');
         trixToolbar.style.top = `${contentLabelToTop}px`;

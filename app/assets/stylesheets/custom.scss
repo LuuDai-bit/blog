@@ -23,6 +23,8 @@
   flex: 1;
   margin: 10px;
   width: 70%;
+  max-height: 98vh;
+  overflow: auto;
 }
 
 .flex-parent-container {
