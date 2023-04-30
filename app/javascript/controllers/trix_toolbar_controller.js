@@ -15,7 +15,6 @@ export default class extends Controller {
       var sticky = distanceToolbarToTop - distanceEditorToTop;
       var scrolled = adminContainer.scrollTop === 0 ? 0 : adminContainer.scrollTop + window.scrollY;
       var contentLabelToTop = document.getElementById('content-label').offsetTop - scrolled;
-      console.log(distanceEditorToTop, distanceToolbarToTop, trixEditor.scrollTop, contentLabelToTop);
 
       if(trixEditor.scrollTop > sticky){
         trixToolbar.classList.add('sticky');
