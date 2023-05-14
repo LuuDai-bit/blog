@@ -3,7 +3,7 @@ class User::PostsController < User::UserController
     @pagy, @posts = pagy(Post.status_publish
                              .by_subject(params[:search_text])
                              .includes(:author)
-                             .order(created_at: :desc))
+                             .order(id: :desc))
   end
 
   def show
