@@ -21,7 +21,6 @@ gem 'config'
 gem 'whenever', require: false
 gem 'sidekiq'
 gem 'toastr-rails'
-gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
