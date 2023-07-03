@@ -19,5 +19,5 @@ require('jquery')
 require("trix")
 require("@rails/actiontext")
 
-global.toastr = require("toastr")
+global.toastr = require("toastr");
 window.bootstrap = require("bootstrap");
