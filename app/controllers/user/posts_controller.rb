@@ -8,5 +8,7 @@ class User::PostsController < User::UserController
 
   def show
     @post = Post.find params[:id]
+    @post.views += 1
+    @post.save!
   end
 end
