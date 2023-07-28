@@ -4,5 +4,6 @@ class Admin::DashboardController < Admin::AdminController
     @post_per_week = Statistic::PostStatisticService.run(target_day, Settings.models.post.statistic.post_per_week)
     @post_per_month = Statistic::PostStatisticService.run(target_day, Settings.models.post.statistic.post_per_month)
     @server_cost = Statistic::CalculateServerCostService.run
+    @access = Statistic::LogStatisticService.run
   end
 end

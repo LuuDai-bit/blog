@@ -29,3 +29,35 @@
     <span>$<%= @server_cost || '-' %></span>
   </div>
 </div>
+
+</br>
+
+<div class="dashboard-card">
+  <div class="statistic-title">
+    <span>Total Access Ip</span>
+  </div>
+
+  <div class="statistic-data">
+    <span><%= @access[:total_access_in_month] || '-' %></span>
+  </div>
+</div>
+
+<div class="dashboard-card">
+  <div class="statistic-title">
+    <span>Total Request</span>
+  </div>
+
+  <div class="statistic-data">
+    <span><%= @access[:total_request_in_month] || '-' %></span>
+  </div>
+</div>
+
+<div class="dashboard-card">
+  <div class="statistic-title">
+    <span>Highest Request</span>
+  </div>
+
+  <div class="statistic-data">
+    <span><%= @access[:highest_request_in_month] || '-' %></span>
+  </div>
+</div>
