@@ -1,6 +1,6 @@
 class Statistic::LogStatisticService < BaseService
   def run
-    total_access_in_month = logs_in_month.length
+    total_access_in_month = logs_in_month.pluck(:ip_address).uniq.length
     total_request_in_month = logs_in_month.inject(0) do |total, log|
       total + log.access_count if log.access_count.present?
     end
