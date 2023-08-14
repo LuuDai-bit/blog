@@ -8,7 +8,6 @@ class User::PostsController < User::UserController
 
   def show
     @post = Post.find params[:id]
-    @post.views += 1
-    @post.save!
+    @post.update_column(:views, @post.view + 1)
   end
 end
