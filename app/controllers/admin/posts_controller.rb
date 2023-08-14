@@ -28,7 +28,7 @@ class Admin::PostsController < Admin::AdminController
   def edit; end
 
   def update
-    if @post.update(post_params)
+    if UpdatePostService.run(@post, post_params)
       flash[:notice] = 'Post updated'
       redirect_to admin_posts_path
     else

@@ -29,6 +29,6 @@ class Post < ApplicationRecord
   scope :count_post_by_time, ->(start_day, end_day) do
     return if start_day.blank? || end_day.blank?
 
-    where(created_at: start_day..end_day).count
+    where(created_at: start_day..end_day, status: :publish).count
   end
 end

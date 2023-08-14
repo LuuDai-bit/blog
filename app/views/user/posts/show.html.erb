@@ -5,9 +5,12 @@
         <div class="post-heading">
           <h1><%= @post.subject %></h1>
           <span class="meta">
-            Posted by
+            Đăng bởi
             <a href="#!">Lưu Đại</a>
-            on <%= @post.created_at.strftime('%d-%m-%Y') %>
+            vào ngày <%= @post.created_at.strftime('%d-%m-%Y') %>
+          </span>
+          <span class="meta">
+            Cập nhật lần cuối vào ngày <%= @post.updated_at.strftime('%d-%m-%Y') %>
           </span>
         </div>
       </div>
