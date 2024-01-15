@@ -23,7 +23,7 @@ class Post < ApplicationRecord
   scope :by_subject, ->(search_text) do
     return if search_text.blank?
 
-    where('posts.subject LIKE ?', '%' + search_text + '%')
+    where('LOWER(posts.subject) LIKE ?', '%' + search_text.downcase + '%')
   end
 
   scope :count_post_by_time, ->(start_day, end_day) do
