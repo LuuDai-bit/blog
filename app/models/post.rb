@@ -8,7 +8,13 @@ class Post < ApplicationRecord
 
   enum status: Settings.enum.post.status.to_h, _prefix: true
 
-  scope :order_by_status, ->() do
+  scope :order_by_views, ->(direction) do
+    order(views: direction) if direction
+  end
+
+  scope :order_by_status, ->(order_views) do
+    return if order_views
+
     sql = <<-SQL.squish
       CASE status
         WHEN 'draft' THEN 1
