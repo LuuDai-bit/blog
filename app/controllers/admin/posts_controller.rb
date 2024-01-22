@@ -2,7 +2,9 @@ class Admin::PostsController < Admin::AdminController
   before_action :load_post, only: %i[show edit update destroy]
 
   def index
-    @pagy, @posts = pagy(Post.order_by_status
+    # binding.pry
+    @pagy, @posts = pagy(Post.order_by_status(params[:order_views])
+                             .order_by_views(params[:order_views])
                              .by_subject(params[:search_text])
                              .includes(:author))
   end
