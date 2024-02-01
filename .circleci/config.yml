@@ -8,6 +8,10 @@ jobs:
     # Install gems, run rails tests
     docker:
       - image: cimg/ruby:3.0.0-node
+        environment:
+          - DB_USERNAME=postgres
+          - DB_PASSWORD=Aa@123456
+          - DB_HOST=localhost
       - image: circleci/postgres:9.5-alpine
         environment:
           - PGUSER=postgres
