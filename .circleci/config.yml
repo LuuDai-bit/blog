@@ -13,7 +13,7 @@ jobs:
       - ruby/install-deps
       - run:
           name: rails test
-          command: bundle exec rails test
+          command: bundle exec rspec
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
