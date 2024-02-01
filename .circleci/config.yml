@@ -9,10 +9,10 @@ jobs:
     docker:
       - image: cimg/ruby:3.0.0-node
       - image: cimg/postgres
-        enviroment:
-          - PGUSER=postgres
-          - PGPASSWORD=Aa@123456
-          - POSTGRES_PASSWORD=Aa@123456
+          enviroment:
+            - PGUSER=postgres
+            - PGPASSWORD=Aa@123456
+            - POSTGRES_PASSWORD=Aa@123456
     steps:
       - checkout
       - ruby/install-deps
