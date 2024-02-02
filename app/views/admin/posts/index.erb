@@ -28,7 +28,7 @@
       </tr>
     </thead>
     <tbody id="admin-posts">
-      <%= render @posts %>
+      <%= render partial: :post, collection: @posts, cached: true %>
     </tbody>
   </table>
   <div id="admin-posts-paginate">
