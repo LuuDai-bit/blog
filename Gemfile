@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
-gem 'rails', '~> 6.1.5', '>= 6.1.5.1'
+gem 'rails', '>= 6.1.7.1'
 gem 'sqlite3', '~> 1.4'
 gem 'puma', '>= 5.6.8'
 gem 'sass-rails', '>= 6'
@@ -12,14 +12,14 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
 gem 'pagy'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '>= 1.12.2'
 gem 'devise'
 gem 'stimulus-rails'
 gem 'aws-sdk-s3'
 gem 'aws-sdk-sns'
 gem 'config'
 gem 'whenever', require: false
-gem 'sidekiq'
+gem 'sidekiq', ">= 7.1.3"
 gem 'toastr-rails'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
