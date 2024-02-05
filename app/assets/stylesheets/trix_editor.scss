@@ -2,4 +2,8 @@ trix-editor {
   a {
     text-decoration: underline;
   }
+
+  .attachment {
+    z-index: -1
+  }
 }
