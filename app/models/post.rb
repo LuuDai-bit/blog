@@ -38,4 +38,8 @@ class Post < ApplicationRecord
 
     where(created_at: start_day..end_day, status: :publish).count
   end
+
+  scope :by_locale, ->() do
+    where.not(subject_en: nil) if I18n.locale == :en
+  end
 end

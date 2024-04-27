@@ -21,4 +21,8 @@ module ApplicationHelper
     path = request.original_fullpath
     path.include?(options)
   end
+
+  def default_locale?
+    I18n.locale == :vi
+  end
 end

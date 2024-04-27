@@ -1,6 +1,7 @@
 <div class="post-preview">
-  <%= link_to user_post_path(post) do %>
-    <h3 class="post-title"><%= post.subject %></h2>
+  <%= link_to user_post_path(post), class: "position-relative" do %>
+    <h3 class="post-title d-inline"><%= default_locale? ? post.subject : post.subject_en %>
+    </h3>
   <% end %>
   <p class="post-meta">
       <%= t('posts.post_by') %>

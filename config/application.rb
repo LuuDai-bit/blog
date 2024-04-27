@@ -13,7 +13,7 @@ module Blog
 
     config.autoloader = :classic
 
-    config.i18n.default_locale = :vi
+    config.i18n.default_locale = :en
 
     # Configuration for the application, engines, and railties goes here.
     #
