@@ -8,7 +8,7 @@ class User::PostsController < User::UserController
   end
 
   def show
-    @post = Post.find params[:id]
+    @post = Post.by_locale.find params[:id]
     @post.update(views: @post.views + 1)
   end
 end
