@@ -11,7 +11,7 @@ class User::UserController < ApplicationController
 
   def switch_locale(&action)
     locale = params[:locale] || I18n.default_locale
-    return unless I18n.available_locales.include?(locale.to_sym)
+    locale = I18n.default_locale unless I18n.available_locales.include?(locale.to_sym)
 
     I18n.with_locale(locale, &action)
   end
