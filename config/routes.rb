@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :reminders, only: %i[index edit update new create destroy]
   end
 
+  get '/:locale' => 'user/posts#index'
   scope "(:locale)", locale: /en|vi/ do
     namespace :user do
       resources :posts, only: %i[index show]
