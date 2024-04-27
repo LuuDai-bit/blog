@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   has_rich_text :content
+  has_rich_text :content_en
 
   belongs_to :author, class_name: User.name,
                       primary_key: :id, foreign_key: :user_id, optional: true
