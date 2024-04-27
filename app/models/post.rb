@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   has_rich_text :content
+  has_rich_text :content_en
 
   belongs_to :author, class_name: User.name,
                       primary_key: :id, foreign_key: :user_id, optional: true
@@ -36,5 +37,9 @@ class Post < ApplicationRecord
     return if start_day.blank? || end_day.blank?
 
     where(created_at: start_day..end_day, status: :publish).count
+  end
+
+  scope :by_locale, ->() do
+    where.not(subject_en: nil) if I18n.locale == :en
   end
 end

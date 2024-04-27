@@ -3,6 +3,11 @@
   <%= form.text_field :subject, class: 'form-control', placeholder: 'Suject' %>
 </div>
 
+<div class="form-group">
+  <%= form.label :subject_en, 'Subject (English)' %>
+  <%= form.text_field :subject_en, class: 'form-control', placeholder: 'Suject' %>
+</div>
+
 <%= content_tag :div, "", class: "pickerContainer", data: {
   emoji_picker_target: "pickerContainer"
 } %>
@@ -11,6 +16,15 @@
   <%= form.label :content, 'Content', id: 'content-label' %>
   <div>
     <%= form.rich_text_area :content, class: 'min-vh-60', data: {
+      emoji_picker_target: "trixEditor", controller: "trix-toolbar"
+    } %>
+  </div>
+</div>
+
+<div class="form-group content-input" id="trix-content-editor">
+  <%= form.label :content_en, 'Content (English)', id: 'content-label' %>
+  <div>
+    <%= form.rich_text_area :content_en, class: 'min-vh-60', data: {
       emoji_picker_target: "trixEditor", controller: "trix-toolbar"
     } %>
   </div>

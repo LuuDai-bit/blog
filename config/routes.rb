@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'sessions' }
-  root 'user/posts#index'
-  get '/about', to: 'user/home#about'
-  get '/contact', to: 'user/home#contact'
 
   namespace :admin do
     root 'dashboard#index'
@@ -13,7 +10,14 @@ Rails.application.routes.draw do
     resources :reminders, only: %i[index edit update new create destroy]
   end
 
-  namespace :user do
-    resources :posts, only: %i[index show]
+  get '/:locale' => 'user/posts#index'
+  scope "(:locale)", locale: /en|vi/ do
+    root 'user/posts#index'
+    get '/about', to: 'user/home#about'
+    get '/contact', to: 'user/home#contact'
+
+    namespace :user do
+      resources :posts, only: %i[index show]
+    end
   end
 end

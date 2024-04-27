@@ -5,13 +5,24 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto py-4 py-lg-0">
         <li class="nav-item">
-          <%= link_to 'Home', root_path, class: 'nav-link px-lg-3 py-3 py-lg-4' %>
+          <%= link_to t('navbar.home'), root_path, class: 'nav-link px-lg-3 py-3 py-lg-4' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'About', about_path, class: 'nav-link px-lg-3 py-3 py-lg-4' %>
+          <%= link_to t('navbar.about'), about_path, class: 'nav-link px-lg-3 py-3 py-lg-4' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Contact', contact_path, class: 'nav-link px-lg-3 py-3 py-lg-4' %>
+          <%= link_to t('navbar.contact'), contact_path, class: 'nav-link px-lg-3 py-3 py-lg-4' %>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <% if default_locale? %>
+            <%= link_to locale: :en do %>
+              <%= image_tag('/us_flag.svg.png', size: '16x10') %>
+            <% end %>
+          <% else %>
+            <%= link_to locale: :vi do %>
+              <%= image_tag('/vn_flag.svg.png', size: '16x10') %>
+            <% end %>
+          <% end %>
         </li>
       </ul>
     </div>
