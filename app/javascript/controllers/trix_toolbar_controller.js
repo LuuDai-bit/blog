@@ -2,14 +2,17 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   connect() {
-    const trixToolbar = document.querySelectorAll('[id^=trix-toolbar]')[0];
-    const trixEditor = document.getElementById('trix-content-editor');
+    const trixToolbars = document.querySelectorAll('[id^=trix-toolbar]');
+    const trixEditors = document.querySelectorAll('[id^=trix-content-editor]');
+    const trixEditorVn = trixEditors[0]
+    const trixEditorEn = trixEditors[1]
     const adminContainer = document.getElementsByClassName('admin-container')[0];
 
-    trixEditor.onscroll = function() {stickyScroll()}
+    trixEditorVn.onscroll = function() {stickyScroll(trixEditorVn, trixToolbars[0])}
+    trixEditorEn.onscroll = function() {stickyScroll(trixEditorEn, trixToolbars[1])}
     adminContainer.onscroll = function() {stickyScroll()}
 
-    function stickyScroll() {
+    function stickyScroll(trixEditor, trixToolbar) {
       var distanceToolbarToTop = trixToolbar.offsetTop;
       var distanceEditorToTop = trixEditor.offsetTop;
       var sticky = distanceToolbarToTop - distanceEditorToTop;

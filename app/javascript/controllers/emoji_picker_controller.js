@@ -3,16 +3,22 @@ import { createPopup } from "@picmo/popup-picker";
 import { RichText } from "../classes/RichText";
 
 export default class extends Controller {
-  static targets = ["trixEditor", "pickerContainer"];
+  static targets = ["trixEditor", "trixEditorEn", "pickerContainer", "pickerContainerEn"];
 
   connect() {
-    const buttonString = this.emojiButtonString();
-    const emojiButton = this.emojiButtonTemplate(buttonString);
+    this.appendEmojiPicker(this.pickerContainerTarget, this.trixEditorTarget, 0)
+
+    this.appendEmojiPicker(this.pickerContainerEnTarget, this.trixEditorEnTarget, 1)
+  }
+
+  appendEmojiPicker(pickerContainerTarget, trixEditorTarget, position) {
+    let buttonString = this.emojiButtonString();
+    let emojiButton = this.emojiButtonTemplate(buttonString);
     let picker;
-    let richText = new RichText(picker, emojiButton) // Tai sao ko new no o duoi do phai set lai picker
+    let richText = new RichText(picker, emojiButton, position)
 
     picker = createPopup({
-      rootElement: this.pickerContainerTarget
+      rootElement: pickerContainerTarget
     }, {
       triggerElement: emojiButton,
       referenceElement: emojiButton,
@@ -20,7 +26,7 @@ export default class extends Controller {
     });
 
     picker.addEventListener("emoji:select", (event) => {
-      this.trixEditorTarget.editor.insertString(event.emoji)
+      trixEditorTarget.editor.insertString(event.emoji)
     })
 
     richText.setPicker(picker);

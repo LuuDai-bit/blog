@@ -1,14 +1,15 @@
 export class RichText {
-  constructor(picker, emojiButton) {
+  constructor(picker, emojiButton, position=0) {
     this.picker = picker
     this.emojiButton = emojiButton
+    this.position = position
     this.createEmojiPickerButton();
   }
 
   createEmojiPickerButton() {
     this.emojiButton.addEventListener('click', this.toggleEmojiPicker.bind(this));
     document
-      .querySelector("[data-trix-button-group=block-tools]")
+      .querySelectorAll("[data-trix-button-group=block-tools]")[this.position]
       .prepend(this.emojiButton);
   }
 
