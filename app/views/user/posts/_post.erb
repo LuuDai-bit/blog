@@ -3,9 +3,9 @@
     <h3 class="post-title"><%= post.subject %></h2>
   <% end %>
   <p class="post-meta">
-      Đăng bởi
+      <%= t('posts.post_by') %>
       <%= link_to 'Lưu Đại', about_path %>
-      vào ngày <%= post.created_at.strftime('%d-%m-%Y') %>
+      <%= t('posts.at') %> <%= post.created_at.strftime('%d-%m-%Y') %>
   </p>
 </div>
 

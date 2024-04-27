@@ -1,0 +1,22 @@
+vi:
+  header:
+    title: Code để học
+  navbar:
+    title: Code để học
+    home: Trang chủ
+    about: Ai đây?
+    contact: Liên hệ
+  posts:
+    title: Code để học
+    description: Blog để note lại những gì mình đã học được
+    post_by: Đăng bởi
+    at: vào ngày
+  about:
+    about_me: Về chính mình
+    and_this_blog: và trang blog này
+    greeting: Chào mọi người, mình là Lưu Đại.
+    short_description_exp: Lập trình viên Ruby on Rails với 3 năm kinh nghiệm
+    hobby: Thích đọc sách, viết blog, game
+  contact:
+    email: Email
+    github: Github
