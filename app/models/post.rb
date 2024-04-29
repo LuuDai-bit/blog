@@ -40,6 +40,6 @@ class Post < ApplicationRecord
   end
 
   scope :by_locale, ->() do
-    where.not(subject_en: nil) if I18n.locale == :en
+    where.not(subject_en: nil, subject_en: '') if I18n.locale == :en
   end
 end
