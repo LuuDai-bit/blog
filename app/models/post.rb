@@ -42,4 +42,8 @@ class Post < ApplicationRecord
   scope :by_locale, ->() do
     where.not(subject_en: nil, subject_en: '') if I18n.locale == :en
   end
+
+  def english_version_available?
+    subject_en.present?
+  end
 end

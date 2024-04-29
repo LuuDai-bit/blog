@@ -2,12 +2,13 @@
 <%= render partial: 'search' %>
 <%= link_to('New Post', new_admin_post_path, class: 'btn btn-primary') %>
 <% if @posts.present? %>
-  <table class="table">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th class="col-md-3">Subject</th>
         <th class="col-md-2">Author</th>
         <th class="col-md-1">Status</th>
+        <th class="col-md-1">English</th>
         <th class="col-md-1">
           Views
           <% if params[:order_views].blank? || params[:order_views] == 'desc' %>
