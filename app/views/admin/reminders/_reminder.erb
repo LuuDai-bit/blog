@@ -1,4 +1,4 @@
-<tr>
+<tr class="align-middle">
   <td><%= reminder.title.truncate 50 %></td>
   <td><%= reminder.content.truncate 50 %></td>
   <td><%= day_format(reminder.day) %></td>
@@ -6,6 +6,10 @@
   <td><%= reminder.only_once ? 'yes' : '-' %></td>
   <td>
     <%= link_to 'Edit', edit_admin_reminder_path(reminder), class: 'btn btn-light' %>
-    <%= link_to 'Destroy', admin_reminder_path(reminder), method: :delete, class: 'btn btn-danger' %>
+    <%= link_to 'Destroy',
+                 admin_reminder_path(reminder),
+                 method: :delete,
+                 class: 'btn btn-danger',
+                 data: { confirm: 'Are you sure?' } %>
   </td>
 </tr>
