@@ -65,6 +65,18 @@
   width: 100%
 }
 
+.small-announcement {
+  color: #fff;
+  font-size: 14px;
+  font-weight: lighter;
+  font-style: italic;
+  margin-top: 1rem;
+
+  a {
+    color: #fff
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .input-group-35vw{
     width: 100% !important;

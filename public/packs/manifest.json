@@ -1,11 +1,11 @@
 {
-  "application.css": "/packs/css/application-25a59c43.css",
+  "application.css": "/packs/css/application-7cbf9aa3.css",
   "application.js": "/packs/js/application-a1f9dbcbbd85a2d5917b.js",
   "application.js.map": "/packs/js/application-a1f9dbcbbd85a2d5917b.js.map",
   "entrypoints": {
     "application": {
       "css": [
-        "/packs/css/application-25a59c43.css"
+        "/packs/css/application-7cbf9aa3.css"
       ],
       "js": [
         "/packs/js/application-a1f9dbcbbd85a2d5917b.js"

@@ -10,6 +10,12 @@
             <%= t('posts.at') %> <%= @post.created_at.strftime('%d-%m-%Y') %>
           </span>
         </div>
+
+        <% if @post.english_version_available? %>
+          <div class="small-announcement">
+            <%= link_to t("posts.click_here"), locale: default_locale? ? :en : :vi %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
