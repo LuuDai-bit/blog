@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: User.name,
                       primary_key: :id, foreign_key: :user_id, optional: true
 
-  validates :subject, presence: true
+  validates :subject, presence: true, length: { minimun: 1, maximum: 255 }
 
   enum status: Settings.enum.post.status.to_h, _prefix: true
 
