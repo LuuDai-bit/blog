@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :users, only: %i[show edit update new create]
     resources :posts
     resources :reminders, only: %i[index edit update new create destroy]
+    resources :categories, only: :index
   end
 
   get '/:locale' => 'user/posts#index'

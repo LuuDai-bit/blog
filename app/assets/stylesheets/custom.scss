@@ -77,6 +77,12 @@
   }
 }
 
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media screen and (max-width: 1200px) {
   .input-group-35vw{
     width: 100% !important;
