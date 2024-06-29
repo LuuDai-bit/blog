@@ -83,6 +83,12 @@
   text-overflow: ellipsis;
 }
 
+.error-message {
+  font-size: 15px;
+  color: red;
+  font-style: italic;
+}
+
 @media screen and (max-width: 1200px) {
   .input-group-35vw{
     width: 100% !important;

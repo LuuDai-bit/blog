@@ -4,5 +4,5 @@
               method: :post,
               scope: :post,
               data: { controller: 'emoji-picker' } do |form| %>
-  <%= render partial: 'form', locals: { form: form } %>
+  <%= render partial: 'form', locals: { form: form, post: @post } %>
 <% end %>
