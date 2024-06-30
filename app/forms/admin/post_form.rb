@@ -57,7 +57,8 @@ class Admin::PostForm
       subject: subject,
       subject_en: subject_en,
       content: content,
-      content_en: content_en
+      content_en: content_en,
+      status: status
     }
   end
 
