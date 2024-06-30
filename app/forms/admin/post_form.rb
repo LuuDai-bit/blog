@@ -58,7 +58,8 @@ class Admin::PostForm
       subject_en: subject_en,
       content: content,
       content_en: content_en,
-      status: status
+      status: status,
+      user_id: user_id
     }
   end
 
