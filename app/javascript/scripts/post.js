@@ -4,10 +4,12 @@ document.addEventListener("turbolinks:load", function() {
 
   let categories = [];
 
+  // Import exist category to categories array
   $('.category-preview').toArray().forEach((category) => {
-    categories.push($(category).html());
+    categories.push($(category).html().trim());
   });
 
+  // Update value of post_categories param by the current categories
   $('#post_categories').val(categories.join(';'));
 
   const displayError = (message) => {
@@ -35,6 +37,22 @@ document.addEventListener("turbolinks:load", function() {
     return true;
   };
 
+  // handle category delete button click event
+  const handleDeleteBtn = () => {
+    $('.delete-category-btn').on('click', (e) => {
+      // Get the category element
+      const categoryElem = $(e.target).siblings('.category-preview');
+      const name = $(categoryElem).html().trim();
+      // Remove the selected category from the categories array
+      const index = categories.indexOf(name);
+      if (index > -1) categories.splice(index, 1);
+      // Update categories input params
+      $('#post_categories').val(categories.join(';'));
+      // Rerender categories block
+      displayCategories();
+    });
+  };
+
   const displayCategories = () => {
     let html = '';
     categories.forEach((c) => {
@@ -46,8 +64,10 @@ document.addEventListener("turbolinks:load", function() {
       `;
     });
     $('#categories-preview').html(html);
+    handleDeleteBtn();
   };
 
+  // Handle add category button
   $('#add-category-btn').on('click', (e) => {
     e.preventDefault();
 
@@ -59,4 +79,7 @@ document.addEventListener("turbolinks:load", function() {
       displayCategories();
     }
   });
+
+  // Handle delete category button event when first load page
+  handleDeleteBtn();
 })
