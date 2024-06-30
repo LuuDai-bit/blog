@@ -3,10 +3,15 @@
     <h3 class="post-title d-inline"><%= default_locale? ? post.subject : post.subject_en %>
     </h3>
   <% end %>
+  <div>
+    <% post.categories.each do |category| %>
+      <span class="user-category">#<%= category.name %></span>
+    <% end %>
+  </div>
   <p class="post-meta">
-      <%= t('posts.post_by') %>
-      <%= link_to 'Lưu Đại', about_path %>
-      <%= t('posts.at') %> <%= post.created_at.strftime('%d-%m-%Y') %>
+    <%= t('posts.post_by') %>
+    <%= link_to 'Lưu Đại', about_path %>
+    <%= t('posts.at') %> <%= post.created_at.strftime('%d-%m-%Y') %>
   </p>
 </div>
 

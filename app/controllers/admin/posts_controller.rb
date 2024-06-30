@@ -15,7 +15,7 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def create
-    @post = Post.new post_params
+    @post = ::Admin::PostForm.new(post_params)
 
     if @post.save
       flash[:notice] = 'Post created'
@@ -29,7 +29,8 @@ class Admin::PostsController < Admin::AdminController
   def edit; end
 
   def update
-    if UpdatePostService.run(@post, post_params)
+    @post = ::Admin::PostForm.new(post_params.merge(id: params[:id]))
+    if @post.save
       flash[:notice] = 'Post updated'
       redirect_to admin_posts_path
     else
@@ -55,6 +56,8 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def post_params
-    params.require(:post).permit(:subject, :subject_en, :content, :content_en, :status).merge(user_id: current_user.id)
+    params.require(:post).permit(:subject, :subject_en, :content, :content_en,
+                                 :status, :categories)
+                         .merge(user_id: current_user.id)
   end
 end

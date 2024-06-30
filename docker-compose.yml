@@ -17,6 +17,8 @@ services:
       - internal
     env_file:
       - .env
+    tty: true
+    stdin_open: true
 
   postgres:
     image: postgres
