@@ -1,7 +1,7 @@
 <%= form_with url: user_posts_path,
               method: :get,
               local: false do |form| %>
-  <div class="mb-3 w-36vw">
+  <div class="mb-2rem w-37vw">
     <%= form.text_field :search_text, class: 'form-control leaf-input', placeholder: I18n.t("posts.search.search_text_place_holder") %>
     <%= form.submit 'Search', class: 'd-none' %>
   </div>
