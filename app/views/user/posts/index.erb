@@ -12,8 +12,17 @@
   </div>
 </header>
 <!-- Search input -->
-<div class="d-flex justify-content-center">
-  <%= render partial: 'search' %>
+<div>
+  <div class="w-36vw m-auto mb-1">
+    <div class="d-flex justify-content-start" id="user-posts-filter">
+      <% if @filter_params.present? %>
+        <%= render partial: 'filter_preview', filter_params: @filter_params %>
+      <% end %>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= render partial: 'search' %>
+  </div>
 </div>
 <!-- Main Content-->
 <div class="container px-4 px-lg-5">

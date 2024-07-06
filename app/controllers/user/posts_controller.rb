@@ -19,6 +19,6 @@ class User::PostsController < User::UserController
   private
 
   def filter_params
-    params.permit(:search_text, :category_name)
+    @filter_params ||= params.permit(:search_text, :category_name)
   end
 end
