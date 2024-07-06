@@ -6,6 +6,7 @@
   <div>
     <% post.categories.each do |category| %>
       <span class="user-category">#<%= category.name %></span>
+      <%= link_to("##{category.name}", user_posts_path(category_name: category.name), class: 'user-category') %>
     <% end %>
   </div>
   <p class="post-meta">
