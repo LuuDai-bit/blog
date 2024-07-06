@@ -12,6 +12,10 @@ vi:
     post_by: Đăng bởi
     at: vào ngày
     click_here: Click here to switch to English version
+    search:
+      search_text_place_holder: Tìm kiếm theo chủ đề
+      category_name: Tên chủ đề
+      search_text: Từ khóa
   about:
     about_me: Về chính mình
     and_this_blog: và trang blog này

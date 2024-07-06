@@ -12,6 +12,10 @@ en:
     post_by: Post by
     at: at
     click_here: Click vào đây để chuyển sang phiên bản Tiếng Việt
+    search:
+      search_text_place_holder: Search by article subject
+      category_name: Category name
+      search_text: Search text
   about:
     about_me: About me
     and_this_blog: and this humble blog
