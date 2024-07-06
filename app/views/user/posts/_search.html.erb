@@ -1,0 +1,8 @@
+<%= form_with url: user_posts_path,
+              method: :get,
+              local: false do |form| %>
+  <div class="mb-3 w-36vw">
+    <%= form.text_field :search_text, class: 'form-control leaf-input', placeholder: 'Post subject' %>
+    <%= form.submit 'Search', class: 'd-none' %>
+  </div>
+<% end %>

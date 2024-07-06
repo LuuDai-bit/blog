@@ -5,7 +5,10 @@ class User::PostsController < User::UserController
                              .merge(Category.by_name(filter_params[:category_name]))
                              .by_locale
                              .order(id: :desc)
-                             .eager_load(:categories, :author))
+                             .left_joins(:categories)
+                             .preload(:categories, :author)
+                             .distinct
+                    )
   end
 
   def show
