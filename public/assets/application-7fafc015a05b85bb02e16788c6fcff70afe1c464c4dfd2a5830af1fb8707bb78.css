@@ -759,12 +759,17 @@ trix-editor .attachment__metadata .attachment__size {
   font-style: italic;
 }
 
+/* line 92, app/assets/stylesheets/custom.scss */
+.mb-2rem {
+  margin-bottom: 2rem;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 93, app/assets/stylesheets/custom.scss */
+  /* line 97, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 98, app/assets/stylesheets/custom.scss */
+  /* line 102, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;
@@ -887,6 +892,65 @@ trix-editor .attachment__metadata .attachment__size {
   color: white;
   background-color: gray;
   cursor: pointer;
+}
+
+/* line 36, app/assets/stylesheets/views/post.scss */
+.user-category {
+  padding: 3px 10px;
+  background-color: #6c757d;
+  color: white;
+  border-radius: 15px 0;
+  font-size: 15px;
+  display: inline-block;
+}
+
+/* line 44, app/assets/stylesheets/views/post.scss */
+.user-category:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 49, app/assets/stylesheets/views/post.scss */
+.w-37vw {
+  width: 37vw;
+}
+
+/* line 53, app/assets/stylesheets/views/post.scss */
+.leaf-input {
+  border: solid 1px #ced4da;
+  border-radius: 15px 0;
+}
+
+/* line 57, app/assets/stylesheets/views/post.scss */
+.leaf-input:focus {
+  border-color: #ced4da;
+  box-shadow: 0 0 0 0.25rem #ced4da;
+}
+
+/* line 63, app/assets/stylesheets/views/post.scss */
+.filter-category {
+  padding: 1px 5px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  font-size: 13px;
+  display: inline-block;
+}
+
+/* line 72, app/assets/stylesheets/views/post.scss */
+.clear-filter {
+  font-size: 13px;
+  border: solid 1px #6c757d;
+  border-radius: 50%;
+  padding: 1px 4px;
+  background-color: #6c757d;
+  color: white;
+}
+
+/* line 80, app/assets/stylesheets/views/post.scss */
+.clear-filter:hover {
+  border: solid 1px #fd5c63;
+  background-color: #fd5c63;
+  color: white;
 }
 
 /*
@@ -1477,12 +1541,17 @@ trix-editor .attachment__metadata {
   font-style: italic;
 }
 
+/* line 92, app/assets/stylesheets/custom.scss */
+.mb-2rem {
+  margin-bottom: 2rem;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 93, app/assets/stylesheets/custom.scss */
+  /* line 97, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 98, app/assets/stylesheets/custom.scss */
+  /* line 102, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;
@@ -14696,6 +14765,65 @@ trix-editor .attachment {
   color: white;
   background-color: gray;
   cursor: pointer;
+}
+
+/* line 36, app/assets/stylesheets/views/post.scss */
+.user-category {
+  padding: 3px 10px;
+  background-color: #6c757d;
+  color: white;
+  border-radius: 15px 0;
+  font-size: 15px;
+  display: inline-block;
+}
+
+/* line 44, app/assets/stylesheets/views/post.scss */
+.user-category:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 49, app/assets/stylesheets/views/post.scss */
+.w-37vw {
+  width: 37vw;
+}
+
+/* line 53, app/assets/stylesheets/views/post.scss */
+.leaf-input {
+  border: solid 1px #ced4da;
+  border-radius: 15px 0;
+}
+
+/* line 57, app/assets/stylesheets/views/post.scss */
+.leaf-input:focus {
+  border-color: #ced4da;
+  box-shadow: 0 0 0 0.25rem #ced4da;
+}
+
+/* line 63, app/assets/stylesheets/views/post.scss */
+.filter-category {
+  padding: 1px 5px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  font-size: 13px;
+  display: inline-block;
+}
+
+/* line 72, app/assets/stylesheets/views/post.scss */
+.clear-filter {
+  font-size: 13px;
+  border: solid 1px #6c757d;
+  border-radius: 50%;
+  padding: 1px 4px;
+  background-color: #6c757d;
+  color: white;
+}
+
+/* line 80, app/assets/stylesheets/views/post.scss */
+.clear-filter:hover {
+  border: solid 1px #fd5c63;
+  background-color: #fd5c63;
+  color: white;
 }
 .toast-title {
 	font-weight: bold;

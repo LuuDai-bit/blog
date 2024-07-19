@@ -40,6 +40,10 @@
   border-radius: 15px 0;
   font-size: 15px;
   display: inline-block;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .w-37vw {
