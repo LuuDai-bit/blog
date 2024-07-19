@@ -25,4 +25,10 @@ module ApplicationHelper
   def default_locale?
     I18n.locale == :vi
   end
+
+  def format_datetime(date, format='%d-%m-%Y')
+    return unless date.methods.include?(:strftime)
+
+    date.strftime(format)
+  end
 end

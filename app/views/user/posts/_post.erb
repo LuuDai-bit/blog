@@ -11,7 +11,7 @@
   <p class="post-meta">
     <%= t('posts.post_by') %>
     <%= link_to 'Lưu Đại', about_path %>
-    <%= t('posts.at') %> <%= post.created_at.strftime('%d-%m-%Y') %>
+    <%= t('posts.at') %> <%= default_locale? ? format_datetime(post.created_at) : format_datetime(post.created_at, '%m-%d-%Y') %>
   </p>
 </div>
 
