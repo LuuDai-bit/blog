@@ -49,7 +49,7 @@
 }
 
 .badge-warning {
-  color: #212529;
+  color: var(--bs-gray-900);
   background-color: #ffc107;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .badge-light {
-  color: #212529;
+  color: var(--bs-gray-900);
   background-color: #f8f9fa;
 }
 
