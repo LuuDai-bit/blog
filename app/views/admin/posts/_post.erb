@@ -1,7 +1,7 @@
 <tr class="align-middle">
   <td class="w-40"><%= post.subject.truncate 50 %></td>
   <td class="w-10"><%= post.author&.name || 'NO AUTHOR' %></td>
-  <td class="w-10"><%= status_badges post.status %></td>
+  <td class="w-10"><%= status_badges post.status.capitalize %></td>
   <td class="w-10"><%= english_status_badges(post) %></td>
   <td class="w-10"><%= post.views %></td>
   <td  class="w-30">
