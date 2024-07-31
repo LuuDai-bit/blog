@@ -673,7 +673,7 @@ trix-editor .attachment__metadata .attachment__size {
 
 /* line 15, app/assets/stylesheets/custom.scss */
 .notice {
-  background-color: black;
+  background-color: var(--bs-gray-900);
   color: white;
   margin: 0;
 }
@@ -759,12 +759,17 @@ trix-editor .attachment__metadata .attachment__size {
   font-style: italic;
 }
 
+/* line 92, app/assets/stylesheets/custom.scss */
+.mb-2rem {
+  margin-bottom: 2rem;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 93, app/assets/stylesheets/custom.scss */
+  /* line 97, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 98, app/assets/stylesheets/custom.scss */
+  /* line 102, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;
@@ -828,7 +833,7 @@ trix-editor .attachment__metadata .attachment__size {
 
 /* line 51, app/assets/stylesheets/badge.scss */
 .badge-warning {
-  color: #212529;
+  color: var(--bs-gray-900);
   background-color: #ffc107;
 }
 
@@ -840,7 +845,7 @@ trix-editor .attachment__metadata .attachment__size {
 
 /* line 61, app/assets/stylesheets/badge.scss */
 .badge-light {
-  color: #212529;
+  color: var(--bs-gray-900);
   background-color: #f8f9fa;
 }
 
@@ -899,34 +904,39 @@ trix-editor .attachment__metadata .attachment__size {
   display: inline-block;
 }
 
-/* line 45, app/assets/stylesheets/views/post.scss */
-.w-36vw {
-  width: 36vw;
+/* line 44, app/assets/stylesheets/views/post.scss */
+.user-category:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* line 49, app/assets/stylesheets/views/post.scss */
+.w-37vw {
+  width: 37vw;
+}
+
+/* line 53, app/assets/stylesheets/views/post.scss */
 .leaf-input {
   border: solid 1px #ced4da;
   border-radius: 15px 0;
 }
 
-/* line 53, app/assets/stylesheets/views/post.scss */
+/* line 57, app/assets/stylesheets/views/post.scss */
 .leaf-input:focus {
   border-color: #ced4da;
   box-shadow: 0 0 0 0.25rem #ced4da;
 }
 
-/* line 59, app/assets/stylesheets/views/post.scss */
+/* line 63, app/assets/stylesheets/views/post.scss */
 .filter-category {
   padding: 1px 5px;
-  background-color: black;
+  background-color: var(--bs-gray-900);
   color: white;
   border-radius: 5px;
   font-size: 13px;
   display: inline-block;
 }
 
-/* line 68, app/assets/stylesheets/views/post.scss */
+/* line 72, app/assets/stylesheets/views/post.scss */
 .clear-filter {
   font-size: 13px;
   border: solid 1px #6c757d;
@@ -936,7 +946,7 @@ trix-editor .attachment__metadata .attachment__size {
   color: white;
 }
 
-/* line 76, app/assets/stylesheets/views/post.scss */
+/* line 80, app/assets/stylesheets/views/post.scss */
 .clear-filter:hover {
   border: solid 1px #fd5c63;
   background-color: #fd5c63;
@@ -1405,7 +1415,7 @@ trix-editor .attachment__metadata {
 
 /* line 51, app/assets/stylesheets/badge.scss */
 .badge-warning {
-  color: #212529;
+  color: var(--bs-gray-900);
   background-color: #ffc107;
 }
 
@@ -1417,7 +1427,7 @@ trix-editor .attachment__metadata {
 
 /* line 61, app/assets/stylesheets/badge.scss */
 .badge-light {
-  color: #212529;
+  color: var(--bs-gray-900);
   background-color: #f8f9fa;
 }
 
@@ -1445,7 +1455,7 @@ trix-editor .attachment__metadata {
 
 /* line 15, app/assets/stylesheets/custom.scss */
 .notice {
-  background-color: black;
+  background-color: var(--bs-gray-900);
   color: white;
   margin: 0;
 }
@@ -1531,12 +1541,17 @@ trix-editor .attachment__metadata {
   font-style: italic;
 }
 
+/* line 92, app/assets/stylesheets/custom.scss */
+.mb-2rem {
+  margin-bottom: 2rem;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 93, app/assets/stylesheets/custom.scss */
+  /* line 97, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 98, app/assets/stylesheets/custom.scss */
+  /* line 102, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;
@@ -1600,13 +1615,13 @@ trix-editor .attachment__metadata {
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
   /* line 38, app/assets/stylesheets/sidebar.scss */
-  .sidebar {
+  .sidebarx {
     width: 100%;
     height: auto;
     position: relative;
   }
   /* line 43, app/assets/stylesheets/sidebar.scss */
-  .sidebar a {
+  .sidebarx a {
     float: left;
   }
   /* line 44, app/assets/stylesheets/sidebar.scss */
@@ -1618,7 +1633,7 @@ trix-editor .attachment__metadata {
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
   /* line 49, app/assets/stylesheets/sidebar.scss */
-  .sidebar a {
+  .sidebarx a {
     text-align: center;
     float: none;
   }
@@ -14762,34 +14777,39 @@ trix-editor .attachment {
   display: inline-block;
 }
 
-/* line 45, app/assets/stylesheets/views/post.scss */
-.w-36vw {
-  width: 36vw;
+/* line 44, app/assets/stylesheets/views/post.scss */
+.user-category:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* line 49, app/assets/stylesheets/views/post.scss */
+.w-37vw {
+  width: 37vw;
+}
+
+/* line 53, app/assets/stylesheets/views/post.scss */
 .leaf-input {
   border: solid 1px #ced4da;
   border-radius: 15px 0;
 }
 
-/* line 53, app/assets/stylesheets/views/post.scss */
+/* line 57, app/assets/stylesheets/views/post.scss */
 .leaf-input:focus {
   border-color: #ced4da;
   box-shadow: 0 0 0 0.25rem #ced4da;
 }
 
-/* line 59, app/assets/stylesheets/views/post.scss */
+/* line 63, app/assets/stylesheets/views/post.scss */
 .filter-category {
   padding: 1px 5px;
-  background-color: black;
+  background-color: var(--bs-gray-900);
   color: white;
   border-radius: 5px;
   font-size: 13px;
   display: inline-block;
 }
 
-/* line 68, app/assets/stylesheets/views/post.scss */
+/* line 72, app/assets/stylesheets/views/post.scss */
 .clear-filter {
   font-size: 13px;
   border: solid 1px #6c757d;
@@ -14799,7 +14819,7 @@ trix-editor .attachment {
   color: white;
 }
 
-/* line 76, app/assets/stylesheets/views/post.scss */
+/* line 80, app/assets/stylesheets/views/post.scss */
 .clear-filter:hover {
   border: solid 1px #fd5c63;
   background-color: #fd5c63;
