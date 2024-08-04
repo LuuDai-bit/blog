@@ -11,9 +11,11 @@ class UserReminder < ApplicationRecord
     current_hour = current_time.hour
     current_minute = current_time.strftime('%M').to_i
 
-    return if reminder.day.exclude?(current_time.strftime('%a')) || (reminder.hour.to_i <= current_hour && reminder.minute.to_i < current_minute)
+    target_hour = reminder.target_date.strftime("%H").to_i
+    target_minute = reminder.target_date.strftime("%M").to_i
+    return if reminder.day.exclude?(current_time.strftime('%a')) || (target_hour <= current_hour && target_minute < current_minute)
 
-    execute_time = current_time.beginning_of_day.since(reminder.hour.to_i.hour).since(reminder.minute.to_i.minute)
+    execute_time = current_time.beginning_of_day.since(target_hour.hour).since(target_minute.minute)
 
     ExecuteReminderJob.perform_at(execute_time, reminder_id, user_id)
   end
