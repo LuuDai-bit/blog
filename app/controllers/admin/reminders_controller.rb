@@ -6,7 +6,7 @@ class Admin::RemindersController < Admin::AdminController
   end
 
   def new
-    @reminder = Reminder.new
+    @reminder = Reminder.new(target_date: Time.current.beginning_of_day, original_timezone: -1)
   end
 
   def create
@@ -23,7 +23,6 @@ class Admin::RemindersController < Admin::AdminController
   end
 
   def edit
-    @reminder.hour = (@reminder.hour - @reminder.original_timezone)%24
   end
 
   def update
@@ -40,7 +39,6 @@ class Admin::RemindersController < Admin::AdminController
     if @reminder.destroy
       redirect_to admin_reminders_path
     else
-      # Message here
       flash[:alert] = 'Reminder destroy failed'
       render :index
     end
@@ -55,12 +53,16 @@ class Admin::RemindersController < Admin::AdminController
   def reminder_params
     original_timezone = params[:reminder][:original_timezone].to_i
     params.require(:reminder).permit(:title, :content, :hour, :minute, :only_once, :original_timezone, day: []).tap do |param|
-      param[:hour] = (24 + param[:hour].to_i + original_timezone)%24
+      param[:target_date] = Time.current
+                                .in_time_zone(original_timezone)
+                                .beginning_of_day
+                                .since(param[:hour].to_i.hour)
+                                .since(param[:minute].to_i.minute)
 
       param[:day].reject! { |day| day.empty? }
       param[:day] = param[:day].map do |day|
                       Settings.models.reminder.day.send("#{day}")
                     end.flatten.uniq
-    end
+    end.except(:hour, :minute)
   end
 end

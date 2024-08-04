@@ -20,7 +20,7 @@
                              Settings.models.reminder.day.to_h.keys.map(&:to_s),
                              :to_s,
                              :humanize,
-                             {},
+                             {selected: selected_day(@reminder.day)},
                              class: 'form-select',
                              multiple: true %>
 
@@ -31,16 +31,20 @@
   <%= form.label :time, 'Time' %>
   <%= form.collection_select :hour,
                              (0..23).to_a,
-                             :to_s,
-                             :to_s,
-                             {},
+                             :to_i,
+                             -> (num) { num.to_s.rjust(2, '0') },
+                             {selected: @reminder.target_date
+                                                 .in_time_zone(@reminder.original_timezone)
+                                                 .strftime("%H").to_i},
                              class: 'form-select form-select-time' %>
   <span>:</span>
   <%= form.collection_select :minute,
                              (0..59).to_a,
-                             :to_s,
-                             :to_s,
-                             {},
+                             :to_i,
+                             -> (num) { num.to_s.rjust(2, '0') },
+                             {selected: @reminder.target_date
+                                                 .in_time_zone(@reminder.original_timezone)
+                                                 .strftime("%M").to_i},
                              class: 'form-select form-select-time' %>
 
   <%= display_error @reminder, :hour, 'Hour' %>
