@@ -22,6 +22,7 @@
                              :humanize,
                              {selected: selected_day(@reminder.day)},
                              class: 'form-select',
+                             size: Settings.models.reminder.day.to_h.keys.length,
                              multiple: true %>
 
   <%= display_error @reminder, :day, 'Day' %>
