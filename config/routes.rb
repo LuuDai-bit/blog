@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :reminders, only: %i[index edit update new create destroy]
     resources :categories, only: :index
+    resources :announcements, except: %i[show destroy]
   end
 
   get '/:locale' => 'user/posts#index'

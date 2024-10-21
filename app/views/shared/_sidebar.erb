@@ -5,5 +5,6 @@
   <%= link_to 'Posts', admin_posts_path, class: "#{'active' if current_controller?('/admin/posts')}" %>
   <%= link_to 'Categories', admin_categories_path, class: "#{'active' if current_controller?('/admin/categories')}" %>
   <%= link_to 'Reminds', admin_reminders_path, class: "#{'active' if current_controller?('/admin/reminders')}" %>
+  <%= link_to 'Announcements', admin_announcements_path, class: "#{'active' if current_controller?('/admin/announcements')}" %>
   <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'danger-action' %>
 </div>

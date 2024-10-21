@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :user_reminders, dependent: :destroy
   has_many :reminders, through: :user_reminders
+  has_many :announcements
 
   validates :name, :email, :phone_number, presence: true
   validates :email, uniqueness: { case_sensitive: false }, format: Devise.email_regexp

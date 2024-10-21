@@ -93,6 +93,17 @@
   margin-bottom: 2rem;
 }
 
+.announcements-popup {
+  font-size: 11px;
+  margin: 0;
+  border-radius: 10px 10px 10px 0;
+  padding: 3px 5px;
+  background-color: var(--bs-gray-900);
+  color: white;
+  font-size: 13px;
+  display: inline-block;
+}
+
 @media screen and (max-width: 1200px) {
   .input-group-35vw{
     width: 100% !important;

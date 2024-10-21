@@ -24,6 +24,16 @@
     <%= render partial: 'search' %>
   </div>
 </div>
+<!-- Announcement-->
+<div class="container px-4 px-lg-5 mb-3">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <% Announcement.active.last(Settings.models.announcement.views.max_display).each do |announcement| %>
+      <div class="col-lg-8 col-xl-7">
+        <span class="announcements-popup"><%= announcement.content %></span>
+      </div>
+    <% end %>
+  </div>
+</div>
 <!-- Main Content-->
 <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">

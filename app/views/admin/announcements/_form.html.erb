@@ -1,0 +1,25 @@
+<div class="w-100 p-1">
+  <div class="row w-100">
+    <div class="form-group col-6">
+      <%= form.label :content, 'Content' %>
+      <%= form.text_field :content, class: 'form-control', placeholder: 'What do you wanna say?' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :activated, 'Activated' %>
+    <div>
+      <span>
+        <%= form.radio_button :activated, true %>
+        <%= 'Activated' %>
+      </span>
+      <span>
+        <%= form.radio_button :activated, false %>
+        <%= 'Inactivated' %>
+      </span>
+    </div>
+  </div>
+</div>
+
+<%= form.submit('Save', class: 'btn btn-primary') %>
+<%= link_to('Cancel', admin_posts_path, class: 'btn btn-secondary') %>
