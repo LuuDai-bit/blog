@@ -23,10 +23,10 @@ class Admin::AnnouncementsController < Admin::AdminController
 
   def update
     if @announcement.update(announcement_params)
-      flash[:notice] = 'Post updated'
+      flash[:notice] = 'Announcement updated'
       redirect_to admin_announcements_path
     else
-      flash[:alert] = 'Post update failed'
+      flash[:alert] = 'Announcement update failed'
     end
   end
 
@@ -37,6 +37,11 @@ class Admin::AnnouncementsController < Admin::AdminController
   end
 
   def announcement_params
-    params.require(:announcement).permit(%i[content activated])
+    params.require(:announcement).permit(%i[content activated duration]).tap do |param|
+      if param[:activated] && param[:duration]
+        param[:end_at] = Time.current.since(param[:duration].to_i)
+        param[:start_at] = Time.current
+      end
+    end
   end
 end

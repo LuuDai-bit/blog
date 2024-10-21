@@ -1,0 +1,31 @@
+<%= text_field_tag('', admin_announcement_path(1), {id: 'update-announcement-path', class: 'd-none'}) %>
+
+<div class="modal d-none" id="announcement-duration" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Select announcement expired time</h5>
+        <button type="button" class="close" id="close-announcement-duration-modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="announcement-duration-option">
+          <div id="one-day" data-duration-second="86400">1 days</div>
+        </div>
+
+        <div class="announcement-duration-option">
+          <div id="one-week" data-duration-second="604800">1 weeks</div>
+        </div>
+
+        <div class="announcement-duration-option">
+          <div id="never" class="selected">Never expired</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="activate-announcement-btn">Submit</button>
+        <button type="button" class="btn btn-secondary" id="cancel-announcement-duration-modal" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
