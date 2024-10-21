@@ -10,6 +10,7 @@ import "channels"
 import "@fortawesome/fontawesome-free/css/all"
 import "controllers"
 import "../scripts/post.js"
+import "../scripts/announcement.js"
 import "../../assets/stylesheets/application"
 
 Rails.start()

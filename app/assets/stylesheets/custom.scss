@@ -104,6 +104,18 @@
   display: inline-block;
 }
 
+.announcement-duration-option {
+  display: 'inline-block';
+  padding: 10px;
+  border: 1px solid var(--bs-gray-900);
+  margin: 1px;
+
+  .selected {
+    background-color: #0085A1;
+    color: #fff;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .input-group-35vw{
     width: 100% !important;

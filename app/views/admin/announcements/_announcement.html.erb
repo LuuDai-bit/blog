@@ -6,7 +6,7 @@
     <% if announcement.activated %>
       <%= button_to 'Deactivate', admin_announcement_path(announcement), method: :patch, params: { announcement: { activated: false } }, class: 'btn btn-light' %>
     <% else %>
-      <%= button_to 'Activate', admin_announcement_path(announcement), method: :patch, params: { announcement: { activated: true } }, class: 'btn btn-light' %>
+      <%= link_to 'Activate', '', {class: 'btn btn-light activate-announcement', data: {id: announcement.id}} %>
     <% end %>
   </td>
 </tr>
