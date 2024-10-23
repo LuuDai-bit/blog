@@ -7,6 +7,7 @@ document.addEventListener("turbolinks:load", function() {
   const closeAnnouncementDurationModalBtn = $('#close-announcement-duration-modal');
   const cancelAnnouncementDurationModalBtn = $('#cancel-announcement-duration-modal');
   const activateAnnouncementModalBtn = $('#activate-announcement-btn');
+  const chooseDurationOptionBlock = $('#choose-announcement-duration');
   let updateAnnouncementId = 1;
 
   $(activateAnnouncementBtn).on('click', (e) => {
@@ -29,12 +30,12 @@ document.addEventListener("turbolinks:load", function() {
   });
 
   $('.announcement-duration-option').on('click', (e) => {
-    $('.announcement-duration-option>div').removeClass('selected')
-    $(e.target).addClass('selected')
-  })
+    $('.announcement-duration-option').removeClass('selected');
+    $(e.target).addClass('selected');
+  });
 
   $(activateAnnouncementModalBtn).on('click', (e) => {
-    const selectedAnnouncementOption = $('.announcement-duration-option>.selected')[0];
+    const selectedAnnouncementOption = $('.announcement-duration-option.selected')[0];
     const durationSecond = $(selectedAnnouncementOption).data('duration-second');
     let url = $('#update-announcement-path').val();
     url = url.slice(0, -1) + updateAnnouncementId;
@@ -51,5 +52,14 @@ document.addEventListener("turbolinks:load", function() {
     });
 
     $(selectAnnouncementDurationModal).addClass('d-none');
-  })
+  });
+
+  $('#announcement_activated_true').on('change', (e) => {
+    $('#choose-announcement-duration').removeClass('d-none');
+  });
+
+  $('#announcement_activated_false').on('change', (e) => {
+    if ($('#choose-announcement-duration').hasClass('d-none')) return;
+    $('#choose-announcement-duration').addClass('d-none');
+  });
 });

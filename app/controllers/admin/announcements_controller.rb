@@ -38,9 +38,14 @@ class Admin::AnnouncementsController < Admin::AdminController
 
   def announcement_params
     params.require(:announcement).permit(%i[content activated duration]).tap do |param|
-      if param[:activated] && param[:duration]
-        param[:end_at] = Time.current.since(param[:duration].to_i)
+      if param[:activated]
         param[:start_at] = Time.current
+
+        if param[:duration].present?
+          param[:end_at] = Time.current.since(param[:duration].to_i)
+        else
+          param[:end_at] = nil
+        end
       end
     end
   end
