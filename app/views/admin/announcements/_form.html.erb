@@ -22,6 +22,7 @@
     <div class="mt-1" id='choose-announcement-duration'>
       <div>Choose the duration</div>
       <%= render partial: 'duration_option' %>
+      <%= form.hidden_field :duration, value: nil %>
     </div>
   </div>
 </div>

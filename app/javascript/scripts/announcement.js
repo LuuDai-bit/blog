@@ -32,6 +32,7 @@ document.addEventListener("turbolinks:load", function() {
   $('.announcement-duration-option').on('click', (e) => {
     $('.announcement-duration-option').removeClass('selected');
     $(e.target).addClass('selected');
+    $('#announcement_duration').val($(e.target).data('duration-second'));
   });
 
   $(activateAnnouncementModalBtn).on('click', (e) => {
