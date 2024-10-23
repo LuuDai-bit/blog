@@ -1,5 +1,5 @@
 class AnnouncementsController < AdminController
   def index
-    @announcements = Announcement.active
+    @announcements = Announcement.display
   end
 end
