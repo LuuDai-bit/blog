@@ -9,18 +9,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="announcement-duration-option">
-          <div id="one-day" data-duration-second="86400">1 days</div>
-        </div>
-
-        <div class="announcement-duration-option">
-          <div id="one-week" data-duration-second="604800">1 weeks</div>
-        </div>
-
-        <div class="announcement-duration-option">
-          <div id="never" class="selected">Never expired</div>
-        </div>
+      <div class="modal-body d-flex justify-content-around">
+        <%= render partial: 'duration_option' %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" id="activate-announcement-btn">Submit</button>
