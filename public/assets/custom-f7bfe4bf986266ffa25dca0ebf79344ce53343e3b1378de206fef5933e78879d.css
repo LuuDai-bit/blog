@@ -120,12 +120,36 @@
   display: inline-block;
 }
 
+/* line 107, app/assets/stylesheets/custom.scss */
+.announcement-duration-option {
+  display: 'inline-block';
+  padding: 10px;
+  border: 1px solid var(--bs-gray-500);
+  margin: 1px;
+}
+
+/* line 114, app/assets/stylesheets/custom.scss */
+.selected {
+  background-color: #0085A1;
+  color: #fff;
+}
+
+/* line 119, app/assets/stylesheets/custom.scss */
+.custom-text-truncate-2l {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 108, app/assets/stylesheets/custom.scss */
+  /* line 129, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 113, app/assets/stylesheets/custom.scss */
+  /* line 134, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;

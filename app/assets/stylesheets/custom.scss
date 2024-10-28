@@ -116,6 +116,17 @@
   color: #fff;
 }
 
+.text-truncate-2l {
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.table-layout-fixed {
+  table-layout: fixed;
+}
+
 @media screen and (max-width: 1200px) {
   .input-group-35vw{
     width: 100% !important;
