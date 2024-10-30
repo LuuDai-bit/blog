@@ -1,6 +1,13 @@
 <div class="post-preview">
   <%= link_to user_post_path(post), class: "position-relative" do %>
     <h3 class="post-title d-inline"><%= default_locale? ? post.subject : post.subject_en %>
+      <% if post.created_at > Time.current.ago(7.days) %>
+        <span
+          class="badge badge-secondary custom-post-badge"
+          title='<%= t('posts.new_post_title') %>'>
+            New
+        </span>
+      <% end %>
     </h3>
   <% end %>
   <div>

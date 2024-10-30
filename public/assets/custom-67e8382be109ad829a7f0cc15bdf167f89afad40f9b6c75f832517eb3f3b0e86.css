@@ -1,23 +1,28 @@
+/* line 1, app/assets/stylesheets/custom.scss */
 .small-content-container {
   margin: auto 30%;
-
-  label {
-    align-self: start;
-  }
 }
 
+/* line 4, app/assets/stylesheets/custom.scss */
+.small-content-container label {
+  align-self: start;
+}
+
+/* line 9, app/assets/stylesheets/custom.scss */
 .custom-alert {
   background-color: red;
   color: white;
   margin: 0;
 }
 
+/* line 15, app/assets/stylesheets/custom.scss */
 .notice {
   background-color: var(--bs-gray-900);
   color: white;
   margin: 0;
 }
 
+/* line 21, app/assets/stylesheets/custom.scss */
 .admin-container {
   display: inline-block;
   flex: 1;
@@ -27,26 +32,29 @@
   overflow: auto;
 }
 
+/* line 30, app/assets/stylesheets/custom.scss */
 .flex-parent-container {
   display: flex;
   width: 100%;
 }
 
-.input-group-35vw{
+/* line 35, app/assets/stylesheets/custom.scss */
+.input-group-35vw {
   width: 35vw !important;
 }
 
-.form-select {
-  &-time {
-    display: inline !important;
-    width: 30% !important;
-  }
+/* line 40, app/assets/stylesheets/custom.scss */
+.form-select-time {
+  display: inline !important;
+  width: 30% !important;
 }
 
+/* line 46, app/assets/stylesheets/custom.scss */
 .form-group {
   margin-bottom: 5px;
 }
 
+/* line 50, app/assets/stylesheets/custom.scss */
 .error-feedback {
   width: 100%;
   margin-top: 0.25rem;
@@ -54,45 +62,53 @@
   color: red;
 }
 
+/* line 57, app/assets/stylesheets/custom.scss */
 .content-input {
   max-height: 70vh;
   overflow-y: scroll;
 }
 
+/* line 62, app/assets/stylesheets/custom.scss */
 .sticky {
   position: fixed;
   background-color: var(--bs-body-bg);
-  width: 100%
+  width: 100%;
 }
 
+/* line 68, app/assets/stylesheets/custom.scss */
 .small-announcement {
   color: #fff;
   font-size: 14px;
   font-weight: lighter;
   font-style: italic;
   margin-top: 1rem;
-
-  a {
-    color: #fff
-  }
 }
 
+/* line 75, app/assets/stylesheets/custom.scss */
+.small-announcement a {
+  color: #fff;
+}
+
+/* line 80, app/assets/stylesheets/custom.scss */
 .truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+/* line 86, app/assets/stylesheets/custom.scss */
 .error-message {
   font-size: 15px;
   color: red;
   font-style: italic;
 }
 
+/* line 92, app/assets/stylesheets/custom.scss */
 .mb-2rem {
   margin-bottom: 2rem;
 }
 
+/* line 96, app/assets/stylesheets/custom.scss */
 .announcements-popup {
   font-size: 11px;
   margin: 0;
@@ -104,6 +120,7 @@
   display: inline-block;
 }
 
+/* line 107, app/assets/stylesheets/custom.scss */
 .announcement-duration-option {
   display: 'inline-block';
   padding: 10px;
@@ -111,11 +128,13 @@
   margin: 1px;
 }
 
+/* line 114, app/assets/stylesheets/custom.scss */
 .selected {
   background-color: #0085A1;
   color: #fff;
 }
 
+/* line 119, app/assets/stylesheets/custom.scss */
 .text-truncate-2l {
   overflow: hidden;
   -webkit-line-clamp: 2;
@@ -123,26 +142,27 @@
   -webkit-box-orient: vertical;
 }
 
+/* line 126, app/assets/stylesheets/custom.scss */
 .table-layout-fixed {
   table-layout: fixed;
 }
 
+/* line 130, app/assets/stylesheets/custom.scss */
 .custom-post-badge {
   position: absolute;
   top: -13px;
-  font-size:12px;
+  font-size: 12px;
   background-color: darkred;
 }
 
 @media screen and (max-width: 1200px) {
-  .input-group-35vw{
+  /* line 138, app/assets/stylesheets/custom.scss */
+  .input-group-35vw {
     width: 100% !important;
   }
-
-  .form-select {
-    &-time {
-      display: inline !important;
-      width: 48% !important;
-    }
+  /* line 143, app/assets/stylesheets/custom.scss */
+  .form-select-time {
+    display: inline !important;
+    width: 48% !important;
   }
 }
