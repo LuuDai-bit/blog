@@ -1,18 +1,18 @@
 <div class="post-preview">
   <%= link_to user_post_path(post), class: "position-relative" do %>
     <h3 class="post-title d-inline"><%= default_locale? ? post.subject : post.subject_en %>
-      <% if post.created_at > Time.current.ago(7.days) %>
-        <span
-          class="badge badge-secondary custom-post-badge"
-          title='<%= t('posts.new_post_title') %>'>
-            New
-        </span>
-      <% end %>
     </h3>
   <% end %>
   <div>
+    <% if post.created_at > Time.current.ago(7.days) %>
+      <span
+        class="user-category custom-post-badge"
+        title='<%= t('posts.new_post_title') %>'>
+          New
+      </span>
+    <% end %>
     <% post.categories.sort_by(&:id).each do |category| %>
-      <%= link_to("##{category.name}", user_posts_path(category_name: category.name), class: 'user-category', remote: true) %>
+      <%= link_to("#{category.name}", user_posts_path(category_name: category.name), class: 'user-category', remote: true) %>
     <% end %>
   </div>
   <p class="post-meta">
