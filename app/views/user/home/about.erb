@@ -1,27 +1,24 @@
 <header class="masthead" style="background-image: url('assets/img/about-bg.jpg')">
-    <div class="container position-relative px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="page-heading">
-                    <h1><%= t('about.about_me') %></h1>
-                    <span class="subheading"><%= t('about.and_this_blog') %></span>
-                </div>
-            </div>
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="page-heading">
+          <h1><%= t('about.about_me') %></h1>
+          <span class="subheading"><%= t('about.and_this_blog') %></span>
         </div>
+      </div>
     </div>
+  </div>
 </header>
 <!-- Main Content-->
-<main class="mb-4">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <p><%= t('about.greeting') %></p>
-                <p>
-                  <%= t('about.short_description_exp') %>
-                </p>
-                <p><%= t('about.hobby') %>
-                </p>
-            </div>
-        </div>
+<article class="mb-4">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <main class="trix-content site-main">
+          <%= default_locale? ? @about_me.content : @about_me.content_en %>
+        </main>
+      </div>
     </div>
-</main>
+  </div>
+</article>
