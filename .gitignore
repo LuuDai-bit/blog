@@ -50,3 +50,6 @@ config/environments/*.local.yml
 
 # Ignore test coverage
 coverage
+
+# Ignore docker postgres data file
+data

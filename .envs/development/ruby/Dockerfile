@@ -1,4 +1,4 @@
-FROM ruby:3.0.0-slim-buster
+FROM ruby:3.3.6-bookworm
 
 ARG USERID
 ARG GROUPID

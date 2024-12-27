@@ -202,6 +202,7 @@ GEM
     method_source (1.0.0)
     mini_magick (4.12.0)
     mini_mime (1.1.5)
+    mini_portile2 (2.8.8)
     minitest (5.21.2)
     msgpack (1.6.0)
     mutex_m (0.2.0)
@@ -215,6 +216,10 @@ GEM
     net-smtp (0.4.0.1)
       net-protocol
     nio4r (2.7.0)
+    nokogiri (1.16.0-aarch64-linux)
+      racc (~> 1.4)
+    nokogiri (1.16.0-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.16.0-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -340,7 +345,8 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.5.4-x86_64-linux)
+    sqlite3 (1.5.4)
+      mini_portile2 (~> 2.8.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     stringio (3.1.0)
@@ -375,6 +381,8 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
+  aarch64-linux
+  arm64-darwin-24
   x86_64-linux
 
 DEPENDENCIES
@@ -396,7 +404,7 @@ DEPENDENCIES
   pry
   puma (>= 5.6.8)
   rack-mini-profiler (~> 2.0)
-  rails (>= 6.1.7.1)
+  rails (>= 7.1)
   rails-controller-testing
   redis (~> 4.0)
   rspec-rails
@@ -415,7 +423,7 @@ DEPENDENCIES
   whenever
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 3.3.6p108
 
 BUNDLED WITH
    2.5.9
