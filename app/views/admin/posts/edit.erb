@@ -4,5 +4,5 @@
               method: :patch,
               scope: :post,
               data: { controller: 'emoji-picker' } do |form| %>
-  <%= render partial: 'form', locals: { form: form, post: @post } %>
+  <%= render partial: 'form', locals: { form: form, post: @post, action: 'update' } %>
 <% end %>

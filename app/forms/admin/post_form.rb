@@ -47,7 +47,7 @@ class Admin::PostForm
     else
       post = Post.new(post_attributes)
     end
-    post.categories = categories
+    post.categories = categories unless categories.nil?
     post.save!
   end
 

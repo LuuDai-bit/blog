@@ -11,6 +11,7 @@ import "@fortawesome/fontawesome-free/css/all"
 import "controllers"
 import "../scripts/post.js"
 import "../scripts/announcement.js"
+import "../scripts/auto_save.js"
 import "../../assets/stylesheets/application"
 
 Rails.start()

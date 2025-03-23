@@ -32,10 +32,18 @@ class Admin::PostsController < Admin::AdminController
     @post = ::Admin::PostForm.new(post_params.merge(id: params[:id]))
     if @post.save
       flash[:notice] = 'Post updated'
-      redirect_to admin_posts_path
+      respond_to do |format|
+        format.html { redirect_to admin_posts_path }
+        format.json { render json: { message: 'OK' } }
+      end
     else
-      flash[:alert] = 'Post update failed'
-      render :edit
+      respond_to do |format|
+        format.html do
+          flash[:alert] = 'Post update failed'
+          render :edit
+        end
+        format.json { render json: { message: 'Failed' }, status: :unprocessable_entity }
+      end
     end
   end
 

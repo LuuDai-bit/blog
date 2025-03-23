@@ -1,4 +1,4 @@
-FROM ruby:3.3.6-bookworm
+FROM ruby:3.3.7-bookworm
 
 ARG USERID
 ARG GROUPID
