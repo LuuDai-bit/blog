@@ -37,14 +37,14 @@
 
 /* line 36, app/assets/stylesheets/badge.scss */
 .badge-secondary {
-  color: #fff;
-  background-color: #6c757d;
+  color: #212529;
+  background-color: #e0e2e4;
 }
 
 /* line 41, app/assets/stylesheets/badge.scss */
 .badge-success {
-  color: #fff;
-  background-color: #28a745;
+  color: #212529;
+  background-color: #bdcebe;
 }
 
 /* line 46, app/assets/stylesheets/badge.scss */
@@ -55,7 +55,7 @@
 
 /* line 51, app/assets/stylesheets/badge.scss */
 .badge-warning {
-  color: #212529;
+  color: var(--bs-gray-900);
   background-color: #ffc107;
 }
 
@@ -67,7 +67,7 @@
 
 /* line 61, app/assets/stylesheets/badge.scss */
 .badge-light {
-  color: #212529;
+  color: var(--bs-gray-900);
   background-color: #f8f9fa;
 }
 

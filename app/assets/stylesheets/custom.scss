@@ -30,6 +30,7 @@
 .flex-parent-container {
   display: flex;
   width: 100%;
+  background-color: #ada397;
 }
 
 .input-group-35vw{
@@ -61,7 +62,7 @@
 
 .sticky {
   position: fixed;
-  background-color: var(--bs-body-bg);
+  background-color: #ada397;
   width: 100%
 }
 
@@ -129,6 +130,23 @@
 
 .custom-post-badge {
   background-color: darkred !important;
+}
+
+.pagination-admin {
+  background-color: #d6cbd3;
+
+  li {
+    a {
+      background-color: #d6cbd3 !important;
+    }
+  }
+
+  li.active {
+    a {
+      background-color: #bdcebe !important;
+      color: #212529 !important;
+    }
+  }
 }
 
 @media screen and (max-width: 1200px) {

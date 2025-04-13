@@ -1,7 +1,7 @@
 <h1>List Announcement</h1>
 <%= link_to('New Announcement', new_admin_announcement_path, class: 'btn btn-primary') %>
 <% if @announcements.present? %>
-  <table class="table table-hover">
+  <table class="table table-hover mt-3 table-striped table-bordered">
     <thead>
       <tr>
         <th class="col-md-3">Id</th>
@@ -14,7 +14,7 @@
       <%= render partial: :announcement, collection: @announcements %>
     </tbody>
   </table>
-  <div id="admin-posts-paginate">
+  <div id="admin-posts-paginate" class="pagination-admin">
     <%== pagy_bootstrap_nav(@pagy) %>
   </div>
 <% else %>
