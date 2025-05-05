@@ -5,5 +5,6 @@ class Admin::DashboardController < Admin::AdminController
     @post_per_month = Statistic::PostStatisticService.run(target_day, Settings.models.post.statistic.post_per_month)
     @server_cost = Statistic::CalculateServerCostService.run
     @access = Statistic::LogStatisticService.run
+    @total_views = Post.pluck(:views).sum
   end
 end

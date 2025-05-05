@@ -1,4 +1,4 @@
-<h1>This is administration page</p>
+<h1>This is administration page</h1>
 
 <div class="dashboard-card">
   <div class="statistic-title">
@@ -61,5 +61,17 @@
     <span><%= @access[:highest_request_in_month] || '-' %></span>
   </div>
 </div>
-</h1>
+
+</br>
+
+<div class="dashboard-card">
+  <div class="statistic-title">
+    <span>Total post views</span>
+  </div>
+
+  <div class="statistic-data">
+    <span><%= @total_views || '-' %></span>
+  </div>
+</div>
+
 <p>All statistic is in current month</p>
