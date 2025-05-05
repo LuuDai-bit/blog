@@ -149,6 +149,15 @@
   }
 }
 
+.errors {
+  color: darkred;
+  font-size: 13px;
+
+  p {
+    margin: 0;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .input-group-35vw{
     width: 100% !important;

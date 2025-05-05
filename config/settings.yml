@@ -24,3 +24,5 @@ models:
   announcement:
     views:
       max_display: 3
+  user:
+    password: !ruby/regexp /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}\z/

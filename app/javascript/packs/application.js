@@ -12,6 +12,7 @@ import "controllers"
 import "../scripts/post.js"
 import "../scripts/announcement.js"
 import "../scripts/auto_save.js"
+import "../scripts/password.js"
 import "../../assets/stylesheets/application"
 
 Rails.start()

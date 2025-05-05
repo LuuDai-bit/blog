@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :about_me, only: %i[update] do
       get '/detail', to: 'about_me#detail', on: :collection
     end
+    resources :settings, only: :index
+    resources :passwords, only: %i[edit update]
   end
 
   get '/:locale' => 'user/posts#index'

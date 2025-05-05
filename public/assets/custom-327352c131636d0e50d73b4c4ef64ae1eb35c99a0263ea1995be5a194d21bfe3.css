@@ -1,0 +1,193 @@
+/* line 1, app/assets/stylesheets/custom.scss */
+.small-content-container {
+  margin: auto 30%;
+}
+
+/* line 4, app/assets/stylesheets/custom.scss */
+.small-content-container label {
+  align-self: start;
+}
+
+/* line 9, app/assets/stylesheets/custom.scss */
+.custom-alert {
+  background-color: red;
+  color: white;
+  margin: 0;
+}
+
+/* line 15, app/assets/stylesheets/custom.scss */
+.notice {
+  background-color: var(--bs-gray-900);
+  color: white;
+  margin: 0;
+}
+
+/* line 21, app/assets/stylesheets/custom.scss */
+.admin-container {
+  display: inline-block;
+  flex: 1;
+  margin: 10px;
+  width: 70%;
+  max-height: 98vh;
+  overflow: auto;
+}
+
+/* line 30, app/assets/stylesheets/custom.scss */
+.flex-parent-container {
+  display: flex;
+  width: 100%;
+  background-color: #ada397;
+}
+
+/* line 36, app/assets/stylesheets/custom.scss */
+.input-group-35vw {
+  width: 35vw !important;
+}
+
+/* line 41, app/assets/stylesheets/custom.scss */
+.form-select-time {
+  display: inline !important;
+  width: 30% !important;
+}
+
+/* line 47, app/assets/stylesheets/custom.scss */
+.form-group {
+  margin-bottom: 5px;
+}
+
+/* line 51, app/assets/stylesheets/custom.scss */
+.error-feedback {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: red;
+}
+
+/* line 58, app/assets/stylesheets/custom.scss */
+.content-input {
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+/* line 63, app/assets/stylesheets/custom.scss */
+.sticky {
+  position: fixed;
+  background-color: #ada397;
+  width: 100%;
+}
+
+/* line 69, app/assets/stylesheets/custom.scss */
+.small-announcement {
+  color: #fff;
+  font-size: 14px;
+  font-weight: lighter;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* line 76, app/assets/stylesheets/custom.scss */
+.small-announcement a {
+  color: #fff;
+}
+
+/* line 81, app/assets/stylesheets/custom.scss */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 87, app/assets/stylesheets/custom.scss */
+.error-message {
+  font-size: 15px;
+  color: red;
+  font-style: italic;
+}
+
+/* line 93, app/assets/stylesheets/custom.scss */
+.mb-2rem {
+  margin-bottom: 2rem;
+}
+
+/* line 97, app/assets/stylesheets/custom.scss */
+.announcements-popup {
+  font-size: 11px;
+  margin: 0;
+  border-radius: 10px 10px 10px 0;
+  padding: 3px 5px;
+  background-color: var(--bs-gray-900);
+  color: white;
+  font-size: 13px;
+  display: inline-block;
+}
+
+/* line 108, app/assets/stylesheets/custom.scss */
+.announcement-duration-option {
+  display: 'inline-block';
+  padding: 10px;
+  border: 1px solid var(--bs-gray-500);
+  margin: 1px;
+}
+
+/* line 115, app/assets/stylesheets/custom.scss */
+.selected {
+  background-color: #0085A1;
+  color: #fff;
+}
+
+/* line 120, app/assets/stylesheets/custom.scss */
+.text-truncate-2l {
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+/* line 127, app/assets/stylesheets/custom.scss */
+.table-layout-fixed {
+  table-layout: fixed;
+}
+
+/* line 131, app/assets/stylesheets/custom.scss */
+.custom-post-badge {
+  background-color: darkred !important;
+}
+
+/* line 135, app/assets/stylesheets/custom.scss */
+.pagination-admin {
+  background-color: #d6cbd3;
+}
+
+/* line 139, app/assets/stylesheets/custom.scss */
+.pagination-admin li a {
+  background-color: #d6cbd3 !important;
+}
+
+/* line 145, app/assets/stylesheets/custom.scss */
+.pagination-admin li.active a {
+  background-color: #bdcebe !important;
+  color: #212529 !important;
+}
+
+/* line 152, app/assets/stylesheets/custom.scss */
+.errors {
+  color: darkred;
+  font-size: 13px;
+}
+
+/* line 156, app/assets/stylesheets/custom.scss */
+.errors p {
+  margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 162, app/assets/stylesheets/custom.scss */
+  .input-group-35vw {
+    width: 100% !important;
+  }
+  /* line 167, app/assets/stylesheets/custom.scss */
+  .form-select-time {
+    display: inline !important;
+    width: 48% !important;
+  }
+}

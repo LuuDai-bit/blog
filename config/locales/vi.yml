@@ -26,3 +26,14 @@ vi:
   contact:
     email: Email
     github: Github
+  activemodel:
+    errors:
+      models:
+        admin/password_form:
+          attributes:
+            password:
+              too_short: 'is too short (minimum is %{count} characters)'
+              invalid: 'is invalid'
+              blank: 'blank'
+            password_confirmation:
+              blank: 'blank'
