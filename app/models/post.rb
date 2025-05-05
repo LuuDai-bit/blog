@@ -8,6 +8,7 @@ class Post < ApplicationRecord
                       primary_key: :id, foreign_key: :user_id, optional: true
 
   validates :subject, presence: true, length: { minimun: 1, maximum: 255 }
+  validates :release_date, presence: true, if: Proc.new { |post| post.status_publish? }
 
   enum status: Settings.enum.post.status.to_h, _prefix: true
 

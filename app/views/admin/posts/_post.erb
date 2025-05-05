@@ -4,7 +4,7 @@
   <td class="w-10"><%= status_badges post.status.capitalize %></td>
   <td class="w-10"><%= english_status_badges(post) %></td>
   <td class="w-10"><%= post.views %></td>
-  <td class="w-10"><%= post.created_at.strftime('%Y/%m/%d') %></td>
+  <td class="w-10"><%= post.release_date&.strftime('%Y/%m/%d') %></td>
   <td  class="w-30">
     <%= link_to 'Detail', admin_post_path(post), class: 'btn btn-light' %>
     <%= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-light' %>

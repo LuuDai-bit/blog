@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_12_22_075235) do
+ActiveRecord::Schema[7.1].define(version: 2025_05_05_005346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -102,6 +102,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_22_075235) do
     t.string "status", default: "draft"
     t.integer "views", default: 0
     t.string "subject_en"
+    t.date "release_date"
     t.index ["status"], name: "index_posts_on_status"
     t.index ["subject"], name: "index_posts_on_subject"
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -115,7 +116,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_22_075235) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "original_timezone", default: 0
-    t.datetime "target_date", default: "2025-03-23 08:45:39", null: false
+    t.datetime "target_date", default: "2024-08-04 06:57:53", null: false
   end
 
   create_table "user_reminders", force: :cascade do |t|

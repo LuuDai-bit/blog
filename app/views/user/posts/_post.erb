@@ -4,7 +4,7 @@
     </h3>
   <% end %>
   <div>
-    <% if post.created_at > Time.current.ago(7.days) %>
+    <% if post.release_date > Time.current.ago(7.days) %>
       <span
         class="user-category custom-post-badge"
         title='<%= t('posts.new_post_title') %>'>
@@ -18,7 +18,7 @@
   <p class="post-meta">
     <%= t('posts.post_by') %>
     <%= link_to 'Lưu Đại', about_path %>
-    <%= t('posts.at') %> <%= default_locale? ? format_datetime(post.created_at) : format_datetime(post.created_at, '%m-%d-%Y') %>
+    <%= t('posts.at') %> <%= default_locale? ? format_datetime(post.release_date) : format_datetime(post.release_date, '%m-%d-%Y') %>
   </p>
 </div>
 

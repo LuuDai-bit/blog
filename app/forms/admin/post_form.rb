@@ -48,6 +48,7 @@ class Admin::PostForm
       post = Post.new(post_attributes)
     end
     post.categories = categories unless categories.nil?
+    update_release_date(post)
     post.save!
   end
 
@@ -61,6 +62,12 @@ class Admin::PostForm
       status: status,
       user_id: user_id
     }
+  end
+
+  def update_release_date(post)
+    return unless post.status_publish? && post.release_date.blank?
+
+    post.release_date = Time.current
   end
 
   def attach_categories_to_post
