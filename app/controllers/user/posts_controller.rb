@@ -4,7 +4,7 @@ class User::PostsController < User::UserController
                              .by_subject(filter_params[:search_text])
                              .merge(Category.by_name(filter_params[:category_name]))
                              .by_locale
-                             .order(id: :desc)
+                             .order(release_date: :desc)
                              .left_joins(:categories)
                              .preload(:categories, :author)
                              .distinct
