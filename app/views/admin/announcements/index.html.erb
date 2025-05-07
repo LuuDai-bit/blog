@@ -1,3 +1,5 @@
+<%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'Announcements', url: '#'}] } %>
+
 <h1>List Announcement</h1>
 <%= link_to('New Announcement', new_admin_announcement_path, class: 'btn btn-primary') %>
 <% if @announcements.present? %>

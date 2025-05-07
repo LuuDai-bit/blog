@@ -1,3 +1,4 @@
+<%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'Posts', url: '#'}] } %>
 <h1>List Post</h1>
 <%= render partial: 'search' %>
 <%= link_to('New Post', new_admin_post_path, class: 'btn btn-primary') %>

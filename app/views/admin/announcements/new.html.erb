@@ -1,3 +1,5 @@
+<%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'Announcements', url: admin_announcements_path}, {name: 'New Announcement', url: '#'}] } %>
+
 <h1>Create New Announcement</h1>
 
 <%= form_with url: admin_announcements_path,

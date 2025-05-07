@@ -1,3 +1,5 @@
+<%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'Reminders', url: '#'}] } %>
+
 <h1>List Remind</h1>
 <%= link_to('New reminder', new_admin_reminder_path, class: 'btn btn-primary') %>
 <% if @reminders.present? %>

@@ -1,0 +1,13 @@
+.bread-root-item {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.bread-element-item {
+  font-weight: bold;
+  font-size: 13px;
+
+  &:before {
+    content: " > ";
+  }
+}

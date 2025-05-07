@@ -1,0 +1,16 @@
+/* line 1, app/assets/stylesheets/breadcrumbs.scss */
+.bread-root-item {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* line 6, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* line 10, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item:before {
+  content: " > ";
+}

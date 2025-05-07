@@ -1,3 +1,5 @@
+<%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'Reminders', url: admin_reminders_path}, {name: 'New Reminder', url: '#'}] } %>
+
 <h1>Create New Reminder</h1>
 
 <%= form_with url: admin_reminders_path,
