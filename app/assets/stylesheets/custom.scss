@@ -133,7 +133,7 @@
 }
 
 .pagination-admin {
-  background-color: #d6cbd3;
+  background-color: #ada397;
 
   li {
     a {
@@ -147,6 +147,10 @@
       color: #212529 !important;
     }
   }
+}
+
+.pagination {
+  margin: auto;
 }
 
 .errors {
