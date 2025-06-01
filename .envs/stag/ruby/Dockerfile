@@ -7,7 +7,8 @@ postgresql-client \
 imagemagick vim \
 sudo \
 cron \
-systemd
+systemd \
+libvips42
 
 RUN systemctl enable cron
 

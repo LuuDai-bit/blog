@@ -5,8 +5,8 @@
 
  */
 /*
-Trix 1.3.1
-Copyright © 2020 Basecamp, LLC
+Trix 1.3.5
+Copyright © 2024 37signals, LLC
 http://trix-editor.org/*/
 /* line 6, node_modules/trix/dist/trix.css */
 trix-editor {
@@ -871,7 +871,7 @@ trix-editor .attachment__metadata .attachment__size {
 
 /* line 135, app/assets/stylesheets/custom.scss */
 .pagination-admin {
-  background-color: #d6cbd3;
+  background-color: #ada397;
 }
 
 /* line 139, app/assets/stylesheets/custom.scss */
@@ -886,22 +886,32 @@ trix-editor .attachment__metadata .attachment__size {
 }
 
 /* line 152, app/assets/stylesheets/custom.scss */
+.pagination {
+  margin: auto;
+}
+
+/* line 156, app/assets/stylesheets/custom.scss */
 .errors {
   color: darkred;
   font-size: 13px;
 }
 
-/* line 156, app/assets/stylesheets/custom.scss */
+/* line 160, app/assets/stylesheets/custom.scss */
 .errors p {
   margin: 0;
 }
 
+/* line 165, app/assets/stylesheets/custom.scss */
+.ml-1 {
+  margin-left: 5px;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 162, app/assets/stylesheets/custom.scss */
+  /* line 170, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 167, app/assets/stylesheets/custom.scss */
+  /* line 175, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;
@@ -985,6 +995,23 @@ trix-editor .attachment__metadata .attachment__size {
 .badge-dark {
   color: #fff;
   background-color: #343a40;
+}
+
+/* line 1, app/assets/stylesheets/breadcrumbs.scss */
+.bread-root-item {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* line 6, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* line 10, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item:before {
+  content: " > ";
 }
 
 /* line 1, app/assets/stylesheets/views/post.scss */
@@ -1087,8 +1114,8 @@ trix-editor .attachment__metadata .attachment__size {
 }
 
 /*
-Trix 1.3.1
-Copyright © 2020 Basecamp, LLC
+Trix 1.3.5
+Copyright © 2024 37signals, LLC
 http://trix-editor.org/*/
 trix-editor {
   border: 1px solid #bbb;
@@ -1569,6 +1596,22 @@ trix-editor .attachment__metadata {
   color: #fff;
   background-color: #343a40;
 }
+/* line 1, app/assets/stylesheets/breadcrumbs.scss */
+.bread-root-item {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* line 6, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* line 10, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item:before {
+  content: " > ";
+}
 /* line 1, app/assets/stylesheets/custom.scss */
 .small-content-container {
   margin: auto 30%;
@@ -1726,7 +1769,7 @@ trix-editor .attachment__metadata {
 
 /* line 135, app/assets/stylesheets/custom.scss */
 .pagination-admin {
-  background-color: #d6cbd3;
+  background-color: #ada397;
 }
 
 /* line 139, app/assets/stylesheets/custom.scss */
@@ -1741,22 +1784,32 @@ trix-editor .attachment__metadata {
 }
 
 /* line 152, app/assets/stylesheets/custom.scss */
+.pagination {
+  margin: auto;
+}
+
+/* line 156, app/assets/stylesheets/custom.scss */
 .errors {
   color: darkred;
   font-size: 13px;
 }
 
-/* line 156, app/assets/stylesheets/custom.scss */
+/* line 160, app/assets/stylesheets/custom.scss */
 .errors p {
   margin: 0;
 }
 
+/* line 165, app/assets/stylesheets/custom.scss */
+.ml-1 {
+  margin-left: 5px;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 162, app/assets/stylesheets/custom.scss */
+  /* line 170, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 167, app/assets/stylesheets/custom.scss */
+  /* line 175, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;
