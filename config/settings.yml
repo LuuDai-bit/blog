@@ -21,6 +21,7 @@ models:
     statistic:
       post_per_week: post_per_week
       post_per_month: post_per_month
+    cache_limit: 20 # posts
   announcement:
     views:
       max_display: 3

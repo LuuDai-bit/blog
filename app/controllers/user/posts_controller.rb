@@ -12,8 +12,18 @@ class User::PostsController < User::UserController
   end
 
   def show
-    @post = Post.by_locale.find params[:id]
-    @post.update(views: @post.views + 1)
+    cached_post = Blog::Cache::PostCache.new.fetch_post_cached(params[:id], I18n.locale)
+    cached_post = Blog::Cache::PostCache.new.set_post_cache(params[:id], I18n.locale) if cached_post.blank?
+
+    cache_post_key = Blog::Cache::PostCache.new.fetch_cache_lock(params[:id], I18n.locale)
+
+    while cache_post_key.present? && cached_post.blank?
+      cache_post_key = Blog::Cache::PostCache.new.fetch_cache_lock(params[:id], I18n.locale)
+      cached_post = Blog::Cache::PostCache.new.fetch_post_cached(params[:id], I18n.locale)
+    end
+
+    @post = cached_post
+    # @post.update(views: @post.views + 1)
   end
 
   private
