@@ -5,6 +5,8 @@ class Blog::Cache::PostCache
     key = redis.post_cached(post_id, locale)
     post_str = redis.client.get(key)
 
+    return post_str if post_str == 'No content'
+
     post_str.present? ? JSON.parse(post_str) : nil
   end
 
@@ -17,15 +19,22 @@ class Blog::Cache::PostCache
     key = redis.post_caching(post_id, locale)
     redis.client.set(key, 1) unless redis.client.get(key)
 
-    post = Post.by_locale.find(post_id)
-    redis.client.set(redis.post_cached(post_id, locale), cached_object(post, locale), ex: 120)
+    post = Post.by_locale.find_by(id: post_id)
+    if post.blank?
+      redis.client.set(redis.post_cached(post_id, locale), 'No content', ex: 120)
+      raise ActiveRecord::RecordNotFound
+    else
+      redis.client.set(redis.post_cached(post_id, locale), cached_object(post, locale), ex: 120)
+    end
 
     redis.client.del(key)
 
     JSON.parse(cached_object(post, locale))
   end
 
-  def update_views
+  def update_views(post_id)
+    hash_key = redis.post_views
+    redis.client.hincrby(hash_key, post_id, 1)
   end
 
   def destroy_cache(post_id)

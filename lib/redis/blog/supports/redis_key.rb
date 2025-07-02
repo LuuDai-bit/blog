@@ -10,4 +10,8 @@ module Blog::Supports::RedisKey
   def post_cached(post_id, locale)
     "post_cached:#{post_id}:#{locale}"
   end
+
+  def post_views
+    "post_view"
+  end
 end
