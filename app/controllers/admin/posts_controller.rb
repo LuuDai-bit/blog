@@ -45,16 +45,19 @@ class Admin::PostsController < Admin::AdminController
         format.json { render json: { message: 'Failed' }, status: :unprocessable_entity }
       end
     end
+
+    Blog::Cache::PostCache.new.destroy_cache(params[:id])
   end
 
   def destroy
     if @post.destroy
       redirect_to admin_posts_path
     else
-      # Message here
       flash[:alert] = 'Post destroy failed'
       render :index
     end
+
+    Blog::Cache::PostCache.new.destroy_cache(params[:id])
   end
 
   private
