@@ -25,7 +25,7 @@
   <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-md-10 col-lg-8 col-xl-7">
-        <main class="trix-content site-main"><%= default_locale? ? @post['content']['body'].html_safe : @post['content_en']['body'].html_safe %></main>
+        <main class="trix-content site-main"><%= default_locale? ? render_action_text_with_images(@post['content']['body']) : render_action_text_with_images(@post['content_en']['body']) %></main>
       </div>
     </div>
   </div>
