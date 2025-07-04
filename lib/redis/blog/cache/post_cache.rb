@@ -22,6 +22,7 @@ class Blog::Cache::PostCache
     post = Post.by_locale.find_by(id: post_id)
     if post.blank?
       redis.client.set(redis.post_cached(post_id, locale), 'No content', ex: 120)
+
       raise ActiveRecord::RecordNotFound
     else
       redis.client.set(redis.post_cached(post_id, locale), cached_object(post, locale), ex: 120)
@@ -30,6 +31,10 @@ class Blog::Cache::PostCache
     redis.client.del(key)
 
     JSON.parse(cached_object(post, locale))
+
+  rescue StandardError => e
+    redis.client.del(key)
+    raise e
   end
 
   def update_views(post_id)
