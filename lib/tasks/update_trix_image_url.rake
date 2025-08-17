@@ -24,3 +24,43 @@ namespace :update_trix_image_url do
     end
   end
 end
+
+# Update for temporary image trix < 1.3.0
+# include Rails.application.routes.url_helpers
+
+# Post.find_each do |post|
+#   remote_images = post.content.body.attachables.select { |a| a.is_a?(ActionText::Attachables::RemoteImage) }
+
+#   p 'a' if remote_images.empty?
+#   next if remote_images.empty?
+
+#   updated_body = post.content.body
+#   doc = Nokogiri::HTML::DocumentFragment.parse(updated_body.to_html)
+#   embeds = post.content.embeds
+
+#   index = 0
+#   remote_images.each do |remote|
+#     node = doc.css("action-text-attachment[url='#{remote.url}']").first
+
+#     return if node.blank?
+
+#     # Create and upload a new blob
+#     blob = embeds[index]&.blob
+
+#     next if blob.blank?
+
+#     attachment = ActionText::Attachment.from_attachable(blob).to_html
+
+#     p attachment
+
+#     # Replace old <action-text-attachment sgid=...> with new blob's attachment HTML
+#     new_node = Nokogiri::HTML::DocumentFragment.parse(attachment).children.first
+#     new_node['signed_id'] = blob.signed_id
+#     node.replace(new_node)
+
+#     index += 1
+#   end
+
+#   post.content = doc.to_html
+#   post.save!
+# end

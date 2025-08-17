@@ -29,6 +29,12 @@ module PostsHelper
 
     doc.css('action-text-attachment').each do |attachment_node|
       url = attachment_node['url']
+      if url.blank?
+        signed_id = attachment_node['signed_id']
+        blob = ActiveStorage::Blob.find_signed(signed_id)
+        url = blob.url
+      end
+
       content_type = attachment_node['content-type']
 
       if url.present? && content_type.match?(/^image\/.*/)
