@@ -2,7 +2,7 @@ class Admin::AnnouncementsController < Admin::AdminController
   before_action :load_announcement, only: %i[update]
 
   def index
-    @pagy, @announcements = pagy(current_user.announcements)
+    @pagy, @announcements = pagy(current_user.announcements.order(id: :desc))
   end
 
   def new
