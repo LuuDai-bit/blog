@@ -1,4 +1,4 @@
-FROM nginx:1.17.9
+FROM nginx:1.28.0
 
 # Set default argument variables
 ARG APP_PATH=/app
