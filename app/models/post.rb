@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   has_rich_text :content
   has_rich_text :content_en
-  has_many :post_categories
+  has_many :post_categories, dependent: :destroy
   has_many :categories, through: :post_categories
 
   belongs_to :author, class_name: User.name,
