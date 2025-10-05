@@ -148,54 +148,59 @@
   table-layout: fixed;
 }
 
-/* line 131, app/assets/stylesheets/custom.scss */
+/* line 134, app/assets/stylesheets/custom.scss */
+.table thead tr th {
+  background-color: #BFA48F;
+}
+
+/* line 141, app/assets/stylesheets/custom.scss */
 .custom-post-badge {
   background-color: darkred !important;
 }
 
-/* line 135, app/assets/stylesheets/custom.scss */
+/* line 145, app/assets/stylesheets/custom.scss */
 .pagination-admin {
   background-color: #e1cdb4;
 }
 
-/* line 139, app/assets/stylesheets/custom.scss */
+/* line 149, app/assets/stylesheets/custom.scss */
 .pagination-admin li a {
   background-color: #e1cdb4 !important;
 }
 
-/* line 145, app/assets/stylesheets/custom.scss */
+/* line 155, app/assets/stylesheets/custom.scss */
 .pagination-admin li.active a {
   background-color: #eca1a6 !important;
   color: #212529 !important;
 }
 
-/* line 152, app/assets/stylesheets/custom.scss */
+/* line 162, app/assets/stylesheets/custom.scss */
 .pagination {
   margin: auto;
 }
 
-/* line 156, app/assets/stylesheets/custom.scss */
+/* line 166, app/assets/stylesheets/custom.scss */
 .errors {
   color: darkred;
   font-size: 13px;
 }
 
-/* line 160, app/assets/stylesheets/custom.scss */
+/* line 170, app/assets/stylesheets/custom.scss */
 .errors p {
   margin: 0;
 }
 
-/* line 165, app/assets/stylesheets/custom.scss */
+/* line 175, app/assets/stylesheets/custom.scss */
 .ml-1 {
   margin-left: 5px;
 }
 
 @media screen and (max-width: 1200px) {
-  /* line 170, app/assets/stylesheets/custom.scss */
+  /* line 180, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 175, app/assets/stylesheets/custom.scss */
+  /* line 185, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;
