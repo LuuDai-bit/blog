@@ -36,7 +36,7 @@
 .flex-parent-container {
   display: flex;
   width: 100%;
-  background-color: #ada397;
+  background-color: #e1cdb4;
 }
 
 /* line 36, app/assets/stylesheets/custom.scss */
@@ -72,7 +72,7 @@
 /* line 63, app/assets/stylesheets/custom.scss */
 .sticky {
   position: fixed;
-  background-color: #ada397;
+  background-color: #e1cdb4;
   width: 100%;
 }
 
@@ -155,42 +155,47 @@
 
 /* line 135, app/assets/stylesheets/custom.scss */
 .pagination-admin {
-  background-color: #d6cbd3;
+  background-color: #e1cdb4;
 }
 
 /* line 139, app/assets/stylesheets/custom.scss */
 .pagination-admin li a {
-  background-color: #d6cbd3 !important;
+  background-color: #e1cdb4 !important;
 }
 
 /* line 145, app/assets/stylesheets/custom.scss */
 .pagination-admin li.active a {
-  background-color: #bdcebe !important;
+  background-color: #eca1a6 !important;
   color: #212529 !important;
 }
 
 /* line 152, app/assets/stylesheets/custom.scss */
+.pagination {
+  margin: auto;
+}
+
+/* line 156, app/assets/stylesheets/custom.scss */
 .errors {
   color: darkred;
   font-size: 13px;
 }
 
-/* line 156, app/assets/stylesheets/custom.scss */
+/* line 160, app/assets/stylesheets/custom.scss */
 .errors p {
   margin: 0;
 }
 
-/* line 161, app/assets/stylesheets/custom.scss */
+/* line 165, app/assets/stylesheets/custom.scss */
 .ml-1 {
   margin-left: 5px;
 }
 
 @media screen and (max-width: 1200px) {
-  /* line 166, app/assets/stylesheets/custom.scss */
+  /* line 170, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 171, app/assets/stylesheets/custom.scss */
+  /* line 175, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;

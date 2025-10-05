@@ -30,7 +30,7 @@
 .flex-parent-container {
   display: flex;
   width: 100%;
-  background-color: #ada397;
+  background-color: #e1cdb4;
 }
 
 .input-group-35vw{
@@ -62,7 +62,7 @@
 
 .sticky {
   position: fixed;
-  background-color: #ada397;
+  background-color: #e1cdb4;
   width: 100%
 }
 
@@ -128,22 +128,32 @@
   table-layout: fixed;
 }
 
+.table {
+  thead {
+    tr {
+      th {
+        background-color: #BFA48F;
+      }
+    }
+  }
+}
+
 .custom-post-badge {
   background-color: darkred !important;
 }
 
 .pagination-admin {
-  background-color: #ada397;
+  background-color: #e1cdb4;
 
   li {
     a {
-      background-color: #d6cbd3 !important;
+      background-color: #e1cdb4 !important;
     }
   }
 
   li.active {
     a {
-      background-color: #bdcebe !important;
+      background-color: #eca1a6 !important;
       color: #212529 !important;
     }
   }

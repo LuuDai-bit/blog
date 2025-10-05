@@ -36,7 +36,7 @@
 .flex-parent-container {
   display: flex;
   width: 100%;
-  background-color: #ada397;
+  background-color: #e1cdb4;
 }
 
 /* line 36, app/assets/stylesheets/custom.scss */
@@ -72,7 +72,7 @@
 /* line 63, app/assets/stylesheets/custom.scss */
 .sticky {
   position: fixed;
-  background-color: #ada397;
+  background-color: #e1cdb4;
   width: 100%;
 }
 
@@ -155,17 +155,17 @@
 
 /* line 135, app/assets/stylesheets/custom.scss */
 .pagination-admin {
-  background-color: #ada397;
+  background-color: #e1cdb4;
 }
 
 /* line 139, app/assets/stylesheets/custom.scss */
 .pagination-admin li a {
-  background-color: #d6cbd3 !important;
+  background-color: #e1cdb4 !important;
 }
 
 /* line 145, app/assets/stylesheets/custom.scss */
 .pagination-admin li.active a {
-  background-color: #bdcebe !important;
+  background-color: #eca1a6 !important;
   color: #212529 !important;
 }
 

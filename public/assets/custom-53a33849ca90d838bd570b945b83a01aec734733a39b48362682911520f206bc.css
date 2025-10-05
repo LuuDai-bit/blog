@@ -36,7 +36,7 @@
 .flex-parent-container {
   display: flex;
   width: 100%;
-  background-color: #ada397;
+  background-color: #e1cdb4;
 }
 
 /* line 36, app/assets/stylesheets/custom.scss */
@@ -72,7 +72,7 @@
 /* line 63, app/assets/stylesheets/custom.scss */
 .sticky {
   position: fixed;
-  background-color: #ada397;
+  background-color: #e1cdb4;
   width: 100%;
 }
 
@@ -148,33 +148,59 @@
   table-layout: fixed;
 }
 
-/* line 131, app/assets/stylesheets/custom.scss */
+/* line 132, app/assets/stylesheets/custom.scss */
+.admin-table th {
+  background-color: #eca1a6;
+}
+
+/* line 137, app/assets/stylesheets/custom.scss */
 .custom-post-badge {
   background-color: darkred !important;
 }
 
-/* line 135, app/assets/stylesheets/custom.scss */
+/* line 141, app/assets/stylesheets/custom.scss */
 .pagination-admin {
-  background-color: #d6cbd3;
-}
-
-/* line 139, app/assets/stylesheets/custom.scss */
-.pagination-admin li a {
-  background-color: #d6cbd3 !important;
+  background-color: #e1cdb4;
 }
 
 /* line 145, app/assets/stylesheets/custom.scss */
+.pagination-admin li a {
+  background-color: #e1cdb4 !important;
+}
+
+/* line 151, app/assets/stylesheets/custom.scss */
 .pagination-admin li.active a {
-  background-color: #bdcebe !important;
+  background-color: #eca1a6 !important;
   color: #212529 !important;
 }
 
+/* line 158, app/assets/stylesheets/custom.scss */
+.pagination {
+  margin: auto;
+}
+
+/* line 162, app/assets/stylesheets/custom.scss */
+.errors {
+  color: darkred;
+  font-size: 13px;
+}
+
+/* line 166, app/assets/stylesheets/custom.scss */
+.errors p {
+  margin: 0;
+}
+
+/* line 171, app/assets/stylesheets/custom.scss */
+.ml-1 {
+  margin-left: 5px;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 153, app/assets/stylesheets/custom.scss */
+  /* line 176, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 158, app/assets/stylesheets/custom.scss */
+  /* line 181, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;

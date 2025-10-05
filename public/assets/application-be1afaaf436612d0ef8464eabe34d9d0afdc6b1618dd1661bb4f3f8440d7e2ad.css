@@ -752,7 +752,7 @@ trix-editor .attachment__metadata .attachment__size {
 .flex-parent-container {
   display: flex;
   width: 100%;
-  background-color: #ada397;
+  background-color: #e1cdb4;
 }
 
 /* line 36, app/assets/stylesheets/custom.scss */
@@ -788,7 +788,7 @@ trix-editor .attachment__metadata .attachment__size {
 /* line 63, app/assets/stylesheets/custom.scss */
 .sticky {
   position: fixed;
-  background-color: #ada397;
+  background-color: #e1cdb4;
   width: 100%;
 }
 
@@ -871,17 +871,17 @@ trix-editor .attachment__metadata .attachment__size {
 
 /* line 135, app/assets/stylesheets/custom.scss */
 .pagination-admin {
-  background-color: #ada397;
+  background-color: #e1cdb4;
 }
 
 /* line 139, app/assets/stylesheets/custom.scss */
 .pagination-admin li a {
-  background-color: #d6cbd3 !important;
+  background-color: #e1cdb4 !important;
 }
 
 /* line 145, app/assets/stylesheets/custom.scss */
 .pagination-admin li.active a {
-  background-color: #bdcebe !important;
+  background-color: #eca1a6 !important;
   color: #212529 !important;
 }
 
@@ -964,7 +964,7 @@ trix-editor .attachment__metadata .attachment__size {
 /* line 41, app/assets/stylesheets/badge.scss */
 .badge-success {
   color: #212529;
-  background-color: #bdcebe;
+  background-color: #eca1a6;
 }
 
 /* line 46, app/assets/stylesheets/badge.scss */
@@ -1564,7 +1564,7 @@ trix-editor .attachment__metadata {
 /* line 41, app/assets/stylesheets/badge.scss */
 .badge-success {
   color: #212529;
-  background-color: #bdcebe;
+  background-color: #eca1a6;
 }
 
 /* line 46, app/assets/stylesheets/badge.scss */
@@ -1650,7 +1650,7 @@ trix-editor .attachment__metadata {
 .flex-parent-container {
   display: flex;
   width: 100%;
-  background-color: #ada397;
+  background-color: #e1cdb4;
 }
 
 /* line 36, app/assets/stylesheets/custom.scss */
@@ -1686,7 +1686,7 @@ trix-editor .attachment__metadata {
 /* line 63, app/assets/stylesheets/custom.scss */
 .sticky {
   position: fixed;
-  background-color: #ada397;
+  background-color: #e1cdb4;
   width: 100%;
 }
 
@@ -1769,17 +1769,17 @@ trix-editor .attachment__metadata {
 
 /* line 135, app/assets/stylesheets/custom.scss */
 .pagination-admin {
-  background-color: #ada397;
+  background-color: #e1cdb4;
 }
 
 /* line 139, app/assets/stylesheets/custom.scss */
 .pagination-admin li a {
-  background-color: #d6cbd3 !important;
+  background-color: #e1cdb4 !important;
 }
 
 /* line 145, app/assets/stylesheets/custom.scss */
 .pagination-admin li.active a {
-  background-color: #bdcebe !important;
+  background-color: #eca1a6 !important;
   color: #212529 !important;
 }
 
@@ -1838,7 +1838,7 @@ trix-editor .attachment__metadata {
   margin-right: 20px;
   padding: 0;
   width: 200px;
-  background-color: #ada397;
+  background-color: #f9dfc1;
   display: inline-block;
   height: 100vh;
   overflow: auto;
@@ -1868,7 +1868,7 @@ trix-editor .attachment__metadata {
 /* Links on mouse-over */
 /* line 31, app/assets/stylesheets/sidebar.scss */
 .sidebar a:hover:not(.active) {
-  background-color: #c5bbc3;
+  background-color: #e1cdb4;
   color: #212529;
 }
 
@@ -4327,7 +4327,7 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #ada397;
+  background-color: #e1cdb4;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   -webkit-appearance: none;
@@ -4357,8 +4357,8 @@ progress {
 /* line 2213, app/assets/stylesheets/simple_bootstrap.scss */
 .form-control:focus {
   color: #212529;
-  background-color: #d6cbd3;
-  border-color: #d6cbd3;
+  background-color: #eca1a6;
+  border-color: #eca1a6;
   outline: 0;
 }
 
@@ -5378,42 +5378,42 @@ textarea.form-control-lg {
 /* line 2996, app/assets/stylesheets/simple_bootstrap.scss */
 .btn-primary {
   color: #212529;
-  background-color: #d6cbd3;
-  border-color: #d6cbd3;
+  background-color: #eca1a6;
+  border-color: #eca1a6;
 }
 
 /* line 3001, app/assets/stylesheets/simple_bootstrap.scss */
 .btn-primary:hover {
   color: #212529;
-  background-color: #c5bbc3;
-  border-color: #c5bbc3;
+  background-color: #e1cdb4;
+  border-color: #e1cdb4;
 }
 
 /* line 3006, app/assets/stylesheets/simple_bootstrap.scss */
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #000;
-  background-color: #c5bbc3;
-  border-color: #c5bbc3;
-  box-shadow: 0 0 0 0.25rem #c5bbc3;
+  background-color: #e1cdb4;
+  border-color: #e1cdb4;
+  box-shadow: 0 0 0 0.25rem #e1cdb4;
 }
 
 /* line 3012, app/assets/stylesheets/simple_bootstrap.scss */
 .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
   color: #000;
-  background-color: #c5bbc3;
-  border-color: #c5bbc3;
+  background-color: #e1cdb4;
+  border-color: #e1cdb4;
 }
 
 /* line 3017, app/assets/stylesheets/simple_bootstrap.scss */
 .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem #c5bbc3;
+  box-shadow: 0 0 0 0.25rem #e1cdb4;
 }
 
 /* line 3020, app/assets/stylesheets/simple_bootstrap.scss */
 .btn-primary:disabled, .btn-primary.disabled {
   color: #000;
-  background-color: #c5bbc3;
-  border-color: #c5bbc3;
+  background-color: #e1cdb4;
+  border-color: #e1cdb4;
 }
 
 /* line 3026, app/assets/stylesheets/simple_bootstrap.scss */
@@ -15178,12 +15178,12 @@ trix-editor .attachment {
 #toast-container > div {
 	background-position: 15px center;
 	background-repeat: no-repeat;
-	-moz-border-radius: 3px 3px 3px 3px; 
-	-webkit-border-radius: 3px 3px 3px 3px; 
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
 	border-radius: 3px 3px 3px 3px;
-	-moz-box-shadow: 0 0 12px #999999; 
-	-webkit-box-shadow: 0 0 12px #999999; 
-	-o-box-shadow: 0 0 12px #999999; 
+	-moz-box-shadow: 0 0 12px #999999;
+	-webkit-box-shadow: 0 0 12px #999999;
+	-o-box-shadow: 0 0 12px #999999;
 	box-shadow: 0 0 12px #999999;
 	color: #FFFFFF;
 	margin: 0 0 6px;
@@ -15219,9 +15219,9 @@ trix-editor .attachment {
 }
 
 #toast-container > :hover {
-	-moz-box-shadow: 0 0 12px #000000; 
-	-webkit-box-shadow: 0 0 12px #000000; 
-	-o-box-shadow: 0 0 12px #000000; 
+	-moz-box-shadow: 0 0 12px #000000;
+	-webkit-box-shadow: 0 0 12px #000000;
+	-o-box-shadow: 0 0 12px #000000;
 	box-shadow: 0 0 12px #000000;
 	filter: alpha(opacity=100);
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";

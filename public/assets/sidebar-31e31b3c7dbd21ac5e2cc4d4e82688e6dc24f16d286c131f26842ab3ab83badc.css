@@ -4,7 +4,7 @@
   margin-right: 20px;
   padding: 0;
   width: 200px;
-  background-color: #f1f1f1;
+  background-color: #f9dfc1;
   display: inline-block;
   height: 100vh;
   overflow: auto;
@@ -19,7 +19,7 @@
 /* line 17, app/assets/stylesheets/sidebar.scss */
 .sidebar a {
   display: block;
-  color: black;
+  color: #212529;
   padding: 16px;
   text-decoration: none;
 }
@@ -27,15 +27,15 @@
 /* Active/current link */
 /* line 25, app/assets/stylesheets/sidebar.scss */
 .sidebar a.active {
-  background-color: #0085A1;
-  color: white;
+  background-color: #eca1a6;
+  color: #212529;
 }
 
 /* Links on mouse-over */
 /* line 31, app/assets/stylesheets/sidebar.scss */
 .sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
+  background-color: #e1cdb4;
+  color: #212529;
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
