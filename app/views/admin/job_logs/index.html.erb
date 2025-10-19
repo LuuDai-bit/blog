@@ -1,6 +1,6 @@
 <%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'Job Logs', url: '#'}] } %>
 
-<h1>Job Logs</h1>
+<h1 class="admin-title">Job Logs</h1>
 <%= render partial: 'search' %>
 <% if @job_logs.present? %>
   <table class="table table-hover table-layout-fixed w-100 mt-3 table-striped table-bordered">

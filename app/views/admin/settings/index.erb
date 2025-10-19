@@ -1,6 +1,6 @@
 <%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'Settings', url: '#'}] } %>
 
-<h1>Setting page</h1>
+<h1 class="admin-title">Setting page</h1>
 <div>
   <i class="fa fa-key" aria-hidden="true"></i>
   <%= link_to 'Change password', edit_admin_password_path(current_user) %>

@@ -25,6 +25,19 @@
   width: 70%;
   max-height: 98vh;
   overflow: auto;
+  min-height: 98vh;
+
+  .form-control {
+    border: 1px solid #BFA48F !important;
+
+    &:focus {
+      border: 1px solid #eca1a6 !important;
+    }
+  }
+
+  label {
+    color: #664227 !important;
+  }
 }
 
 .flex-parent-container {
@@ -174,6 +187,18 @@
 
 .ml-1 {
   margin-left: 5px;
+}
+
+.admin-title {
+  color: #B07548;
+}
+
+.btn, .btn-primary, .btn-light {
+  color: #664227 !important;
+
+  input {
+    color: #664227 !important;
+  }
 }
 
 @media screen and (max-width: 1200px) {

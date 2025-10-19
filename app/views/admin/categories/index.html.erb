@@ -1,6 +1,6 @@
 <%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'Categories', url: '#'}] } %>
 
-<h1>List Categories</h1>
+<h1 class="admin-title">Categories</h1>
 <% if @categories.present? %>
   <div class="row">
     <% @categories.each do |category| %>

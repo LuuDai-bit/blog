@@ -957,13 +957,13 @@ trix-editor .attachment__metadata .attachment__size {
 
 /* line 36, app/assets/stylesheets/badge.scss */
 .badge-secondary {
-  color: #212529;
+  color: #664227;
   background-color: #e0e2e4;
 }
 
 /* line 41, app/assets/stylesheets/badge.scss */
 .badge-success {
-  color: #212529;
+  color: #664227;
   background-color: #eca1a6;
 }
 
@@ -1027,7 +1027,7 @@ trix-editor .attachment__metadata .attachment__size {
 .category-add-btn {
   position: relative;
   top: 4px;
-  border: 1px solid #0085A1;
+  border: 1px solid #664227;
   padding: 7px;
   right: 76px;
 }
@@ -1557,13 +1557,13 @@ trix-editor .attachment__metadata {
 
 /* line 36, app/assets/stylesheets/badge.scss */
 .badge-secondary {
-  color: #212529;
+  color: #664227;
   background-color: #e0e2e4;
 }
 
 /* line 41, app/assets/stylesheets/badge.scss */
 .badge-success {
-  color: #212529;
+  color: #664227;
   background-color: #eca1a6;
 }
 
@@ -15054,7 +15054,7 @@ trix-editor .attachment {
 .category-add-btn {
   position: relative;
   top: 4px;
-  border: 1px solid #0085A1;
+  border: 1px solid #664227;
   padding: 7px;
   right: 76px;
 }

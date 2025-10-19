@@ -752,7 +752,7 @@ trix-editor .attachment__metadata .attachment__size {
 .flex-parent-container {
   display: flex;
   width: 100%;
-  background-color: #ada397;
+  background-color: #e1cdb4;
 }
 
 /* line 36, app/assets/stylesheets/custom.scss */
@@ -788,7 +788,7 @@ trix-editor .attachment__metadata .attachment__size {
 /* line 63, app/assets/stylesheets/custom.scss */
 .sticky {
   position: fixed;
-  background-color: #ada397;
+  background-color: #e1cdb4;
   width: 100%;
 }
 
@@ -864,54 +864,74 @@ trix-editor .attachment__metadata .attachment__size {
   table-layout: fixed;
 }
 
-/* line 131, app/assets/stylesheets/custom.scss */
+/* line 134, app/assets/stylesheets/custom.scss */
+.table thead tr th {
+  background-color: #BFA48F;
+}
+
+/* line 141, app/assets/stylesheets/custom.scss */
 .custom-post-badge {
   background-color: darkred !important;
 }
 
-/* line 135, app/assets/stylesheets/custom.scss */
-.pagination-admin {
-  background-color: #ada397;
-}
-
-/* line 139, app/assets/stylesheets/custom.scss */
-.pagination-admin li a {
-  background-color: #d6cbd3 !important;
-}
-
 /* line 145, app/assets/stylesheets/custom.scss */
+.pagination-admin {
+  background-color: #e1cdb4;
+}
+
+/* line 149, app/assets/stylesheets/custom.scss */
+.pagination-admin li a {
+  background-color: #e1cdb4 !important;
+}
+
+/* line 155, app/assets/stylesheets/custom.scss */
 .pagination-admin li.active a {
-  background-color: #bdcebe !important;
+  background-color: #eca1a6 !important;
   color: #212529 !important;
 }
 
-/* line 152, app/assets/stylesheets/custom.scss */
+/* line 162, app/assets/stylesheets/custom.scss */
 .pagination {
   margin: auto;
 }
 
-/* line 156, app/assets/stylesheets/custom.scss */
+/* line 166, app/assets/stylesheets/custom.scss */
 .errors {
   color: darkred;
   font-size: 13px;
 }
 
-/* line 160, app/assets/stylesheets/custom.scss */
+/* line 170, app/assets/stylesheets/custom.scss */
 .errors p {
   margin: 0;
 }
 
-/* line 165, app/assets/stylesheets/custom.scss */
+/* line 175, app/assets/stylesheets/custom.scss */
 .ml-1 {
   margin-left: 5px;
 }
 
+/* line 179, app/assets/stylesheets/custom.scss */
+.admin-title {
+  color: #B07548;
+}
+
+/* line 183, app/assets/stylesheets/custom.scss */
+.btn, .btn-primary, .btn-light {
+  color: #664227;
+}
+
+/* line 186, app/assets/stylesheets/custom.scss */
+.btn input, .btn-primary input, .btn-light input {
+  color: #664227;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 170, app/assets/stylesheets/custom.scss */
+  /* line 192, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 175, app/assets/stylesheets/custom.scss */
+  /* line 197, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;
@@ -940,58 +960,59 @@ trix-editor .attachment__metadata .attachment__size {
 .btn .badge {
   position: relative;
   top: -1px;
+  color: #664227;
 }
 
-/* line 25, app/assets/stylesheets/badge.scss */
+/* line 26, app/assets/stylesheets/badge.scss */
 .badge-pill {
   padding-right: 0.6em;
   padding-left: 0.6em;
   border-radius: 10rem;
 }
 
-/* line 31, app/assets/stylesheets/badge.scss */
+/* line 32, app/assets/stylesheets/badge.scss */
 .badge-primary {
   color: #fff;
   background-color: #007bff;
 }
 
-/* line 36, app/assets/stylesheets/badge.scss */
+/* line 37, app/assets/stylesheets/badge.scss */
 .badge-secondary {
   color: #664227;
   background-color: #e0e2e4;
 }
 
-/* line 41, app/assets/stylesheets/badge.scss */
+/* line 42, app/assets/stylesheets/badge.scss */
 .badge-success {
   color: #664227;
-  background-color: #bdcebe;
+  background-color: #eca1a6;
 }
 
-/* line 46, app/assets/stylesheets/badge.scss */
+/* line 47, app/assets/stylesheets/badge.scss */
 .badge-danger {
   color: #fff;
   background-color: #dc3545;
 }
 
-/* line 51, app/assets/stylesheets/badge.scss */
+/* line 52, app/assets/stylesheets/badge.scss */
 .badge-warning {
   color: var(--bs-gray-900);
   background-color: #ffc107;
 }
 
-/* line 56, app/assets/stylesheets/badge.scss */
+/* line 57, app/assets/stylesheets/badge.scss */
 .badge-info {
   color: #fff;
   background-color: #17a2b8;
 }
 
-/* line 61, app/assets/stylesheets/badge.scss */
+/* line 62, app/assets/stylesheets/badge.scss */
 .badge-light {
   color: var(--bs-gray-900);
   background-color: #f8f9fa;
 }
 
-/* line 66, app/assets/stylesheets/badge.scss */
+/* line 67, app/assets/stylesheets/badge.scss */
 .badge-dark {
   color: #fff;
   background-color: #343a40;
@@ -1001,15 +1022,27 @@ trix-editor .attachment__metadata .attachment__size {
 .bread-root-item {
   font-weight: bold;
   font-size: 13px;
+  color: #B07548;
 }
 
 /* line 6, app/assets/stylesheets/breadcrumbs.scss */
+.bread-root-item a {
+  color: #B07548;
+}
+
+/* line 11, app/assets/stylesheets/breadcrumbs.scss */
 .bread-element-item {
   font-weight: bold;
   font-size: 13px;
+  color: #B07548;
 }
 
-/* line 10, app/assets/stylesheets/breadcrumbs.scss */
+/* line 16, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item a {
+  color: #B07548;
+}
+
+/* line 20, app/assets/stylesheets/breadcrumbs.scss */
 .bread-element-item:before {
   content: " > ";
 }
@@ -1540,58 +1573,59 @@ trix-editor .attachment__metadata {
 .btn .badge {
   position: relative;
   top: -1px;
+  color: #664227;
 }
 
-/* line 25, app/assets/stylesheets/badge.scss */
+/* line 26, app/assets/stylesheets/badge.scss */
 .badge-pill {
   padding-right: 0.6em;
   padding-left: 0.6em;
   border-radius: 10rem;
 }
 
-/* line 31, app/assets/stylesheets/badge.scss */
+/* line 32, app/assets/stylesheets/badge.scss */
 .badge-primary {
   color: #fff;
   background-color: #007bff;
 }
 
-/* line 36, app/assets/stylesheets/badge.scss */
+/* line 37, app/assets/stylesheets/badge.scss */
 .badge-secondary {
   color: #664227;
   background-color: #e0e2e4;
 }
 
-/* line 41, app/assets/stylesheets/badge.scss */
+/* line 42, app/assets/stylesheets/badge.scss */
 .badge-success {
   color: #664227;
-  background-color: #bdcebe;
+  background-color: #eca1a6;
 }
 
-/* line 46, app/assets/stylesheets/badge.scss */
+/* line 47, app/assets/stylesheets/badge.scss */
 .badge-danger {
   color: #fff;
   background-color: #dc3545;
 }
 
-/* line 51, app/assets/stylesheets/badge.scss */
+/* line 52, app/assets/stylesheets/badge.scss */
 .badge-warning {
   color: var(--bs-gray-900);
   background-color: #ffc107;
 }
 
-/* line 56, app/assets/stylesheets/badge.scss */
+/* line 57, app/assets/stylesheets/badge.scss */
 .badge-info {
   color: #fff;
   background-color: #17a2b8;
 }
 
-/* line 61, app/assets/stylesheets/badge.scss */
+/* line 62, app/assets/stylesheets/badge.scss */
 .badge-light {
   color: var(--bs-gray-900);
   background-color: #f8f9fa;
 }
 
-/* line 66, app/assets/stylesheets/badge.scss */
+/* line 67, app/assets/stylesheets/badge.scss */
 .badge-dark {
   color: #fff;
   background-color: #343a40;
@@ -1600,15 +1634,27 @@ trix-editor .attachment__metadata {
 .bread-root-item {
   font-weight: bold;
   font-size: 13px;
+  color: #B07548;
 }
 
 /* line 6, app/assets/stylesheets/breadcrumbs.scss */
+.bread-root-item a {
+  color: #B07548;
+}
+
+/* line 11, app/assets/stylesheets/breadcrumbs.scss */
 .bread-element-item {
   font-weight: bold;
   font-size: 13px;
+  color: #B07548;
 }
 
-/* line 10, app/assets/stylesheets/breadcrumbs.scss */
+/* line 16, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item a {
+  color: #B07548;
+}
+
+/* line 20, app/assets/stylesheets/breadcrumbs.scss */
 .bread-element-item:before {
   content: " > ";
 }
@@ -1650,7 +1696,7 @@ trix-editor .attachment__metadata {
 .flex-parent-container {
   display: flex;
   width: 100%;
-  background-color: #ada397;
+  background-color: #e1cdb4;
 }
 
 /* line 36, app/assets/stylesheets/custom.scss */
@@ -1686,7 +1732,7 @@ trix-editor .attachment__metadata {
 /* line 63, app/assets/stylesheets/custom.scss */
 .sticky {
   position: fixed;
-  background-color: #ada397;
+  background-color: #e1cdb4;
   width: 100%;
 }
 
@@ -1762,54 +1808,74 @@ trix-editor .attachment__metadata {
   table-layout: fixed;
 }
 
-/* line 131, app/assets/stylesheets/custom.scss */
+/* line 134, app/assets/stylesheets/custom.scss */
+.table thead tr th {
+  background-color: #BFA48F;
+}
+
+/* line 141, app/assets/stylesheets/custom.scss */
 .custom-post-badge {
   background-color: darkred !important;
 }
 
-/* line 135, app/assets/stylesheets/custom.scss */
-.pagination-admin {
-  background-color: #ada397;
-}
-
-/* line 139, app/assets/stylesheets/custom.scss */
-.pagination-admin li a {
-  background-color: #d6cbd3 !important;
-}
-
 /* line 145, app/assets/stylesheets/custom.scss */
+.pagination-admin {
+  background-color: #e1cdb4;
+}
+
+/* line 149, app/assets/stylesheets/custom.scss */
+.pagination-admin li a {
+  background-color: #e1cdb4 !important;
+}
+
+/* line 155, app/assets/stylesheets/custom.scss */
 .pagination-admin li.active a {
-  background-color: #bdcebe !important;
+  background-color: #eca1a6 !important;
   color: #212529 !important;
 }
 
-/* line 152, app/assets/stylesheets/custom.scss */
+/* line 162, app/assets/stylesheets/custom.scss */
 .pagination {
   margin: auto;
 }
 
-/* line 156, app/assets/stylesheets/custom.scss */
+/* line 166, app/assets/stylesheets/custom.scss */
 .errors {
   color: darkred;
   font-size: 13px;
 }
 
-/* line 160, app/assets/stylesheets/custom.scss */
+/* line 170, app/assets/stylesheets/custom.scss */
 .errors p {
   margin: 0;
 }
 
-/* line 165, app/assets/stylesheets/custom.scss */
+/* line 175, app/assets/stylesheets/custom.scss */
 .ml-1 {
   margin-left: 5px;
 }
 
+/* line 179, app/assets/stylesheets/custom.scss */
+.admin-title {
+  color: #B07548;
+}
+
+/* line 183, app/assets/stylesheets/custom.scss */
+.btn, .btn-primary, .btn-light {
+  color: #664227;
+}
+
+/* line 186, app/assets/stylesheets/custom.scss */
+.btn input, .btn-primary input, .btn-light input {
+  color: #664227;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 170, app/assets/stylesheets/custom.scss */
+  /* line 192, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 175, app/assets/stylesheets/custom.scss */
+  /* line 197, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;
@@ -1838,7 +1904,7 @@ trix-editor .attachment__metadata {
   margin-right: 20px;
   padding: 0;
   width: 200px;
-  background-color: #ada397;
+  background-color: #f9dfc1;
   display: inline-block;
   height: 100vh;
   overflow: auto;
@@ -1868,7 +1934,7 @@ trix-editor .attachment__metadata {
 /* Links on mouse-over */
 /* line 31, app/assets/stylesheets/sidebar.scss */
 .sidebar a:hover:not(.active) {
-  background-color: #c5bbc3;
+  background-color: #e1cdb4;
   color: #212529;
 }
 
@@ -4327,7 +4393,7 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #ada397;
+  background-color: #e1cdb4;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   -webkit-appearance: none;
@@ -4357,8 +4423,8 @@ progress {
 /* line 2213, app/assets/stylesheets/simple_bootstrap.scss */
 .form-control:focus {
   color: #212529;
-  background-color: #d6cbd3;
-  border-color: #d6cbd3;
+  background-color: #eca1a6;
+  border-color: #eca1a6;
   outline: 0;
 }
 
@@ -5378,42 +5444,42 @@ textarea.form-control-lg {
 /* line 2996, app/assets/stylesheets/simple_bootstrap.scss */
 .btn-primary {
   color: #212529;
-  background-color: #d6cbd3;
-  border-color: #d6cbd3;
+  background-color: #eca1a6;
+  border-color: #eca1a6;
 }
 
 /* line 3001, app/assets/stylesheets/simple_bootstrap.scss */
 .btn-primary:hover {
   color: #212529;
-  background-color: #c5bbc3;
-  border-color: #c5bbc3;
+  background-color: #e1cdb4;
+  border-color: #e1cdb4;
 }
 
 /* line 3006, app/assets/stylesheets/simple_bootstrap.scss */
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #000;
-  background-color: #c5bbc3;
-  border-color: #c5bbc3;
-  box-shadow: 0 0 0 0.25rem #c5bbc3;
+  background-color: #e1cdb4;
+  border-color: #e1cdb4;
+  box-shadow: 0 0 0 0.25rem #e1cdb4;
 }
 
 /* line 3012, app/assets/stylesheets/simple_bootstrap.scss */
 .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
   color: #000;
-  background-color: #c5bbc3;
-  border-color: #c5bbc3;
+  background-color: #e1cdb4;
+  border-color: #e1cdb4;
 }
 
 /* line 3017, app/assets/stylesheets/simple_bootstrap.scss */
 .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem #c5bbc3;
+  box-shadow: 0 0 0 0.25rem #e1cdb4;
 }
 
 /* line 3020, app/assets/stylesheets/simple_bootstrap.scss */
 .btn-primary:disabled, .btn-primary.disabled {
   color: #000;
-  background-color: #c5bbc3;
-  border-color: #c5bbc3;
+  background-color: #e1cdb4;
+  border-color: #e1cdb4;
 }
 
 /* line 3026, app/assets/stylesheets/simple_bootstrap.scss */

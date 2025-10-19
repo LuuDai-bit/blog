@@ -1,0 +1,28 @@
+/* line 1, app/assets/stylesheets/breadcrumbs.scss */
+.bread-root-item {
+  font-weight: bold;
+  font-size: 13px;
+  color: #B07548;
+}
+
+/* line 6, app/assets/stylesheets/breadcrumbs.scss */
+.bread-root-item a {
+  color: #B07548;
+}
+
+/* line 11, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item {
+  font-weight: bold;
+  font-size: 13px;
+  color: #B07548;
+}
+
+/* line 16, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item a {
+  color: #B07548;
+}
+
+/* line 20, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item:before {
+  content: " > ";
+}

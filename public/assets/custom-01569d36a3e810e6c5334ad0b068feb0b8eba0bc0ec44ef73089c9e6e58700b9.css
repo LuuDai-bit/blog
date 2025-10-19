@@ -195,12 +195,27 @@
   margin-left: 5px;
 }
 
+/* line 179, app/assets/stylesheets/custom.scss */
+.admin-title {
+  color: #B07548;
+}
+
+/* line 183, app/assets/stylesheets/custom.scss */
+.btn, .btn-primary, .btn-light {
+  color: #664227;
+}
+
+/* line 186, app/assets/stylesheets/custom.scss */
+.btn input, .btn-primary input, .btn-light input {
+  color: #664227;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 180, app/assets/stylesheets/custom.scss */
+  /* line 192, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 185, app/assets/stylesheets/custom.scss */
+  /* line 197, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;

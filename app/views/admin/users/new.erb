@@ -1,6 +1,6 @@
 <%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'New user', url: '#'}] } %>
 
-<h1>Create New User</h1>
+<h1 class="admin-title">Create New User</h1>
 
 <%= form_with url: admin_users_path, method: :post, scope: :user do |form| %>
   <div class="form-group">

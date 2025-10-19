@@ -1,11 +1,21 @@
 .bread-root-item {
   font-weight: bold;
   font-size: 13px;
+  color: #B07548;
+
+  a {
+    color: #B07548;
+  }
 }
 
 .bread-element-item {
   font-weight: bold;
   font-size: 13px;
+  color: #B07548;
+
+  a {
+    color: #B07548;
+  }
 
   &:before {
     content: " > ";

@@ -911,12 +911,32 @@ trix-editor .attachment__metadata .attachment__size {
   margin-left: 5px;
 }
 
+/* line 179, app/assets/stylesheets/custom.scss */
+.admin-title {
+  color: #B07548;
+}
+
+/* line 183, app/assets/stylesheets/custom.scss */
+.btn, .btn-primary, .btn-light {
+  color: #664227 !important;
+}
+
+/* line 186, app/assets/stylesheets/custom.scss */
+.btn input, .btn-primary input, .btn-light input {
+  color: #664227 !important;
+}
+
+/* line 191, app/assets/stylesheets/custom.scss */
+.form-control {
+  border: 1px solid #e8edf2;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 180, app/assets/stylesheets/custom.scss */
+  /* line 196, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 185, app/assets/stylesheets/custom.scss */
+  /* line 201, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;
@@ -945,58 +965,59 @@ trix-editor .attachment__metadata .attachment__size {
 .btn .badge {
   position: relative;
   top: -1px;
+  color: #664227 !important;
 }
 
-/* line 25, app/assets/stylesheets/badge.scss */
+/* line 26, app/assets/stylesheets/badge.scss */
 .badge-pill {
   padding-right: 0.6em;
   padding-left: 0.6em;
   border-radius: 10rem;
 }
 
-/* line 31, app/assets/stylesheets/badge.scss */
+/* line 32, app/assets/stylesheets/badge.scss */
 .badge-primary {
   color: #fff;
   background-color: #007bff;
 }
 
-/* line 36, app/assets/stylesheets/badge.scss */
+/* line 37, app/assets/stylesheets/badge.scss */
 .badge-secondary {
-  color: #212529;
+  color: #664227;
   background-color: #e0e2e4;
 }
 
-/* line 41, app/assets/stylesheets/badge.scss */
+/* line 42, app/assets/stylesheets/badge.scss */
 .badge-success {
-  color: #212529;
+  color: #664227;
   background-color: #eca1a6;
 }
 
-/* line 46, app/assets/stylesheets/badge.scss */
+/* line 47, app/assets/stylesheets/badge.scss */
 .badge-danger {
   color: #fff;
   background-color: #dc3545;
 }
 
-/* line 51, app/assets/stylesheets/badge.scss */
+/* line 52, app/assets/stylesheets/badge.scss */
 .badge-warning {
   color: var(--bs-gray-900);
   background-color: #ffc107;
 }
 
-/* line 56, app/assets/stylesheets/badge.scss */
+/* line 57, app/assets/stylesheets/badge.scss */
 .badge-info {
   color: #fff;
   background-color: #17a2b8;
 }
 
-/* line 61, app/assets/stylesheets/badge.scss */
+/* line 62, app/assets/stylesheets/badge.scss */
 .badge-light {
   color: var(--bs-gray-900);
   background-color: #f8f9fa;
 }
 
-/* line 66, app/assets/stylesheets/badge.scss */
+/* line 67, app/assets/stylesheets/badge.scss */
 .badge-dark {
   color: #fff;
   background-color: #343a40;
@@ -1006,15 +1027,27 @@ trix-editor .attachment__metadata .attachment__size {
 .bread-root-item {
   font-weight: bold;
   font-size: 13px;
+  color: #B07548;
 }
 
 /* line 6, app/assets/stylesheets/breadcrumbs.scss */
+.bread-root-item a {
+  color: #B07548;
+}
+
+/* line 11, app/assets/stylesheets/breadcrumbs.scss */
 .bread-element-item {
   font-weight: bold;
   font-size: 13px;
+  color: #B07548;
 }
 
-/* line 10, app/assets/stylesheets/breadcrumbs.scss */
+/* line 16, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item a {
+  color: #B07548;
+}
+
+/* line 20, app/assets/stylesheets/breadcrumbs.scss */
 .bread-element-item:before {
   content: " > ";
 }
@@ -1032,7 +1065,7 @@ trix-editor .attachment__metadata .attachment__size {
 .category-add-btn {
   position: relative;
   top: 4px;
-  border: 1px solid #0085A1;
+  border: 1px solid #664227;
   padding: 7px;
   right: 76px;
 }
@@ -1545,58 +1578,59 @@ trix-editor .attachment__metadata {
 .btn .badge {
   position: relative;
   top: -1px;
+  color: #664227 !important;
 }
 
-/* line 25, app/assets/stylesheets/badge.scss */
+/* line 26, app/assets/stylesheets/badge.scss */
 .badge-pill {
   padding-right: 0.6em;
   padding-left: 0.6em;
   border-radius: 10rem;
 }
 
-/* line 31, app/assets/stylesheets/badge.scss */
+/* line 32, app/assets/stylesheets/badge.scss */
 .badge-primary {
   color: #fff;
   background-color: #007bff;
 }
 
-/* line 36, app/assets/stylesheets/badge.scss */
+/* line 37, app/assets/stylesheets/badge.scss */
 .badge-secondary {
-  color: #212529;
+  color: #664227;
   background-color: #e0e2e4;
 }
 
-/* line 41, app/assets/stylesheets/badge.scss */
+/* line 42, app/assets/stylesheets/badge.scss */
 .badge-success {
-  color: #212529;
+  color: #664227;
   background-color: #eca1a6;
 }
 
-/* line 46, app/assets/stylesheets/badge.scss */
+/* line 47, app/assets/stylesheets/badge.scss */
 .badge-danger {
   color: #fff;
   background-color: #dc3545;
 }
 
-/* line 51, app/assets/stylesheets/badge.scss */
+/* line 52, app/assets/stylesheets/badge.scss */
 .badge-warning {
   color: var(--bs-gray-900);
   background-color: #ffc107;
 }
 
-/* line 56, app/assets/stylesheets/badge.scss */
+/* line 57, app/assets/stylesheets/badge.scss */
 .badge-info {
   color: #fff;
   background-color: #17a2b8;
 }
 
-/* line 61, app/assets/stylesheets/badge.scss */
+/* line 62, app/assets/stylesheets/badge.scss */
 .badge-light {
   color: var(--bs-gray-900);
   background-color: #f8f9fa;
 }
 
-/* line 66, app/assets/stylesheets/badge.scss */
+/* line 67, app/assets/stylesheets/badge.scss */
 .badge-dark {
   color: #fff;
   background-color: #343a40;
@@ -1605,15 +1639,27 @@ trix-editor .attachment__metadata {
 .bread-root-item {
   font-weight: bold;
   font-size: 13px;
+  color: #B07548;
 }
 
 /* line 6, app/assets/stylesheets/breadcrumbs.scss */
+.bread-root-item a {
+  color: #B07548;
+}
+
+/* line 11, app/assets/stylesheets/breadcrumbs.scss */
 .bread-element-item {
   font-weight: bold;
   font-size: 13px;
+  color: #B07548;
 }
 
-/* line 10, app/assets/stylesheets/breadcrumbs.scss */
+/* line 16, app/assets/stylesheets/breadcrumbs.scss */
+.bread-element-item a {
+  color: #B07548;
+}
+
+/* line 20, app/assets/stylesheets/breadcrumbs.scss */
 .bread-element-item:before {
   content: " > ";
 }
@@ -1814,12 +1860,32 @@ trix-editor .attachment__metadata {
   margin-left: 5px;
 }
 
+/* line 179, app/assets/stylesheets/custom.scss */
+.admin-title {
+  color: #B07548;
+}
+
+/* line 183, app/assets/stylesheets/custom.scss */
+.btn, .btn-primary, .btn-light {
+  color: #664227 !important;
+}
+
+/* line 186, app/assets/stylesheets/custom.scss */
+.btn input, .btn-primary input, .btn-light input {
+  color: #664227 !important;
+}
+
+/* line 191, app/assets/stylesheets/custom.scss */
+.form-control {
+  border: 1px solid #e8edf2;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 180, app/assets/stylesheets/custom.scss */
+  /* line 196, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 185, app/assets/stylesheets/custom.scss */
+  /* line 201, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;
@@ -15065,7 +15131,7 @@ trix-toolbar {
 .category-add-btn {
   position: relative;
   top: 4px;
-  border: 1px solid #0085A1;
+  border: 1px solid #664227;
   padding: 7px;
   right: 76px;
 }
@@ -15189,12 +15255,12 @@ trix-toolbar {
 #toast-container > div {
 	background-position: 15px center;
 	background-repeat: no-repeat;
-	-moz-border-radius: 3px 3px 3px 3px; 
-	-webkit-border-radius: 3px 3px 3px 3px; 
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
 	border-radius: 3px 3px 3px 3px;
-	-moz-box-shadow: 0 0 12px #999999; 
-	-webkit-box-shadow: 0 0 12px #999999; 
-	-o-box-shadow: 0 0 12px #999999; 
+	-moz-box-shadow: 0 0 12px #999999;
+	-webkit-box-shadow: 0 0 12px #999999;
+	-o-box-shadow: 0 0 12px #999999;
 	box-shadow: 0 0 12px #999999;
 	color: #FFFFFF;
 	margin: 0 0 6px;
@@ -15230,9 +15296,9 @@ trix-toolbar {
 }
 
 #toast-container > :hover {
-	-moz-box-shadow: 0 0 12px #000000; 
-	-webkit-box-shadow: 0 0 12px #000000; 
-	-o-box-shadow: 0 0 12px #000000; 
+	-moz-box-shadow: 0 0 12px #000000;
+	-webkit-box-shadow: 0 0 12px #000000;
+	-o-box-shadow: 0 0 12px #000000;
 	box-shadow: 0 0 12px #000000;
 	filter: alpha(opacity=100);
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";

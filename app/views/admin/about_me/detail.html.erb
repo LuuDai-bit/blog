@@ -1,6 +1,6 @@
 <%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'About me', url: '#'}] } %>
 
-<h1>Edit About me</h1>
+<h1 class="admin-title">Edit About me</h1>
 
 <%= form_with url: admin_about_me_path(@about_me),
               method: :patch,

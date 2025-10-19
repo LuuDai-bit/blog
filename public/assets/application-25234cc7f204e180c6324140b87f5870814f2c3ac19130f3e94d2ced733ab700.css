@@ -962,13 +962,13 @@ trix-editor .attachment__metadata .attachment__size {
 
 /* line 36, app/assets/stylesheets/badge.scss */
 .badge-secondary {
-  color: #212529;
+  color: #664227;
   background-color: #e0e2e4;
 }
 
 /* line 41, app/assets/stylesheets/badge.scss */
 .badge-success {
-  color: #212529;
+  color: #664227;
   background-color: #eca1a6;
 }
 
@@ -1032,7 +1032,7 @@ trix-editor .attachment__metadata .attachment__size {
 .category-add-btn {
   position: relative;
   top: 4px;
-  border: 1px solid #0085A1;
+  border: 1px solid #664227;
   padding: 7px;
   right: 76px;
 }
@@ -1562,13 +1562,13 @@ trix-editor .attachment__metadata {
 
 /* line 36, app/assets/stylesheets/badge.scss */
 .badge-secondary {
-  color: #212529;
+  color: #664227;
   background-color: #e0e2e4;
 }
 
 /* line 41, app/assets/stylesheets/badge.scss */
 .badge-success {
-  color: #212529;
+  color: #664227;
   background-color: #eca1a6;
 }
 
@@ -15064,7 +15064,7 @@ trix-editor .attachment {
 .category-add-btn {
   position: relative;
   top: 4px;
-  border: 1px solid #0085A1;
+  border: 1px solid #664227;
   padding: 7px;
   right: 76px;
 }
@@ -15188,12 +15188,12 @@ trix-editor .attachment {
 #toast-container > div {
 	background-position: 15px center;
 	background-repeat: no-repeat;
-	-moz-border-radius: 3px 3px 3px 3px; 
-	-webkit-border-radius: 3px 3px 3px 3px; 
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
 	border-radius: 3px 3px 3px 3px;
-	-moz-box-shadow: 0 0 12px #999999; 
-	-webkit-box-shadow: 0 0 12px #999999; 
-	-o-box-shadow: 0 0 12px #999999; 
+	-moz-box-shadow: 0 0 12px #999999;
+	-webkit-box-shadow: 0 0 12px #999999;
+	-o-box-shadow: 0 0 12px #999999;
 	box-shadow: 0 0 12px #999999;
 	color: #FFFFFF;
 	margin: 0 0 6px;
@@ -15229,9 +15229,9 @@ trix-editor .attachment {
 }
 
 #toast-container > :hover {
-	-moz-box-shadow: 0 0 12px #000000; 
-	-webkit-box-shadow: 0 0 12px #000000; 
-	-o-box-shadow: 0 0 12px #000000; 
+	-moz-box-shadow: 0 0 12px #000000;
+	-webkit-box-shadow: 0 0 12px #000000;
+	-o-box-shadow: 0 0 12px #000000;
 	box-shadow: 0 0 12px #000000;
 	filter: alpha(opacity=100);
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
