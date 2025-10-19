@@ -18,7 +18,7 @@ class Admin::PostsController < Admin::AdminController
     @post = ::Admin::PostForm.new(post_params)
 
     if @post.save
-      flash.now[:notice] = 'Post created'
+      flash[:notice] = 'Post created'
       redirect_to admin_posts_path
     else
       flash.now[:alert] = 'Post create failed'
@@ -31,7 +31,7 @@ class Admin::PostsController < Admin::AdminController
   def update
     @post = ::Admin::PostForm.new(post_params.merge(id: params[:id]))
     if @post.save
-      flash.now[:notice] = 'Post updated'
+      flash[:notice] = 'Post updated'
       respond_to do |format|
         format.html { redirect_to admin_posts_path }
         format.json { render json: { message: 'OK' } }

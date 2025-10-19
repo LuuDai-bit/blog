@@ -14,7 +14,7 @@ class Admin::RemindersController < Admin::AdminController
     @reminder.user_reminders.build(user_id: current_user.id)
 
     if @reminder.save
-      flash.now[:notice] = 'Reminder created'
+      flash[:notice] = 'Reminder created'
       redirect_to admin_reminders_path
     else
       flash.now[:alert] = 'Reminder create failed'
@@ -27,7 +27,7 @@ class Admin::RemindersController < Admin::AdminController
 
   def update
     if @reminder.update(reminder_params)
-      flash.now[:notice] = 'Reminder updated'
+      flash[:notice] = 'Reminder updated'
       redirect_to admin_reminders_path
     else
       flash.now[:alert] = 'Reminder update failed'

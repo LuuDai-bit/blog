@@ -4,7 +4,7 @@ class Admin::PasswordsController < Admin::AdminController
   def update
     @user = ::Admin::PasswordForm.new(password_params.merge(id: params[:id]))
     if @user.save
-      flash.now[:notice] = 'Password updated'
+      flash[:notice] = 'Password updated'
       redirect_to admin_posts_path
     else
       flash.now[:alert] = 'Password update failed'
