@@ -13,20 +13,20 @@ class Admin::AnnouncementsController < Admin::AdminController
     @announcement = current_user.announcements.new(announcement_params)
 
     if @announcement.save
-      flash[:notice] = 'Announcement created'
+      flash.now[:notice] = 'Announcement created'
       redirect_to admin_announcements_path
     else
-      flash[:alert] = 'Announcement create failed'
+      flash.now[:alert] = 'Announcement create failed'
       render :new
     end
   end
 
   def update
     if @announcement.update(announcement_params)
-      flash[:notice] = 'Announcement updated'
+      flash.now[:notice] = 'Announcement updated'
       redirect_to admin_announcements_path
     else
-      flash[:alert] = 'Announcement update failed'
+      flash.now[:alert] = 'Announcement update failed'
     end
   end
 

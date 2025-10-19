@@ -18,10 +18,10 @@ class Admin::PostsController < Admin::AdminController
     @post = ::Admin::PostForm.new(post_params)
 
     if @post.save
-      flash[:notice] = 'Post created'
+      flash.now[:notice] = 'Post created'
       redirect_to admin_posts_path
     else
-      flash[:alert] = 'Post create failed'
+      flash.now[:alert] = 'Post create failed'
       render :new
     end
   end
@@ -31,7 +31,7 @@ class Admin::PostsController < Admin::AdminController
   def update
     @post = ::Admin::PostForm.new(post_params.merge(id: params[:id]))
     if @post.save
-      flash[:notice] = 'Post updated'
+      flash.now[:notice] = 'Post updated'
       respond_to do |format|
         format.html { redirect_to admin_posts_path }
         format.json { render json: { message: 'OK' } }
@@ -39,7 +39,7 @@ class Admin::PostsController < Admin::AdminController
     else
       respond_to do |format|
         format.html do
-          flash[:alert] = 'Post update failed'
+          flash.now[:alert] = 'Post update failed'
           render :edit
         end
         format.json { render json: { message: 'Failed' }, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class Admin::PostsController < Admin::AdminController
     if @post.destroy
       redirect_to admin_posts_path
     else
-      flash[:alert] = 'Post destroy failed'
+      flash.now[:alert] = 'Post destroy failed'
       render :index
     end
 

@@ -14,10 +14,10 @@ class Admin::RemindersController < Admin::AdminController
     @reminder.user_reminders.build(user_id: current_user.id)
 
     if @reminder.save
-      flash[:notice] = 'Reminder created'
+      flash.now[:notice] = 'Reminder created'
       redirect_to admin_reminders_path
     else
-      flash[:alert] = 'Reminder create failed'
+      flash.now[:alert] = 'Reminder create failed'
       render :new
     end
   end
@@ -27,10 +27,10 @@ class Admin::RemindersController < Admin::AdminController
 
   def update
     if @reminder.update(reminder_params)
-      flash[:notice] = 'Reminder updated'
+      flash.now[:notice] = 'Reminder updated'
       redirect_to admin_reminders_path
     else
-      flash[:alert] = 'Reminder update failed'
+      flash.now[:alert] = 'Reminder update failed'
       render :edit
     end
   end
@@ -39,7 +39,7 @@ class Admin::RemindersController < Admin::AdminController
     if @reminder.destroy
       redirect_to admin_reminders_path
     else
-      flash[:alert] = 'Reminder destroy failed'
+      flash.now[:alert] = 'Reminder destroy failed'
       render :index
     end
   end

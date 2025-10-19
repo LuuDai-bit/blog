@@ -5,10 +5,10 @@ class Admin::AboutMeController < Admin::AdminController
 
   def update
     if @about_me.update(about_me_params)
-      flash[:notice] = 'Announcement created'
+      flash.now[:notice] = 'Announcement created'
       render :detail
     else
-      flash[:alert] = 'Announcement create failed'
+      flash.now[:alert] = 'Announcement create failed'
       render :detail
     end
   end
