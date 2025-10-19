@@ -2,8 +2,9 @@ trix-editor {
   a {
     text-decoration: underline;
   }
+}
 
-  .attachment {
-    z-index: -1
-  }
+trix-toolbar {
+  z-index: 1;
+  position: relative;
 }
