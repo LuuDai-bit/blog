@@ -15,6 +15,8 @@ class SyncViewsToPostJob
     end
 
     redis.client.del(redis.post_views)
+
+    JobLog.create(job_name: self.class.name)
   end
 
   private

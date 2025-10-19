@@ -9,5 +9,7 @@ class ExecuteReminderJob
     SendReminderEmailService.run(reminder.title, reminder.content)
 
     reminder.destroy! if reminder.only_once
+
+    JobLog.create(job_name: self.class.name)
   end
 end

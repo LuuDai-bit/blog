@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
     resources :settings, only: :index
     resources :passwords, only: %i[edit update]
+    resources :job_logs, only: :index
   end
 
   get '/:locale' => 'user/posts#index'

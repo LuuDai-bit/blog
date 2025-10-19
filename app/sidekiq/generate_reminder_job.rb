@@ -16,5 +16,7 @@ class GenerateReminderJob
 
       ExecuteReminderJob.perform_at(execute_time, user_reminder.reminder_id, user_reminder.user_id)
     end
+
+    JobLog.create(job_name: self.class.name)
   end
 end
