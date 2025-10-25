@@ -15,7 +15,7 @@ module Blog
 
     config.i18n.available_locales = [:en, :vi]
 
-    config.i18n.default_locale = :vi
+    config.i18n.default_locale = :en
 
     # Configuration for the application, engines, and railties goes here.
     #
