@@ -24,6 +24,8 @@ vi:
     short_description_exp: Lập trình viên Ruby on Rails với 3 năm kinh nghiệm
     hobby: Thích đọc sách, viết blog, game
   contact:
+    contact: Liên hệ
+    description: Liên hệ mình qua
     email: Email
     github: Github
   activemodel:

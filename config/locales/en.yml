@@ -24,6 +24,8 @@ en:
     short_description_exp: Ruby Developer with 3 year of experiences
     hobby: I like reading books, writing blogs and playing games
   contact:
+    contact: Contact
+    description: Contact me via
     email: Email
     github: Github
   activemodel:
