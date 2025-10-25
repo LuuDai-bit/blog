@@ -6,5 +6,6 @@ class Admin::DashboardController < Admin::AdminController
     @server_cost = Statistic::CalculateServerCostService.run
     @access = Statistic::LogStatisticService.run
     @total_views = Post.pluck(:views).sum
+    @annually_posts_progress = Statistic::AnnuallyPostProgressService.run
   end
 end

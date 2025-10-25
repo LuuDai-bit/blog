@@ -30,32 +30,48 @@
   width: 70%;
   max-height: 98vh;
   overflow: auto;
+  min-height: 98vh;
 }
 
 /* line 30, app/assets/stylesheets/custom.scss */
+.admin-container .form-control {
+  border: 1px solid #BFA48F !important;
+}
+
+/* line 33, app/assets/stylesheets/custom.scss */
+.admin-container .form-control:focus {
+  border: 1px solid #eca1a6 !important;
+}
+
+/* line 38, app/assets/stylesheets/custom.scss */
+.admin-container label {
+  color: #664227 !important;
+}
+
+/* line 43, app/assets/stylesheets/custom.scss */
 .flex-parent-container {
   display: flex;
   width: 100%;
   background-color: #e1cdb4;
 }
 
-/* line 36, app/assets/stylesheets/custom.scss */
+/* line 49, app/assets/stylesheets/custom.scss */
 .input-group-35vw {
   width: 35vw !important;
 }
 
-/* line 41, app/assets/stylesheets/custom.scss */
+/* line 54, app/assets/stylesheets/custom.scss */
 .form-select-time {
   display: inline !important;
   width: 30% !important;
 }
 
-/* line 47, app/assets/stylesheets/custom.scss */
+/* line 60, app/assets/stylesheets/custom.scss */
 .form-group {
   margin-bottom: 5px;
 }
 
-/* line 51, app/assets/stylesheets/custom.scss */
+/* line 64, app/assets/stylesheets/custom.scss */
 .error-feedback {
   width: 100%;
   margin-top: 0.25rem;
@@ -63,20 +79,20 @@
   color: red;
 }
 
-/* line 58, app/assets/stylesheets/custom.scss */
+/* line 71, app/assets/stylesheets/custom.scss */
 .content-input {
   max-height: 70vh;
   overflow-y: scroll;
 }
 
-/* line 63, app/assets/stylesheets/custom.scss */
+/* line 76, app/assets/stylesheets/custom.scss */
 .sticky {
   position: fixed;
   background-color: #e1cdb4;
   width: 100%;
 }
 
-/* line 69, app/assets/stylesheets/custom.scss */
+/* line 82, app/assets/stylesheets/custom.scss */
 .small-announcement {
   color: #fff;
   font-size: 14px;
@@ -85,31 +101,31 @@
   margin-top: 1rem;
 }
 
-/* line 76, app/assets/stylesheets/custom.scss */
+/* line 89, app/assets/stylesheets/custom.scss */
 .small-announcement a {
   color: #fff;
 }
 
-/* line 81, app/assets/stylesheets/custom.scss */
+/* line 94, app/assets/stylesheets/custom.scss */
 .truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* line 87, app/assets/stylesheets/custom.scss */
+/* line 100, app/assets/stylesheets/custom.scss */
 .error-message {
   font-size: 15px;
   color: red;
   font-style: italic;
 }
 
-/* line 93, app/assets/stylesheets/custom.scss */
+/* line 106, app/assets/stylesheets/custom.scss */
 .mb-2rem {
   margin-bottom: 2rem;
 }
 
-/* line 97, app/assets/stylesheets/custom.scss */
+/* line 110, app/assets/stylesheets/custom.scss */
 .announcements-popup {
   font-size: 11px;
   margin: 0;
@@ -121,7 +137,7 @@
   display: inline-block;
 }
 
-/* line 108, app/assets/stylesheets/custom.scss */
+/* line 121, app/assets/stylesheets/custom.scss */
 .announcement-duration-option {
   display: 'inline-block';
   padding: 10px;
@@ -129,13 +145,13 @@
   margin: 1px;
 }
 
-/* line 115, app/assets/stylesheets/custom.scss */
+/* line 128, app/assets/stylesheets/custom.scss */
 .selected {
   background-color: #0085A1;
   color: #fff;
 }
 
-/* line 120, app/assets/stylesheets/custom.scss */
+/* line 133, app/assets/stylesheets/custom.scss */
 .text-truncate-2l {
   overflow: hidden;
   -webkit-line-clamp: 2;
@@ -143,79 +159,84 @@
   -webkit-box-orient: vertical;
 }
 
-/* line 127, app/assets/stylesheets/custom.scss */
+/* line 140, app/assets/stylesheets/custom.scss */
 .table-layout-fixed {
   table-layout: fixed;
 }
 
-/* line 134, app/assets/stylesheets/custom.scss */
+/* line 147, app/assets/stylesheets/custom.scss */
 .table thead tr th {
   background-color: #BFA48F;
 }
 
-/* line 141, app/assets/stylesheets/custom.scss */
+/* line 154, app/assets/stylesheets/custom.scss */
 .custom-post-badge {
   background-color: darkred !important;
 }
 
-/* line 145, app/assets/stylesheets/custom.scss */
+/* line 158, app/assets/stylesheets/custom.scss */
 .pagination-admin {
   background-color: #e1cdb4;
 }
 
-/* line 149, app/assets/stylesheets/custom.scss */
+/* line 162, app/assets/stylesheets/custom.scss */
 .pagination-admin li a {
   background-color: #e1cdb4 !important;
 }
 
-/* line 155, app/assets/stylesheets/custom.scss */
+/* line 168, app/assets/stylesheets/custom.scss */
 .pagination-admin li.active a {
   background-color: #eca1a6 !important;
   color: #212529 !important;
 }
 
-/* line 162, app/assets/stylesheets/custom.scss */
+/* line 175, app/assets/stylesheets/custom.scss */
 .pagination {
   margin: auto;
 }
 
-/* line 166, app/assets/stylesheets/custom.scss */
+/* line 179, app/assets/stylesheets/custom.scss */
 .errors {
   color: darkred;
   font-size: 13px;
 }
 
-/* line 170, app/assets/stylesheets/custom.scss */
+/* line 183, app/assets/stylesheets/custom.scss */
 .errors p {
   margin: 0;
 }
 
-/* line 175, app/assets/stylesheets/custom.scss */
+/* line 188, app/assets/stylesheets/custom.scss */
 .ml-1 {
   margin-left: 5px;
 }
 
-/* line 179, app/assets/stylesheets/custom.scss */
+/* line 192, app/assets/stylesheets/custom.scss */
 .admin-title {
   color: #B07548;
 }
 
-/* line 183, app/assets/stylesheets/custom.scss */
+/* line 196, app/assets/stylesheets/custom.scss */
 .btn, .btn-primary, .btn-light {
-  color: #664227;
+  color: #664227 !important;
 }
 
-/* line 186, app/assets/stylesheets/custom.scss */
+/* line 199, app/assets/stylesheets/custom.scss */
 .btn input, .btn-primary input, .btn-light input {
-  color: #664227;
+  color: #664227 !important;
+}
+
+/* line 204, app/assets/stylesheets/custom.scss */
+.progress_bar_gold {
+  background-color: #B07548 !important;
 }
 
 @media screen and (max-width: 1200px) {
-  /* line 192, app/assets/stylesheets/custom.scss */
+  /* line 209, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 197, app/assets/stylesheets/custom.scss */
+  /* line 214, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;

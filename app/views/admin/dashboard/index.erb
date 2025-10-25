@@ -3,7 +3,7 @@
 <h1 class="admin-title">Home</h1>
 
 <div class="dashboard-card">
-  <div class="statistic-title">
+  <div class="statistic-title admin-title">
     <span>Post per week</span>
   </div>
 
@@ -13,7 +13,7 @@
 </div>
 
 <div class="dashboard-card">
-  <div class="statistic-title">
+  <div class="statistic-title admin-title">
     <span>Post per month</span>
   </div>
 
@@ -23,7 +23,7 @@
 </div>
 
 <div class="dashboard-card">
-  <div class="statistic-title">
+  <div class="statistic-title admin-title">
     <span>Server Cost</span>
   </div>
 
@@ -35,7 +35,7 @@
 </br>
 
 <div class="dashboard-card">
-  <div class="statistic-title">
+  <div class="statistic-title admin-title">
     <span>Total Access Ip</span>
   </div>
 
@@ -45,7 +45,7 @@
 </div>
 
 <div class="dashboard-card">
-  <div class="statistic-title">
+  <div class="statistic-title admin-title">
     <span>Total Request</span>
   </div>
 
@@ -55,7 +55,7 @@
 </div>
 
 <div class="dashboard-card">
-  <div class="statistic-title">
+  <div class="statistic-title admin-title">
     <span>Highest Request</span>
   </div>
 
@@ -67,7 +67,7 @@
 </br>
 
 <div class="dashboard-card">
-  <div class="statistic-title">
+  <div class="statistic-title admin-title">
     <span>Total post views</span>
   </div>
 
@@ -76,4 +76,17 @@
   </div>
 </div>
 
-<p>All statistic is in current month</p>
+<div class="mt-5">
+  <div class="statistic-title admin-title">
+    <span>Annually Posts Progress</span>
+  </div>
+
+  <div class="progress-bar progress_bar_gold"
+       role="progressbar"
+       style="<%= 'width:' + @annually_posts_progress.to_s + '%;' %>"
+       aria-valuenow="<%= @annually_posts_progress %>"
+       aria-valuemin="0"
+       aria-valuemax="100">
+       <%= @annually_posts_progress.to_s + '%' %>
+  </div>
+</div>
