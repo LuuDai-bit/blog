@@ -122,18 +122,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_19_112333) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "original_timezone", default: 0
-    t.datetime "target_date", default: "2024-08-04 06:57:53", null: false
-  end
-
-  create_table "share_thoughts", force: :cascade do |t|
-    t.string "subject", null: false
-    t.json "content"
-    t.string "subject_en"
-    t.json "content_en"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_share_thoughts_on_user_id"
+    t.datetime "target_date", default: "2025-10-27 15:27:11", null: false
   end
 
   create_table "user_reminders", force: :cascade do |t|
@@ -179,7 +168,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_19_112333) do
   add_foreign_key "post_categories", "categories"
   add_foreign_key "post_categories", "posts"
   add_foreign_key "posts", "users"
-  add_foreign_key "share_thoughts", "users"
   add_foreign_key "user_reminders", "reminders"
   add_foreign_key "user_reminders", "users"
 end
