@@ -5,7 +5,7 @@ ruby '3.3.7'
 
 gem 'rails', '7.1.5.2'
 gem 'sqlite3', '~> 1.4'
-gem 'puma', '>= 5.6.8'
+gem 'puma', '>= 6.4.3'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
