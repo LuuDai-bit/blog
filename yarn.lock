@@ -1071,6 +1071,13 @@
   dependencies:
     spark-md5 "^3.0.0"
 
+"@rails/activestorage@^7.1.5.2":
+  version "7.1.502"
+  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-7.1.502.tgz#0b8f4a96f90fc8b0cda1e78d0de67dc216e9ca5a"
+  integrity sha512-GkVBhXCcjck/A0EoginDVLTXdqwkdQ+jhrE5UVtpvR6s9d0awk+YWa39qMlkv2V2pEb2JOGVdpqMVdNbQhsPOA==
+  dependencies:
+    spark-md5 "^3.0.1"
+
 "@rails/ujs@^6.0.0":
   version "6.1.710"
   resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-6.1.710.tgz#14cbf938c49985af51cca52d117f9c358ea4a579"
@@ -6800,7 +6807,7 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-spark-md5@^3.0.0:
+spark-md5@^3.0.0, spark-md5@^3.0.1:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/spark-md5/-/spark-md5-3.0.2.tgz#7952c4a30784347abcee73268e473b9c0167e3fc"
   integrity sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==
