@@ -19,7 +19,7 @@ gem 'aws-sdk-s3'
 gem 'aws-sdk-sns'
 gem 'config'
 gem 'whenever', require: false
-gem 'sidekiq', ">= 7.1.3"
+gem 'sidekiq', ">= 7.2.4"
 gem 'toastr-rails'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'

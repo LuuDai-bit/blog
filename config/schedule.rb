@@ -4,9 +4,9 @@ end
 
 set :enviroment, ENV["RAILS_ENV"]
 
-every 1.day, at: '00:00 am' do
-  runner 'GenerateReminderJob.perform_async'
-end
+# every 1.day, at: '00:00 am' do
+#   runner 'GenerateReminderJob.perform_async'
+# end
 
 every 1.day, at: '01:00 am' do
   runner 'SyncViewsToPostJob.perform_async'
