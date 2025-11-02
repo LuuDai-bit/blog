@@ -7,7 +7,7 @@ jobs:
   test-ruby:
     # Install gems, run rails tests
     docker:
-      - image: cimg/ruby:3.0.0-node
+      - image: cimg/ruby:3.3.7-node
         environment:
           - RAILS_ENV=test
       - image: circleci/postgres:9.5-alpine
