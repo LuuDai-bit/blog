@@ -2,7 +2,8 @@ class Admin::PostsController < Admin::AdminController
   before_action :load_post, only: %i[show edit update destroy]
 
   def index
-    @pagy, @posts = pagy(Post.order_by_status(params[:order_views])
+    @pagy, @posts = pagy(Post.by_type(params[:type])
+                             .order_by_status(params[:order_views])
                              .order_by_views(params[:order_views])
                              .by_subject(params[:search_text])
                              .includes(:author))
@@ -68,7 +69,7 @@ class Admin::PostsController < Admin::AdminController
 
   def post_params
     params.require(:post).permit(:subject, :subject_en, :content, :content_en,
-                                 :status, :categories)
+                                 :status, :categories, :type)
                          .merge(user_id: current_user.id)
   end
 end

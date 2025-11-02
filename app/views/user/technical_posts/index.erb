@@ -1,0 +1,52 @@
+<!-- Page Header-->
+<header class="masthead">
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="site-heading">
+          <h1><%= t('posts.title') %></h1>
+          <span class="subheading"><%= t('posts.description') %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Search input -->
+<div class="container px-4 px-lg-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7 mb-1" id="user-posts-filter">
+      <% if @filter_params.present? %>
+        <%= render partial: 'filter_preview', filter_params: @filter_params %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <%= render partial: 'search' %>
+  </div>
+</div>
+<!-- Announcement-->
+<div class="container px-4 px-lg-5 mb-3">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <% Announcement.active.last(Settings.models.announcement.views.max_display).each do |announcement| %>
+      <div class="col-lg-8 col-xl-7">
+        <span class="announcements-popup"><%= announcement.content %></span>
+      </div>
+    <% end %>
+  </div>
+</div>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7" id="user-posts">
+          <% unless @posts.blank? %>
+            <!-- Post preview-->
+            <%= render partial: :post, collection: @posts %>
+
+            <!-- Pager-->
+            <div class='d-flex justify-content-center' id="user-posts-paginate">
+              <%== pagy_bootstrap_nav(@pagy) %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+</div>

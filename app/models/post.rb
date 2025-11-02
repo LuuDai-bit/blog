@@ -51,7 +51,15 @@ class Post < ApplicationRecord
     where.not(subject_en: nil, subject_en: '') if I18n.locale == :en
   end
 
+  scope :by_type, ->(type) do 
+    where(type: type) if type.present?
+  end
+
   def english_version_available?
     subject_en.present?
+  end
+
+  def self.types 
+    %w(TechnicalPost IdleTalk)
   end
 end

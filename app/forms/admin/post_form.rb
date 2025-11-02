@@ -4,7 +4,7 @@ class Admin::PostForm
   # validate :max_number_of_categories
 
   attr_accessor :id, :subject, :subject_en, :content, :content_en, :categories,
-                :status, :user_id
+                :status, :user_id, :type
 
   validates :subject, presence: true, length: { minimun: 1, maximum: 255 }
 
@@ -60,7 +60,8 @@ class Admin::PostForm
       content: content,
       content_en: content_en,
       status: status,
-      user_id: user_id
+      user_id: user_id,
+      type: type
     }
   end
 

@@ -1,0 +1,3 @@
+$("#user-posts").html("<%= j render @posts %>");
+$("#user-posts-paginate").html("<%== j pagy_bootstrap_nav(@pagy) %>");
+$("#user-posts-filter").html("<%= j render 'filter_preview', filter_params: @filter_params %>")

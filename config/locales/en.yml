@@ -4,6 +4,7 @@ en:
   navbar:
     title: CodeDeHoc
     home: Home
+    idle_talk: Idle Talks
     about: "Who's this bitch?"
     contact: Contact
   posts:

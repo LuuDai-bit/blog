@@ -1,14 +1,14 @@
-class User::PostsController < User::UserController
+class User::IdleTalksController < User::UserController
   def index
-    @pagy, @posts = pagy(Post.status_publish
-                             .by_subject(filter_params[:search_text])
-                             .merge(Category.by_name(filter_params[:category_name]))
-                             .by_locale
-                             .order(release_date: :desc)
-                             .left_joins(:categories)
-                             .preload(:categories, :author)
-                             .distinct
-                    )
+    @pagy, @posts = pagy(IdleTalk.status_publish
+                                 .by_subject(filter_params[:search_text])
+                                 .merge(Category.by_name(filter_params[:category_name]))
+                                 .by_locale
+                                 .order(release_date: :desc)
+                                 .left_joins(:categories)
+                                 .preload(:categories, :author)
+                                 .distinct
+                        )
   end
 
   def show

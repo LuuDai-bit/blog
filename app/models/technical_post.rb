@@ -1,0 +1,2 @@
+class TechnicalPost < Post
+end
