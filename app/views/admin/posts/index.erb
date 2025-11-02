@@ -8,6 +8,7 @@
       <tr>
         <th class="col-md-4 text-center">Subject</th>
         <th class="col-md-1 text-center">Author</th>
+        <th class="col-md-1 text-center">Type</th>
         <th class="col-md-1 text-center">Status</th>
         <th class="col-md-1 text-center">English</th>
         <th class="col-md-1 text-center">
@@ -26,12 +27,12 @@
             <% end %>
           <% end %>
         </th>
-        <th class="col-md-2 text-center">Release date</th>
+        <th class="col-md-1 text-center">RD</th>
         <th class="col text-center">Action</th>
       </tr>
     </thead>
     <tbody id="admin-posts">
-      <%= render partial: :post, collection: @posts %>
+      <%= render partial: 'post', collection: @posts %>
     </tbody>
   </table>
   <div id="admin-posts-paginate" class="pagination-admin d-flex justify-content-center">

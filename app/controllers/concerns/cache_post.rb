@@ -1,17 +1,5 @@
-class User::PostsController < User::UserController
-  def index
-    @pagy, @posts = pagy(Post.status_publish
-                             .by_subject(filter_params[:search_text])
-                             .merge(Category.by_name(filter_params[:category_name]))
-                             .by_locale
-                             .order(release_date: :desc)
-                             .left_joins(:categories)
-                             .preload(:categories, :author)
-                             .distinct
-                    )
-  end
-
-  def show
+module CachePost
+  def cached_and_show
     cached_post = Blog::Cache::PostCache.new.fetch_post_cached(params[:id], I18n.locale)
     raise ActiveRecord::RecordNotFound if cached_post == 'No content'
 
@@ -26,11 +14,5 @@ class User::PostsController < User::UserController
 
     @post = cached_post
     Blog::Cache::PostCache.new.update_views(params[:id])
-  end
-
-  private
-
-  def filter_params
-    @filter_params ||= params.permit(:search_text, :category_name)
   end
 end

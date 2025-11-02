@@ -1,0 +1,25 @@
+<div class="post-preview">
+  <%= link_to user_idle_talk_path(idle_talk), class: "position-relative" do %>
+    <h3 class="post-title d-inline"><%= default_locale? ? idle_talk.subject : idle_talk.subject_en %>
+    </h3>
+  <% end %>
+  <div>
+    <% if idle_talk.release_date > Time.current.ago(7.days) %>
+      <span
+        class="user-category custom-post-badge"
+        title='<%= t('posts.new_post_title') %>'>
+          New
+      </span>
+    <% end %>
+    <% idle_talk.categories.sort_by(&:id).each do |category| %>
+      <%= link_to("#{category.name}", user_idle_talks_path(category_name: category.name), class: 'user-category', remote: true) %>
+    <% end %>
+  </div>
+  <p class="post-meta">
+    <%= t('posts.post_by') %>
+    <%= link_to 'Lưu Đại', about_path %>
+    <%= t('posts.at') %> <%= default_locale? ? format_datetime(idle_talk.release_date) : format_datetime(idle_talk.release_date, '%m-%d-%Y') %>
+  </p>
+</div>
+
+<hr class="my-4" />

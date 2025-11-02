@@ -18,14 +18,17 @@ Rails.application.routes.draw do
     resources :job_logs, only: :index
   end
 
-  get '/:locale' => 'user/posts#index'
+  get '/:locale' => 'user/technical_posts#index'
+  
   scope "(:locale)", locale: /en|vi/ do
-    root 'user/posts#index'
+    root 'user/technical_posts#index'
     get '/about', to: 'user/home#about'
     get '/contact', to: 'user/home#contact'
+    get '/idle_talks' => 'user/idle_talks#index'
 
     namespace :user do
-      resources :posts, only: %i[index show]
+      resources :technical_posts, only: %i[index show]
+      resources :idle_talks, only: %i[index show]
     end
   end
 end
