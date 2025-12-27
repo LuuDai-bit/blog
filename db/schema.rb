@@ -123,7 +123,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_02_082817) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "original_timezone", default: 0
-    t.datetime "target_date", default: "2025-10-27 15:27:11", null: false
+    t.datetime "target_date", default: "2025-12-27 05:32:24", null: false
   end
 
   create_table "user_reminders", force: :cascade do |t|
