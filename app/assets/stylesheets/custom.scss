@@ -205,6 +205,13 @@
   background-color: #B07548 !important;
 }
 
+.main-container {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
 @media screen and (max-width: 1200px) {
   .input-group-35vw{
     width: 100% !important;
