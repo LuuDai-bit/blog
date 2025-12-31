@@ -1,10 +1,10 @@
 <%= form_with url: admin_job_logs_path,
               method: :get,
               remote: true do |form| %>
-  <div class="input-group mb-3 input-group-35vw">
+  <div class="input-group input-group-35vw">
     <%= form.text_field :job_name, class: 'form-control', placeholder: 'Search' %>
     <div class="input-group-append">
-      <%= form.submit 'Search', class: 'btn btn-primary btn-without-margin' %>
+      <%= form.submit 'Search', class: 'btn btn-secondary btn-without-margin' %>
     </div>
   </div>
 <% end %>
