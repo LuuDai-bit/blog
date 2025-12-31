@@ -1,9 +1,0 @@
-/* line 2, app/assets/stylesheets/trix_editor.scss */
-trix-editor a {
-  text-decoration: underline;
-}
-
-/* line 6, app/assets/stylesheets/trix_editor.scss */
-trix-editor .attachment {
-  z-index: -1;
-}
