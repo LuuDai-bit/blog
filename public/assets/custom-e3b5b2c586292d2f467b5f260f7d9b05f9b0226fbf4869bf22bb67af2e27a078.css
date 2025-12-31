@@ -35,12 +35,12 @@
 
 /* line 30, app/assets/stylesheets/custom.scss */
 .admin-container .form-control {
-  border: 1px solid #BFA48F !important;
+  border: 1px solid inherit !important;
 }
 
 /* line 33, app/assets/stylesheets/custom.scss */
 .admin-container .form-control:focus {
-  border: 1px solid #eca1a6 !important;
+  border: 1px solid inherit !important;
 }
 
 /* line 38, app/assets/stylesheets/custom.scss */
