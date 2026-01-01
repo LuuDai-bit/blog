@@ -1,0 +1,15 @@
+/* line 1, app/assets/stylesheets/trix_editor.scss */
+trix-editor {
+  border-radius: 5px !important;
+}
+
+/* line 4, app/assets/stylesheets/trix_editor.scss */
+trix-editor a {
+  text-decoration: underline;
+}
+
+/* line 9, app/assets/stylesheets/trix_editor.scss */
+trix-toolbar {
+  z-index: 1;
+  position: relative;
+}

@@ -1,8 +1,10 @@
 <h1 class="admin-title">Edit post</h1>
 
-<%= form_with url: admin_post_path(@post),
-              method: :patch,
-              scope: :post,
-              data: { controller: 'emoji-picker' } do |form| %>
-  <%= render partial: 'form', locals: { form: form, post: @post, action: 'update' } %>
-<% end %>
+<div class="main-container">
+  <%= form_with url: admin_post_path(@post),
+                method: :patch,
+                scope: :post,
+                data: { controller: 'emoji-picker' } do |form| %>
+    <%= render partial: 'form', locals: { form: form, post: @post, action: 'update' } %>
+  <% end %>
+</div>

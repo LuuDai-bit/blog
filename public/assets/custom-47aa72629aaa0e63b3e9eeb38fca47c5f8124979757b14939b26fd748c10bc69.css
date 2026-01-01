@@ -36,42 +36,43 @@
 /* line 30, app/assets/stylesheets/custom.scss */
 .admin-container .form-control {
   border: 1px solid inherit !important;
+  border-radius: 5px;
 }
 
-/* line 33, app/assets/stylesheets/custom.scss */
+/* line 34, app/assets/stylesheets/custom.scss */
 .admin-container .form-control:focus {
   border: 1px solid inherit !important;
 }
 
-/* line 38, app/assets/stylesheets/custom.scss */
+/* line 39, app/assets/stylesheets/custom.scss */
 .admin-container label {
   color: #664227 !important;
 }
 
-/* line 43, app/assets/stylesheets/custom.scss */
+/* line 44, app/assets/stylesheets/custom.scss */
 .flex-parent-container {
   display: flex;
   width: 100%;
   background-color: #e1cdb4;
 }
 
-/* line 49, app/assets/stylesheets/custom.scss */
+/* line 50, app/assets/stylesheets/custom.scss */
 .input-group-35vw {
   width: 35vw !important;
 }
 
-/* line 54, app/assets/stylesheets/custom.scss */
+/* line 55, app/assets/stylesheets/custom.scss */
 .form-select-time {
   display: inline !important;
   width: 30% !important;
 }
 
-/* line 60, app/assets/stylesheets/custom.scss */
+/* line 61, app/assets/stylesheets/custom.scss */
 .form-group {
   margin-bottom: 5px;
 }
 
-/* line 64, app/assets/stylesheets/custom.scss */
+/* line 65, app/assets/stylesheets/custom.scss */
 .error-feedback {
   width: 100%;
   margin-top: 0.25rem;
@@ -79,20 +80,20 @@
   color: red;
 }
 
-/* line 71, app/assets/stylesheets/custom.scss */
+/* line 72, app/assets/stylesheets/custom.scss */
 .content-input {
   max-height: 70vh;
   overflow-y: scroll;
 }
 
-/* line 76, app/assets/stylesheets/custom.scss */
+/* line 77, app/assets/stylesheets/custom.scss */
 .sticky {
   position: fixed;
   background-color: #e1cdb4;
   width: 100%;
 }
 
-/* line 82, app/assets/stylesheets/custom.scss */
+/* line 83, app/assets/stylesheets/custom.scss */
 .small-announcement {
   color: #fff;
   font-size: 14px;
@@ -101,31 +102,31 @@
   margin-top: 1rem;
 }
 
-/* line 89, app/assets/stylesheets/custom.scss */
+/* line 90, app/assets/stylesheets/custom.scss */
 .small-announcement a {
   color: #fff;
 }
 
-/* line 94, app/assets/stylesheets/custom.scss */
+/* line 95, app/assets/stylesheets/custom.scss */
 .truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* line 100, app/assets/stylesheets/custom.scss */
+/* line 101, app/assets/stylesheets/custom.scss */
 .error-message {
   font-size: 15px;
   color: red;
   font-style: italic;
 }
 
-/* line 106, app/assets/stylesheets/custom.scss */
+/* line 107, app/assets/stylesheets/custom.scss */
 .mb-2rem {
   margin-bottom: 2rem;
 }
 
-/* line 110, app/assets/stylesheets/custom.scss */
+/* line 111, app/assets/stylesheets/custom.scss */
 .announcements-popup {
   font-size: 11px;
   margin: 0;
@@ -137,7 +138,7 @@
   display: inline-block;
 }
 
-/* line 121, app/assets/stylesheets/custom.scss */
+/* line 122, app/assets/stylesheets/custom.scss */
 .announcement-duration-option {
   display: 'inline-block';
   padding: 10px;
@@ -145,13 +146,13 @@
   margin: 1px;
 }
 
-/* line 128, app/assets/stylesheets/custom.scss */
+/* line 129, app/assets/stylesheets/custom.scss */
 .selected {
   background-color: #0085A1;
   color: #fff;
 }
 
-/* line 133, app/assets/stylesheets/custom.scss */
+/* line 134, app/assets/stylesheets/custom.scss */
 .text-truncate-2l {
   overflow: hidden;
   -webkit-line-clamp: 2;
@@ -159,74 +160,74 @@
   -webkit-box-orient: vertical;
 }
 
-/* line 140, app/assets/stylesheets/custom.scss */
+/* line 141, app/assets/stylesheets/custom.scss */
 .table-layout-fixed {
   table-layout: fixed;
 }
 
-/* line 147, app/assets/stylesheets/custom.scss */
+/* line 148, app/assets/stylesheets/custom.scss */
 .table thead tr th {
   background-color: #BFA48F;
 }
 
-/* line 154, app/assets/stylesheets/custom.scss */
+/* line 155, app/assets/stylesheets/custom.scss */
 .custom-post-badge {
   background-color: darkred !important;
 }
 
-/* line 160, app/assets/stylesheets/custom.scss */
+/* line 161, app/assets/stylesheets/custom.scss */
 .pagination-admin li a {
   background-color: #e1cdb4 !important;
 }
 
-/* line 166, app/assets/stylesheets/custom.scss */
+/* line 167, app/assets/stylesheets/custom.scss */
 .pagination-admin li.active a {
   background-color: #eca1a6 !important;
   color: #212529 !important;
 }
 
-/* line 173, app/assets/stylesheets/custom.scss */
+/* line 174, app/assets/stylesheets/custom.scss */
 .pagination {
   margin: auto;
 }
 
-/* line 177, app/assets/stylesheets/custom.scss */
+/* line 178, app/assets/stylesheets/custom.scss */
 .errors {
   color: darkred;
   font-size: 13px;
 }
 
-/* line 181, app/assets/stylesheets/custom.scss */
+/* line 182, app/assets/stylesheets/custom.scss */
 .errors p {
   margin: 0;
 }
 
-/* line 186, app/assets/stylesheets/custom.scss */
+/* line 187, app/assets/stylesheets/custom.scss */
 .ml-1 {
   margin-left: 5px;
 }
 
-/* line 190, app/assets/stylesheets/custom.scss */
+/* line 191, app/assets/stylesheets/custom.scss */
 .admin-title {
   color: #B07548;
 }
 
-/* line 194, app/assets/stylesheets/custom.scss */
+/* line 195, app/assets/stylesheets/custom.scss */
 .btn, .btn-primary, .btn-light {
   color: #664227 !important;
 }
 
-/* line 197, app/assets/stylesheets/custom.scss */
+/* line 198, app/assets/stylesheets/custom.scss */
 .btn input, .btn-primary input, .btn-light input {
   color: #664227 !important;
 }
 
-/* line 202, app/assets/stylesheets/custom.scss */
+/* line 203, app/assets/stylesheets/custom.scss */
 .progress_bar_gold {
   background-color: #B07548 !important;
 }
 
-/* line 206, app/assets/stylesheets/custom.scss */
+/* line 207, app/assets/stylesheets/custom.scss */
 .main-container {
   background: #fff4f4;
   border-radius: 8px;
@@ -235,11 +236,11 @@
 }
 
 @media screen and (max-width: 1200px) {
-  /* line 214, app/assets/stylesheets/custom.scss */
+  /* line 215, app/assets/stylesheets/custom.scss */
   .input-group-35vw {
     width: 100% !important;
   }
-  /* line 219, app/assets/stylesheets/custom.scss */
+  /* line 220, app/assets/stylesheets/custom.scss */
   .form-select-time {
     display: inline !important;
     width: 48% !important;

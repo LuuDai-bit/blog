@@ -14,6 +14,8 @@ import "../scripts/announcement.js"
 import "../scripts/auto_save.js"
 import "../scripts/password.js"
 import "../../assets/stylesheets/application"
+import "trix"
+import "@rails/actiontext"
 
 Rails.start()
 Turbolinks.start()
