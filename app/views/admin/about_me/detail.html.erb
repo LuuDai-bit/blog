@@ -2,29 +2,31 @@
 
 <h1 class="admin-title">Edit About me</h1>
 
-<%= form_with url: admin_about_me_path(@about_me),
-              method: :patch,
-              scope: :about_me do |form| %>
+<div class="main-container">
+  <%= form_with url: admin_about_me_path(@about_me),
+                method: :patch,
+                scope: :about_me do |form| %>
 
-  <div class="row">
-    <div class="form-group content-input col-6" id="trix-content-editor">
-      <%= form.label :content, 'Content', id: 'content-label' %>
-      <div>
-        <%= form.rich_text_area :content, class: 'min-vh-60', data: {
-          emoji_picker_target: "trixEditor", controller: "trix-toolbar"
-        } %>
+    <div class="row">
+      <div class="form-group content-input col-6" id="trix-content-editor">
+        <%= form.label :content, 'Content', id: 'content-label' %>
+        <div>
+          <%= form.rich_text_area :content, class: 'min-vh-60', data: {
+            emoji_picker_target: "trixEditor", controller: "trix-toolbar"
+          } %>
+        </div>
+      </div>
+
+      <div class="form-group content-input col-6" id="trix-content-editor-en">
+        <%= form.label :content_en, 'Content (English)', id: 'content-label-en' %>
+        <div>
+          <%= form.rich_text_area :content_en, class: 'min-vh-60', data: {
+            emoji_picker_target: "trixEditorEn", controller: "trix-toolbar"
+          } %>
+        </div>
       </div>
     </div>
 
-    <div class="form-group content-input col-6" id="trix-content-editor-en">
-      <%= form.label :content_en, 'Content (English)', id: 'content-label-en' %>
-      <div>
-        <%= form.rich_text_area :content_en, class: 'min-vh-60', data: {
-          emoji_picker_target: "trixEditorEn", controller: "trix-toolbar"
-        } %>
-      </div>
-    </div>
-  </div>
-
-  <%= form.submit('Save', class: 'btn btn-primary') %>
-<% end %>
+    <%= form.submit('Save', class: 'btn btn-primary') %>
+  <% end %>
+</div>

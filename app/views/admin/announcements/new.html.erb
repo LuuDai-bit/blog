@@ -1,9 +1,11 @@
 <%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'Announcements', url: admin_announcements_path}, {name: 'New Announcement', url: '#'}] } %>
 
-<h1>Create New Announcement</h1>
+<h1 class="admin-title">Create New Announcement</h1>
 
-<%= form_with url: admin_announcements_path,
-              method: :post,
-              scope: :announcement do |form| %>
-  <%= render partial: 'form', locals: { form: form, post: @annoucnement } %>
-<% end %>
+<div class="main-container">
+  <%= form_with url: admin_announcements_path,
+                method: :post,
+                scope: :announcement do |form| %>
+    <%= render partial: 'form', locals: { form: form, post: @annoucnement } %>
+  <% end %>
+</div>

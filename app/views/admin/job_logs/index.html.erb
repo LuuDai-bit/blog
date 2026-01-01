@@ -1,26 +1,29 @@
 <%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'Job Logs', url: '#'}] } %>
 
 <h1 class="admin-title">Job Logs</h1>
-<%= render partial: 'search' %>
-<% if @job_logs.present? %>
-  <table class="table table-hover table-layout-fixed w-100 mt-3 table-striped table-bordered">
-    <thead>
-      <tr>
-        <th class="col-md-1 text-center">Id</th>
-        <th class="col-md-4 text-center">Job name</th>
-        <th class="col-md-1 text-center">Created at</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render partial: :job_logs, collection: @job_logs %>
-    </tbody>
-  </table>
-  <div id="admin-posts-paginate" class="pagination-admin d-flex justify-content-center">
-    <%== pagy_bootstrap_nav(@pagy) %>
-  </div>
 
-<% else %>
-  <div class="mt-3 w-100 h-100vh text-center">
-    NO JOB LOGS
-  </div>
-<% end %>
+<div class="main-container">
+  <%= render partial: 'search' %>
+  <% if @job_logs.present? %>
+    <table class="table table-hover table-layout-fixed w-100 mt-3 table-striped table-bordered">
+      <thead>
+        <tr>
+          <th class="col-md-1 text-center">Id</th>
+          <th class="col-md-4 text-center">Job name</th>
+          <th class="col-md-1 text-center">Created at</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: :job_logs, collection: @job_logs %>
+      </tbody>
+    </table>
+    <div id="admin-posts-paginate" class="pagination-admin d-flex justify-content-center">
+      <%== pagy_bootstrap_nav(@pagy) %>
+    </div>
+
+  <% else %>
+    <div class="mt-3 w-100 h-100vh text-center">
+      NO JOB LOGS
+    </div>
+  <% end %>
+</div>

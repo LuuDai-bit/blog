@@ -2,8 +2,10 @@
 
 <h1>Create New Reminder</h1>
 
-<%= form_with url: admin_reminders_path,
-              method: :post,
-              scope: :reminder do |form| %>
-  <%= render partial: 'form', locals: { form: form } %>
-<% end %>
+<div class="main-container">
+  <%= form_with url: admin_reminders_path,
+                method: :post,
+                scope: :reminder do |form| %>
+    <%= render partial: 'form', locals: { form: form } %>
+  <% end %>
+</div>
