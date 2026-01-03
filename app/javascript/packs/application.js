@@ -18,6 +18,11 @@ import "../../assets/stylesheets/application"
 import "trix"
 import "@rails/actiontext"
 
+import $ from "jquery"
+window.$ = $
+window.jQuery = $
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

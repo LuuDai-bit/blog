@@ -1969,15 +1969,16 @@ trix-editor .attachment__metadata {
 /* line 1, app/assets/stylesheets/dashboard.scss */
 .dashboard-card {
   border: 1px solid #e6e6e6;
+  border-radius: 10px;
   width: 300px;
   height: 70px;
   text-align: center;
-  background-color: #f2f2f2;
+  background-color: #fff4f4;
   display: inline-block;
   margin-bottom: 5px;
 }
 
-/* line 10, app/assets/stylesheets/dashboard.scss */
+/* line 11, app/assets/stylesheets/dashboard.scss */
 .dashboard-card .statistic-title {
   font-weight: bold;
   font-size: 20px;
@@ -1988,7 +1989,7 @@ trix-editor .attachment__metadata {
 .sidebar {
   margin-right: 20px;
   padding: 0;
-  width: 200px;
+  width: 15%;
   background-color: #f9dfc1;
   display: inline-block;
   height: 100vh;
@@ -2003,21 +2004,23 @@ trix-editor .attachment__metadata {
 /* Sidebar links */
 /* line 17, app/assets/stylesheets/sidebar.scss */
 .sidebar a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #212529;
   padding: 16px;
   text-decoration: none;
 }
 
 /* Active/current link */
-/* line 25, app/assets/stylesheets/sidebar.scss */
+/* line 27, app/assets/stylesheets/sidebar.scss */
 .sidebar a.active {
   background-color: #eca1a6;
   color: #212529;
 }
 
 /* Links on mouse-over */
-/* line 31, app/assets/stylesheets/sidebar.scss */
+/* line 33, app/assets/stylesheets/sidebar.scss */
 .sidebar a:hover:not(.active) {
   background-color: #e1cdb4;
   color: #212529;
@@ -2025,28 +2028,44 @@ trix-editor .attachment__metadata {
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
-  /* line 38, app/assets/stylesheets/sidebar.scss */
-  .sidebarx {
-    width: 100%;
-    height: auto;
-    position: relative;
+  /* hide sidebar by default on small screens; toggled via JS */
+  /* line 41, app/assets/stylesheets/sidebar.scss */
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    z-index: 1050;
+    overflow-y: auto;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.12);
   }
-  /* line 43, app/assets/stylesheets/sidebar.scss */
-  .sidebarx a {
-    float: left;
+  /* line 53, app/assets/stylesheets/sidebar.scss */
+  .sidebar.open {
+    display: block;
   }
-  /* line 44, app/assets/stylesheets/sidebar.scss */
-  div.content {
+  /* hamburger toggle button */
+  /* line 56, app/assets/stylesheets/sidebar.scss */
+  .sidebar-toggle {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1100;
+    color: #212529;
+    font-size: 1.25rem;
+  }
+  /* line 65, app/assets/stylesheets/sidebar.scss */
+  .admin-container {
     margin-left: 0;
   }
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
-  /* line 49, app/assets/stylesheets/sidebar.scss */
-  .sidebarx a {
-    text-align: center;
-    float: none;
+  /* line 70, app/assets/stylesheets/sidebar.scss */
+  .sidebar a {
+    text-align: left;
   }
 }
 @charset "UTF-8";

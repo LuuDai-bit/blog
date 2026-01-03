@@ -1,20 +1,24 @@
 document.addEventListener('turbolinks:load', () => {
-  console.log('Sidebar script initializing')
-  const toggle = $('#sidebarToggle')
-  const sidebar = $('.sidebar')
-console.log('Sidebar elements:', $(toggle), $(sidebar))
+  const toggle = $('#sidebarToggle')[0]
+  const sidebar = $('.sidebar')[0]
+  const closeBtn = $('#sidebarClose')[0]
+
   if (!$(toggle) || !$(sidebar)) return
-console.log('Sidebar script loaded')
-  $(toggle).addEventListener('click', (e) => {
-    console.log('Toggling sidebar')
+
+  $(toggle).on('click', (e) => {
+    e.preventDefault()
+
     $(sidebar).css('display', 'block')
-    $(toggle).css('display', 'none')
+    $(toggle).addClass('d-none')
+    $(closeBtn).removeClass('d-none')
   })
 
   // Close sidebar when clicking outside on mobile
-  document.addEventListener('click', (e) => {
-    if (!sidebar.classList.contains('open')) return
-    if (e.target === toggle || sidebar.contains(e.target)) return
-    sidebar.classList.remove('open')
+  $(closeBtn).on('click', (e) => {
+    e.preventDefault()
+
+    $(sidebar).css('display', 'none')
+    $(toggle).removeClass('d-none')
+    $(closeBtn).addClass('d-none')
   })
 })
