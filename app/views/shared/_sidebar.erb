@@ -1,3 +1,7 @@
+<button id="sidebarToggle" class="sidebar-toggle d-md-none btn btn-link" aria-label="Toggle sidebar">
+  <%= icon 'menu', library: 'boxicons' %>
+</button>
+
 <div class="sidebar">
   <%= image_tag 'code-de-hoc-1.png', size: '200x70' %>
   <%= link_to admin_root_path, class: "#{'active' if current_page?(admin_root_path)}" do %>

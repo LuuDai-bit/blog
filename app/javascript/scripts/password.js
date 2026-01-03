@@ -4,6 +4,8 @@ document.addEventListener("turbolinks:load", function() {
   const savePasswordBtn = $('#save_password');
   let isPassed = false;
 
+  if (!userPassword || !userPasswordConfirmation || !savePasswordBtn) return;
+
   const clearErrors = () => {
     $('.errors').toArray().forEach((error) => $(error).empty());
   };
