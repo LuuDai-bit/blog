@@ -52,5 +52,17 @@
   <%= display_error @reminder, :minute, 'Minute' %>
 </div>
 
+<div class="form-group col-md-6">
+  <%= form.label :notification_type, 'Notification Type' %>
+  <%= form.collection_select :notification_type,
+                             Settings.models.reminder.notification_type.to_h.keys.map(&:to_s),
+                             :to_s,
+                             :humanize,
+                             {selected: @reminder.notification_type},
+                             class: 'form-select' %>
+
+  <%= display_error @reminder, :notification_type, 'Notification Type' %>
+</div>
+
 <%= form.submit('Save', class: 'btn btn-primary') %>
 <%= link_to('Cancel', admin_reminders_path, class: 'btn btn-secondary') %>

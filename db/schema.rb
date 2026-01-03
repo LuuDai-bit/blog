@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_11_02_082817) do
+ActiveRecord::Schema[7.1].define(version: 2026_01_03_085802) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -123,7 +123,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_02_082817) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "original_timezone", default: 0
-    t.datetime "target_date", default: "2025-12-27 05:32:24", null: false
+    t.datetime "target_date", default: "2026-01-02 09:05:15", null: false
+    t.string "notification_type", default: "email", null: false
   end
 
   create_table "user_reminders", force: :cascade do |t|
@@ -157,6 +158,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_02_082817) do
     t.string "unlock_token"
     t.datetime "locked_at", precision: nil
     t.string "phone_number", null: false
+    t.string "device_id", default: [], array: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

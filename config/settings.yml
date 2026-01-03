@@ -17,6 +17,10 @@ models:
       friday: 'Fri'
       saturday: 'Sat'
       sunday: 'Sun'
+    notification_type:
+      email: email
+      sms: sms
+      push: push
   post:
     statistic:
       post_per_week: post_per_week
