@@ -30,7 +30,9 @@
       </div>
     </div>
 
-    <%= form.submit('Save', class: 'btn btn-primary ml-1', id: 'save_password') %>
-    <%= link_to('Cancel', admin_settings_path, class: 'btn btn-secondary') %>
+    <div class="mt-2 d-flex flex-row-reverse">
+      <%= link_to('Cancel', admin_settings_path, class: 'btn btn-secondary') %>
+      <%= form.submit('Save', class: 'btn btn-primary me-2', id: 'save_password') %>
+    </div>
   <% end %>
 </div>

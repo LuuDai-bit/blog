@@ -13,9 +13,15 @@ import "../scripts/post.js"
 import "../scripts/announcement.js"
 import "../scripts/auto_save.js"
 import "../scripts/password.js"
+import "../scripts/sidebar.js"
 import "../../assets/stylesheets/application"
 import "trix"
 import "@rails/actiontext"
+
+import $ from "jquery"
+window.$ = $
+window.jQuery = $
+
 
 Rails.start()
 Turbolinks.start()
