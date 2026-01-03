@@ -1,34 +1,43 @@
 <div class="sidebar">
   <%= image_tag 'code-de-hoc-1.png', size: '200x70' %>
   <%= link_to admin_root_path, class: "#{'active' if current_page?(admin_root_path)}" do %>
-    <i class="bi bi-0-circle"></i>
+    <%= icon 'home', library: 'boxicons' %>
     Home
   <% end %>
   <%= link_to new_admin_user_path, class: "#{'active' if current_controller?('/admin/users')}" do %>
+    <%= icon 'user', library: 'boxicons' %>
     New User
   <% end %>
   <%= link_to admin_posts_path, class: "#{'active' if current_controller?('/admin/posts')}" do %>
+    <%= icon 'pencil', library: 'boxicons' %>
     Posts
   <% end %>
   <%= link_to admin_categories_path, class: "#{'active' if current_controller?('/admin/categories')}" do %>
+    <%= icon 'category', library: 'boxicons' %>
     Categories
   <% end %>
   <%= link_to admin_reminders_path, class: "#{'active' if current_controller?('/admin/reminders')}" do %>
+    <%= icon 'bell', library: 'boxicons' %>
     Reminds
   <% end %>
   <%= link_to admin_announcements_path, class: "#{'active' if current_controller?('/admin/announcements')}" do %>
+    <%= icon 'user-voice', library: 'boxicons' %>
     Announcements
   <% end %>
   <%= link_to detail_admin_about_me_index_path, class: "#{'active' if current_controller?('/admin/about_me')}" do %>
+    <%= icon 'info-circle', library: 'boxicons' %>
     About me
   <% end %>
   <%= link_to admin_settings_path, class: "#{'active' if current_controller?('/admin/settings') || current_controller?('/admin/passwords')}" do %>
+    <%= icon 'cog', library: 'boxicons' %>
     Settings
   <% end %>
   <%= link_to admin_job_logs_path, class: "#{'active' if current_controller?('/admin/job_logs')}" do %>
+    <%= icon 'file', library: 'boxicons' %>
     Job Logs
   <% end %>
   <%= link_to destroy_user_session_path, method: :delete, class: 'danger-action' do %>
+    <%= icon 'log-out', library: 'boxicons' %>
     Logout
   <% end %>
 </div>

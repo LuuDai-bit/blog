@@ -2,7 +2,7 @@
 .sidebar {
   margin-right: 20px;
   padding: 0;
-  width: 200px;
+  width: 15%;
   background-color: #f9dfc1;
   display: inline-block;
   height: 100vh;
@@ -15,7 +15,9 @@
 
 /* Sidebar links */
 .sidebar a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #212529;
   padding: 16px;
   text-decoration: none;
