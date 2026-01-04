@@ -1,3 +1,5 @@
+require 'notification_services/base'
+
 module NotificationServices
   class SNS < Base
     def send_notification(recipient, message)
