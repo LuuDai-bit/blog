@@ -1,0 +1,18 @@
+/* line 1, app/assets/stylesheets/dashboard.scss */
+.dashboard-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  width: 300px;
+  height: 70px;
+  text-align: center;
+  background-color: #fff4f4;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+/* line 11, app/assets/stylesheets/dashboard.scss */
+.dashboard-card .statistic-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}

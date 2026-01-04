@@ -52,5 +52,7 @@
   <%= display_error @reminder, :minute, 'Minute' %>
 </div>
 
-<%= form.submit('Save', class: 'btn btn-primary') %>
-<%= link_to('Cancel', admin_reminders_path, class: 'btn btn-secondary') %>
+<div class="mt-2 d-flex flex-row-reverse">
+  <%= link_to('Cancel', admin_reminders_path, class: 'btn btn-secondary') %>
+  <%= form.submit('Save', class: 'btn btn-primary me-2') %>
+</div>

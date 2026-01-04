@@ -2,7 +2,7 @@
 .sidebar {
   margin-right: 20px;
   padding: 0;
-  width: 200px;
+  width: 15%;
   background-color: #f9dfc1;
   display: inline-block;
   height: 100vh;
@@ -15,7 +15,9 @@
 
 /* Sidebar links */
 .sidebar a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #212529;
   padding: 16px;
   text-decoration: none;
@@ -35,19 +37,37 @@
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
-  .sidebarx {
-    width: 100%;
-    height: auto;
-    position: relative;
+  /* hide sidebar by default on small screens; toggled via JS */
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    z-index: 1050;
+    overflow-y: auto;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.12);
   }
-  .sidebarx a {float: left;}
-  div.content {margin-left: 0;}
+
+  .sidebar.open { display: block; }
+
+  /* hamburger toggle button */
+  .sidebar-toggle {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1100;
+    color: #212529;
+    font-size: 1.25rem;
+  }
+
+  .admin-container { margin-left: 0; }
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
-  .sidebarx a {
-    text-align: center;
-    float: none;
+  .sidebar a {
+    text-align: left;
   }
 }
