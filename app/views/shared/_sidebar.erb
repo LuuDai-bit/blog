@@ -1,13 +1,50 @@
+<button id="sidebarToggle" class="d-md-none btn btn-link position-absolute top-0 end-0" aria-label="Toggle sidebar">
+  <%= icon 'menu', library: 'boxicons' %>
+</button>
+<button id="sidebarClose" class="d-none btn btn-link position-absolute top-0 end-0" aria-label="Toggle sidebar">
+  <%= icon 'x', library: 'boxicons' %>
+</button>
+
 <div class="sidebar">
   <%= image_tag 'code-de-hoc-1.png', size: '200x70' %>
-  <%= link_to 'Home', admin_root_path, class: "#{'active' if current_page?(admin_root_path)}" %>
-  <%= link_to 'New User', new_admin_user_path, class: "#{'active' if current_controller?('/admin/users')}" %>
-  <%= link_to 'Posts', admin_posts_path, class: "#{'active' if current_controller?('/admin/posts')}" %>
-  <%= link_to 'Categories', admin_categories_path, class: "#{'active' if current_controller?('/admin/categories')}" %>
-  <%= link_to 'Reminds', admin_reminders_path, class: "#{'active' if current_controller?('/admin/reminders')}" %>
-  <%= link_to 'Announcements', admin_announcements_path, class: "#{'active' if current_controller?('/admin/announcements')}" %>
-  <%= link_to 'About me', detail_admin_about_me_index_path, class: "#{'active' if current_controller?('/admin/about_me')}" %>
-  <%= link_to 'Settings', admin_settings_path, class: "#{'active' if current_controller?('/admin/settings') || current_controller?('/admin/passwords')}" %>
-  <%= link_to 'Job Logs', admin_job_logs_path, class: "#{'active' if current_controller?('/admin/job_logs')}" %>
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'danger-action' %>
+  <%= link_to admin_root_path, class: "#{'active' if current_page?(admin_root_path)}" do %>
+    <%= icon 'home', library: 'boxicons' %>
+    Home
+  <% end %>
+  <%= link_to new_admin_user_path, class: "#{'active' if current_controller?('/admin/users')}" do %>
+    <%= icon 'user', library: 'boxicons' %>
+    New User
+  <% end %>
+  <%= link_to admin_posts_path, class: "#{'active' if current_controller?('/admin/posts')}" do %>
+    <%= icon 'pencil', library: 'boxicons' %>
+    Posts
+  <% end %>
+  <%= link_to admin_categories_path, class: "#{'active' if current_controller?('/admin/categories')}" do %>
+    <%= icon 'category', library: 'boxicons' %>
+    Categories
+  <% end %>
+  <%= link_to admin_reminders_path, class: "#{'active' if current_controller?('/admin/reminders')}" do %>
+    <%= icon 'bell', library: 'boxicons' %>
+    Reminds
+  <% end %>
+  <%= link_to admin_announcements_path, class: "#{'active' if current_controller?('/admin/announcements')}" do %>
+    <%= icon 'user-voice', library: 'boxicons' %>
+    Announcements
+  <% end %>
+  <%= link_to detail_admin_about_me_index_path, class: "#{'active' if current_controller?('/admin/about_me')}" do %>
+    <%= icon 'info-circle', library: 'boxicons' %>
+    About me
+  <% end %>
+  <%= link_to admin_settings_path, class: "#{'active' if current_controller?('/admin/settings') || current_controller?('/admin/passwords')}" do %>
+    <%= icon 'cog', library: 'boxicons' %>
+    Settings
+  <% end %>
+  <%= link_to admin_job_logs_path, class: "#{'active' if current_controller?('/admin/job_logs')}" do %>
+    <%= icon 'file', library: 'boxicons' %>
+    Job Logs
+  <% end %>
+  <%= link_to destroy_user_session_path, method: :delete, class: 'danger-action' do %>
+    <%= icon 'log-out', library: 'boxicons' %>
+    Logout
+  <% end %>
 </div>
