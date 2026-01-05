@@ -27,6 +27,8 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'strong_migrations'
 gem 'rails_icons'
+gem 'twilio-ruby'
+gem 'phony_rails'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 

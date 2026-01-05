@@ -1,5 +1,5 @@
 require 'notification_services/gmail'
-require 'notification_services/sns'
+require 'notification_services/sms'
 require 'notification_services/fcm'
 
 module Notification
@@ -19,7 +19,7 @@ module Notification
       when 'email'
         NotificationServices::Gmail.new
       when 'sms'
-        NotificationServices::SNS.new
+        NotificationServices::SMS.new
       when 'push'
         NotificationServices::FCM.new
       else

@@ -1,5 +1,5 @@
 require 'notification_services/gmail'
-require 'notification_services/sns'
+require 'notification_services/sms'
 require 'notification_services/fcm'
 
 module Notification
@@ -18,9 +18,9 @@ module Notification
       when 'email'
         ::NotificationServices::Gmail.new(user.email)
       when 'sms'
-        ::NotificationServices::SNS.new(user.phone_number)
+        ::NotificationServices::SMS.new(user.phone_number)
       when 'push'
-        ::NotificationServices::SNS.new(user.device_id)
+        ::NotificationServices::FCM.new(user.device_id)
       else
         raise ArgumentError, "Unsupported notification type: #{notification_type}"
       end
