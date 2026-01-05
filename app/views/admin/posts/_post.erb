@@ -9,10 +9,10 @@
   <td  class="w-30">
     <%= link_to 'Detail', admin_post_path(post), class: 'btn btn-light' %>
     <%= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-light' %>
-    <%= link_to 'Destroy',
-                admin_post_path(post),
-                method: :delete,
-                class: 'btn btn-danger',
-                data: { confirm: 'Are you sure?' } %>
+    <%= button_to 'Destroy',
+                  admin_post_path(post),
+                  method: :delete,
+                  class: 'btn btn-danger',
+                  data: { confirm: 'Are you sure?' } %>
   </td>
 </tr>

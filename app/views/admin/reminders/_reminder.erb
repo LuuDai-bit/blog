@@ -6,10 +6,10 @@
   <td><%= reminder.only_once ? 'yes' : '-' %></td>
   <td>
     <%= link_to 'Edit', edit_admin_reminder_path(reminder), class: 'btn btn-light' %>
-    <%= link_to 'Destroy',
-                 admin_reminder_path(reminder),
-                 method: :delete,
-                 class: 'btn btn-danger',
-                 data: { confirm: 'Are you sure?' } %>
+    <%= button_to 'Destroy',
+                  admin_reminder_path(reminder),
+                  method: :delete,
+                  class: 'btn btn-danger',
+                  data: { confirm: 'Are you sure?' } %>
   </td>
 </tr>
