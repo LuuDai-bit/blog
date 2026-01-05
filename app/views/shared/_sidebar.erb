@@ -43,7 +43,7 @@
     <%= icon 'file', library: 'boxicons' %>
     Job Logs
   <% end %>
-  <%= link_to destroy_user_session_path, method: :delete, class: 'danger-action' do %>
+  <%= button_to destroy_user_session_path, method: :delete, class: 'danger-action btn-link btn' do %>
     <%= icon 'log-out', library: 'boxicons' %>
     Logout
   <% end %>
