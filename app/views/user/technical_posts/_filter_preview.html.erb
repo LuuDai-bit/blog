@@ -1,6 +1,6 @@
 <div class="position-relative w-100">
-  <% filter_params.each do |filter, value| %>
+  <% @filter_params.each do |filter, value| %>
     <span class="filter-category"><%= I18n.t("posts.search.#{filter}") %>: <%= value %></span>
   <% end %>
-  <%= link_to 'X', user_technical_posts_path, class: "clear-filter #{'d-none' if filter_params.values.blank?}" %>
+  <%= link_to 'X', user_technical_posts_path, class: "clear-filter #{'d-none' if @filter_params.values.blank?}" %>
 </div>
