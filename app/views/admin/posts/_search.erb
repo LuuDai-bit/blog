@@ -4,7 +4,9 @@
   <div class="input-group input-group-35vw">
     <%= form.text_field :search_text, class: 'form-control', placeholder: 'Search' %>
     <div class="input-group-append">
-      <%= form.submit 'Search', class: 'btn btn-secondary btn-without-margin' %>
+      <%= form.button type='submit', class: 'btn btn-secondary btn-without-margin' do %>
+        <%= icon 'search', library: 'boxicons' %>
+      <% end %>
     </div>
   </div>
 <% end %>

@@ -5,11 +5,14 @@
   <td><%= reminder.target_date.in_time_zone(reminder.original_timezone).strftime("%H:%M") %></td>
   <td><%= reminder.only_once ? 'yes' : '-' %></td>
   <td>
-    <%= link_to 'Edit', edit_admin_reminder_path(reminder), class: 'btn btn-light' %>
-    <%= button_to 'Destroy',
-                  admin_reminder_path(reminder),
+    <%= link_to edit_admin_reminder_path(reminder), class: 'btn btn-light' do %>
+      <%= icon 'pencil', library: 'boxicons' %>
+    <% end %>
+    <%= button_to admin_reminder_path(reminder),
                   method: :delete,
                   class: 'btn btn-danger',
-                  data: { confirm: 'Are you sure?' } %>
+                  data: { confirm: 'Are you sure?' } do %>
+      <%= icon 'trash', library: 'boxicons' %>
+    <% end %>
   </td>
 </tr>

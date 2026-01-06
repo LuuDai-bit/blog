@@ -4,7 +4,10 @@
 <div class="main-container">
   <div class="d-flex justify-content-between">
     <%= render partial: 'search' %>
-    <%= link_to('New Post', new_admin_post_path, class: 'btn btn-primary') %>
+    <%= link_to(new_admin_post_path, class: 'btn btn-primary') do %>
+      <%= icon 'plus', library: 'boxicons' %>
+      <span>New Post</span>
+    <% end %>
   </div>
 
   <% if @posts.present? %>
