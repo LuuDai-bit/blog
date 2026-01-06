@@ -7,12 +7,17 @@
   <td class="w-10"><%= post.views %></td>
   <td class="w-10"><%= post.release_date&.strftime('%Y/%m/%d') %></td>
   <td  class="w-30">
-    <%= link_to 'Detail', admin_post_path(post), class: 'btn btn-light' %>
-    <%= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-light' %>
-    <%= button_to 'Destroy',
-                  admin_post_path(post),
+    <%= link_to admin_post_path(post), class: 'btn btn-light' do %>
+      <%= icon 'file', library: 'boxicons' %>
+    <% end %>
+    <%= link_to edit_admin_post_path(post), class: 'btn btn-light' do %>
+      <%= icon 'pencil', library: 'boxicons' %>
+    <% end %>
+    <%= button_to admin_post_path(post),
                   method: :delete,
-                  class: 'btn btn-danger',
-                  data: { confirm: 'Are you sure?' } %>
+                  class: 'btn btn-danger d-inline',
+                  data: { confirm: 'Are you sure?' } do %>
+      <%= icon 'trash', library: 'boxicons' %>
+    <% end %>
   </td>
 </tr>

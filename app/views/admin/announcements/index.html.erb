@@ -3,7 +3,10 @@
 <h1 class="admin-title">Announcements</h1>
 
 <div class="main-container">
-  <%= link_to('New Announcement', new_admin_announcement_path, class: 'btn btn-primary') %>
+  <%= link_to(new_admin_announcement_path, class: 'btn btn-primary') do %>
+    <%= icon 'plus', library: 'boxicons' %>
+    <span>New Announcement</span>
+  <% end %>
 
   <% if @announcements.present? %>
     <table class="table table-hover mt-3 table-striped table-bordered">
