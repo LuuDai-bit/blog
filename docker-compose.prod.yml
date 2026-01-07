@@ -17,6 +17,7 @@ services:
     environment:
       - RAILS_ENV=production
       - REDIS_URL=redis://:luudai198@redis:6379/12
+      - NODE_OPTIONS=--openssl-legacy-provider
     env_file:
       - .env
 
