@@ -1,4 +1,4 @@
-require 'notification_services/gmail'
+require 'notification_services/email'
 require 'notification_services/sms'
 require 'notification_services/fcm'
 
@@ -16,7 +16,7 @@ module Notification
 
       case notification_type
       when 'email'
-        ::NotificationServices::Gmail.new(user.email)
+        ::NotificationServices::Email.new(user.email)
       when 'sms'
         ::NotificationServices::SMS.new(user.phone_number)
       when 'push'

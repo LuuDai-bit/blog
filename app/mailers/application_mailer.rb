@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "Codedehoc <#{ENV['GMAIL_USERNAME']}>"
+  default from: "Codedehoc <noreply@codedehoc.click>"
   layout 'mailer'
 end

@@ -1,7 +1,7 @@
 require 'notification_services/base'
 
 module NotificationServices
-  class Gmail < Base
+  class Email < Base
     def send_notification(recipient, message)
       unless eligible?(destination)
         raise ArgumentError, "Invalid email address: #{destination}"
