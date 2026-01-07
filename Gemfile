@@ -17,6 +17,8 @@ gem 'devise'
 gem 'stimulus-rails'
 gem 'aws-sdk-s3', '>= 1.208.0'
 gem 'aws-sdk-sns'
+gem 'aws-sdk-rails'
+gem 'aws-actionmailer-ses'
 gem 'config'
 gem 'whenever', require: false
 gem 'sidekiq', ">= 7.2.4"

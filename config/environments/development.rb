@@ -88,4 +88,8 @@ Rails.application.configure do
     authentication: :plain,
     enable_starttls_auto: true
   }
+
+  # SES email configuration
+  # config.action_mailer.delivery_method = :ses_v2
+  # config.action_mailer.ses_v2_settings = { region: ENV['AWS_REGION'] }
 end
