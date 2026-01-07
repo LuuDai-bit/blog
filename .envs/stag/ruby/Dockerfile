@@ -24,7 +24,7 @@ RUN bundle install
 RUN apt-get install -y curl
 SHELL ["/bin/bash", "--login", "-c"]
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-RUN nvm install v14.16.0
+RUN nvm install v24.12.0
 RUN npm install --global yarn
 RUN yarn
 SHELL ["/bin/sh", "-c"]
