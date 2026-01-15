@@ -1,8 +1,8 @@
 <tr class="align-middle">
-  <td class="w-5"><%= announcement.id %></td>
+  <td class="w-5 text-center"><%= announcement.id %></td>
   <td class="w-60"><%= announcement.content.truncate 50 %></td>
-  <td class="w-10"><%= announcement.activated %></td>
-  <td  class="w-25">
+  <td class="w-10 text-center"><%= announcement.activated %></td>
+  <td  class="w-10 text-center">
     <% if announcement.activated %>
       <%= button_to 'Deactivate', admin_announcement_path(announcement), method: :patch, params: { announcement: { activated: false } }, class: 'btn btn-light' %>
     <% else %>
