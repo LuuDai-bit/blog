@@ -1,17 +1,18 @@
 <tr class="align-middle">
   <td><%= reminder.title.truncate 50 %></td>
   <td><%= reminder.content.truncate 50 %></td>
-  <td><%= day_format(reminder.day) %></td>
-  <td><%= reminder.target_date.in_time_zone(reminder.original_timezone).strftime("%H:%M") %></td>
-  <td><%= reminder.only_once ? 'yes' : '-' %></td>
+  <td class="text-center"><%= day_format(reminder.day) %></td>
+  <td class="text-center"><%= reminder.target_date.in_time_zone(reminder.original_timezone).strftime("%H:%M") %></td>
+  <td class="text-center"><%= reminder.only_once ? 'yes' : '-' %></td>
   <td>
-    <%= link_to edit_admin_reminder_path(reminder), class: 'btn btn-light' do %>
+    <%= link_to edit_admin_reminder_path(reminder), class: 'btn btn-light', title: 'Edit Reminder' do %>
       <%= icon 'pencil', library: 'boxicons' %>
     <% end %>
     <%= button_to admin_reminder_path(reminder),
                   method: :delete,
                   class: 'btn btn-danger',
-                  data: { confirm: 'Are you sure?' } do %>
+                  data: { confirm: 'Are you sure?' },
+                  title: 'Delete Reminder' do %>
       <%= icon 'trash', library: 'boxicons' %>
     <% end %>
   </td>
