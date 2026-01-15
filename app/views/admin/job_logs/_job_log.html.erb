@@ -1,5 +1,5 @@
 <tr class="align-middle">
-  <td class="w-40"><span class="text-truncate-2l"><%= job_log.id %></span></td>
+  <td class="w-10 text-center"><span class="text-truncate-2l"><%= job_log.id %></span></td>
   <td class="w-40"><span class="text-truncate-2l"><%= job_log.job_name %></span></td>
-  <td class="w-40"><span class="text-truncate-2l"><%= job_log.created_at %></span></td>
+  <td class="w-10 text-center"><span class="text-truncate-2l"><%= format_datetime(job_log.created_at, '%d %B %Y %H:%M') %></span></td>
 </tr>
