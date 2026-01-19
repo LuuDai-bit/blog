@@ -41,4 +41,8 @@ module ApplicationHelper
 
     image
   end
+
+  def page_theme
+    Setting.where(name: 'theme').first&.value || 'default'
+  end
 end

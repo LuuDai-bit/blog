@@ -1,20 +1,20 @@
 .bread-root-item {
   font-weight: bold;
   font-size: 13px;
-  color: #B07548;
+  color: var(--breadcrumb-text-color);
 
   a {
-    color: #B07548;
+    color: var(--breadcrumb-text-color);
   }
 }
 
 .bread-element-item {
   font-weight: bold;
   font-size: 13px;
-  color: #B07548;
+  color: var(--breadcrumb-text-color);
 
   a {
-    color: #B07548;
+    color: var(--breadcrumb-text-color);
   }
 
   &:before {

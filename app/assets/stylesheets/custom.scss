@@ -193,7 +193,7 @@
 }
 
 .admin-title {
-  color: #B07548;
+  color: var(--title-text-color);
 }
 
 .btn, .btn-primary, .btn-light {
@@ -205,7 +205,8 @@
 }
 
 .progress_bar_gold {
-  background-color: #B07548 !important;
+  background-color: var(--primary-color) !important;
+  color: #333333 !important;
 }
 
 .main-container {
