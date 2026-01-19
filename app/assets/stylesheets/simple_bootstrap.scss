@@ -2190,7 +2190,7 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #e1cdb4;
+  background-color: var(--fc-bg-color);
   background-clip: padding-box;
   border: 1px solid #ced4da;
   -webkit-appearance: none;
@@ -2212,8 +2212,8 @@ progress {
 }
 .form-control:focus {
   color: #212529;
-  background-color: #eca1a6;
-  border-color: #eca1a6;
+  background-color: var(--btn-bg-color);
+  border-color: var(--btn-bg-color);
   outline: 0;
 }
 .form-control::-webkit-date-and-time-value {
@@ -2994,44 +2994,44 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
-  color: #212529;
-  background-color: #eca1a6;
-  border-color: #eca1a6;
+  color: var(--btn-text-color);
+  background-color: var(--btn-bg-color);
+  border-color: var(--btn-bg-color);
 }
 .btn-primary:hover {
-  color: #212529;
-  background-color: #e1cdb4;
-  border-color: #e1cdb4;
+  color: var(--btn-text-color);
+  background-color: var(--btn-hover-bg-color);
+  border-color: var(--btn-hover-bg-color);
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #000;
-  background-color: #e1cdb4;
-  border-color: #e1cdb4;
-  box-shadow: 0 0 0 0.25rem #e1cdb4;
+  background-color: var(--btn-hover-bg-color);
+  border-color: var(--btn-hover-bg-color);
+  box-shadow: 0 0 0 0.25rem var(--btn-hover-bg-color);
 }
 .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
   color: #000;
-  background-color: #e1cdb4;
-  border-color: #e1cdb4;
+  background-color: var(--btn-hover-bg-color);
+  border-color: var(--btn-hover-bg-color);
 }
 .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem #e1cdb4;
+  box-shadow: 0 0 0 0.25rem var(--btn-hover-bg-color);
 }
 .btn-primary:disabled, .btn-primary.disabled {
   color: #000;
-  background-color: #e1cdb4;
-  border-color: #e1cdb4;
+  background-color: var(--btn-hover-bg-color);
+  border-color: var(--btn-hover-bg-color);
 }
 
 .btn-secondary {
-  color: #3B5BDB;
-  background-color: #E8EDFF;
-  border-color: #eca1a6;
+  color: var(--btn-text-color);
+  background-color: var(--btn-bg-color);
+  border-color: var(--btn-bg-color);
 }
 .btn-secondary:hover {
-  color: #fff;
-  background-color: #DDE4FF;
-  border-color: #eca1a6;
+  color: var(--btn-text-color);
+  background-color: var(--btn-hover-bg-color);
+  border-color: var(--btn-hover-bg-color);
 }
 .btn-check:focus + .btn-secondary, .btn-secondary:focus {
   color: #fff;
@@ -3175,32 +3175,32 @@ textarea.form-control-lg {
 
 .btn-light {
   color: #000;
-  background-color: #eca1a6;
-  border-color: #eca1a6;
+  background-color: var(--btn-bg-color);
+  border-color: var(--btn-bg-color);
 }
 .btn-light:hover {
   color: #000;
-  background-color: #d49296;
-  border-color: #d49296;
+  background-color: var(--btn-hover-bg-color);
+  border-color: var(--btn-hover-bg-color);
 }
 .btn-check:focus + .btn-light, .btn-light:focus {
   color: #000;
-  background-color: #d49296;
-  border-color: #d49296;
+  background-color: var(--btn-hover-bg-color);
+  border-color: var(--btn-hover-bg-color);
   box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
 }
 .btn-check:checked + .btn-light, .btn-check:active + .btn-light, .btn-light:active, .btn-light.active, .show > .btn-light.dropdown-toggle {
   color: #000;
-  background-color: #d49296;
-  border-color: #d49296;
+  background-color: var(--btn-hover-bg-color);
+  border-color: var(--btn-hover-bg-color);
 }
 .btn-check:checked + .btn-light:focus, .btn-check:active + .btn-light:focus, .btn-light:active:focus, .btn-light.active:focus, .show > .btn-light.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem #d49296;
+  box-shadow: 0 0 0 0.25rem var(--btn-hover-bg-color);
 }
 .btn-light:disabled, .btn-light.disabled {
   color: #000;
-  background-color: #d49296;
-  border-color: #d49296;
+  background-color: var(--btn-hover-bg-color);
+  border-color: var(--btn-hover-bg-color);
 }
 
 .btn-dark {

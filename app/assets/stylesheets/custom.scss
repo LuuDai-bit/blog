@@ -37,14 +37,14 @@
   }
 
   label {
-    color: #664227 !important;
+    color: var(--btn-text-color) !important; // TODO: replace with variable
   }
 }
 
 .flex-parent-container {
   display: flex;
   width: 100%;
-  background-color: #e1cdb4;
+  background-color: var(--background-color);
 }
 
 .input-group-35vw{
@@ -146,7 +146,7 @@
   thead {
     tr {
       th {
-        background-color: #BFA48F;
+        background-color: var(--tb-head-th-bg-color);
       }
     }
   }
@@ -163,13 +163,13 @@
 .pagination-admin {
   li {
     a {
-      background-color: #e1cdb4 !important;
+      background-color: var(--background-color) !important;
     }
   }
 
   li.active {
     a {
-      background-color: #eca1a6 !important;
+      background-color: var(--btn-bg-color) !important;
       color: #212529 !important;
     }
   }
@@ -197,10 +197,10 @@
 }
 
 .btn, .btn-primary, .btn-light {
-  color: #664227 !important;
+  color: var(--btn-text-color) !important;
 
   input {
-    color: #664227 !important;
+    color: var(--btn-text-color) !important;
   }
 }
 
@@ -209,7 +209,7 @@
 }
 
 .main-container {
-  background: #fff4f4;
+  background: var(--main-bg-color);
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);

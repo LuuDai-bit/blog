@@ -3,7 +3,7 @@
   margin-right: 20px;
   padding: 0;
   width: 15%;
-  background-color: #f9dfc1;
+  background-color: var(--sidebar-bg-color);
   display: inline-block;
   height: 100vh;
   overflow: auto;
@@ -25,14 +25,14 @@
 
 /* Active/current link */
 .sidebar a.active {
-  background-color: #eca1a6;
-  color: #212529;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
 }
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
-  background-color: #e1cdb4;
-  color: #212529;
+  background-color: var(--btn-hover-bg-color);
+  color: var(--btn-text-color);
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */

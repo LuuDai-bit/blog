@@ -20,7 +20,7 @@
 .btn .badge {
   position: relative;
   top: -1px;
-  color: #664227 !important;
+  color: var(--btn-text-color) !important;
 }
 
 .badge-pill {
@@ -35,13 +35,13 @@
 }
 
 .badge-secondary {
-  color: #664227;
+  color: #664227; // TODO: replace with variable
   background-color: #e0e2e4;
 }
 
 .badge-success {
-  color: #664227;
-  background-color: #eca1a6;
+  color: #664227; // TODO: replace with variable
+  background-color: #eca1a6; // TODO: replace with variable
 }
 
 .badge-danger {
