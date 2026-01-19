@@ -31,4 +31,18 @@ module ApplicationHelper
 
     date.strftime(format)
   end
+
+  def display_image(url, options={})
+    if File.exist?("#{Rails.root}/app/assets/images/#{url}")
+      image = image_tag("#{url}",options)
+    else
+      image = image_tag("no_image", options)
+    end
+
+    image
+  end
+
+  def page_theme
+    Setting.where(name: 'theme').first&.value || 'default'
+  end
 end

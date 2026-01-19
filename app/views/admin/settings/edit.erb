@@ -1,0 +1,9 @@
+<h1 class="admin-title">Detail Setting Page</h1>
+
+<div class="main-container">
+  <%= form_with url: update_admin_settings_path(@settings),
+                method: :patch,
+                scope: :settings do |form| %>
+    <%= render partial: 'form', locals: { form: form, settings: @settings } %>
+  <% end %>
+</div>

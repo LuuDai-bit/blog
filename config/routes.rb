@@ -13,13 +13,16 @@ Rails.application.routes.draw do
     resources :about_me, only: %i[update] do
       get '/detail', to: 'about_me#detail', on: :collection
     end
-    resources :settings, only: :index
+    resources :settings, only: :index do
+      get '/edit', to: 'settings#edit', on: :collection
+      patch '/update', to: 'settings#update', on: :collection
+    end
     resources :passwords, only: %i[edit update]
     resources :job_logs, only: :index
   end
 
   get '/:locale' => 'user/technical_posts#index'
-  
+
   scope "(:locale)", locale: /en|vi/ do
     root 'user/technical_posts#index'
     get '/about', to: 'user/home#about'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2026_01_03_085802) do
+ActiveRecord::Schema[7.1].define(version: 2026_01_19_042517) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -125,6 +125,13 @@ ActiveRecord::Schema[7.1].define(version: 2026_01_03_085802) do
     t.integer "original_timezone", default: 0
     t.datetime "target_date", default: "2026-01-02 09:05:15", null: false
     t.string "notification_type", default: "email", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "value", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_reminders", force: :cascade do |t|
