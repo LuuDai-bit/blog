@@ -4,12 +4,16 @@
     <div class="theme-options">
       <% Setting::THEME_OPTIONS.each do |theme_option| %>
         <div class="theme-option">
-          <%= form.radio_button :theme,
-                                theme_option[:name],
-                                id: "theme_#{theme_option[:name]}",
-                                checked: @theme == theme_option[:name] %>
-          <%= form.label "theme_#{theme_option[:name]}" do %>
-            <%= display_image(theme_option[:image_url], size: "100x100", alt: theme_option[:name]) %>
+          <%= form.label "theme_#{theme_option[:name]}",
+                         for: "theme_#{theme_option[:name]}" do %>
+            <%= form.radio_button :theme,
+                                  theme_option[:name],
+                                  id: "theme_#{theme_option[:name]}",
+                                  checked: @theme == theme_option[:name] %>
+            <%= display_image(theme_option[:image_url],
+                              size: "100x100",
+                              alt: theme_option[:name],
+                              title: theme_option[:name].titleize) %>
           <% end %>
         </div>
       <% end %>
