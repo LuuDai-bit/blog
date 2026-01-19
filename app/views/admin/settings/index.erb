@@ -2,6 +2,13 @@
 
 <h1 class="admin-title">Setting page</h1>
 <div class="main-container">
-  <i class="fa fa-key" aria-hidden="true"></i>
-  <%= link_to 'Change password', edit_admin_password_path(current_user) %>
+  <span class="mx-3">
+    <i class="fa fa-key" aria-hidden="true"></i>
+    <%= link_to 'Change password', edit_admin_password_path(current_user) %>
+  </span>
+
+  <span class="mx-3">
+    <%= icon 'user', library: 'boxicons' %>
+    <%= link_to 'Edit settings', edit_admin_settings_path %>
+  </span>
 </div>

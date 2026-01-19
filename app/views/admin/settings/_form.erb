@@ -1,0 +1,23 @@
+<div class="w-100 p-1">
+  <div class="theme-settings-section">
+    <h3>Choose Theme</h3>
+    <div class="theme-options">
+      <% Setting::THEME_OPTIONS.each do |theme_option| %>
+        <div class="theme-option">
+          <%= form.radio_button :theme,
+                                theme_option[:name],
+                                id: "theme_#{theme_option[:name]}",
+                                checked: @theme == theme_option[:name] %>
+          <%= form.label "theme_#{theme_option[:name]}" do %>
+            <%= display_image(theme_option[:image_url], size: "100x100", alt: theme_option[:name]) %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mt-2 d-flex flex-row-reverse">
+    <%= link_to('Cancel', admin_settings_path, class: 'btn btn-secondary') %>
+    <%= form.submit('Save', class: 'btn btn-primary me-2') %>
+  </div>
+</div>
