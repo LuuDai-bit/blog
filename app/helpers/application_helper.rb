@@ -33,7 +33,7 @@ module ApplicationHelper
   end
 
   def display_image(url, options={})
-    if File.exist?("#{Rails.public_path}/public/images/#{url}")
+    if File.exist?("#{Rails.root}/app/assets/images/#{url}")
       image = image_tag("#{url}",options)
     else
       image = image_tag("no_image", options)
