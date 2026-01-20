@@ -11,7 +11,10 @@ document.addEventListener('turbolinks:load', () => {
       "--fc-bg-color": "#e1cdb4",
       "--tb-head-th-bg-color": "#BFA48F",
       "--title-text-color": "#B07548",
-      "--breadcrumb-text-color": "#B07548"
+      "--breadcrumb-text-color": "#B07548",
+      "--badge-success-bg-color": "#eca1a6",
+      "--badge-success-text-color": "#664227",
+      "--badge-secondary-text-color": "#664227"
     }
   };
 
@@ -20,7 +23,8 @@ document.addEventListener('turbolinks:load', () => {
                        "--main-bg-color", "--sidebar-bg-color",
                        "--fc-bg-color", "--tb-head-th-bg-color",
                        "--title-text-color", "--breadcrumb-text-color",
-                      "--primary-color"];
+                       "--primary-color", "--badge-success-bg-color",
+                       "--badge-success-text-color", "--badge-secondary-text-color"];
 
   function applyTheme(themeName) {
     if (themeName != "default") {

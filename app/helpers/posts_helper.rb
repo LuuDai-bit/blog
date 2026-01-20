@@ -9,7 +9,7 @@ module PostsHelper
               "success"
             end
 
-    content_tag(:span, status, class: ["badge", "badge-#{badge}"])
+    content_tag(:span, status.capitalize, class: ["badge", "badge-#{badge}"])
   end
 
   def english_status_badges(post)
