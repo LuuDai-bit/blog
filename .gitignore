@@ -37,6 +37,10 @@
 yarn-debug.log*
 .yarn-integrity
 
+# Ignore packs
+/public/assets/*
+/public/packs/manifest.json
+
 # Ignore env file
 .env
 .env.docker

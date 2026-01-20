@@ -35,13 +35,13 @@
 }
 
 .badge-secondary {
-  color: #664227; // TODO: replace with variable
+  color: var(--badge-secondary-text-color);
   background-color: #e0e2e4;
 }
 
 .badge-success {
-  color: #664227; // TODO: replace with variable
-  background-color: #eca1a6; // TODO: replace with variable
+  color: var(--badge-success-text-color);
+  background-color: var(--badge-success-bg-color);
 }
 
 .badge-danger {
