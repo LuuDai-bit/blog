@@ -10,11 +10,10 @@ jobs:
       - image: cimg/ruby:3.3.7-node
         environment:
           - RAILS_ENV=test
+          - REDIS_URL: redis://localhost:6379/0
       - image: circleci/postgres:9.5-alpine
       - image: redis:7
         name: redis
-    environment:
-      REDIS_URL: redis://localhost:6379/0
 
     steps:
       - checkout
