@@ -10,7 +10,6 @@ jobs:
       - image: cimg/ruby:3.3.7-node
         environment:
           - RAILS_ENV=test
-          - REDIS_URL: redis://localhost:6379/0
       - image: circleci/postgres:9.5-alpine
       - image: redis:7
         name: redis
@@ -20,13 +19,7 @@ jobs:
       - ruby/install-deps
       - run:
           name: Wait for Redis
-          command: |
-            for i in {1..10}; do
-              redis-cli -h localhost -p 6379 ping && exit 0
-              sleep 1
-            done
-            echo "Redis not ready"
-            exit 1
+          command: dockerize -wait tcp://localhost:6379 -timeout 1m
       - run:
           name: Wait for db
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
