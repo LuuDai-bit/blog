@@ -12,13 +12,13 @@ jobs:
           - RAILS_ENV=test
       - image: circleci/postgres:9.5-alpine
       - image: redis:7
-        name: redis
-    environment:
-      REDIS_URL: redis://localhost:6379/0
 
     steps:
       - checkout
       - ruby/install-deps
+      - run:
+          name: Wait for Redis
+          command: dockerize -wait tcp://localhost:6379 -timeout 1m
       - run:
           name: Wait for db
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
