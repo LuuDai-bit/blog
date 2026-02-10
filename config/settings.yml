@@ -12,7 +12,7 @@ models:
       weekend: [Sat, Sun]
       monday: 'Mon'
       tuesday: 'Tue'
-      wenesday: 'Wed'
+      wednesday: 'Wed'
       thursday: 'Thu'
       friday: 'Fri'
       saturday: 'Sat'
