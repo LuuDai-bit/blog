@@ -20,7 +20,15 @@ jobs:
       - checkout
       - ruby/install-deps
       - run:
-          name: Wail for db
+        name: Wait for redis
+        command: |
+            for i in `seq 1 10`; do
+              nc -z localhost 6379 && echo "Redis up" && exit 0
+              sleep 1
+            done
+            exit 1
+      - run:
+          name: Wait for db
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
           name: prepare db
