@@ -3,8 +3,8 @@ class Admin::PostsController < Admin::AdminController
 
   def index
     @pagy, @posts = pagy(Post.by_type(params[:type])
-                             .order_by_status
                              .order_by_views(params[:order_views])
+                             .order_by_status
                              .by_subject(params[:search_text])
                              .includes(:author))
   end

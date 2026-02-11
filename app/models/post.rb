@@ -22,7 +22,7 @@ class Post < ApplicationRecord
         WHEN 'draft' THEN 1
         WHEN 'publish' THEN 2
       END ASC,
-      created_at DESC
+      posts.created_at DESC
     SQL
 
     order(Arel.sql(sql))
