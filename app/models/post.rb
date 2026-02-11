@@ -16,9 +16,7 @@ class Post < ApplicationRecord
     order(views: direction) if direction
   end
 
-  scope :order_by_status, ->(order_views) do
-    return if order_views
-
+  scope :order_by_status, ->() do
     sql = <<-SQL.squish
       CASE status
         WHEN 'draft' THEN 1
@@ -44,6 +42,7 @@ class Post < ApplicationRecord
   scope :count_post_by_time, ->(start_day, end_day) do
     return if start_day.blank? || end_day.blank?
 
+    # TODO: fix this logic to use release_date instead of created_at
     where(created_at: start_day..end_day, status: :publish).count
   end
 
@@ -51,7 +50,7 @@ class Post < ApplicationRecord
     where.not(subject_en: nil, subject_en: '') if I18n.locale == :en
   end
 
-  scope :by_type, ->(type) do 
+  scope :by_type, ->(type) do
     where(type: type) if type.present?
   end
 
@@ -59,7 +58,7 @@ class Post < ApplicationRecord
     subject_en.present?
   end
 
-  def self.types 
+  def self.types
     %w(TechnicalPost IdleTalk)
   end
 end
