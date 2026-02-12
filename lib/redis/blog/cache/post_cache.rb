@@ -19,7 +19,7 @@ class Blog::Cache::PostCache
     key = redis.post_caching(post_id, locale)
     redis.client.set(key, 1) unless redis.client.get(key)
 
-    post = Post.by_locale.find_by(id: post_id)
+    post = Post.by_locale.find_by(id: post_id, status: :publish)
     if post.blank?
       redis.client.set(redis.post_cached(post_id, locale), 'No content', ex: 120)
 
