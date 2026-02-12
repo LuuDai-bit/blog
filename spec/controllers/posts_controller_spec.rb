@@ -17,6 +17,12 @@ RSpec.describe Admin::PostsController, type: :controller do
         posts = assigns(:posts)
         expect(posts).to be_empty
       end
+
+      it 'should render index template' do
+        subject
+
+        expect(response).to render_template(:index)
+      end
     end
 
     context 'when there is 1 technical post' do
@@ -138,5 +144,239 @@ RSpec.describe Admin::PostsController, type: :controller do
   end
 
   describe 'GET #show' do
+    let!(:post) { create(:post) }
+
+    let(:params) { {id: post.id} }
+
+    subject { get :show, params: params}
+
+    context 'when success' do
+      it 'should render show template' do
+        subject
+
+        expect(response).to render_template(:show)
+      end
+    end
+
+    context 'when fail' do
+      context 'when the post do not exist' do
+        let(:params) { {id: 0} }
+
+        it 'should raise not found error' do
+          expect { subject }.to raise_error(ActiveRecord::RecordNotFound)
+        end
+      end
+    end
+  end
+
+  describe 'GET #new' do
+    subject { get :new }
+
+    it 'should assigns empty post' do
+      subject
+
+      post = assigns(:post)
+      expect(post).not_to eq nil
+      expect(post.id).to eq nil
+    end
+
+    it 'should render new template' do
+      subject
+
+      expect(response).to render_template(:new)
+    end
+  end
+
+  describe 'POST #create' do
+    let(:params) do
+      {
+        post: {
+          subject: 'Test subject',
+          subject_en: 'Test subject en',
+          content: 'Content test subject',
+          content_en: 'Content test subject en',
+          status: :draft,
+          categories: '',
+          type: 'TechnicalPost'
+        }
+      }
+    end
+
+    subject { post :create, params: params }
+
+    context 'when success' do
+      it 'should add 1 post record to database' do
+        expect { subject }.to change(Post, :count).by(1)
+      end
+
+      it 'should render notice flash message' do
+        subject
+
+        expect(flash[:notice]).to eq 'Post created'
+      end
+
+      context 'when has categories' do
+        it 'should create categories record' do
+          params[:post][:categories] = 'category;super category'
+
+          expect { subject }.to change(Category, :count).by(2)
+        end
+      end
+    end
+
+    context 'when fail' do
+      context 'when missing required field' do
+        it 'should return can not blank error' do
+          params[:post][:subject] = nil
+
+          subject
+
+          post = assigns(:post)
+          expect(post.errors.messages[:subject]).to eq ["can't be blank"]
+        end
+
+        it 'should render alert flash message' do
+          params[:post][:subject] = nil
+
+          subject
+
+          expect(flash[:alert]).to eq 'Post create failed'
+        end
+      end
+
+      context 'when have one field exceed character limit' do
+        it 'should return exceed limit character error' do
+          params[:post][:subject] = 'a'*256
+
+          subject
+
+          post = assigns(:post)
+          expect(post.errors.messages[:subject]).to eq ["is too long (maximum is 255 characters)"]
+        end
+      end
+    end
+  end
+
+  describe 'GET #edit' do
+    let(:post) { create(:post) }
+    let(:params) { {id: post.id} }
+
+    subject { get :edit, params: params }
+
+    context 'when success' do
+      it 'should render edit template' do
+        subject
+
+        expect(response).to render_template(:edit)
+      end
+    end
+
+    context 'when post id not exist' do
+      let(:params) { {id: 0} }
+
+      it 'should raise not found error' do
+        expect { subject }.to raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
+  end
+
+  describe 'PATCH #update' do
+    let(:post) { create(:post) }
+    let(:params) do
+      {
+        id: post.id,
+        post: {
+          subject: 'Test subject updated',
+          subject_en: 'Test subject en',
+          content: 'Content test subject',
+          content_en: 'Content test subject en',
+          status: :draft,
+          categories: '',
+          type: 'TechnicalPost'
+        }
+      }
+    end
+
+    subject { patch :update, params: params }
+
+    context 'when success' do
+      context 'when valid params without categories' do
+        it 'should update post' do
+          subject
+
+          post = assigns(:post)
+          expect(post.subject).to eq 'Test subject updated'
+        end
+
+        it 'should render update success flash message' do
+          subject
+
+          expect(flash[:notice]).to eq 'Post updated'
+        end
+      end
+
+      context 'when valid params with categories' do
+        it 'should create new categories' do
+          params[:post][:categories] = 'category;super category'
+
+          expect { subject }.to change(Category, :count).by(2)
+        end
+      end
+    end
+
+    context 'when fail' do
+      context 'when post not exist' do
+        it 'should raise not found error' do
+          params[:id] = 0
+
+          expect { subject }.to raise_error(ActiveRecord::RecordNotFound)
+        end
+      end
+
+      context 'when required field is empty' do
+        it 'should return can not blank error' do
+          params[:post][:subject] = ' '
+
+          subject
+
+          post = assigns(:post)
+          expect(post.errors.messages[:subject]).to eq ["can't be blank"]
+        end
+      end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    let!(:post) { create(:post) }
+    let(:params) { {id: post.id} }
+    subject { delete(:destroy, params: params) }
+
+    context 'when success' do
+      it 'should destroy post' do
+        expect { subject }.to change(Post, :count).by(-1)
+      end
+
+      it 'should redirect to admin post path' do
+        subject
+
+        expect(response).to redirect_to(admin_posts_path)
+      end
+    end
+
+    context 'when fail' do
+      before do
+        allow_any_instance_of(Post).to receive(:destroy).and_return(false)
+      end
+
+      it 'should render alert flash message' do
+        subject
+
+        expect(flash.now[:alert]).to eq 'Post destroy failed'
+      end
+
+      it 'should render index' do
+        expect(subject).to render_template(:index)
+      end
+    end
   end
 end

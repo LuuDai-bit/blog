@@ -70,26 +70,4 @@ class Admin::PostForm
 
     post.release_date = Time.current
   end
-
-  def attach_categories_to_post
-    category_names = params[:categories]&.pluck(:name)
-    return unless category_names.present?
-
-    exist_categories = Category.where(name: category_names)
-    post_categories = []
-    params[:categories].each do |category_param|
-      category = exist_categories.detect { |c| c.name == category_param[:name] }
-      if category.blank?
-        category = Category.new(category_param)
-        if !category.valid?
-          errors.add(:categories, category.errors.full_messages.first)
-          return
-        end
-      end
-
-      post_categories << category
-    end
-
-    @post.categories = post_categories
-  end
 end
