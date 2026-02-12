@@ -7,6 +7,6 @@ FactoryBot.define do
     status { 'draft' }
     views { 0 }
 
-    user
+    author { create(:user) }
   end
 end
