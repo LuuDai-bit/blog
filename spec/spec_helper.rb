@@ -1,6 +1,18 @@
-require "simplecov"
+require 'simplecov'
+require 'simplecov-lcov'
 
-SimpleCov.start "rails" do
+SimpleCov::Formatter::LcovFormatter.config do |c|
+  c.report_with_single_file = true
+  c.output_directory = 'coverage'
+  c.lcov_file_name = 'lcov.info'
+end
+
+SimpleCov.formatters = [
+  SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::LcovFormatter
+]
+
+SimpleCov.start 'rails' do
   enable_coverage :branch
 end
 

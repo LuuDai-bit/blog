@@ -3,6 +3,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@2.0.1
+  codecov: codecov/codecov@3
 jobs:
   test-ruby:
     # Install gems, run rails tests
@@ -28,6 +29,8 @@ jobs:
       - run:
           name: rails test
           command: bundle exec rspec
+      - codecov/upload:
+          file: coverage/lcov.info
 
 workflows:
   build-and-test:
