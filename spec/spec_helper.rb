@@ -11,7 +11,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::LcovFormatter
 ]
 
-SimpleCov.start 'rails' do
+SimpleCov.start "rails" do
   enable_coverage :branch
 end
 
