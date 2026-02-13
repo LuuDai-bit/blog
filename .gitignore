@@ -39,7 +39,7 @@ yarn-debug.log*
 
 # Ignore packs
 /public/assets/*
-/public/packs/manifest.json
+/public/packs/*
 
 # Ignore env file
 .env
