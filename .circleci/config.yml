@@ -30,7 +30,7 @@ jobs:
           name: rails test
           command: bundle exec rspec
       - codecov/upload:
-          file: coverage/blog.lcov
+          file: coverage/lcov.info
 
 workflows:
   build-and-test:
