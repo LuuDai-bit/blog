@@ -2,6 +2,8 @@
 
 FactoryBot.define do
   factory :post do
+    initialize_with { type.present? ? type.constantize.new : Post.new }
+
     subject { FFaker::Book.title }
     content { FFaker::Lorem.paragraph }
     status { 'draft' }
