@@ -30,7 +30,6 @@ jobs:
           name: rails test
           command: bundle exec rspec
       - codecov/upload:
-          fail_if_ci_error: true
           file: coverage/lcov.info
 
 workflows:
