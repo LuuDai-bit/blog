@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     end
     resources :passwords, only: %i[edit update]
     resources :job_logs, only: :index
+    resources :test, only: :index
   end
 
   get '/:locale' => 'user/technical_posts#index'
