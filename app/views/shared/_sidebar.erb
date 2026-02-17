@@ -43,6 +43,10 @@
     <%= icon 'file', library: 'boxicons' %>
     Job Logs
   <% end %>
+  <%= link_to admin_auth_tokens_path, class: "#{'active' if current_controller?('/admin/auth_tokens')}" do %>
+    <%= icon 'key', library: 'boxicons' %>
+    Auth Tokens
+  <% end %>
   <%= link_to destroy_user_session_path, method: :delete, class: 'danger-action' do %>
     <%= icon 'log-out', library: 'boxicons' %>
     Logout

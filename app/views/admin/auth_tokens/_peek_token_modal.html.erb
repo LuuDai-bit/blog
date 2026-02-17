@@ -1,0 +1,18 @@
+<div class="modal d-none" id="auth-token-peek" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Authentication Token Peek</h5>
+        <button type="button" class="close" id="close-peek-token-modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex justify-content-around">
+        <p id="plain-token"><%= @auth_token&.token %></p>
+      </div>
+      <div class="modal-footer">
+        <i>What are you looking at</i>
+      </div>
+    </div>
+  </div>
+</div>
