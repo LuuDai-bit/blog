@@ -44,7 +44,7 @@ jobs:
             JSON=$(jq -n \
               --arg owner "$CIRCLE_PROJECT_USERNAME" \
               --arg repo "$CIRCLE_PROJECT_REPONAME" \
-              --argjson pr "$CIRCLE_PR_NUMBER" \
+              --argjson pr "$CIRCLE_PR_NUMBER:-0" \
               --argjson project "$PROJECT_COVERAGE" \
               --argjson patch "$PATCH_COVERAGE" \
               '{project_coverage:$project, patch_coverage:$patch, pull_request_number:$pr, owner:$owner, repo:$repo}')
