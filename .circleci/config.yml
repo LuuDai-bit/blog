@@ -31,6 +31,26 @@ jobs:
           command: bundle exec rspec
       - codecov/upload:
           file: coverage/lcov.info
+      - run:
+          name: Calculate Coverage
+          command: |
+            PROJECT_COVERAGE=$(awk '/LF:/ { lf += $2 } /LH:/ { lh += $2 } END { print int((lh/lf)*100) }' coverage/lcov.info)
+
+            PATCH_COVERAGE=$PROJECT_COVERAGE
+
+            echo "Project coverage: $PROJECT_COVERAGE"
+            echo "Patch coverage: $PATCH_COVERAGE"
+
+            curl --location 'https://codedehoc.click/gateway/comments' \
+              --header "token: $CDH_API_TOKEN" \
+              --header 'Content-Type: application/json' \
+              --data "{
+                \"project_coverage\": $PROJECT_COVERAGE,
+                \"patch_coverage\": $PATCH_COVERAGE,
+                \"pull_request_number\": ${CIRCLE_PR_NUMBER},
+                \"owner\": \"${CIRCLE_PROJECT_USERNAME}\",
+                \"repo\": \"${CIRCLE_PROJECT_REPONAME}\"
+              }"
 
 workflows:
   build-and-test:
