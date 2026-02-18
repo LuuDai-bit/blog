@@ -7,7 +7,10 @@ RSpec.describe Gateway::CommentsController, type: :controller do
     let(:valid_params) do
       {
         project_coverage: '85.5',
-        patch_coverage: '90.2'
+        patch_coverage: '90.2',
+        pull_request_number: '123',
+        owner: 'test-owner',
+        repo: 'test-repo'
       }
     end
 
@@ -76,7 +79,7 @@ RSpec.describe Gateway::CommentsController, type: :controller do
         it 'still makes the request with nil values' do
           expect(HTTParty).to receive(:post).with(
             'http://localhost:3000/api/v1/comments',
-            body: { project_coverage: nil, patch_coverage: nil }
+            body: { project_coverage: nil, patch_coverage: nil, pull_request_number: nil, owner: nil, repo: nil }
           )
 
           post :create
