@@ -41,16 +41,20 @@ jobs:
             echo "Project coverage: $PROJECT_COVERAGE"
             echo "Patch coverage: $PATCH_COVERAGE"
 
+            JSON=$(jq -n \
+              --arg owner "$CIRCLE_PROJECT_USERNAME" \
+              --arg repo "$CIRCLE_PROJECT_REPONAME" \
+              --argjson pr "$CIRCLE_PR_NUMBER" \
+              --argjson project "$PROJECT_COVERAGE" \
+              --argjson patch "$PATCH_COVERAGE" \
+              '{project_coverage:$project, patch_coverage:$patch, pull_request_number:$pr, owner:$owner, repo:$repo}')
+
+            echo "Generated JSON: $JSON"
+
             curl --location 'https://codedehoc.click/gateway/comments' \
               --header "token: $CDH_API_TOKEN" \
               --header 'Content-Type: application/json' \
-              --data "{
-                \"project_coverage\": $PROJECT_COVERAGE,
-                \"patch_coverage\": $PATCH_COVERAGE,
-                \"pull_request_number\": ${CIRCLE_PR_NUMBER},
-                \"owner\": \"${CIRCLE_PROJECT_USERNAME}\",
-                \"repo\": \"${CIRCLE_PROJECT_REPONAME}\"
-              }"
+              --data "$JSON"
 
 workflows:
   build-and-test:
