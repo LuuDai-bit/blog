@@ -1,4 +1,3 @@
-require 'faraday'
 require 'httparty'
 
 class Gateway::CommentsController < Gateway::ApplicationController
