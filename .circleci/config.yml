@@ -41,6 +41,8 @@ jobs:
             echo "Project coverage: $PROJECT_COVERAGE"
             echo "Patch coverage: $PATCH_COVERAGE"
 
+            echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
+
             JSON=$(jq -n \
               --arg owner "$CIRCLE_PROJECT_USERNAME" \
               --arg repo "$CIRCLE_PROJECT_REPONAME" \
