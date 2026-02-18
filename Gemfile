@@ -31,6 +31,7 @@ gem 'strong_migrations'
 gem 'rails_icons'
 gem 'twilio-ruby'
 gem 'phony_rails'
+gem 'httparty'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 

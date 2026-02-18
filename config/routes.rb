@@ -19,6 +19,11 @@ Rails.application.routes.draw do
     end
     resources :passwords, only: %i[edit update]
     resources :job_logs, only: :index
+    resources :auth_tokens, only: %i[index create show destroy]
+  end
+
+  namespace :gateway do
+    resources :comments, only: :create
   end
 
   get '/:locale' => 'user/technical_posts#index'

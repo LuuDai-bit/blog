@@ -1,0 +1,21 @@
+<tr class="align-middle">
+  <td class="w-5 text-center"><%= auth_token.id %></td>
+  <td class="w-60"><%= auth_token.token %></td>
+  <td class="w-10 text-center"><%= auth_token.created_at %></td>
+  <td  class="w-10 text-center">
+    <%= button_to admin_auth_token_path(auth_token),
+                  remote: true,
+                  method: :get,
+                  class: 'btn btn-light',
+                  title: 'View Token' do %>
+      <%= icon 'file', library: 'boxicons' %>
+    <% end %>
+    <%= button_to admin_auth_token_path(auth_token),
+                  method: :delete,
+                  class: 'btn btn-danger d-inline',
+                  data: { confirm: 'Are you sure?' },
+                  title: 'Delete Token' do %>
+      <%= icon 'trash', library: 'boxicons' %>
+    <% end %>
+  </td>
+</tr>
