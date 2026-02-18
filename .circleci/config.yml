@@ -43,11 +43,6 @@ jobs:
 
             PR_NUMBER=$(echo "$CIRCLE_PULL_REQUEST" | grep -oE '[0-9]+$')
 
-            echo "CIRCLE_PULL_REQUEST: $CIRCLE_PULL_REQUEST"
-            echo "CIRCLE_PR_NUMBER: $PR_NUMBER"
-            echo "CIRCLE_PROJECT_USERNAME: $CIRCLE_PROJECT_USERNAME"
-            echo "CIRCLE_PROJECT_REPONAME: $CIRCLE_PROJECT_REPONAME"
-
             JSON=$(jq -n \
               --arg owner "$CIRCLE_PROJECT_USERNAME" \
               --arg repo "$CIRCLE_PROJECT_REPONAME" \
