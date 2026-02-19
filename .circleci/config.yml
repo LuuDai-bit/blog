@@ -34,11 +34,6 @@ jobs:
       - run:
           name: Calculate Coverage
           command: |
-            if [ -z "$CIRCLE_PULL_REQUEST" ]; then
-              echo "Not a PR build. Skip coverage comment."
-              exit 0
-            fi
-
             PROJECT_COVERAGE=$(ruby -rjson -e '
               data = JSON.parse(File.read("coverage/coverage.json"))
               puts data["groups"]["Project"].to_i.round(2)
