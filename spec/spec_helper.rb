@@ -1,18 +1,23 @@
 require 'simplecov'
-require 'simplecov-lcov'
-
-SimpleCov::Formatter::LcovFormatter.config do |c|
-  c.report_with_single_file = true
-  c.output_directory = 'coverage'
-  c.lcov_file_name = 'lcov.info'
-end
+require 'simplecov_json_formatter'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
-  SimpleCov::Formatter::LcovFormatter
+  SimpleCov::Formatter::JSONFormatter
 ]
 
 SimpleCov.start 'rails' do
+  changed_files = `git diff --name-only origin/main`.split("\n")
+  add_group "Changed" do |source_file|
+    changed_files.detect do |filename|
+      source_file.filename.ends_with?(filename)
+    end
+  end
+
+  add_group "Project" do
+    SimpleCov.result.covered_percent
+  end
+
   enable_coverage :branch
 end
 

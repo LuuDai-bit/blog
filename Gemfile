@@ -56,8 +56,8 @@ group :test do
   gem 'rails-controller-testing'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
-  gem 'simplecov-lcov', require: false
   gem 'timecop'
+  gem 'simplecov_json_formatter'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
