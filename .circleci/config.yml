@@ -39,9 +39,15 @@ jobs:
               exit 0
             fi
 
-            PROJECT_COVERAGE=$(awk -F: '/LF:/ { lf += $2 } /LH:/ { lh += $2 } END { print int((lh/lf)*100) }' coverage/lcov.info)
+            PROJECT_COVERAGE=$(ruby -rjson -e '
+              data = JSON.parse(File.read("coverage/coverage.json"))
+              puts data["groups"]["Project"].to_i.round(2)
+            ')
 
-            PATCH_COVERAGE=$PROJECT_COVERAGE
+            PATCH_COVERAGE=$(ruby -rjson -e '
+              data = JSON.parse(File.read("coverage/coverage.json"))
+              puts data["groups"]["Changed"].to_i.round(2)
+            ')
 
             echo "Project coverage: $PROJECT_COVERAGE"
             echo "Patch coverage: $PATCH_COVERAGE"
