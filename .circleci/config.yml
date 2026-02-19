@@ -34,6 +34,11 @@ jobs:
       - run:
           name: Calculate Coverage
           command: |
+            if [ -z "$CIRCLE_PULL_REQUEST" ]; then
+              echo "Not a PR build. Skip coverage comment."
+              exit 0
+            fi
+
             PROJECT_COVERAGE=$(awk -F: '/LF:/ { lf += $2 } /LH:/ { lh += $2 } END { print int((lh/lf)*100) }' coverage/lcov.info)
 
             PATCH_COVERAGE=$PROJECT_COVERAGE
