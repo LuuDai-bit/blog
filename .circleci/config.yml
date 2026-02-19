@@ -34,11 +34,21 @@ jobs:
       - run:
           name: Calculate Coverage
           command: |
-            echo "pull request url: $CIRCLE_PULL_REQUEST"
+            echo "Circle pull request: $CIRCLE_PULL_REQUEST"
             if [ -z "$CIRCLE_PULL_REQUEST" ]; then
               echo "Not a PR build. Skip coverage comment."
               exit 0
             fi
+
+            PROJECT_COVERAGE=$(ruby -rjson -e '
+              data = JSON.parse(File.read("coverage/coverage.json"))
+              puts data["groups"]["Project"]["lines"]["covered_percent"].round(2)
+            ')
+
+            PATCH_COVERAGE=$(ruby -rjson -e '
+              data = JSON.parse(File.read("coverage/coverage.json"))
+              puts data["groups"]["Changed"]["lines"]["covered_percent"].round(2)
+            ')
 
             echo "Project coverage: $PROJECT_COVERAGE"
             echo "Patch coverage: $PATCH_COVERAGE"
