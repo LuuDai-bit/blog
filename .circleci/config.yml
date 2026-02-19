@@ -34,8 +34,8 @@ jobs:
       - run:
           name: Calculate Coverage
           command: |
-            echo "$CIRCLE_PIPELINE_SOURCE"
-            if [ "$CIRCLE_PIPELINE_SOURCE" != "pull-request" ]; then
+            echo "pull request url: $CIRCLE_PULL_REQUEST"
+            if [ -z "$CIRCLE_PULL_REQUEST" ]; then
               echo "Not a PR build. Skip coverage comment."
               exit 0
             fi
