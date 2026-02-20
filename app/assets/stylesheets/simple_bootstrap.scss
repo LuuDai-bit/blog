@@ -5275,6 +5275,7 @@ textarea.form-control-lg {
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   outline: 0;
+  border-radius: 5px;
 }
 
 .modal-backdrop {
@@ -5300,6 +5301,7 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding: 1rem 1rem;
   border-bottom: 1px solid #dee2e6;
+  background-color: var(--tb-head-th-bg-color);
 }
 .modal-header .btn-close {
   padding: 0.5rem 0.5rem;
