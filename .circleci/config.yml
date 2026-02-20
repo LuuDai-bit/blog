@@ -29,8 +29,6 @@ jobs:
       - run:
           name: rails test
           command: bundle exec rspec
-      - codecov/upload:
-          file: coverage/lcov.info
       - run:
           name: Calculate Coverage
           command: |
