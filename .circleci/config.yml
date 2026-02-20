@@ -32,8 +32,21 @@ jobs:
       - run:
           name: Calculate Coverage
           command: |
-            echo "Circle pull request: $CIRCLE_PULL_REQUEST"
-            if [ -z "$CIRCLE_PULL_REQUEST" ] && [ -z "$CIRCLE_PR_NUMBER" ]; then
+            if [ -z "$CIRCLE_PULL_REQUEST" ]; then
+              CIRCLE_PULL_REQUEST=`
+                curl -s -L \
+                  -H "Accept: application/vnd.github+json" \
+                  -H "Authorization: Bearer $GITHUB_TOKEN" \
+                  -H "X-GitHub-Api-Version: 2022-11-28" \
+                  "https://api.github.com/repos/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/pulls?head=$CIRCLE_PROJECT_USERNAME:$CIRCLE_BRANCH&state=open" \
+                  | grep -o '/pulls/[0-9]*' \
+                  | head -1 \
+                  | grep -o '[0-9]*' \
+                  || true
+              `
+            fi
+
+            if [ -z "$CIRCLE_PULL_REQUEST" ]; then
               echo "Not a PR build. Skip coverage comment."
               exit 0
             fi
