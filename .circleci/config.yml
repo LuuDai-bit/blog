@@ -29,13 +29,11 @@ jobs:
       - run:
           name: rails test
           command: bundle exec rspec
-      - codecov/upload:
-          file: coverage/lcov.info
       - run:
           name: Calculate Coverage
           command: |
             echo "Circle pull request: $CIRCLE_PULL_REQUEST"
-            if [ -z "$CIRCLE_PULL_REQUEST" ]; then
+            if [ -z "$CIRCLE_PULL_REQUEST" ] && [ -z "$CIRCLE_PR_NUMBER" ]; then
               echo "Not a PR build. Skip coverage comment."
               exit 0
             fi
