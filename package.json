@@ -12,6 +12,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
     "bootstrap": "^5.2.3",
+    "commonmark": "^0.31.2",
     "jquery": "^3.7.1",
     "picimo": "^0.0.39",
     "picmo": "^5.7.2",

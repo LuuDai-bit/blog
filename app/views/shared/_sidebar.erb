@@ -47,6 +47,10 @@
     <%= icon 'key', library: 'boxicons' %>
     Auth Tokens
   <% end %>
+  <%= link_to admin_comment_templates_path, class: "#{'active' if current_controller?('/admin/comment_templates')}" do %>
+    <%= icon 'message', library: 'boxicons' %>
+    Comment Templates
+  <% end %>
   <%= link_to destroy_user_session_path, method: :delete, class: 'danger-action' do %>
     <%= icon 'log-out', library: 'boxicons' %>
     Logout
