@@ -132,6 +132,7 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
 
     before do
       allow_any_instance_of(described_class).to receive(:update_comment_template).and_return(double(code: 200))
+      allow_any_instance_of(described_class).to receive(:get_comment_template).and_return(double('data' => params[:comment_template]))
     end
 
     context 'when success' do
