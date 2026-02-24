@@ -29,4 +29,22 @@ module CommentBotModule
     }
     HTTParty.post(url, body: body)
   end
+
+  def get_comment_template(id)
+    url = "#{CommentBotModule::DOMAIN}/api/v1/comment_templates/#{id}"
+    HTTParty.get(url)
+  end
+
+  def update_comment_template(id, content, repository_id)
+    return if content.blank?
+
+    url = "#{CommentBotModule::DOMAIN}/api/v1/comment_templates/#{id}"
+    body = {
+      comment_template: {
+        content: content,
+        repository_id: repository_id
+      }
+    }
+    HTTParty.patch(url, body: body)
+  end
 end

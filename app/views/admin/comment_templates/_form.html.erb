@@ -3,6 +3,7 @@
     <div class="form-group col-6">
       <%= form.label :content, 'Content' %>
       <%= form.text_area :content,
+                         value: comment_template.try(:[], 'content'),
                          class: 'form-control',
                          placeholder: 'Gihub comment template',
                          size: '50x10',

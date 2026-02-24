@@ -20,9 +20,23 @@ class Admin::CommentTemplatesController < Admin::AdminController
     end
   end
 
-  def edit; end
+  def edit
+    response = get_comment_template(params[:id])
+    @comment_template = response['data']
+  end
 
   def update
+    response = update_comment_template(params[:id], comment_template_params[:content], comment_template_params[:repository_id])
+
+    if response.code == 200
+      flash[:notice] = "Comment template updated"
+      redirect_to admin_comment_templates_path
+    else
+      flash[:danger] = "There's error while update comment template"
+      response = get_comment_template(params[:id])
+      @comment_template = response['data']
+      render :edit
+    end
   end
 
   def destroy
