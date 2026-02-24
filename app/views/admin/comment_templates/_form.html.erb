@@ -1,0 +1,25 @@
+<div class="w-100 p-1" data-controller="preview-github-comment">
+  <div class="row w-100">
+    <div class="form-group col-6">
+      <%= form.label :content, 'Content' %>
+      <%= form.text_area :content,
+                         class: 'form-control',
+                         placeholder: 'Gihub comment template',
+                         size: '50x10',
+                         data: {action: 'preview-github-comment#generatePreview',
+                                'preview-github-comment-target': 'source'} %>
+    </div>
+
+    <div class="form-group col-6">
+      <%= form.label :preview, 'Preview' %>
+      <div class="preview-container"
+          id="preview-comment-template"
+          data-preview-github-comment-target="preview"></div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-2 d-flex flex-row-reverse">
+  <%= link_to('Cancel', admin_comment_templates_path, class: 'btn btn-secondary') %>
+  <%= form.submit('Save', class: 'btn btn-primary me-2') %>
+</div>

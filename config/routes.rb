@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :passwords, only: %i[edit update]
     resources :job_logs, only: :index
     resources :auth_tokens, only: %i[index create show destroy]
+    resources :comment_templates
   end
 
   namespace :gateway do
