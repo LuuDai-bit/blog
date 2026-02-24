@@ -146,7 +146,8 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
     context 'when failed' do
       before do
         allow_any_instance_of(described_class).to receive(:update_comment_template).and_return(double(code: 422))
-        allow_any_instance_of(described_class).to receive(:get_comment_template).and_return(double('data' => params[:comment_template]))
+        response = { data: { content: 'Test comment template', repository_id: 1 } }
+        allow_any_instance_of(described_class).to receive(:get_comment_template).and_return(response)
       end
 
       it 'should render edit template' do
