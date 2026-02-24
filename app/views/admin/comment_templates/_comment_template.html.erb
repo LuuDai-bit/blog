@@ -3,5 +3,11 @@
   <td class="w-30"><span class="text-truncate-2l"><%= comment_template["content"] %></span></td>
   <td class="w-30"><%= format_datetime(comment_template["created_at"].to_date) %></td>
   <td class="w-30"><%= comment_template["status"] %></td>
-  <td class="w-30"></td>
+  <td class="w-30">
+    <%= link_to edit_admin_comment_template_path(comment_template["id"]),
+                class: 'btn btn-light',
+                title: 'Edit Comment Template' do %>
+      <%= icon 'file', library: 'boxicons' %>
+    <% end %>
+  </td>
 </tr>

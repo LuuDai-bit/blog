@@ -1,0 +1,11 @@
+<%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'Comment Templates', url: admin_comment_templates_path}, {name: 'Edit Comment Template', url: '#'}] } %>
+
+<h1 class="admin-title">Edit Comment Template</h1>
+
+<div class="main-container">
+  <%= form_with url: admin_comment_template_path(@comment_template['id']),
+                method: :patch,
+                scope: :comment_template do |form| %>
+    <%= render partial: 'form', locals: { form: form, comment_template: @comment_template } %>
+  <% end %>
+</div>
