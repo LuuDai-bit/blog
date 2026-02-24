@@ -19,7 +19,18 @@ module CommentBotModule
     response
   end
 
-  def create_comment_templates(message)
-    return if message.blank?
+  def create_comment_templates(content, repository_id)
+    return if content.blank?
+
+    url = "#{CommentBotModule::DOMAIN}/api/v1/comment_templates"
+    body = {
+      comment_template: {
+        content: content,
+        repository_id: repository_id
+      }
+    }
+    response = HTTParty.post(url, body: body)
+
+    response
   end
 end
