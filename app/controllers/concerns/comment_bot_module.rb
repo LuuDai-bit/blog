@@ -14,9 +14,7 @@ module CommentBotModule
       page: page,
       per_page: per_page
     }.to_json
-    response = HTTParty.get(url, body: body)
-
-    response
+    HTTParty.get(url, body: body)
   end
 
   def create_comment_templates(content, repository_id)
@@ -29,8 +27,6 @@ module CommentBotModule
         repository_id: repository_id
       }
     }
-    response = HTTParty.post(url, body: body)
-
-    response
+    HTTParty.post(url, body: body)
   end
 end
