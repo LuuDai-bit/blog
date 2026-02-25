@@ -20,7 +20,9 @@ Rails.application.routes.draw do
     resources :passwords, only: %i[edit update]
     resources :job_logs, only: :index
     resources :auth_tokens, only: %i[index create show destroy]
-    resources :comment_templates
+    resources :comment_templates do
+      patch :make_active, on: :member, to: "comment_templates#make_active"
+    end
   end
 
   namespace :gateway do

@@ -53,6 +53,11 @@ module CommentBotModule
     HTTParty.delete(url)
   end
 
+  def mark_comment_template_as_active(id)
+    url = "#{CommentBotModule::DOMAIN}/api/v1/comment_templates/#{id}/make_active"
+    HTTParty.patch(url)
+  end
+
   def get_repositories
     url = "#{CommentBotModule::DOMAIN}/api/v1/repositories"
     HTTParty.get(url)

@@ -66,6 +66,8 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
 
     context 'when success' do
       before do
+        data = { data: 'test' }
+        allow_any_instance_of(described_class).to receive(:get_repositories).and_return(data)
         allow_any_instance_of(described_class).to receive(:create_comment_templates).and_return(double(code: 201))
       end
 
@@ -84,7 +86,7 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
       it 'should render new template' do
         subject
         expect(response).to render_template :new
-        expect(flash[:danger]).to eq "There's error while create comment template"
+        expect(flash[:alert]).to eq "There is error while create comment template"
       end
     end
   end
@@ -138,6 +140,8 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
     subject { patch :update, params: params }
 
     before do
+      data = { data: 'test' }
+      allow_any_instance_of(described_class).to receive(:get_repositories).and_return(data)
       allow_any_instance_of(described_class).to receive(:update_comment_template).and_return(double(code: 200))
       allow_any_instance_of(described_class).to receive(:get_comment_template).and_return(double('data' => params[:comment_template]))
     end
@@ -160,7 +164,7 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
       it 'should render edit template' do
         subject
         expect(response).to render_template :edit
-        expect(flash[:danger]).to eq "There's error while update comment template"
+        expect(flash[:alert]).to eq "There is error while update comment template"
       end
     end
   end
@@ -194,7 +198,7 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
       it 'should redirect to index page with error message' do
         subject
         expect(response).to redirect_to admin_comment_templates_path
-        expect(flash[:danger]).to eq "There's error while delete comment template"
+        expect(flash[:alert]).to eq "There is error while delete comment template"
       end
     end
   end

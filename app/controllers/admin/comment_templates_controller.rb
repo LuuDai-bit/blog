@@ -1,5 +1,5 @@
 class Admin::CommentTemplatesController < Admin::AdminController
-  before_action :load_repositories, only: %i[new edit]
+  before_action :load_repositories, only: %i[new edit create update]
 
   include CommentBotModule
 
@@ -18,7 +18,7 @@ class Admin::CommentTemplatesController < Admin::AdminController
       flash[:notice] = "Comment template created"
       redirect_to admin_comment_templates_path
     else
-      flash[:danger] = "There's error while create comment template"
+      flash.now[:alert] = "There is error while create comment template"
       render :new
     end
   end
@@ -35,9 +35,9 @@ class Admin::CommentTemplatesController < Admin::AdminController
       flash[:notice] = "Comment template updated"
       redirect_to admin_comment_templates_path
     else
-      flash[:danger] = "There's error while update comment template"
-      response = get_comment_template(params[:id])
-      @comment_template = response['data']
+      flash.now[:alert] = "There is error while update comment template"
+      comment_template_response = get_comment_template(params[:id])
+      @comment_template = comment_template_response['data']
       render :edit
     end
   end
@@ -47,7 +47,18 @@ class Admin::CommentTemplatesController < Admin::AdminController
     if response.code == 200
       flash[:notice] = 'Comment template deleted'
     else
-      flash[:danger] = "There's error while delete comment template"
+      flash.now[:alert] = "There is error while delete comment template"
+    end
+
+    redirect_to admin_comment_templates_path
+  end
+
+  def make_active
+    response = mark_comment_template_as_active(params[:id])
+    if response.code == 200
+      flash[:notice] = 'Comment template marked as active'
+    else
+      flash.now[:alert] = "There is error while marking comment template as active"
     end
 
     redirect_to admin_comment_templates_path
