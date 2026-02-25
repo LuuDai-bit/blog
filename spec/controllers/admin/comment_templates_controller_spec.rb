@@ -157,4 +157,38 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
       end
     end
   end
+
+  describe 'DELETE #destroy' do
+    let(:params) do
+      {
+        id: 1
+      }
+    end
+
+    subject { delete :destroy, params: params }
+
+    context 'when success' do
+      before do
+        allow_any_instance_of(described_class).to receive(:destroy_comment_template).and_return(double(code: 200))
+      end
+
+      it 'should redirect to index page' do
+        subject
+        expect(response).to redirect_to admin_comment_templates_path
+        expect(flash[:notice]).to eq 'Comment template deleted'
+      end
+    end
+
+    context 'when failed' do
+      before do
+        allow_any_instance_of(described_class).to receive(:destroy_comment_template).and_return(double(code: 422))
+      end
+
+      it 'should redirect to index page with error message' do
+        subject
+        expect(response).to redirect_to admin_comment_templates_path
+        expect(flash[:danger]).to eq "There's error while delete comment template"
+      end
+    end
+  end
 end

@@ -9,5 +9,12 @@
                 title: 'Edit Comment Template' do %>
       <%= icon 'file', library: 'boxicons' %>
     <% end %>
+    <%= link_to admin_comment_template_path(comment_template["id"]),
+                method: :delete,
+                data: { confirm: 'Are you sure?' },
+                class: 'btn btn-danger d-inline',
+                title: 'Delete Comment Template' do %>
+      <%= icon 'trash', library: 'boxicons' %>
+    <% end %>
   </td>
 </tr>
