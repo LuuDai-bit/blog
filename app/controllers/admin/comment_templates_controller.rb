@@ -1,9 +1,12 @@
 class Admin::CommentTemplatesController < Admin::AdminController
+  before_action :load_repositories, only: %i[new edit]
+
   include CommentBotModule
 
   def index
     response = get_comment_templates(params[:page], params[:per_page])
     @comment_templates = response['data']
+    # TODO: Pagination
   end
 
   def new; end
@@ -54,5 +57,10 @@ class Admin::CommentTemplatesController < Admin::AdminController
 
   def comment_template_params
     params.require(:comment_template).permit(:content, :repository_id)
+  end
+
+  def load_repositories
+    response = get_repositories
+    @repositories = response['data']
   end
 end

@@ -52,4 +52,9 @@ module CommentBotModule
     url = "#{CommentBotModule::DOMAIN}/api/v1/comment_templates/#{id}"
     HTTParty.delete(url)
   end
+
+  def get_repositories
+    url = "#{CommentBotModule::DOMAIN}/api/v1/repositories"
+    HTTParty.get(url)
+  end
 end
