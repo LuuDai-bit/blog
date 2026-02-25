@@ -40,6 +40,14 @@ class Admin::CommentTemplatesController < Admin::AdminController
   end
 
   def destroy
+    response = destroy_comment_template(params[:id])
+    if response.code == 200
+      flash[:notice] = 'Comment template deleted'
+    else
+      flash[:danger] = "There's error while delete comment template"
+    end
+
+    redirect_to admin_comment_templates_path
   end
 
   private

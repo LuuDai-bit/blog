@@ -47,4 +47,9 @@ module CommentBotModule
     }
     HTTParty.patch(url, body: body)
   end
+
+  def destroy_comment_template(id)
+    url = "#{CommentBotModule::DOMAIN}/api/v1/comment_templates/#{id}"
+    HTTParty.delete(url)
+  end
 end
