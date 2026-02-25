@@ -38,6 +38,11 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
   describe 'GET #new' do
     subject { get :new }
 
+    before do
+      data = { data: 'test' }
+      allow_any_instance_of(described_class).to receive(:get_repositories).and_return(data)
+    end
+
     context 'when success' do
       it 'should render new page' do
         subject
@@ -104,6 +109,8 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
       end
 
       before do
+        data = { data: 'test' }
+        allow_any_instance_of(described_class).to receive(:get_repositories).and_return(data)
         allow_any_instance_of(described_class).to receive(:get_comment_template).and_return(comment_template)
       end
 

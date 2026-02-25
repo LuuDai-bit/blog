@@ -1,6 +1,16 @@
 <div class="w-100 p-1" data-controller="preview-github-comment">
   <div class="row w-100">
     <div class="form-group col-6">
+      <%= form.label :repository_id, 'Repository' %>
+      <%= form.select :repository_id,
+                      options_for_select(@repositories.map { |r| [r['full_name'], r['id']] },
+                                         comment_template.try(:[], 'repository_id')),
+                      {include_blank: 'Select repository'},
+                      class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row w-100">
+    <div class="form-group col-6">
       <%= form.label :content, 'Content' %>
       <%= form.text_area :content,
                          value: comment_template.try(:[], 'content'),
