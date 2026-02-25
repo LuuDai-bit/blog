@@ -7,6 +7,7 @@
                                          comment_template.try(:[], 'repository_id')),
                       {include_blank: 'Select repository'},
                       class: 'form-control' %>
+      <%= display_errors_hash(@response, :repository_id) %>
     </div>
   </div>
   <div class="row w-100">
@@ -19,6 +20,7 @@
                          size: '50x10',
                          data: {action: 'preview-github-comment#generatePreview',
                                 'preview-github-comment-target': 'source'} %>
+      <%= display_errors_hash(@response, :content) %>
     </div>
 
     <div class="form-group col-6">
@@ -26,6 +28,17 @@
       <div class="preview-container"
           id="preview-comment-template"
           data-preview-github-comment-target="preview"></div>
+    </div>
+  </div>
+  <div class="row w-100">
+    <div class="form-group col-6">
+      <%= form.label :status, 'Status' %>
+      <%= form.select :status,
+                      options_for_select([['Active', 'active'], ['Draft', 'draft']],
+                      comment_template.try(:[], 'status')),
+                      {include_blank: 'Select status'},
+                      class: 'form-control' %>
+      <%= display_errors_hash(@response, :status) %>
     </div>
   </div>
 </div>

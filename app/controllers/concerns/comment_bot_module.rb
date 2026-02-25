@@ -17,14 +17,15 @@ module CommentBotModule
     HTTParty.get(url, body: body)
   end
 
-  def create_comment_templates(content, repository_id)
+  def create_comment_templates(content, repository_id, status)
     return if content.blank?
 
     url = "#{CommentBotModule::DOMAIN}/api/v1/comment_templates"
     body = {
       comment_template: {
         content: content,
-        repository_id: repository_id
+        repository_id: repository_id,
+        status: status
       }
     }
     HTTParty.post(url, body: body)
@@ -35,14 +36,15 @@ module CommentBotModule
     HTTParty.get(url)
   end
 
-  def update_comment_template(id, content, repository_id)
+  def update_comment_template(id, content, repository_id, status)
     return if content.blank?
 
     url = "#{CommentBotModule::DOMAIN}/api/v1/comment_templates/#{id}"
     body = {
       comment_template: {
         content: content,
-        repository_id: repository_id
+        repository_id: repository_id,
+        status: status
       }
     }
     HTTParty.patch(url, body: body)
