@@ -10,6 +10,13 @@
                 title: 'Edit Comment Template' do %>
       <%= icon 'file', library: 'boxicons' %>
     <% end %>
+    <%= link_to make_active_admin_comment_template_path(comment_template["id"]),
+                method: :patch,
+                data: { confirm: "Are you sure? All other comment templates in #{comment_template["repository"]["full_name"]} will be deactivated." },
+                class: 'btn btn-light',
+                title: 'Mark as Active Comment Template' do %>
+      <%= icon 'check-circle', library: 'boxicons' %>
+    <% end %>
     <%= link_to admin_comment_template_path(comment_template["id"]),
                 method: :delete,
                 data: { confirm: 'Are you sure?' },

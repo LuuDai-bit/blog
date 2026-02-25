@@ -8,6 +8,13 @@ module ApplicationHelper
     content_tag :div, error, class: "error-feedback"
   end
 
+  def display_errors_hash(errors_hash, attribute)
+    return unless errors_hash&.key?(attribute.to_s)
+
+    error = errors_hash[attribute.to_s][0]
+    content_tag :div, error, class: "error-feedback"
+  end
+
   def toastr_flash
     flash.each_with_object([]) do |(type, message), flash_messages|
       type = 'success' if type == 'notice'
