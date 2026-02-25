@@ -80,6 +80,8 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
 
     context 'when failed' do
       before do
+        data = { data: 'test' }
+        allow_any_instance_of(described_class).to receive(:get_repositories).and_return(data)
         allow_any_instance_of(described_class).to receive(:create_comment_templates).and_return(double(code: 422))
       end
 
