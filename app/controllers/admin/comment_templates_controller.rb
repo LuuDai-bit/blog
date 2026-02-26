@@ -6,7 +6,10 @@ class Admin::CommentTemplatesController < Admin::AdminController
   def index
     response = get_comment_templates(params[:page], params[:per_page])
     @comment_templates = response['data']
-    # TODO: Pagination
+    pagination = response['meta']
+    @pagy = Pagy.new(count: pagination['total_count'],
+                     page: pagination['page'],
+                     items: pagination['per_page'])
   end
 
   def new; end
