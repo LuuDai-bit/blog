@@ -14,7 +14,12 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
     end
     let(:comment_templates) do
       {
-        'data' => []
+        'data' => [],
+        'meta' => {
+          'total_count' => 0,
+          'page' => 1,
+          'per_page' => 20
+        }
       }
     end
 
