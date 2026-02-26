@@ -4,6 +4,10 @@ import { Parser, HtmlRenderer } from "commonmark";
 export default class extends Controller {
   static targets = [ "source", "preview" ]
 
+  connect() {
+    generatePreview();
+  }
+
   generatePreview() {
     const inputValue = this.sourceTarget.value;
     const reader   = new Parser();
