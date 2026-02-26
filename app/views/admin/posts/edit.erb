@@ -1,7 +1,7 @@
 <h1 class="admin-title">Edit post</h1>
 
 <div class="main-container">
-  <%= form_with url: admin_post_path(@post),
+  <%= form_with url: admin_post_path(@post.id),
                 method: :patch,
                 scope: :post,
                 data: { controller: 'emoji-picker' } do |form| %>
