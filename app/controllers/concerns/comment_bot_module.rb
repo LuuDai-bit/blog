@@ -10,11 +10,11 @@ module CommentBotModule
 
   def get_comment_templates(page = 1, per_page = 20)
     url = "#{CommentBotModule::DOMAIN}/api/v1/comment_templates"
-    body = {
+    query = {
       page: page,
       per_page: per_page
-    }.to_json
-    HTTParty.get(url, body: body)
+    }
+    HTTParty.get(url, query: query)
   end
 
   def create_comment_templates(content, repository_id, status)
