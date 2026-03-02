@@ -2,12 +2,20 @@
   <div class="row w-100">
     <div class="form-group col-6">
       <%= form.label :repository_id, 'Repository' %>
-      <%= form.select :repository_id,
-                      options_for_select(@repositories.map { |r| [r['full_name'], r['id']] },
-                                         comment_template.try(:[], 'repository_id')),
-                      {include_blank: 'Select repository'},
-                      class: 'form-control' %>
-      <%= display_errors_hash(@response, :repository_id) %>
+      <div class="input-group">
+        <%= form.select :repository_id,
+                        options_for_select(@repositories.map { |r| [r['full_name'], r['id']] },
+                                          comment_template.try(:[], 'repository_id')),
+                        {include_blank: 'Select repository'},
+                        data: { 'modal-target': 'repositoriesSelect' },
+                        class: 'form-control' %>
+
+        <div class="input-group-append">
+          <button type="button" class="btn btn-primary" data-action="modal#open">Add repository</button>
+        </div>
+
+        <%= display_errors_hash(@response, :repository_id) %>
+      </div>
     </div>
   </div>
   <div class="row w-100">
