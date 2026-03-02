@@ -1,5 +1,7 @@
 trix-editor {
-  border-radius: 5px !important; 
+  border-radius: 5px !important;
+  max-height: 60vh;
+  overflow: scroll;
 
   a {
     text-decoration: underline;
