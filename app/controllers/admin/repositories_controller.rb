@@ -7,7 +7,7 @@ class Admin::RepositoriesController < Admin::AdminController
     if response.code == 201
       render json: { data: response }
     else
-      render json: { data: response }, status: :unprocessable_entity
+      render json: { error: response }, status: :unprocessable_entity
     end
   end
 

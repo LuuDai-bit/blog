@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["form", "container", "repositoriesSelect"];
+  static targets = ["form", "container", "repositoriesSelect", "error"];
 
   open() {
     this.containerTarget.classList.remove('d-none');
@@ -9,6 +9,8 @@ export default class extends Controller {
 
   close() {
     this.containerTarget.classList.add('d-none');
+    this.formTarget.reset();
+    this.errorTarget.classList.add('d-none');
   }
 
   submit(event) {
@@ -27,14 +29,23 @@ export default class extends Controller {
         body: JSON.stringify(obj)
       });
 
+      const responseJson = await response.json();
+
       if (response.ok) {
         const newOption = document.createElement('option');
-        const responseJson = await response.json();
         const data = responseJson.data;
         newOption.value = data.id;
         newOption.text = data.full_name;
+        newOption.selected = true;
         this.repositoriesSelectTarget.appendChild(newOption);
+        this.formTarget.reset();
+        this.errorTarget.classList.add('d-none');
+
         this.close();
+      } else {
+        const data = responseJson.error;
+        this.errorTarget.textContent = data.errors.join(', ');
+        this.errorTarget.classList.remove('d-none');
       }
     }
 
