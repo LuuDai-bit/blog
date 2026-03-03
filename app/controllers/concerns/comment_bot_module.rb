@@ -64,4 +64,15 @@ module CommentBotModule
     url = "#{CommentBotModule::DOMAIN}/api/v1/repositories"
     HTTParty.get(url)
   end
+
+  def create_respository(owner, name)
+    url = "#{CommentBotModule::DOMAIN}/api/v1/repositories"
+    body = {
+      repository: {
+        owner: owner,
+        name: name
+      }
+    }
+    HTTParty.post(url, body: body)
+  end
 end
