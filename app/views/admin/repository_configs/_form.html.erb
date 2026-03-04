@@ -1,0 +1,37 @@
+<div class="w-100 p-1" data-controller="variable-modal">
+  <div class="row w-100">
+    <%= label_tag :repository_info, 'Repository Information' %>
+    <div class="form-group col-6">
+      <%= label_tag :owner, 'Owner' %>
+      <%= text_field_tag :owner, @repository.try(:[], 'owner'), class: 'form-control disabled' %>
+    </div>
+    <div class="form-group col-6">
+      <%= label_tag :name, 'Name' %>
+      <%= text_field_tag :name, @repository.try(:[], 'name'), class: 'form-control disabled' %>
+    </div>
+  </div>
+
+  <div class="row w-100">
+    <%= label_tag :variables, 'Variables' %>
+    <div class="form-group col-12">
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary" data-action="variable-modal#open">Add Variable</button>
+      </div>
+      <table class="table table-hover table-layout-fixed w-100 mt-3 table-striped table-bordered">
+        <thead>
+          <tr>
+            <th class="col-md-1 text-center">Id</th>
+            <th class="col-md-3 text-center">Name</th>
+            <th class="col-md-3 text-center">Format</th>
+            <th class="col-md-2 text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody id="admin-repositories" data-variable-modal-target="tableBody">
+          <%= render partial: 'variable', collection: @repository.try(:[], 'variables') %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <%= render 'variable_modal' %>
+</div>

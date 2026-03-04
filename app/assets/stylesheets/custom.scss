@@ -254,6 +254,25 @@
   }
 }
 
+.disabled {
+  opacity: 0.6;
+  filter: grayscale(40%);
+  background-color: #cccccc !important;
+  color: #666666 !important;
+  border-color: #bbbbbb !important;
+
+  cursor: not-allowed !important;
+  pointer-events: none;
+  user-select: none;
+
+  transition: all 0.2s ease-in-out;
+}
+
+button svg,
+button icon {
+  pointer-events: none;
+}
+
 @media screen and (max-width: 1200px) {
   .input-group-35vw {
     width: 100% !important;

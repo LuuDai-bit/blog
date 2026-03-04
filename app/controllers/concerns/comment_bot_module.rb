@@ -65,6 +65,20 @@ module CommentBotModule
     HTTParty.get(url)
   end
 
+  def get_repositories_with_pagination(page = 1, per_page = 20)
+    url = "#{CommentBotModule::DOMAIN}/api/v1/repositories"
+    query = {
+      page: page,
+      per_page: per_page
+    }
+    HTTParty.get(url, query: query)
+  end
+
+  def get_repository(id)
+    url = "#{CommentBotModule::DOMAIN}/api/v1/repositories/#{id}"
+    HTTParty.get(url)
+  end
+
   def create_respository(owner, name)
     url = "#{CommentBotModule::DOMAIN}/api/v1/repositories"
     body = {
@@ -84,23 +98,25 @@ module CommentBotModule
     HTTParty.get(url, query: query)
   end
 
-  def create_variable(name, format)
+  def create_variable(name, format, repository_id)
     url = "#{CommentBotModule::DOMAIN}/api/v1/variables"
     body = {
       variable: {
         name: name,
-        format: format
+        format: format,
+        repository_id: repository_id
       }
     }
     HTTParty.post(url, body: body)
   end
 
-  def update_variable(id, name, format)
+  def update_variable(id, name, format, repository_id)
     url = "#{CommentBotModule::DOMAIN}/api/v1/variables/#{id}"
     body = {
       variable: {
         name: name,
-        format: format
+        format: format,
+        repository_id: repository_id
       }
     }
     HTTParty.patch(url, body: body)
