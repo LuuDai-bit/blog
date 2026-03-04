@@ -41,6 +41,8 @@ export default class extends Controller {
         this.formTarget.reset();
         this.errorTarget.classList.add('d-none');
 
+        this.repositoriesSelectTarget.dispatchEvent(new Event('change'));
+
         this.close();
       } else {
         const data = responseJson.error;

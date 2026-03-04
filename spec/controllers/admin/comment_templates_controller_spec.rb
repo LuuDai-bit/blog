@@ -119,6 +119,7 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
 
       before do
         data = { data: 'test' }
+        allow_any_instance_of(described_class).to receive(:get_variables).and_return(data)
         allow_any_instance_of(described_class).to receive(:get_repositories).and_return(data)
         allow_any_instance_of(described_class).to receive(:get_comment_template).and_return(comment_template)
       end

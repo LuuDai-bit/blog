@@ -47,7 +47,7 @@
   background-color: var(--background-color);
 }
 
-.input-group-35vw{
+.input-group-35vw {
   width: 35vw !important;
 }
 
@@ -196,7 +196,9 @@
   color: var(--title-text-color);
 }
 
-.btn, .btn-primary, .btn-light {
+.btn,
+.btn-primary,
+.btn-light {
   color: var(--btn-text-color) !important;
 
   input {
@@ -213,7 +215,7 @@
   background: var(--main-bg-color);
   border-radius: 8px;
   padding: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .theme-option {
@@ -224,8 +226,36 @@
   border-radius: 5px;
 }
 
+.variables-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.variable-preview-card {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 12px;
+
+  .variable-name {
+    font-weight: bold;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+
+  .variable-format {
+    font-style: italic;
+  }
+}
+
 @media screen and (max-width: 1200px) {
-  .input-group-35vw{
+  .input-group-35vw {
     width: 100% !important;
   }
 

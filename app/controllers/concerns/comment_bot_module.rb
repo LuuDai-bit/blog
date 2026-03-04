@@ -75,4 +75,39 @@ module CommentBotModule
     }
     HTTParty.post(url, body: body)
   end
+
+  def get_variables(repository_id)
+    url = "#{CommentBotModule::DOMAIN}/api/v1/variables"
+    query = {
+      repository_id: repository_id
+    }
+    HTTParty.get(url, query: query)
+  end
+
+  def create_variable(name, format)
+    url = "#{CommentBotModule::DOMAIN}/api/v1/variables"
+    body = {
+      variable: {
+        name: name,
+        format: format
+      }
+    }
+    HTTParty.post(url, body: body)
+  end
+
+  def update_variable(id, name, format)
+    url = "#{CommentBotModule::DOMAIN}/api/v1/variables/#{id}"
+    body = {
+      variable: {
+        name: name,
+        format: format
+      }
+    }
+    HTTParty.patch(url, body: body)
+  end
+
+  def destroy_variable(id)
+    url = "#{CommentBotModule::DOMAIN}/api/v1/variables/#{id}"
+    HTTParty.delete(url)
+  end
 end

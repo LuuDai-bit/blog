@@ -7,14 +7,24 @@
                         options_for_select(@repositories.map { |r| [r['full_name'], r['id']] },
                                           comment_template.try(:[], 'repository_id')),
                         {include_blank: 'Select repository'},
-                        data: { 'modal-target': 'repositoriesSelect' },
+                        data: { 'repository-modal-target': 'repositoriesSelect',
+                                'preview-github-comment-target': 'repositoriesSelect',
+                                action: 'change->preview-github-comment#reloadVariables' },
                         class: 'form-control' %>
 
         <div class="input-group-append">
-          <button type="button" class="btn btn-primary" data-action="modal#open">Add repository</button>
+          <button type="button" class="btn btn-primary" data-action="repository-modal#open">Add repository</button>
         </div>
 
         <%= display_errors_hash(@response, :repository_id) %>
+      </div>
+    </div>
+
+    <div class="form-group col-12">
+      <%= form.hidden_field :variables_path, value: admin_variables_path, data: { 'preview-github-comment-target': 'variablesPath' } %>
+      <%= form.label :variables, 'Variables' %>
+      <div data-preview-github-comment-target="variables">
+        <%= render 'variables' %>
       </div>
     </div>
   </div>
