@@ -8,7 +8,10 @@
             data-action="variable-modal#open"
             data-variable-id="<%= variable["id"] %>"
             data-variable-name="<%= variable["name"] %>"
-            data-variable-format="<%= variable["format"] %>">
+            data-variable-format="<%= variable["format"] %>"
+            data-variable-type="<%= variable["variable_type"] %>"
+            data-bsm-input="<%= variable["boolean_success_message"] %>"
+            data-bfm-input="<%= variable["boolean_false_message"] %>">
       <%= icon 'file', library: 'boxicons' %>
     </button>
     <button class="btn btn-danger"
