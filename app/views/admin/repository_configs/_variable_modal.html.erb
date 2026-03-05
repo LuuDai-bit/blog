@@ -1,0 +1,39 @@
+<div class="modal d-none" id="add-variable-modal" tabindex="-1" role="dialog" data-variable-modal-target="container">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Variable</h5>
+        <button type="button" class="btn-close" id="close-add-variable-modal" data-action="variable-modal#close" aria-label="Close">
+        </button>
+      </div>
+      <%= hidden_field_tag :repository_path, admin_variables_path, data: { 'variable-modal-target': 'variablePath' } %>
+      <%= form_with url: admin_variables_path,
+                    method: :post,
+                    local: true,
+                    data: { 'variable-modal-target': 'form' } do |form| %>
+        <div class="modal-body d-flex justify-content-around">
+          <div class="row">
+            <span class="col-12 mb-2 d-none alert-danger" data-variable-modal-target="error">
+            </span>
+            <div class="col-12 mb-2">
+              <%= form.label :name, 'Name' %>
+              <%= form.text_field :name, class: 'form-control', placeholder: 'Name', data: { 'variable-modal-target': 'nameInput' } %>
+            </div>
+            <div class="col-12">
+              <%= form.label :format, 'Format' %>
+              <%= form.text_field :format, class: 'form-control', placeholder: 'Format', data: { 'variable-modal-target': 'formatInput' } %>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <%= form.submit('Save',
+                          class: 'btn btn-primary',
+                          id: 'save-repository-btn',
+                          data: {action: 'variable-modal#submit'}) %>
+          <button type="button" class="btn btn-secondary" data-action="variable-modal#close">Close</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
