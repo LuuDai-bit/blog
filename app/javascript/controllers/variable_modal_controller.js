@@ -36,6 +36,8 @@ export default class extends Controller {
     this.containerTarget.classList.add('d-none');
     this.formTarget.reset();
     this.errorTarget.classList.add('d-none');
+    this.bsmInputContainerTarget.classList.add('d-none');
+    this.bfmInputContainerTarget.classList.add('d-none');
   }
 
   changeVariableType(event) {
@@ -43,6 +45,8 @@ export default class extends Controller {
     if (event.target.value === "string") {
       this.bsmInputContainerTarget.classList.add('d-none');
       this.bfmInputContainerTarget.classList.add('d-none');
+      this.bsmInputTarget.value = "";
+      this.bfmInputTarget.value = "";
     } else {
       this.bsmInputContainerTarget.classList.remove('d-none');
       this.bfmInputContainerTarget.classList.remove('d-none');
