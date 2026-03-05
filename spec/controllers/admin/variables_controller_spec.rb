@@ -103,7 +103,12 @@ RSpec.describe Admin::VariablesController, type: :controller do
 
   describe "DELETE #destroy" do
     before do
+      response = double(code:200, 'data': [])
+      data = double(variables: [])
+      allow(response).to receive(:[]).with('data').and_return(data)
+      allow(data).to receive(:[]).with('variables').and_return([])
       allow_any_instance_of(described_class).to receive(:destroy_variable).and_return(double(code: 200, data: {}))
+      allow_any_instance_of(described_class).to receive(:get_repository).and_return(response)
     end
 
     it "returns a success response" do
