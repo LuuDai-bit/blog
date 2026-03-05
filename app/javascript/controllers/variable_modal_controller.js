@@ -1,7 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["form", "error", "container", "variablePath", "nameInput", "formatInput", "tableBody"];
+  static targets = ["form", "error", "container", "variablePath",
+    "nameInput", "formatInput", "tableBody", "variableTypeString",
+    "variableTypeBoolean", "bsmInput", "bfmInput",
+    "bsmInputContainer", "bfmInputContainer"];
 
   connect() {
     this.variableId = null;
@@ -17,6 +20,14 @@ export default class extends Controller {
     if (this.variableId) {
       this.nameInputTarget.value = event.target.dataset.variableName;
       this.formatInputTarget.value = event.target.dataset.variableFormat;
+      if (event.target.dataset.variableType === "string") {
+        this.variableTypeStringTarget.checked = true;
+      } else {
+        this.variableTypeBooleanTarget.checked = true;
+        this.changeVariableType(event);
+      }
+      this.bsmInputTarget.value = event.target.dataset.bsmInput;
+      this.bfmInputTarget.value = event.target.dataset.bfmInput;
     }
     this.containerTarget.classList.remove('d-none');
   }
@@ -25,6 +36,21 @@ export default class extends Controller {
     this.containerTarget.classList.add('d-none');
     this.formTarget.reset();
     this.errorTarget.classList.add('d-none');
+    this.bsmInputContainerTarget.classList.add('d-none');
+    this.bfmInputContainerTarget.classList.add('d-none');
+  }
+
+  changeVariableType(event) {
+    event.preventDefault();
+    if (event.target.value === "string") {
+      this.bsmInputContainerTarget.classList.add('d-none');
+      this.bfmInputContainerTarget.classList.add('d-none');
+      this.bsmInputTarget.value = "";
+      this.bfmInputTarget.value = "";
+    } else {
+      this.bsmInputContainerTarget.classList.remove('d-none');
+      this.bfmInputContainerTarget.classList.remove('d-none');
+    }
   }
 
   submit(event) {
@@ -33,6 +59,7 @@ export default class extends Controller {
     const obj = Object.fromEntries(formData.entries());
     obj.repository_id = this.repositoryId;
     obj.id = this.variableId;
+    console.log(obj);
     const path = this.variableId ? `${this.variablePathTarget.value}/${this.variableId}` : this.variablePathTarget.value;
 
     const saveVariable = async () => {

@@ -19,9 +19,38 @@
               <%= form.label :name, 'Name' %>
               <%= form.text_field :name, class: 'form-control', placeholder: 'Name', data: { 'variable-modal-target': 'nameInput' } %>
             </div>
-            <div class="col-12">
+
+            <div class="col-12 mb-2">
               <%= form.label :format, 'Format' %>
               <%= form.text_field :format, class: 'form-control', placeholder: 'Format', data: { 'variable-modal-target': 'formatInput' } %>
+            </div>
+
+            <div class="col-12 mb-2">
+              <div class="form-group">
+                <%= form.label :variable_type, 'Variable Type' %>
+                <div>
+                  <% ["string", "boolean"].each do |variable_type| %>
+                    <%= label_tag variable_type.to_sym do %>
+                      <%= form.radio_button :variable_type,
+                                            variable_type,
+                                            data: { 'action': 'variable-modal#changeVariableType',
+                                                    'variable-modal-target': 'variableType' + variable_type.capitalize },
+                                            checked: variable_type == "string" %>
+                      <%= variable_type.capitalize %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 mb-2 d-none" data-variable-modal-target="bsmInputContainer">
+              <%= form.label :boolean_success_message, 'Success Message' %>
+              <%= form.text_field :boolean_success_message, class: 'form-control', placeholder: 'Success Message', data: { 'variable-modal-target': 'bsmInput' } %>
+            </div>
+
+            <div class="col-12 mb-2 d-none" data-variable-modal-target="bfmInputContainer">
+              <%= form.label :boolean_false_message, 'False Message' %>
+              <%= form.text_field :boolean_false_message, class: 'form-control', placeholder: 'False Message', data: { 'variable-modal-target': 'bfmInput' } %>
             </div>
           </div>
         </div>

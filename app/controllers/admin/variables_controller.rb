@@ -18,7 +18,7 @@ class Admin::VariablesController < Admin::AdminController
   end
 
   def create
-    response = create_variable(variable_params[:name], variable_params[:format], variable_params[:repository_id])
+    response = create_variable(variable_params)
 
     if response.code == 201
       @repository = get_repository(variable_params[:repository_id])['data']
@@ -35,7 +35,7 @@ class Admin::VariablesController < Admin::AdminController
   end
 
   def update
-    response = update_variable(params[:id], variable_params[:name], variable_params[:format], variable_params[:repository_id])
+    response = update_variable(params[:id], variable_params)
 
     if response.code == 200
       @repository = get_repository(variable_params[:repository_id])['data']
@@ -71,6 +71,7 @@ class Admin::VariablesController < Admin::AdminController
   private
 
   def variable_params
-    params.require(:variable).permit(:name, :format, :repository_id)
+    params.require(:variable).permit(:name, :format, :repository_id, :variable_type,
+                                     :boolean_false_message, :boolean_success_message)
   end
 end

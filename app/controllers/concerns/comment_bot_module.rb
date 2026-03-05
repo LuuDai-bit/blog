@@ -98,25 +98,31 @@ module CommentBotModule
     HTTParty.get(url, query: query)
   end
 
-  def create_variable(name, format, repository_id)
+  def create_variable(variable)
     url = "#{CommentBotModule::DOMAIN}/api/v1/variables"
     body = {
       variable: {
-        name: name,
-        format: format,
-        repository_id: repository_id
+        name: variable[:name],
+        format: variable[:format],
+        repository_id: variable[:repository_id],
+        variable_type: variable[:variable_type],
+        boolean_false_message: variable[:boolean_false_message],
+        boolean_success_message: variable[:boolean_success_message]
       }
     }
     HTTParty.post(url, body: body)
   end
 
-  def update_variable(id, name, format, repository_id)
+  def update_variable(id, variable)
     url = "#{CommentBotModule::DOMAIN}/api/v1/variables/#{id}"
     body = {
       variable: {
-        name: name,
-        format: format,
-        repository_id: repository_id
+        name: variable[:name],
+        format: variable[:format],
+        repository_id: variable[:repository_id],
+        variable_type: variable[:variable_type],
+        boolean_false_message: variable[:boolean_false_message],
+        boolean_success_message: variable[:boolean_success_message]
       }
     }
     HTTParty.patch(url, body: body)
