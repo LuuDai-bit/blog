@@ -29,8 +29,6 @@ export default class extends Controller {
         }
       })
       const data = await response.json();
-      console.log('debug')
-      console.log(data.data);
       this.variablesTarget.innerHTML = data.data;
     };
 

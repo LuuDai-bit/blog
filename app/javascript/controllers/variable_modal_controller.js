@@ -59,7 +59,6 @@ export default class extends Controller {
     const obj = Object.fromEntries(formData.entries());
     obj.repository_id = this.repositoryId;
     obj.id = this.variableId;
-    console.log(obj);
     const path = this.variableId ? `${this.variablePathTarget.value}/${this.variableId}` : this.variablePathTarget.value;
 
     const saveVariable = async () => {

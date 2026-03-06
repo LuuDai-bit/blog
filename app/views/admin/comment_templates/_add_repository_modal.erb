@@ -1,18 +1,18 @@
-<div class="modal d-none" id="add-repository-modal" tabindex="-1" role="dialog" data-modal-target="container">
+<div class="modal d-none" id="add-repository-modal" tabindex="-1" role="dialog" data-repository-modal-target="container">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Add repository</h5>
-        <button type="button" class="btn-close" id="close-add-repository-modal" data-action="modal#close" aria-label="Close">
+        <button type="button" class="btn-close" id="close-add-repository-modal" data-action="repository-modal#close" aria-label="Close">
         </button>
       </div>
       <%= form_with url: admin_repositories_path,
                     method: :post,
                     local: true,
-                    data: { 'modal-target': 'form' } do |form| %>
+                    data: { 'repository-modal-target': 'form' } do |form| %>
         <div class="modal-body d-flex justify-content-around">
           <div class="row">
-            <span class="col-12 mb-2 d-none alert-danger" data-modal-target="error">
+            <span class="col-12 mb-2 d-none alert-danger" data-repository-modal-target="error">
             </span>
             <div class="col-12 mb-2">
               <%= form.label :owner, 'Owner' %>
@@ -26,8 +26,8 @@
         </div>
 
         <div class="modal-footer">
-          <%= form.submit('Save', class: 'btn btn-primary', id: 'save-repository-btn', data: {action: 'modal#submit'}) %>
-          <button type="button" class="btn btn-secondary" data-action="modal#close">Close</button>
+          <%= form.submit('Save', class: 'btn btn-primary', id: 'save-repository-btn', data: {action: 'repository-modal#submit'}) %>
+          <button type="button" class="btn btn-secondary" data-action="repository-modal#close">Close</button>
         </div>
       <% end %>
     </div>

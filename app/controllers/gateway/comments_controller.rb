@@ -17,11 +17,10 @@ class Gateway::CommentsController < Gateway::ApplicationController
 
   def body
     {
-      project_coverage: params[:project_coverage],
-      patch_coverage: params[:patch_coverage],
       pull_request_number: params[:pull_request_number],
       owner: params[:owner],
-      repo: params[:repo]
+      repo: params[:repo],
+      variables: params.to_unsafe_h.except(:pull_request_number, :owner, :repo)
     }
   end
 end
