@@ -25,9 +25,20 @@ RSpec.describe Gateway::CommentsController, type: :controller do
         end
 
         it 'makes a POST request to the external API' do
+          expected_body = {
+            pull_request_number: '123',
+            owner: 'test-owner',
+            repo: 'test-repo',
+            variables: {
+              'action' => 'create',
+              'controller' => 'gateway/comments',
+              'patch_coverage' => '90.2',
+              'project_coverage' => '85.5'
+            }
+          }
           expect(HTTParty).to receive(:post).with(
             'http://localhost:3000/api/v1/comments',
-            body: valid_params
+            body: expected_body
           )
 
           post :create, params: valid_params
@@ -50,9 +61,20 @@ RSpec.describe Gateway::CommentsController, type: :controller do
           end
 
           it 'uses the custom domain' do
+            expected_body = {
+              pull_request_number: '123',
+              owner: 'test-owner',
+              repo: 'test-repo',
+              variables: {
+                'action' => 'create',
+                'controller' => 'gateway/comments',
+                'patch_coverage' => '90.2',
+                'project_coverage' => '85.5'
+              }
+            }
             expect(HTTParty).to receive(:post).with(
               'https://custom-domain.com/api/v1/comments',
-              body: valid_params
+              body: expected_body
             )
 
             post :create, params: valid_params
@@ -77,9 +99,18 @@ RSpec.describe Gateway::CommentsController, type: :controller do
 
       context 'with missing parameters' do
         it 'still makes the request with nil values' do
+          expected_body = {
+            pull_request_number: nil,
+            owner: nil,
+            repo: nil,
+            variables: {
+              'action' => 'create',
+              'controller' => 'gateway/comments'
+            }
+          }
           expect(HTTParty).to receive(:post).with(
             'http://localhost:3000/api/v1/comments',
-            body: { project_coverage: nil, patch_coverage: nil, pull_request_number: nil, owner: nil, repo: nil }
+            body: expected_body
           )
 
           post :create
