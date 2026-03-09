@@ -3,7 +3,11 @@
               method: :get,
               local: false do |form| %>
   <div class="mb-2rem">
-    <%= form.text_field :search_text, class: 'form-control leaf-input', placeholder: I18n.t("posts.search.search_text_place_holder") %>
+    <%= form.hidden_field :category_name, value: @filter_params[:category_name] %>
+    <%= form.text_field :search_text,
+                        class: 'form-control leaf-input',
+                        placeholder: I18n.t("posts.search.search_text_place_holder"),
+                        value: @filter_params[:search_text] %>
     <%= form.submit 'Search', class: 'd-none' %>
   </div>
 <% end %>
