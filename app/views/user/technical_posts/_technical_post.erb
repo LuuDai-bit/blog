@@ -12,7 +12,10 @@
       </span>
     <% end %>
     <% technical_post.categories.sort_by(&:id).each do |category| %>
-      <%= link_to("#{category.name}", user_technical_posts_path(category_name: category.name), class: 'user-category', remote: true) %>
+      <%= link_to("#{category.name}",
+                  user_technical_posts_path(category_name: category.name, search_text: @filter_params[:search_text]),
+                  class: 'user-category',
+                  remote: true) %>
     <% end %>
   </div>
   <p class="post-meta">
