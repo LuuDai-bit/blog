@@ -7,7 +7,7 @@ require "comment_services_pb"
 class CommentGrpcClient
   def initialize
     @stub = Comment::CommentService::Stub.new(
-      "localhost:50051",
+      ENV["GITHUB_GRPC_DOMAIN"] || "localhost:50051",
       :this_channel_is_insecure
     )
   end
