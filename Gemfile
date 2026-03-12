@@ -18,7 +18,7 @@ gem 'pagy'
 gem 'pg'
 gem 'puma', '>= 6.4.3'
 gem 'rack', '~> 2.2'
-gem 'rails', '7.1.5.2'
+gem 'rails', '~> 7.2'
 gem 'sass-rails', '>= 6'
 gem 'sidekiq', ">= 7.2.4"
 gem 'stimulus-rails'
