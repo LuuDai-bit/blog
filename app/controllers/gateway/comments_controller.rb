@@ -5,7 +5,7 @@ class Gateway::CommentsController < Gateway::ApplicationController
     CommentGrpcClient.new.create_comment(owner: params[:owner],
                                          repo: params[:repo],
                                          pr: params[:pull_request_number].to_i,
-                                         variables: params.to_unsafe_h.except(*filtered_params))
+                                         variables: variables)
 
     render json: { message: 'Success' }
 
@@ -17,5 +17,14 @@ class Gateway::CommentsController < Gateway::ApplicationController
 
   def filtered_params
     %i[owner repo controller action comment pull_request_number]
+  end
+
+  def variables
+    hash = params.to_unsafe_h.except(*filtered_params)
+    hash.each do |key, value|
+      hash[key] = value.to_s
+    end
+
+    hash
   end
 end
