@@ -12,6 +12,10 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
+ActiveSupport.on_load(:action_mailer) do
+  Rails.application.reload_routes_unless_loaded
+end
+
 RSpec.configure do |config|
   Dir[Rails.root.join("spec/supports/**/*.rb")].each { |file| require file }
   config.include FactoryBot::Syntax::Methods
