@@ -12,7 +12,7 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
-ActiveSupport.on_load(:action_mailer) do
+ActiveSupport.on_load(:action_controller) do
   Rails.application.reload_routes_unless_loaded
 end
 
