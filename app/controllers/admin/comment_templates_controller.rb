@@ -31,6 +31,7 @@ class Admin::CommentTemplatesController < Admin::AdminController
   def edit
     response = get_comment_template(params[:id])
     @comment_template = response['data']
+    @variables = get_variables(@comment_template.try(:[], 'repository_id'))['data']
   end
 
   def update

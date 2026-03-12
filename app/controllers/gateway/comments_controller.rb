@@ -2,10 +2,10 @@ require 'httparty'
 
 class Gateway::CommentsController < Gateway::ApplicationController
   def create
-    domain = ENV['GITHUB_APP_DOMAIN'] || 'http://localhost:3000'
-    url = "#{domain}/api/v1/comments"
-
-    HTTParty.post(url, body: body)
+    CommentGrpcClient.new.create_comment(owner: params[:owner],
+                                         repo: params[:repo],
+                                         pr: params[:pull_request_number].to_i,
+                                         variables: params.to_unsafe_h.except(*filtered_params))
 
     render json: { message: 'Success' }
 
@@ -15,13 +15,7 @@ class Gateway::CommentsController < Gateway::ApplicationController
 
   private
 
-  def body
-    {
-      project_coverage: params[:project_coverage],
-      patch_coverage: params[:patch_coverage],
-      pull_request_number: params[:pull_request_number],
-      owner: params[:owner],
-      repo: params[:repo]
-    }
+  def filtered_params
+    %i[owner repo controller action comment pull_request_number]
   end
 end

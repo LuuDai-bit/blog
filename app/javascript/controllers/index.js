@@ -18,3 +18,9 @@ application.register("trix-toolbar", TrixToolbarController)
 
 import PreviewGithubCommentController from "./preview_github_comment_controller"
 application.register("preview-github-comment", PreviewGithubCommentController)
+
+import RepositoryModalController from "./repository_modal_controller"
+application.register("repository-modal", RepositoryModalController)
+
+import VariableModalController from "./variable_modal_controller"
+application.register("variable-modal", VariableModalController)

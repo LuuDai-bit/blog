@@ -1,0 +1,16 @@
+<div class="variables-list">
+  <% if @variables.present? %>
+    <% @variables.each do |variable| %>
+      <span class="variable-preview-card">
+        <span class="variable-name">
+          <%= variable['name'] %>
+        </span>
+        <span class="variable-format">
+          <%= variable['format'] %>
+        </span>
+      </span>
+    <% end %>
+  <% else %>
+    <span class="text-muted">No variables</span>
+  <% end %>
+</div>

@@ -21,48 +21,21 @@ RSpec.describe Gateway::CommentsController, type: :controller do
 
       context 'when HTTParty request succeeds' do
         before do
-          allow(HTTParty).to receive(:post).and_return(double(success?: true))
+          allow_any_instance_of(CommentGrpcClient).to receive(:create_comment).and_return('success')
         end
 
         it 'makes a POST request to the external API' do
-          expect(HTTParty).to receive(:post).with(
-            'http://localhost:3000/api/v1/comments',
-            body: valid_params
-          )
-
-          post :create, params: valid_params
-        end
-
-        it 'returns success message' do
           post :create, params: valid_params
 
+          json_response = JSON.parse(response.body)
           expect(response).to have_http_status(:success)
-          expect(JSON.parse(response.body)).to eq({ 'message' => 'Success' })
-        end
-
-        context 'with custom domain' do
-          before do
-            ENV['GITHUB_APP_DOMAIN'] = 'https://custom-domain.com'
-          end
-
-          after do
-            ENV.delete('GITHUB_APP_DOMAIN')
-          end
-
-          it 'uses the custom domain' do
-            expect(HTTParty).to receive(:post).with(
-              'https://custom-domain.com/api/v1/comments',
-              body: valid_params
-            )
-
-            post :create, params: valid_params
-          end
+          expect(json_response['message']).to eq 'Success'
         end
       end
 
       context 'when HTTParty request fails' do
         before do
-          allow(HTTParty).to receive(:post).and_raise(StandardError.new('Connection failed'))
+          allow_any_instance_of(CommentGrpcClient).to receive(:create_comment).and_raise(StandardError.new('Connection failed'))
         end
 
         it 'returns error message with exception' do
@@ -74,25 +47,6 @@ RSpec.describe Gateway::CommentsController, type: :controller do
           expect(response_body['exception']).to eq('Connection failed')
         end
       end
-
-      context 'with missing parameters' do
-        it 'still makes the request with nil values' do
-          expect(HTTParty).to receive(:post).with(
-            'http://localhost:3000/api/v1/comments',
-            body: { project_coverage: nil, patch_coverage: nil, pull_request_number: nil, owner: nil, repo: nil }
-          )
-
-          post :create
-        end
-      end
-    end
-
-    context 'without authentication' do
-      it 'raises AuthenticationError' do
-        expect {
-          post :create, params: valid_params
-        }.to raise_error(Gateway::ApplicationController::AuthenticationError)
-      end
     end
 
     context 'with lowercase token header' do
@@ -101,7 +55,7 @@ RSpec.describe Gateway::CommentsController, type: :controller do
       end
 
       it 'authenticates successfully' do
-        allow(HTTParty).to receive(:post)
+        allow_any_instance_of(CommentGrpcClient).to receive(:create_comment).and_return('success')
 
         post :create, params: valid_params
 

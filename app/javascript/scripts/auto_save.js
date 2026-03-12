@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("turbolinks:load", function () {
   const pathName = window.location.pathname.split("/")[2];
   if (pathName != 'posts') return;
 
@@ -13,7 +13,6 @@ document.addEventListener("turbolinks:load", function() {
   // Handle call update ajax to save post
   const savePost = () => {
     if (!$('#auto_save')[0]) {
-      console.log(autosaveInterval);
       clearInterval(autosaveInterval);
       return;
     }

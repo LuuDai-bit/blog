@@ -23,6 +23,9 @@ Rails.application.routes.draw do
     resources :comment_templates do
       patch :make_active, on: :member, to: "comment_templates#make_active"
     end
+    resources :repositories, only: :create
+    resources :variables, only: %i[index create update destroy]
+    resources :repository_configs, only: %i[index edit]
   end
 
   namespace :gateway do
