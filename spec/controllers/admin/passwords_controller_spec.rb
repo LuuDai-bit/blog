@@ -53,7 +53,7 @@ RSpec.describe Admin::PasswordsController, type: :controller do
           subject
 
           expect(flash[:alert]).to eq 'Password update failed'
-          expect(response).to render_template(:edit)
+          expect(response).to render_template :edit
         end
       end
     end
