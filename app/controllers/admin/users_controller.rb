@@ -1,5 +1,5 @@
 class Admin::UsersController < Admin::AdminController
-  before_action :load_user, only: %i[show edit udpate]
+  before_action :load_user, only: %i[show edit update]
 
   def show; end
 
@@ -23,7 +23,7 @@ class Admin::UsersController < Admin::AdminController
 
   def update
     if @user.update(user_params)
-      redirect_to @user
+      redirect_to root_path
     else
       render :edit
     end
