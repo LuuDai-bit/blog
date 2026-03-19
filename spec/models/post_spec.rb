@@ -106,6 +106,16 @@ RSpec.describe Post, type: :model do
 
         expect(post_count).to eq 1
       end
+
+      context 'when start_date blank' do
+        subject { Post.count_post_by_time(nil, Time.current.ago(1.day)) }
+
+        it 'should not run the scope' do
+          post_count = subject
+
+          expect(post_count.length).to eq 3
+        end
+      end
     end
 
     context '.by_locale' do
