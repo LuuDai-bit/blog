@@ -20,7 +20,7 @@ module ApplicationHelper
       type = 'success' if type == 'notice'
       type = 'error' if type == 'alert'
       text = "<script>toastr.#{type}('#{message}', '', { closeButton: false, progressBar: true })</script>"
-      flash_messages << text.html_safe if message
+      flash_messages << text.html_safe
     end.join("\n").html_safe
   end
 
