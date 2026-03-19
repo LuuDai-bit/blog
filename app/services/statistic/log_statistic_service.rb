@@ -12,6 +12,7 @@ class Statistic::LogStatisticService < BaseService
   private
   def logs_in_month
     @logs_in_month ||= Log.where("date_part('month', created_at) = #{current_time.month}")
+                          .where("date_part('year', created_at) = #{current_time.year}")
   end
 
   def current_time
