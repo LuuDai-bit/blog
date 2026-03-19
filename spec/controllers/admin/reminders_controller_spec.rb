@@ -183,5 +183,15 @@ RSpec.describe Admin::RemindersController, type: :controller do
       subject
       expect(response).to redirect_to(admin_reminders_path)
     end
+
+    context 'when destroy fail' do
+      before { allow_any_instance_of(Reminder).to receive(:destroy).and_return(false) }
+
+      it 'should return alert flash message' do
+        subject
+        expect(flash[:alert]).to eq 'Reminder destroy failed'
+        expect(response).to render_template(:index)
+      end
+    end
   end
 end

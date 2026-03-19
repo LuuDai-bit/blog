@@ -210,4 +210,37 @@ RSpec.describe Admin::CommentTemplatesController, type: :controller do
       end
     end
   end
+
+  describe 'PATCH #make_active' do
+    subject { patch :make_active, params: params }
+    let(:params) { {id: 1} }
+
+    before do
+      data = double({code: 200})
+      allow_any_instance_of(described_class).to receive(:mark_comment_template_as_active).and_return(data)
+    end
+
+    context 'when response from external api has 200 status code' do
+      it 'should render notice flash' do
+        subject
+
+        expect(flash[:notice]).to eq 'Comment template marked as active'
+        expect(response).to redirect_to(admin_comment_templates_path)
+      end
+    end
+
+    context 'when response from external api has 400 status code' do
+      before do
+        data = double({code: 400})
+        allow_any_instance_of(described_class).to receive(:mark_comment_template_as_active).and_return(data)
+      end
+
+      it 'should render alert flash' do
+        subject
+
+        expect(flash[:alert]).to eq 'There is error while marking comment template as active'
+        expect(response).to redirect_to(admin_comment_templates_path)
+      end
+    end
+  end
 end

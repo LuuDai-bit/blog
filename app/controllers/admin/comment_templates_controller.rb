@@ -67,7 +67,7 @@ class Admin::CommentTemplatesController < Admin::AdminController
     if response.code == 200
       flash[:notice] = 'Comment template marked as active'
     else
-      flash.now[:alert] = "There is error while marking comment template as active"
+      flash.now[:alert] = 'There is error while marking comment template as active'
     end
 
     redirect_to admin_comment_templates_path
