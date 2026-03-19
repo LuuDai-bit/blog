@@ -20,6 +20,12 @@ RSpec.describe ApplicationHelper, type: :helper do
       model = DummyErrorModel.new
       expect(helper.display_error(model, :name, "Name")).to be_nil
     end
+
+    context "when params has empty object" do
+      it "returns nil" do
+        expect(helper.display_error(nil, :name, "Name")).to be_nil
+      end
+    end
   end
 
   describe "display_errors_hash" do
@@ -31,6 +37,12 @@ RSpec.describe ApplicationHelper, type: :helper do
 
     it "returns nil when attribute key missing" do
       expect(helper.display_errors_hash({ "user" => ["is invalid"] }, :email)).to be_nil
+    end
+
+    context "when params has empty object" do
+      it "returns nil" do
+        expect(helper.display_errors_hash(nil, :name)).to be_nil
+      end
     end
   end
 
