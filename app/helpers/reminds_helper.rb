@@ -17,11 +17,4 @@ module RemindsHelper
 
     return selected_keys if selected_keys.present?
   end
-
-  private
-
-  def two_character_number_format(number)
-    number = number.to_i
-    number < 10 ? "0#{number}" : number
-  end
 end
