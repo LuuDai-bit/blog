@@ -25,7 +25,7 @@ RSpec.describe Statistic::AnnuallyPostProgressService, type: :service do
     end
 
     it 'should return statistic number' do
-       annually_posts_progress = subject
+      annually_posts_progress = subject
 
       expect(annually_posts_progress).to eq 100
     end
