@@ -3,11 +3,11 @@ require 'notification_services/base'
 module NotificationServices
   class Email < Base
     def send_notification(recipient, message)
-      unless eligible?(destination)
-        raise ArgumentError, "Invalid email address: #{destination}"
+      unless eligible?(recipient)
+        raise ArgumentError, "Invalid email address: #{recipient}"
       end
 
-      ReminderMailer.send_notification(destination, recipient, message).deliver_later
+      ReminderMailer.send_notification(recipient, recipient, message).deliver_later
     end
 
     private

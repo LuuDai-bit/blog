@@ -94,7 +94,7 @@ RSpec.describe Post, type: :model do
         create(:post,
                created_at: Time.current.ago(5.days),
                status: :publish,
-               release_date: Time.current)
+               release_date: Time.current.ago(5.days))
       end
       let!(:post2) { create(:post, status: :publish, release_date: Time.current) }
       let!(:post3) { create(:post, created_at: Time.current.ago(5.days)) }

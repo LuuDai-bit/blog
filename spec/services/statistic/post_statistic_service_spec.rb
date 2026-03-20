@@ -4,23 +4,24 @@ require 'rails_helper'
 
 RSpec.describe Statistic::PostStatisticService, type: :service do
   subject { described_class.run(target_day, statistic_type) }
-  let(:target_day) { Time.current }
+  let(:current_time) { Time.parse('2026-03-19 10:00') }
+  let(:target_day) { current_time }
   let!(:post_in_week) do
     create(:post,
-           created_at: Time.current.beginning_of_week,
-           release_date: Time.current.beginning_of_week,
+           created_at: current_time.beginning_of_week,
+           release_date: current_time.beginning_of_week,
            status: :publish)
   end
   let!(:post_in_month) do
     create(:post,
-           created_at: Time.current.beginning_of_month,
-           release_date: Time.current.beginning_of_month,
+           created_at: current_time.beginning_of_month,
+           release_date: current_time.beginning_of_month,
            status: :publish)
   end
   let!(:today_post) do
     create(:post,
-           created_at: Time.current,
-           release_date: Time.current,
+           created_at: current_time,
+           release_date: current_time,
            status: :publish)
   end
 
