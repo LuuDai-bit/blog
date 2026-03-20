@@ -42,8 +42,7 @@ class Post < ApplicationRecord
   scope :count_post_by_time, ->(start_day, end_day) do
     return if start_day.blank? || end_day.blank?
 
-    # TODO: fix this logic to use release_date instead of created_at
-    where(created_at: start_day..end_day, status: :publish).count
+    where(release_date: start_day..end_day, status: :publish).count
   end
 
   scope :by_locale, ->() do
