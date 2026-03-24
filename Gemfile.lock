@@ -133,7 +133,16 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0)
     database_cleaner-core (2.0.1)
+    datadog-ci (0.8.3)
+      msgpack
     date (3.5.1)
+    ddtrace (1.23.3)
+      datadog-ci (~> 0.8.1)
+      debase-ruby_core_source (= 3.3.1)
+      libdatadog (~> 7.0.0.1.0)
+      libddwaf (~> 1.14.0.0.0)
+      msgpack
+    debase-ruby_core_source (3.3.1)
     deep_merge (1.2.2)
     devise (4.9.4)
       bcrypt (~> 3.0)
@@ -232,6 +241,15 @@ GEM
     json (2.19.1)
     jwt (3.1.2)
       base64
+    libdatadog (7.0.0.1.0)
+    libdatadog (7.0.0.1.0-aarch64-linux)
+    libdatadog (7.0.0.1.0-x86_64-linux)
+    libddwaf (1.14.0.0.0-aarch64-linux)
+      ffi (~> 1.0)
+    libddwaf (1.14.0.0.0-arm64-darwin)
+      ffi (~> 1.0)
+    libddwaf (1.14.0.0.0-x86_64-linux)
+      ffi (~> 1.0)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -470,6 +488,7 @@ DEPENDENCIES
   byebug
   config
   database_cleaner
+  ddtrace
   devise
   dotenv-rails
   factory_bot_rails
