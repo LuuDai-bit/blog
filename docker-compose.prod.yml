@@ -1,6 +1,7 @@
 services:
   app:
     container_name: blog_prod
+    mem_limit: 250m
     build:
       context: .
       dockerfile: .envs/stag/ruby/Dockerfile
@@ -22,6 +23,7 @@ services:
       - .env
 
   nginx:
+    mem_limit: 10m
     build:
       context: .envs/stag
       dockerfile: nginx/Dockerfile
@@ -39,6 +41,7 @@ services:
       - internal
 
   postgres:
+    mem_limit: 50m
     image: postgres
     container_name: blog_database_prod
     ports:
@@ -52,6 +55,7 @@ services:
       - internal
 
   redis:
+    mem_limit: 50m
     image: redis:7.2.12
     env_file:
       - .env.docker
@@ -62,6 +66,7 @@ services:
       - internal
 
   sidekiq:
+    mem_limit: 250m
     container_name: blog_sidekiq
     image: blog_image:latest
     command: bash -c "service cron start && whenever && whenever --update-crontab && bundle exec sidekiq"
