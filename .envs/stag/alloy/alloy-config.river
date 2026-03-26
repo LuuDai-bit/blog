@@ -1,0 +1,47 @@
+discovery.relabel "metrics_integrations_integrations_ruby_rack" {
+	targets = [{
+		__address__ = "app:3000",
+	}]
+
+	rule {
+		target_label = "instance"
+		replacement  = constants.hostname
+	}
+}
+
+prometheus.scrape "metrics_integrations_integrations_ruby_rack" {
+	targets    = discovery.relabel.metrics_integrations_integrations_ruby_rack.output
+	forward_to = [prometheus.remote_write.metrics_service.receiver]
+	job_name   = "integrations/ruby-rack"
+}
+
+prometheus.remote_write "metrics_service" {
+  endpoint {
+    url = env("GRAFANA_CLOUD_PUSH_URL")
+
+    basic_auth {
+      username = env("GRAFANA_CLOUD_USER")
+      password = env("GRAFANA_CLOUD_API_KEY")
+    }
+  }
+}
+
+loki.source.file "rails_logs" {
+  targets = [
+    {
+      __path__ = "/var/log/app/development.log",
+    },
+  ]
+  forward_to = [loki.write.grafana_cloud_loki.receiver]
+}
+
+loki.write "grafana_cloud_loki" {
+  endpoint {
+    url = env("GRAFANA_CLOUD_LOKI_URL")
+
+    basic_auth {
+      username = env("GRAFANA_CLOUD_LOKI_USER")
+      password = env("GRAFANA_CLOUD_API_KEY")
+    }
+  }
+}

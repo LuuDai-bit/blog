@@ -285,6 +285,8 @@ GEM
       prettyprint
     prettyprint (0.2.0)
     prism (1.9.0)
+    prometheus-client (4.2.5)
+      base64
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -484,6 +486,7 @@ DEPENDENCIES
   pagy
   pg
   phony_rails
+  prometheus-client
   pry
   puma (>= 6.4.3)
   rack (~> 2.2)
