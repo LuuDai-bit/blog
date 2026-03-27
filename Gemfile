@@ -16,6 +16,7 @@ gem 'image_processing', '>= 1.12.2'
 gem 'jbuilder', '~> 2.11'
 gem 'pagy'
 gem 'pg'
+gem 'prometheus-client'
 gem 'puma', '>= 6.4.3'
 gem 'rack', '~> 2.2'
 gem 'rails', '~> 8.0'
@@ -35,6 +36,7 @@ gem 'phony_rails'
 gem 'rails_icons'
 gem 'strong_migrations'
 gem 'twilio-ruby'
+gem 'lograge'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 

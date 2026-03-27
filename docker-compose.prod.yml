@@ -84,6 +84,19 @@ services:
     env_file:
       - .env
 
+  alloy:
+    name: alloy
+    mem_limit: 80m
+    image: grafana/alloy:latest
+    command: [
+      "run", "/etc/alloy/config.river"
+    ]
+    volumes:
+      - .envs/stag/alloy/alloy-config.river:/etc/alloy/config.river
+      - ./log:/var/log/app
+    env_file:
+      - .env.docker
+
 networks:
   internal:
     driver: bridge
