@@ -29,7 +29,7 @@ prometheus.remote_write "metrics_service" {
 loki.source.file "rails_logs" {
   targets = [
     {
-      __path__ = "/var/log/app/production.log",
+      __path__ = "/var/log/app/development.log",
     },
   ]
   forward_to = [loki.write.grafana_cloud_loki.receiver]
@@ -44,4 +44,26 @@ loki.write "grafana_cloud_loki" {
       password = env("GRAFANA_CLOUD_API_KEY")
     }
   }
+}
+
+loki.process "logs" {
+  stage.json {
+    expressions = {
+      level    = "level",
+      method   = "method",
+      path     = "path",
+      status   = "status",
+      duration = "duration",
+    }
+  }
+
+  // Set the "level" (info, error) as a searchable label in Grafana
+  stage.labels {
+    values = {
+      level  = "level",
+      status = "status",
+    }
+  }
+
+  forward_to = [loki.write.grafana_cloud_loki.receiver]
 }
