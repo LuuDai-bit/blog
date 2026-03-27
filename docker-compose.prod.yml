@@ -85,6 +85,8 @@ services:
       - .env
 
   alloy:
+    name: alloy
+    mem_limit: 80m
     image: grafana/alloy:latest
     command: [
       "run", "/etc/alloy/config.river"
