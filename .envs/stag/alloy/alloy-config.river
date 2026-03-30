@@ -30,6 +30,7 @@ loki.source.file "rails_logs" {
   targets = [
     {
       __path__ = "/var/log/app/production.log",
+      "service_name" = "blog",
     },
   ]
   forward_to = [loki.write.grafana_cloud_loki.receiver]
