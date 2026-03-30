@@ -1,7 +1,7 @@
 services:
   app:
     container_name: blog_prod
-    mem_limit: 250m
+    mem_limit: 300m
     build:
       context: .
       dockerfile: .envs/stag/ruby/Dockerfile
