@@ -1,4 +1,8 @@
 document.addEventListener('turbolinks:load', () => {
+  const pathName = window.location.pathname.split("/")[1];
+
+  if (pathName != 'admin') return;
+
   const themes = {
     yellow_pink: {
       "--primary-color": "#B07548",
