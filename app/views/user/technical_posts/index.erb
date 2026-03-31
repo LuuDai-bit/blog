@@ -34,6 +34,22 @@
     <% end %>
   </div>
 </div>
+<!-- Highlighted Categories -->
+<% highlighted = Category.highlighted_ordered %>
+<% if highlighted.present? %>
+  <div class="container px-4 px-lg-5 mb-4">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-lg-8 col-xl-7 d-flex flex-wrap gap-2">
+        <% highlighted.each do |category| %>
+          <%= link_to("#{category.name}",
+                      user_technical_posts_path(category_name: category.name, search_text: @filter_params.present? ? @filter_params[:search_text] : nil),
+                      class: 'badge bg-secondary text-white p-2',
+                      remote: true) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
 <!-- Main Content-->
 <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">

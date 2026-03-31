@@ -1,0 +1,47 @@
+<%= render partial: 'shared/breadcrumbs', locals: { sites: [{name: 'Categories', url: admin_categories_path}, {name: 'Edit', url: '#'}] } %>
+
+<h1 class="admin-title">Edit Category: <%= @category.name %></h1>
+<div class="main-container">
+  <%= form_with(model: [:admin, @category], local: true, class: "col-md-6") do |f| %>
+    <% if @category.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <ul>
+        <% @category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group mb-3 form-check">
+      <%= f.check_box :highlighted, class: 'form-check-input' %>
+      <%= f.label :highlighted, 'Highlight this category', class: 'form-check-label' %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= f.label :highlight_order, 'Highlight Order (1-5)', class: 'form-label' %>
+      <%= f.number_field :highlight_order, class: 'form-control', min: 1, max: 5 %>
+    </div>
+
+    <div class="actions mt-3">
+      <%= f.submit 'Save', class: 'btn btn-primary btn-sm' %>
+      <%= link_to 'Cancel', admin_categories_path, class: 'btn btn-secondary btn-sm' %>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  document.addEventListener('turbolinks:load', () => {
+    const checkbox = document.getElementById('category_highlighted');
+    const orderInput = document.getElementById('category_highlight_order');
+
+    if (checkbox && orderInput) {
+      const toggleOrderInput = () => {
+        orderInput.disabled = !checkbox.checked;
+      };
+
+      checkbox.addEventListener('change', toggleOrderInput);
+      toggleOrderInput();
+    }
+  });
+</script>
