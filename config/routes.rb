@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :users, only: %i[show edit update new create]
     resources :posts
     resources :reminders, only: %i[index edit update new create destroy]
-    resources :categories, only: :index
+    resources :categories, only: %i[index edit update]
     resources :announcements, except: %i[show destroy]
     resources :about_me, only: %i[update] do
       get '/detail', to: 'about_me#detail', on: :collection
