@@ -7,8 +7,8 @@ Things you may want to cover:
 
 * Ruby version
 
-Ruby 3.0.9
-Rails 6
+Ruby 3.37
+Rails 8.1
 * System dependencies
 
 * Configuration
