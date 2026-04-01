@@ -1,4 +1,7 @@
-FROM ruby:3.3.7-bookworm
+FROM ruby:3.3.11-slim
+
+COPY --from=node:24-slim /usr/local/bin /usr/local/bin
+COPY --from=node:24-slim /usr/local/lib /usr/local/lib
 
 RUN apt-get update -qq && apt-get install -y build-essential \
 postgresql-contrib \
@@ -8,24 +11,22 @@ imagemagick vim \
 sudo \
 cron \
 systemd \
-libvips42
+libvips-dev \
+libyaml-dev
 
 RUN systemctl enable cron
 
 RUN mkdir /blog
 WORKDIR /blog
 
-RUN gem install bundler -no-rdoc -no-ri
+RUN gem install bundler -v 2.5.9 -no-rdoc -no-ri
 COPY Gemfile /blog/Gemfile
 COPY Gemfile.lock /blog/Gemfile.lock
 RUN bundle install
 
 # Install nodejs
-RUN apt-get install -y curl
-SHELL ["/bin/bash", "--login", "-c"]
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-RUN nvm install v24.12.0
-RUN npm install --global yarn
+COPY --from=node:24-slim /opt /opt
+RUN node -v && npm -v && yarn -v
 RUN yarn
 SHELL ["/bin/sh", "-c"]
 RUN rails action_text:install

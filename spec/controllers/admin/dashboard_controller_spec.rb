@@ -7,7 +7,12 @@ RSpec.describe Admin::DashboardController, type: :controller do
 
   describe 'GET #index' do
     context 'when success' do
-      before { allow(Statistic::CalculateServerCostService).to receive(:run).and_return(1) }
+      before do
+        Timecop.freeze(Time.zone.local(2026, 2, 9, 10, 0, 0))
+        allow(Statistic::CalculateServerCostService).to receive(:run).and_return(1)
+      end
+
+      after { Timecop.return }
 
       subject { get(:index) }
 
