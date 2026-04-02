@@ -24,3 +24,6 @@ application.register("repository-modal", RepositoryModalController)
 
 import VariableModalController from "./variable_modal_controller"
 application.register("variable-modal", VariableModalController)
+
+import ServerCostController from "./server_cost_controller"
+application.register("server-cost", ServerCostController)

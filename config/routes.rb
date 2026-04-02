@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     root 'dashboard#index'
     get '/', to: 'dashboard#index'
 
+    resources :dashboard do
+      get :server_cost, on: :collection
+    end
     resources :users, only: %i[show edit update new create]
     resources :posts
     resources :reminders, only: %i[index edit update new create destroy]
