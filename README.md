@@ -1,33 +1,21 @@
 # README
+## Purpose
+- A website helps me save and publish blog posts.
+- The website contains 2 sites: a user site where users can read my blog and an admin site where I create blog posts and manage my work, bio, and the website theme through multiple functions.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Features
+### User site
+- View blog posts
+- View bio, contact
+- Internationalization (English and Vietnamese)
 
-Things you may want to cover:
+### Admin site
+- Manage blog posts.
+- Manage categories and highlight categories.
+- Manage announcements and the timer for each announcement.
+- Manage reminder. Remind to send through email, notification, sms.
+- Monitor job statuses
+- Act as a front-end for github pr commenter
 
-* Ruby version
-
-Ruby 3.37
-Rails 8.1
-* System dependencies
-
-* Configuration
-
-copy .env and .env.docker 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-bundle exec sidekiq
-whenever --update-crontab
-sudo service cron reload
-
-Cron log: sudo tail -f /var/log/syslog
-* Deployment instructions
-
-rake assets:clean && rake assets:precompile 
-* ...
+### API Gateway
+- Routes requests to other services.
