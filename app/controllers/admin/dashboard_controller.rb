@@ -3,9 +3,14 @@ class Admin::DashboardController < Admin::AdminController
     target_day = params[:target_day] || Time.current
     @post_per_week = Statistic::PostStatisticService.run(target_day, Settings.models.post.statistic.post_per_week)
     @post_per_month = Statistic::PostStatisticService.run(target_day, Settings.models.post.statistic.post_per_month)
-    @server_cost = Statistic::CalculateServerCostService.run
     @access = Statistic::LogStatisticService.run
     @total_views = Post.pluck(:views).sum
     @annually_posts_progress = Statistic::AnnuallyPostProgressService.run
+  end
+
+  def server_cost
+    server_cost = Statistic::CalculateServerCostService.run
+
+    render json: { server_cost: server_cost }, status: :ok
   end
 end

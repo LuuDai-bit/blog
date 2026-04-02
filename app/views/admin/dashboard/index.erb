@@ -27,8 +27,10 @@
     <span>Server Cost</span>
   </div>
 
-  <div class="statistic-data">
-    <span>$<%= @server_cost || '-' %></span>
+  <div class="statistic-data" data-controller="server-cost">
+    <%= hidden_field_tag(:scurl, server_cost_admin_dashboard_index_path,
+                         data: { 'server-cost-target': 'scUrl' }) %>
+    <span data-server-cost-target="serverCost">-</span>
   </div>
 </div>
 

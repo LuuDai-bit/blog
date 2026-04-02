@@ -39,4 +39,21 @@ RSpec.describe Admin::DashboardController, type: :controller do
       end
     end
   end
+
+  describe 'GET #server_cost' do
+    context 'when success' do
+      before do
+        allow(Statistic::CalculateServerCostService).to receive(:run).and_return(42)
+      end
+
+      subject { get(:server_cost) }
+
+      it 'renders server cost json' do
+        subject
+
+        expect(response).to have_http_status(:ok)
+        expect(JSON.parse(response.body)).to eq('server_cost' => 42)
+      end
+    end
+  end
 end
