@@ -1,2 +1,11 @@
 //= link_tree ../images
 //= link_directory ../stylesheets .css
+//= link_tree ../../javascript .js
+//= link_tree ../../../vendor/javascript .js
+//= link picmo/dist/index.js
+//= link bootstrap/dist/js/bootstrap.js
+//= link commonmark/dist/commonmark.js
+//= link entities/lib/index.js
+//= link jquery/dist/jquery.js
+//= link picimo/picimo.js
+//= link eventize-js/dist/eventize.umd.js

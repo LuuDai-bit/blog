@@ -24,8 +24,6 @@ gem 'sass-rails', '>= 6'
 gem 'sidekiq', ">= 7.2.4"
 gem 'stimulus-rails'
 gem 'toastr-rails'
-gem 'turbolinks', '~> 5'
-gem 'webpacker', '~> 5.0'
 gem 'whenever', require: false
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
@@ -66,3 +64,5 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "importmap-rails", "~> 2.2"
