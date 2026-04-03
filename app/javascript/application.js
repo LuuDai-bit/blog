@@ -21,10 +21,3 @@ window.jQuery = $
 
 Rails.start()
 ActiveStorage.start()
-
-require('jquery')
-require("trix")
-require("@rails/actiontext")
-
-global.toastr = require("toastr");
-window.bootstrap = require("bootstrap");
