@@ -23,15 +23,6 @@ COPY Gemfile ${APP_PATH}/Gemfile
 COPY Gemfile.lock ${APP_PATH}/Gemfile.lock
 RUN bundle install -j 4
 
-# Install nodejs
-RUN apt-get install -y curl
-SHELL ["/bin/bash", "--login", "-c"]
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-RUN source ~/.nvm/nvm.sh
-RUN nvm install v14.16.0
-RUN npm install --global yarn
-RUN yarn
-SHELL ["/bin/sh", "-c"]
 RUN rails action_text:install
 
 # Map user outside to container user

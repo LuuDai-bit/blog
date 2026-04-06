@@ -1,8 +1,5 @@
 FROM ruby:3.3.11-slim
 
-COPY --from=node:24-slim /usr/local/bin /usr/local/bin
-COPY --from=node:24-slim /usr/local/lib /usr/local/lib
-
 RUN apt-get update -qq && apt-get install -y build-essential \
 postgresql-contrib \
 libpq-dev \
@@ -24,11 +21,6 @@ COPY Gemfile /blog/Gemfile
 COPY Gemfile.lock /blog/Gemfile.lock
 RUN bundle install
 
-# Install nodejs
-COPY --from=node:24-slim /opt /opt
-RUN node -v && npm -v && yarn -v
-RUN yarn
-SHELL ["/bin/sh", "-c"]
 RUN rails action_text:install
 
 # Add a script to be executed every time the container starts.
