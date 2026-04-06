@@ -1,0 +1,4 @@
+// mdurl/encode.js@1.0.1 downloaded from https://ga.jspm.io/npm:mdurl@1.0.1/encode.js
+
+var e={};var t={};function getEncodeCache(e){var n,o,r=t[e];if(r)return r;r=t[e]=[];for(n=0;n<128;n++){o=String.fromCharCode(n);/^[0-9a-z]$/i.test(o)?r.push(o):r.push("%"+("0"+n.toString(16).toUpperCase()).slice(-2))}for(n=0;n<e.length;n++)r[e.charCodeAt(n)]=e[n];return r}function encode(e,t,n){var o,r,c,a,f,i="";if("string"!==typeof t){n=t;t=encode.defaultChars}"undefined"===typeof n&&(n=true);f=getEncodeCache(t);for(o=0,r=e.length;o<r;o++){c=e.charCodeAt(o);if(n&&37===c&&o+2<r&&/^[0-9a-f]{2}$/i.test(e.slice(o+1,o+3))){i+=e.slice(o,o+3);o+=2}else if(c<128)i+=f[c];else if(c>=55296&&c<=57343){if(c>=55296&&c<=56319&&o+1<r){a=e.charCodeAt(o+1);if(a>=56320&&a<=57343){i+=encodeURIComponent(e[o]+e[o+1]);o++;continue}}i+="%EF%BF%BD"}else i+=encodeURIComponent(e[o])}return i}encode.defaultChars=";/?:@&=+$,-_.!~*'()#";encode.componentChars="-_.!~*'()";e=encode;var n=e;export default n;
+

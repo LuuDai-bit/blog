@@ -13,9 +13,6 @@ application.register("emoji-picker", EmojiPickerController)
 import RegisterTimeController from "./register_time_controller"
 application.register("register-time", RegisterTimeController)
 
-import TrixToolbarController from "./trix_toolbar_controller"
-application.register("trix-toolbar", TrixToolbarController)
-
 import PreviewGithubCommentController from "./preview_github_comment_controller"
 application.register("preview-github-comment", PreviewGithubCommentController)
 

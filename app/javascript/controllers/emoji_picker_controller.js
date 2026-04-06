@@ -1,14 +1,17 @@
 import { Controller } from "@hotwired/stimulus";
 import { createPopup } from "@picmo/popup-picker";
 import { RichText } from "../classes/RichText";
+import { waitForElement } from "../utils/wait_for_element"
 
 export default class extends Controller {
   static targets = ["trixEditor", "trixEditorEn", "pickerContainer", "pickerContainerEn"];
 
   connect() {
-    this.appendEmojiPicker(this.pickerContainerTarget, this.trixEditorTarget, 0)
+    waitForElement('[data-trix-button-group="block-tools"]').then((el) => {
+      this.appendEmojiPicker(this.pickerContainerTarget, this.trixEditorTarget, 0)
 
-    this.appendEmojiPicker(this.pickerContainerEnTarget, this.trixEditorEnTarget, 1)
+      this.appendEmojiPicker(this.pickerContainerEnTarget, this.trixEditorEnTarget, 1)
+    }).catch(console.warn)
   }
 
   appendEmojiPicker(pickerContainerTarget, trixEditorTarget, position) {
