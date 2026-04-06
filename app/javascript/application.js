@@ -15,9 +15,7 @@ import "./scripts/auth_token.js"
 import "trix"
 import "@rails/actiontext"
 
-import * as $ from "jquery"
-window.$ = $
-window.jQuery = $
+import "jquery"
 
 Rails.start()
 ActiveStorage.start()
