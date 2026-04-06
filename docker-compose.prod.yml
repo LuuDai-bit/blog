@@ -1,7 +1,7 @@
 services:
   app:
     container_name: blog_prod
-    mem_limit: 400m
+    mem_limit: 300m
     build:
       context: .
       dockerfile: .envs/stag/ruby/Dockerfile
@@ -23,7 +23,7 @@ services:
       - .env
 
   nginx:
-    mem_limit: 10m
+    mem_limit: 15m
     build:
       context: .envs/stag
       dockerfile: nginx/Dockerfile
@@ -86,7 +86,7 @@ services:
 
   alloy:
     container_name: alloy
-    mem_limit: 80m
+    mem_limit: 150m
     image: grafana/alloy:latest
     command: [
       "run", "/etc/alloy/config.river"
