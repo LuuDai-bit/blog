@@ -1,4 +1,4 @@
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const pathName = window.location.pathname.split("/")[1];
 
   if (pathName != 'admin') return;

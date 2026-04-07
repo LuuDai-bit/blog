@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("DOMContentLoaded", function() {
   const pathName = window.location.pathname.split("/")[2];
   if (pathName != 'auth_tokens') return;
 
