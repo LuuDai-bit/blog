@@ -1,4 +1,4 @@
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const toggle = $('#sidebarToggle')[0]
   const sidebar = $('.sidebar')[0]
   const closeBtn = $('#sidebarClose')[0]

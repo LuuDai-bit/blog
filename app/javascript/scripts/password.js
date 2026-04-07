@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("DOMContentLoaded", function() {
   const userPassword = $('#user_password');
   const userPasswordConfirmation = $('#user_password_confirmation');
   const savePasswordBtn = $('#save_password');
