@@ -164,6 +164,7 @@
   li {
     a {
       background-color: var(--background-color) !important;
+      color: var(--bs-secondary) !important;
     }
   }
 
@@ -172,6 +173,10 @@
       background-color: var(--btn-bg-color) !important;
       color: #212529 !important;
     }
+  }
+
+  .disabled {
+    border-radius: 5px !important;
   }
 }
 
