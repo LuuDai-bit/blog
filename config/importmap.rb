@@ -9,11 +9,8 @@ pin "@rails/actioncable", to: "@rails--actioncable.js" # @8.1.300
 pin "@rails/activestorage", to: "@rails--activestorage.js" # @8.1.300
 pin "@rails/ujs", to: "@rails--ujs.js" # @7.1.3
 pin "bootstrap" # @5.3.8
-pin "commonmark" # @0.31.2
-pin "entities" # @3.0.1
-pin "mdurl/encode.js", to: "mdurl--encode.js.js" # @1.0.1
-pin "jquery" # @4.0.0
 pin "picimo" # @0.0.39
+pin "commonmark", to: "https://cdn.jsdelivr.net/npm/commonmark@0.30.0/dist/commonmark.min.js"
 pin "@babel/runtime-corejs3/core-js/array/from", to: "@babel--runtime-corejs3--core-js--array--from.js" # @7.29.2
 pin "@babel/runtime-corejs3/core-js/array/is-array", to: "@babel--runtime-corejs3--core-js--array--is-array.js" # @7.29.2
 pin "@babel/runtime-corejs3/core-js/get-iterator", to: "@babel--runtime-corejs3--core-js--get-iterator.js" # @7.29.2
@@ -63,3 +60,4 @@ pin "toastr" # @2.1.4
 pin "trix" # @2.1.18
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
+pin "jquery" # @4.0.0
