@@ -1,7 +1,7 @@
 <% search_url = url_for(params.to_unsafe_h.merge(only_path: true)) %>
 window.history.pushState({path: "<%= search_url %>"}, "", "<%= search_url %>");
 document.getElementById('user-posts').innerHTML = "<%= j render @posts %>";
-let paginate = document.getElementById('user-posts-paginate');
-if (paginate) paginate.innerHTML = "<%= j pagy_bootstrap_nav(@pagy) %>";
+if (document.getElementById('user-posts-paginate'))
+  document.getElementById('user-posts-paginate').innerHTML = "<%= j pagy_bootstrap_nav(@pagy) %>";
 document.getElementById('user-posts-filter').innerHTML = "<%= j render 'filter_preview', filter_params: @filter_params %>";
 document.getElementById('user-posts-search').innerHTML = "<%= j render 'search' %>";
