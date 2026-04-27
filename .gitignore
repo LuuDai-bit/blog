@@ -38,7 +38,6 @@ yarn-debug.log*
 .yarn-integrity
 
 # Ignore packs
-/public/assets/*
 /public/packs/*
 
 # Ignore env file

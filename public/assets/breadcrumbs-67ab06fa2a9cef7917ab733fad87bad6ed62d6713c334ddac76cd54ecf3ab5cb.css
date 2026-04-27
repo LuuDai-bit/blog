@@ -1,0 +1,1 @@
+.bread-root-item{font-weight:bold;font-size:13px;color:var(--breadcrumb-text-color)}.bread-root-item a{color:var(--breadcrumb-text-color)}.bread-element-item{font-weight:bold;font-size:13px;color:var(--breadcrumb-text-color)}.bread-element-item a{color:var(--breadcrumb-text-color)}.bread-element-item:before{content:" > "}
