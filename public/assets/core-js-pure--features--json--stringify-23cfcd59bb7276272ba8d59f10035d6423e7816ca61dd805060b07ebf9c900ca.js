@@ -1,0 +1,4 @@
+// core-js-pure/features/json/stringify@3.49.0 downloaded from https://ga.jspm.io/npm:core-js-pure@3.49.0/features/json/stringify.js
+
+import e from"../../actual/json/stringify.js";import"../../stable/json/stringify.js";import"../../es/json/stringify.js";import"../../_/Bod1HfIt.js";import"../../_/2A2upUax.js";import"../../_/8bP-HUY6.js";import"../../_/n_2nVgpU.js";import"../../_/Dpl3fKEv.js";import"../../_/B8k6ph0S.js";import"../../_/DAdzMFyo.js";import"../../_/p0JOLSe5.js";import"../../_/Ug5gWaLs.js";import"../../_/Cnqr1e0e.js";import"../../_/D4dWG1jE.js";import"../../_/xOZZ-kZv.js";import"../../_/B2tjI8jG.js";import"../../_/PomxwKS2.js";import"../../_/CfVS8HrL.js";import"../../_/BuP_ut99.js";import"../../_/D6J_cSqj.js";import"../../_/BOMGHz_Z.js";import"../../_/sBLPyb4n.js";import"../../_/BOZacoj4.js";import"../../_/vpUq6WFX.js";var t={};t=e;var n=t;export{n as default};
+
