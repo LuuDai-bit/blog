@@ -31,22 +31,16 @@
 
   checkCtrl = false;
 
-  $('*').keydown(function(e) {
+  document.addEventListener('keydown', function(e) {
     if (e.keyCode == CTRL_BTN) {
       checkCtrl = true
     }
-  }).keyup(function(ev) {
-    if (ev.keyCode == CTRL_BTN) {
-      checkCtrl = false
-    }
-  }).keydown(function(event) {
     if (checkCtrl) {
-      if (event.keyCode == U_BTN) {
+      if (e.keyCode == U_BTN) {
         return false;
       }
     }
-  }).keydown(function(event) {
-    if (event.keyCode == F12_BTN) {
+    if (e.keyCode == F12_BTN) {
       return false
     }
   })

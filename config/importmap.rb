@@ -1,6 +1,7 @@
 # Pin npm packages by running ./bin/importmap
 
 pin "application"
+pin_all_from "app/javascript/scripts", under: "scripts"
 pin "@fortawesome/fontawesome-free", to: "@fortawesome--fontawesome-free.js" # @7.2.0
 pin "@hotwired/stimulus", to: "@hotwired--stimulus.js" # @3.2.2
 pin "@picmo/popup-picker", to: "@picmo--popup-picker.js" # @5.8.5
@@ -60,4 +61,3 @@ pin "toastr" # @2.1.4
 pin "trix" # @2.1.18
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
-pin "jquery" # @4.0.0

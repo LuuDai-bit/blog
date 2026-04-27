@@ -1,2 +1,2 @@
-$('#plain-token').html("<%= @auth_token.token %>")
-$('#auth-token-peek').removeClass('d-none')
+document.getElementById('plain-token').innerHTML = "<%= @auth_token.token %>";
+document.getElementById('auth-token-peek').classList.remove('d-none');
