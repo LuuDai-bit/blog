@@ -61,3 +61,4 @@ pin "toastr" # @2.1.4
 pin "trix" # @2.1.18
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
+pin "jquery", to: "jquery.js"
