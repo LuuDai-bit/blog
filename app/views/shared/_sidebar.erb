@@ -29,6 +29,10 @@
       <%= icon 'category', library: 'boxicons' %>
       Categories
     <% end %>
+    <%= link_to detail_admin_about_me_index_path, class: "#{'active' if current_controller?('/admin/about_me')}" do %>
+      <%= icon 'info-circle', library: 'boxicons' %>
+      About me
+    <% end %>
   </div>
   <%= link_to admin_reminders_path, class: "#{'active' if current_controller?('/admin/reminders')}" do %>
     <%= icon 'bell', library: 'boxicons' %>
@@ -37,10 +41,6 @@
   <%= link_to admin_announcements_path, class: "#{'active' if current_controller?('/admin/announcements')}" do %>
     <%= icon 'user-voice', library: 'boxicons' %>
     Announcements
-  <% end %>
-  <%= link_to detail_admin_about_me_index_path, class: "#{'active' if current_controller?('/admin/about_me')}" do %>
-    <%= icon 'info-circle', library: 'boxicons' %>
-    About me
   <% end %>
   <%= link_to admin_settings_path, class: "#{'active' if current_controller?('/admin/settings') || current_controller?('/admin/passwords')}" do %>
     <%= icon 'cog', library: 'boxicons' %>
