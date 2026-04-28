@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     resources :repositories, only: :create
     resources :variables, only: %i[index create update destroy]
     resources :repository_configs, only: %i[index edit]
+    resources :feeds, only: %i[index]
   end
 
   namespace :gateway do

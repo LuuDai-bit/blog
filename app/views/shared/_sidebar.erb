@@ -67,7 +67,7 @@
   <a class="sidebar-collapse-btn" data-bs-toggle="collapse" data-bs-target="#gct-group" aria-expanded="false" aria-controls="management-group">
     <%= icon 'layout', library: 'boxicons' %>
     Comment Templates
-    <span class="collapse-icon"><%= active_collapse?(%w[]) ? '▲' : '▼' %></span>
+    <span class="collapse-icon"><%= active_collapse?(%w[comment_templates repository_configs]) ? '▲' : '▼' %></span>
   </a>
   <div id="gct-group" class="sidebar-collapse-group collapse <%= active_collapse?(%w[comment_templates repository_configs]) ? 'show' : '' %>">
     <%= link_to admin_comment_templates_path, class: "#{'active' if current_controller?('/admin/comment_templates')}" do %>
@@ -77,6 +77,18 @@
     <%= link_to admin_repository_configs_path, class: "#{'active' if current_controller?('/admin/repository_configs')}" do %>
       <%= icon 'message', library: 'boxicons' %>
       Repository Configs
+    <% end %>
+  </div>
+
+  <a class="sidebar-collapse-btn" data-bs-toggle="collapse" data-bs-target="#feeds-group" aria-expanded="false" aria-controls="management-group">
+    <%= icon 'layout', library: 'boxicons' %>
+    Feeds
+    <span class="collapse-icon"><%= active_collapse?(%w[feeds]) ? '▲' : '▼' %></span>
+  </a>
+  <div id="feeds-group" class="sidebar-collapse-group collapse <%= active_collapse?(%w[feeds]) ? 'show' : '' %>">
+    <%= link_to admin_feeds_path, class: "#{'active' if current_controller?('/admin/comment_templates')}" do %>
+      <%= icon 'message', library: 'boxicons' %>
+      Feeds
     <% end %>
   </div>
 
