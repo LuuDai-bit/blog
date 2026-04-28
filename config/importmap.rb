@@ -57,8 +57,8 @@ pin "@babel/runtime-corejs3/core-js/symbol/async-iterator", to: "@babel--runtime
 pin "@babel/runtime-corejs3/core-js/symbol/iterator", to: "@babel--runtime-corejs3--core-js--symbol--iterator.js" # @7.29.2
 pin "@babel/runtime-corejs3/core-js/weak-map", to: "@babel--runtime-corejs3--core-js--weak-map.js" # @7.29.2
 pin "eventize-js" # @1.1.1
-pin "toastr" # @2.1.4
 pin "trix" # @2.1.18
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
 pin "jquery", to: "jquery.js"
+pin "notyf" # @3.10.0
