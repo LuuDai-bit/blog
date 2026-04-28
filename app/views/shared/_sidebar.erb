@@ -15,14 +15,21 @@
     <%= icon 'user', library: 'boxicons' %>
     New User
   <% end %>
-  <%= link_to admin_posts_path, class: "#{'active' if current_controller?('/admin/posts')}" do %>
+  <a class="sidebar-collapse-btn" data-bs-toggle="collapse" data-bs-target="#content-group" aria-expanded="false" aria-controls="content-group">
     <%= icon 'pencil', library: 'boxicons' %>
-    Posts
-  <% end %>
-  <%= link_to admin_categories_path, class: "#{'active' if current_controller?('/admin/categories')}" do %>
-    <%= icon 'category', library: 'boxicons' %>
-    Categories
-  <% end %>
+    Content
+    <span class="collapse-icon"><%= active_collapse?(%w[posts categories]) ? '▲' : '▼' %></span>
+  </a>
+  <div id="content-group" class="sidebar-collapse-group collapse <%= active_collapse?(%w[posts categories]) ? 'show' : '' %>">
+    <%= link_to admin_posts_path, class: "#{'active' if current_controller?('/admin/posts')}" do %>
+      <%= icon 'pencil', library: 'boxicons' %>
+      Posts
+    <% end %>
+    <%= link_to admin_categories_path, class: "#{'active' if current_controller?('/admin/categories')}" do %>
+      <%= icon 'category', library: 'boxicons' %>
+      Categories
+    <% end %>
+  </div>
   <%= link_to admin_reminders_path, class: "#{'active' if current_controller?('/admin/reminders')}" do %>
     <%= icon 'bell', library: 'boxicons' %>
     Reminds
