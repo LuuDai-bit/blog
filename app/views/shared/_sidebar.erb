@@ -11,16 +11,13 @@
     <%= icon 'home', library: 'boxicons' %>
     Home
   <% end %>
-  <%= link_to new_admin_user_path, class: "#{'active' if current_controller?('/admin/users')}" do %>
-    <%= icon 'user', library: 'boxicons' %>
-    New User
-  <% end %>
+
   <a class="sidebar-collapse-btn" data-bs-toggle="collapse" data-bs-target="#content-group" aria-expanded="false" aria-controls="content-group">
     <%= icon 'pencil', library: 'boxicons' %>
     Content
-    <span class="collapse-icon"><%= active_collapse?(%w[posts categories]) ? '▲' : '▼' %></span>
+    <span class="collapse-icon"><%= active_collapse?(%w[posts categories about_me]) ? '▲' : '▼' %></span>
   </a>
-  <div id="content-group" class="sidebar-collapse-group collapse <%= active_collapse?(%w[posts categories]) ? 'show' : '' %>">
+  <div id="content-group" class="sidebar-collapse-group collapse <%= active_collapse?(%w[posts categories about_me]) ? 'show' : '' %>">
     <%= link_to admin_posts_path, class: "#{'active' if current_controller?('/admin/posts')}" do %>
       <%= icon 'pencil', library: 'boxicons' %>
       Posts
@@ -34,34 +31,55 @@
       About me
     <% end %>
   </div>
-  <%= link_to admin_reminders_path, class: "#{'active' if current_controller?('/admin/reminders')}" do %>
-    <%= icon 'bell', library: 'boxicons' %>
-    Reminds
-  <% end %>
-  <%= link_to admin_announcements_path, class: "#{'active' if current_controller?('/admin/announcements')}" do %>
-    <%= icon 'user-voice', library: 'boxicons' %>
-    Announcements
-  <% end %>
-  <%= link_to admin_settings_path, class: "#{'active' if current_controller?('/admin/settings') || current_controller?('/admin/passwords')}" do %>
-    <%= icon 'cog', library: 'boxicons' %>
-    Settings
-  <% end %>
-  <%= link_to admin_job_logs_path, class: "#{'active' if current_controller?('/admin/job_logs')}" do %>
-    <%= icon 'file', library: 'boxicons' %>
-    Job Logs
-  <% end %>
-  <%= link_to admin_auth_tokens_path, class: "#{'active' if current_controller?('/admin/auth_tokens')}" do %>
-    <%= icon 'key', library: 'boxicons' %>
-    Auth Tokens
-  <% end %>
-  <%= link_to admin_comment_templates_path, class: "#{'active' if current_controller?('/admin/comment_templates')}" do %>
-    <%= icon 'message', library: 'boxicons' %>
+
+  <a class="sidebar-collapse-btn" data-bs-toggle="collapse" data-bs-target="#management-group" aria-expanded="false" aria-controls="management-group">
+    <%= icon 'pencil', library: 'boxicons' %>
+    Management
+    <span class="collapse-icon"><%= active_collapse?(%w[users reminders announcements settings passwords job_logs auth_tokens]) ? '▲' : '▼' %></span>
+  </a>
+  <div id="management-group" class="sidebar-collapse-group collapse <%= active_collapse?(%w[users reminders announcements settings passwords job_logs auth_tokens]) ? 'show' : '' %>">
+    <%= link_to new_admin_user_path, class: "#{'active' if current_controller?('/admin/users')}" do %>
+      <%= icon 'user', library: 'boxicons' %>
+      New User
+    <% end %>
+    <%= link_to admin_reminders_path, class: "#{'active' if current_controller?('/admin/reminders')}" do %>
+      <%= icon 'bell', library: 'boxicons' %>
+      Reminds
+    <% end %>
+    <%= link_to admin_announcements_path, class: "#{'active' if current_controller?('/admin/announcements')}" do %>
+      <%= icon 'user-voice', library: 'boxicons' %>
+      Announcements
+    <% end %>
+    <%= link_to admin_settings_path, class: "#{'active' if current_controller?('/admin/settings') || current_controller?('/admin/passwords')}" do %>
+      <%= icon 'cog', library: 'boxicons' %>
+      Settings
+    <% end %>
+    <%= link_to admin_job_logs_path, class: "#{'active' if current_controller?('/admin/job_logs')}" do %>
+      <%= icon 'file', library: 'boxicons' %>
+      Job Logs
+    <% end %>
+    <%= link_to admin_auth_tokens_path, class: "#{'active' if current_controller?('/admin/auth_tokens')}" do %>
+      <%= icon 'key', library: 'boxicons' %>
+      Auth Tokens
+    <% end %>
+  </div>
+
+  <a class="sidebar-collapse-btn" data-bs-toggle="collapse" data-bs-target="#gct-group" aria-expanded="false" aria-controls="management-group">
+    <%= icon 'pencil', library: 'boxicons' %>
     Comment Templates
-  <% end %>
-  <%= link_to admin_repository_configs_path, class: "#{'active' if current_controller?('/admin/repository_configs')}" do %>
-    <%= icon 'message', library: 'boxicons' %>
-    Repository Configs
-  <% end %>
+    <span class="collapse-icon"><%= active_collapse?(%w[]) ? '▲' : '▼' %></span>
+  </a>
+  <div id="gct-group" class="sidebar-collapse-group collapse <%= active_collapse?(%w[comment_templates repository_configs]) ? 'show' : '' %>">
+    <%= link_to admin_comment_templates_path, class: "#{'active' if current_controller?('/admin/comment_templates')}" do %>
+      <%= icon 'message', library: 'boxicons' %>
+      Comment Templates
+    <% end %>
+    <%= link_to admin_repository_configs_path, class: "#{'active' if current_controller?('/admin/repository_configs')}" do %>
+      <%= icon 'message', library: 'boxicons' %>
+      Repository Configs
+    <% end %>
+  </div>
+
   <%= link_to destroy_user_session_path, method: :delete, class: 'danger-action' do %>
     <%= icon 'log-out', library: 'boxicons' %>
     Logout
