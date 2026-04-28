@@ -5,9 +5,15 @@ import "trix"
 import "@rails/actiontext"
 import "jquery"
 
+import "scripts/announcement"
+import "scripts/auth_token"
+import "scripts/auto_save"
+import "scripts/highlight_categories"
+import "scripts/password"
+import "scripts/post"
 import "scripts/sidebar_collapse"
 import "scripts/sidebar"
-
+import "scripts/theme"
 
 Rails.start()
 ActiveStorage.start()
