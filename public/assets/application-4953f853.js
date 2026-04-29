@@ -17,7 +17,7 @@ import "scripts/sidebar"
 import "scripts/theme"
 
 window.notyf = new Notyf({
-  duration: 3000,
+  duration: 4000,
   position: { x: 'right', y: 'top' }
 })
 

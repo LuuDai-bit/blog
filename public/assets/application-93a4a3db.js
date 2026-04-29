@@ -16,10 +16,7 @@ import "scripts/sidebar_collapse"
 import "scripts/sidebar"
 import "scripts/theme"
 
-window.notyf = new Notyf({
-  duration: 3000,
-  position: { x: 'right', y: 'top' }
-})
+var notyf = new Notyf()
 
 Rails.start()
 ActiveStorage.start()
