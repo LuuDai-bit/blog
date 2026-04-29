@@ -7,10 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      // If the div is visible and we aren't already loading
       if (entry.isIntersecting && sentinel.dataset.loading !== "true") {
         sentinel.dataset.loading = "true";
-console.log("Doing it")
+
         $('#see_more_link').trigger("click");
 
         setTimeout('', 5000);
