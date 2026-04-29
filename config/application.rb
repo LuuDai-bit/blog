@@ -25,5 +25,7 @@ module Blog
     # config.time_zone = "Central Time (US & Canada)"
     config.autoload_paths << Rails.root.join("lib/redis")
     config.eager_load_paths << Rails.root.join("lib/redis")
+    config.autoload_paths << Rails.root.join("lib/feeds")
+    config.eager_load_paths << Rails.root.join("lib/feeds")
   end
 end

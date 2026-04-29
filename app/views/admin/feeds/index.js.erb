@@ -1,0 +1,8 @@
+<% if @feeds.to_a.empty? %>
+  $('#feeds').append("<p class='text-center'>NO MORE FEED</p>")
+  $('#see_more_meta').remove()
+  $('#see_more_link').remove()
+<% else %>
+  $('#feeds').append("<%= j render 'feeds', feeds: @feeds %>")
+  $('#see_more_link').attr('href', "<%= admin_feeds_path(page: @page + 1, per: @per_page) %>")
+<% end %>
