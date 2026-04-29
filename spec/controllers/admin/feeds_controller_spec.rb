@@ -56,8 +56,8 @@ RSpec.describe Admin::FeedsController, type: :controller do
       it 'should render template index' do
         subject
 
-        expect(assigns(:page)).to eq '1'
-        expect(assigns(:per_page)).to eq '10'
+        expect(assigns(:page)).to eq 1
+        expect(assigns(:per_page)).to eq 10
         expect(response).to render_template :index
       end
     end

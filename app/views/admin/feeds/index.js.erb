@@ -1,7 +1,7 @@
-$('#feeds').append(<%= j render 'feeds', feeds: @feeds %>)
+$('#feeds').append("<%= j render 'feeds', feeds: @feeds %>")
 
 <% if @feeds.empty? %>
-  $('#see_more_meta').html('')
+  $('#see_more_link').remove()
 <% else %>
-  $('#see_more_meta').html(<%= link_to admin_feeds_path(page: @page + 1, per: @per_page), class: "d-none", id: "see_more_link" %>)
+  $('#see_more_link').attr('href', "<%= admin_feeds_path(page: @page + 1, per: @per_page) %>")
 <% end %>

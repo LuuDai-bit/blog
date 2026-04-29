@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting && sentinel.dataset.loading !== "true") {
         sentinel.dataset.loading = "true";
-
-        if($('#see_more_link')[0]) $('#see_more_link')[0].click();
+console.log("Doing it")
+        if($('#see_more_link')) $('#see_more_link').trigger("click");
 
         setTimeout('', 5000);
 
