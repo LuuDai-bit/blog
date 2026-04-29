@@ -50,19 +50,19 @@ RSpec.describe ApplicationHelper, type: :helper do
     it "renders success script for notice flash" do
       helper.flash[:notice] = "Saved"
       html = helper.toastr_flash
-      expect(html).to include("toastr.success('Saved'" )
+      expect(html).to include("window.notyf.success({message: 'Saved', icon: false}")
     end
 
     it "renders error script for alert flash" do
       helper.flash[:alert] = "Failed"
       html = helper.toastr_flash
-      expect(html).to include("toastr.error('Failed'" )
+      expect(html).to include("window.notyf.error({message: 'Failed', icon: false}")
     end
 
     it "renders custom type script for other flash types" do
       helper.flash[:custom] = "Msg"
       html = helper.toastr_flash
-      expect(html).to include("toastr.custom('Msg'" )
+      expect(html).to include("window.notyf.custom({message: 'Msg', icon: false}")
     end
   end
 
