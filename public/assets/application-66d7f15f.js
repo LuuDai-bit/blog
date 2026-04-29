@@ -4,7 +4,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "trix"
 import "@rails/actiontext"
 import "jquery"
-import {Notyf} from "notyf"
+import "notyf"
 
 import "scripts/announcement"
 import "scripts/auth_token"
@@ -15,12 +15,8 @@ import "scripts/post"
 import "scripts/sidebar_collapse"
 import "scripts/sidebar"
 import "scripts/theme"
-import "scripts/feed"
 
-window.notyf = new Notyf({
-  duration: 3000,
-  position: { x: 'right', y: 'top' }
-})
+var notyf = new Notyf();
 
 Rails.start()
 ActiveStorage.start()
