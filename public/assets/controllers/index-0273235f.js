@@ -2,25 +2,25 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "controllers/application"
+import { application } from "./application"
 
 import EmojiPickerController from "controllers/emoji_picker_controller"
 application.register("emoji-picker", EmojiPickerController)
 
-import HelloController from "controllers/hello_controller"
+import HelloController from "hello_controller"
 application.register("hello", HelloController)
 
-import PreviewGithubCommentController from "controllers/preview_github_comment_controller"
+import PreviewGithubCommentController from "preview_github_comment_controller"
 application.register("preview-github-comment", PreviewGithubCommentController)
 
-import RegisterTimeController from "controllers/register_time_controller"
+import RegisterTimeController from "register_time_controller"
 application.register("register-time", RegisterTimeController)
 
-import RepositoryModalController from "controllers/repository_modal_controller"
+import RepositoryModalController from "repository_modal_controller"
 application.register("repository-modal", RepositoryModalController)
 
-import ServerCostController from "controllers/server_cost_controller"
+import ServerCostController from "server_cost_controller"
 application.register("server-cost", ServerCostController)
 
-import VariableModalController from "controllers/variable_modal_controller"
+import VariableModalController from "variable_modal_controller"
 application.register("variable-modal", VariableModalController)

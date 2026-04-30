@@ -2,6 +2,9 @@
 
 pin "application"
 pin_all_from "app/javascript/scripts", under: "scripts"
+pin_all_from "app/javascript/controllers", under: "controllers"
+pin_all_from "app/javascript/classes", under: "classes"
+pin_all_from "app/javascript/utils", under: "utils"
 pin "@fortawesome/fontawesome-free", to: "@fortawesome--fontawesome-free.js" # @7.2.0
 pin "@hotwired/stimulus", to: "@hotwired--stimulus.js" # @3.2.2
 pin "@picmo/popup-picker", to: "@picmo--popup-picker.js" # @5.8.5
