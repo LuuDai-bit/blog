@@ -6,7 +6,7 @@
     </div>
     <div class="card-body position-relative">
       <span class="card-text"><%= feed['description'] %></span>
-      <span class="position-absolute bottom-0 end-0 me-2"><%= link_to "Go to post", feed['source'] %></span>
+      <span class="position-absolute bottom-0 end-0 me-2"><%= link_to "Go to post", feed['source'], target: :_blank %></span>
     </div>
   </div>
 <% end %>
