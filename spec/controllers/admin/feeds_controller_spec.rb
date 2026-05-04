@@ -62,4 +62,48 @@ RSpec.describe Admin::FeedsController, type: :controller do
       end
     end
   end
+
+  describe 'GET #mark_as_read' do
+    subject { get :index, params: params }
+
+    let(:params) { {id: 123} }
+
+    before do
+      allow(::Feed).to receive(:mark_as_read).and_return(response)
+    end
+
+    context 'when success' do
+      let(:response) do
+        instance_double(
+          HTTParty::Response,
+          code: 200,
+          body: { success: true }.to_json,
+          parsed_response: { "success": true }
+        )
+      end
+
+      it 'should return success message' do
+        subject
+
+        expect(response.code).to eq 200
+      end
+    end
+
+    context 'when fail' do
+      let(:response) do
+        instance_double(
+          HTTParty::Response,
+          code: 400,
+          body: { success: false }.to_json,
+          parsed_response: { "success": false }
+        )
+      end
+
+      it 'should return fail status' do
+        subject
+
+        expect(response.code).to eq 400
+      end
+    end
+  end
 end
