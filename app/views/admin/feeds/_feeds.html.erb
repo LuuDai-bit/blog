@@ -1,12 +1,15 @@
 <% feeds.each do |feed| %>
-  <div class="card mb-3">
+  <div class="card mb-3"">
     <div class="card-header bg-light">
       <h5 class="card-title mb-0 w-80"><%= feed['title'] %></h5>
-
+      <span class="badge badge-secondary <%= "d-none" unless feed['is_read'] %>" id="feed-<%= feed['id']%>">Read</span>
     </div>
     <div class="card-body position-relative">
       <span class="card-text"><%= feed['description'] %></span>
-      <span class="position-absolute bottom-0 end-0 me-2"><%= link_to "Go to post", feed['source'], target: :_blank %></span>
+      <span class="position-absolute bottom-0 end-0 me-2">
+        <%= link_to "Go to post", feed['source'], target: :_blank, class: "feed_link_btn", data: { id: feed['id'] } %>
+        <%= link_to "Mark as read", mark_as_read_admin_feeds_path, class: "d-none mark_as_read_btn" %>
+      </span>
     </div>
   </div>
 <% end %>

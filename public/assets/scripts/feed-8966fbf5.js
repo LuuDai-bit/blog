@@ -27,9 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     $.ajax({
       type: 'PATCH',
       url: url,
-      headers: {
-        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-      },
       data: {
         id: id,
       },

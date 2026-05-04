@@ -11,5 +11,12 @@ class Feed
 
       HTTParty.get(url, query: query)
     end
+
+    def mark_as_read(id)
+      url = "#{DOMAIN}/feeds/mark_as_read"
+      body = { id: id }
+
+      HTTParty.patch(url, body: body.to_json)
+    end
   end
 end
