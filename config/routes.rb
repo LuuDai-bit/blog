@@ -29,7 +29,9 @@ Rails.application.routes.draw do
     resources :repositories, only: :create
     resources :variables, only: %i[index create update destroy]
     resources :repository_configs, only: %i[index edit]
-    resources :feeds, only: %i[index]
+    resources :feeds, only: %i[index] do
+      patch '/mark_as_read', to: 'feeds#mark_as_read', on: :collection
+    end
   end
 
   namespace :gateway do

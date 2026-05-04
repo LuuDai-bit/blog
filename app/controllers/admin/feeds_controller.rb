@@ -9,4 +9,14 @@ class Admin::FeedsController < Admin::AdminController
       format.js
     end
   end
+
+  def mark_as_read
+    result = ::Feed.mark_as_read(params[:id].to_i)
+
+    if result.code == 200
+      render json: { message: "Success" }
+    else
+      render json: { message: "Failed" }, status: :bad_request
+    end
+  end
 end

@@ -21,15 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
   observer.observe(sentinel);
 
   $('.feed_link_btn').on('click', (e) => {
+    console.log("1")
     let markAsReadBtn = $(e.target).siblings('.mark_as_read_btn');
     let id = $(e.target).data("id");
     let url = $(markAsReadBtn).attr('href');
     $.ajax({
       type: 'PATCH',
       url: url,
-      headers: {
-        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-      },
       data: {
         id: id,
       },
