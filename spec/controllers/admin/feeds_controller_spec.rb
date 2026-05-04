@@ -69,7 +69,7 @@ RSpec.describe Admin::FeedsController, type: :controller do
     let(:params) { {id: 123} }
 
     before do
-      allow(::Feed).to receive(:mark_as_read).and_return(response)
+      allow(HTTParty).to receive(:get).and_return(response)
     end
 
     context 'when success' do
