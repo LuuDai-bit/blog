@@ -2,15 +2,13 @@ require 'httparty'
 
 class Gateway::CommentsController < Gateway::ApplicationController
   def create
+    raise StandardError
     CommentGrpcClient.new.create_comment(owner: params[:owner],
                                          repo: params[:repo],
                                          pr: params[:pull_request_number].to_i,
                                          variables: variables)
 
     render json: { message: 'Success' }
-
-  rescue StandardError => e
-    render json: { message: 'Failed', exception: e.message }, status: :internal_server_error
   end
 
   private
