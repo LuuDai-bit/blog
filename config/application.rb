@@ -23,9 +23,10 @@ module Blog
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    config.autoload_paths << Rails.root.join("lib/redis")
-    config.eager_load_paths << Rails.root.join("lib/redis")
-    config.autoload_paths << Rails.root.join("lib/feeds")
-    config.eager_load_paths << Rails.root.join("lib/feeds")
+    load_paths = [Rails.root.join("lib/redis"), Rails.root.join("lib/feeds"),
+                  Rails.root.join("lib/error")]
+
+    config.autoload_paths += load_paths
+    config.eager_load_paths += load_paths
   end
 end

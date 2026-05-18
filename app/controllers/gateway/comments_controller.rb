@@ -8,9 +8,6 @@ class Gateway::CommentsController < Gateway::ApplicationController
                                          variables: variables)
 
     render json: { message: 'Success' }
-
-  rescue StandardError => e
-    render json: { message: 'Failed', exception: e.message }, status: :internal_server_error
   end
 
   private
