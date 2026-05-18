@@ -43,8 +43,7 @@ RSpec.describe Gateway::CommentsController, type: :controller do
 
           expect(response).to have_http_status(:internal_server_error)
           response_body = JSON.parse(response.body)
-          expect(response_body['message']).to eq('Failed')
-          expect(response_body['exception']).to eq('Connection failed')
+          expect(response_body['message']).to eq('Something went wrong. Please check the log or contact admin')
         end
       end
     end

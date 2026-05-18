@@ -2,7 +2,6 @@ require 'httparty'
 
 class Gateway::CommentsController < Gateway::ApplicationController
   def create
-    raise StandardError
     CommentGrpcClient.new.create_comment(owner: params[:owner],
                                          repo: params[:repo],
                                          pr: params[:pull_request_number].to_i,
