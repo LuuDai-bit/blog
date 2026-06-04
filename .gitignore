@@ -56,3 +56,6 @@ coverage
 
 # Ignore docker postgres data file
 data
+
+# Ignore gem
+/vendor/bundle
