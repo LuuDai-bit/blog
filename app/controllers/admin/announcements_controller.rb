@@ -7,6 +7,7 @@ class Admin::AnnouncementsController < Admin::AdminController
 
   def new
     @announcement = Announcement.new
+    @announcement_types = Dialog.allowed_options
   end
 
   def create
@@ -37,7 +38,7 @@ class Admin::AnnouncementsController < Admin::AdminController
   end
 
   def announcement_params
-    params.require(:announcement).permit(%i[content activated duration]).tap do |param|
+    params.require(:announcement).permit(%i[content activated duration color_config]).tap do |param|
       if param[:activated]
         param[:start_at] = Time.current
 

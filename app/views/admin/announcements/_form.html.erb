@@ -7,6 +7,18 @@
   </div>
 
   <div class="form-group mt-2">
+    <%= form.label :color_config, 'Choose announcement type:' %>
+    <div>
+      <%= form.collection_select :color_config,
+                                @announcement_types.map(&:to_s),
+                                :to_s,
+                                :titleize,
+                                {selected: 'default'},
+                                class: 'form-select form-select-time' %>
+    </div>
+  </div>
+
+  <div class="form-group mt-2">
     <%= form.label :activated, 'Activated' %>
     <div>
       <span>
