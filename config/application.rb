@@ -24,7 +24,7 @@ module Blog
     #
     # config.time_zone = "Central Time (US & Canada)"
     load_paths = [Rails.root.join("lib/redis"), Rails.root.join("lib/feeds"),
-                  Rails.root.join("lib/error")]
+                  Rails.root.join("lib/error"), Rails.root.join("lib/colorable")]
 
     config.autoload_paths += load_paths
     config.eager_load_paths += load_paths
