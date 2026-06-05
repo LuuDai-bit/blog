@@ -7,6 +7,6 @@ class Announcement < ApplicationRecord
   scope :display, ->() { active.where('end_at > ? or end_at IS NULL', Time.current) }
 
   def css_class
-    Dialog.new.color_config(self.color_config)
+    "dialog-#{Dialog.new.css_class(type: self.color_config)}"
   end
 end

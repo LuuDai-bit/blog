@@ -9,7 +9,7 @@ class Dialog < Colorable
   }.freeze
 
   def css_class(type:)
-    CSS_MAPPING[type]
+    CSS_MAPPING[type.to_sym]
   end
 
   def self.allowed_options
