@@ -2,6 +2,7 @@ class Announcement < ApplicationRecord
   belongs_to :user
 
   validates :content, :color_config, presence: true
+  validates :color_config, inclusion: { in: Dialog.allowed_options }
 
   scope :active, ->() { where(activated: true) }
   scope :display, ->() { active.where('end_at > ? or end_at IS NULL', Time.current) }
