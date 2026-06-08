@@ -13,6 +13,6 @@ class Dialog < Colorable
   end
 
   def self.allowed_options
-    CSS_MAPPING.keys
+    CSS_MAPPING.keys.map(&:to_s)
   end
 end
