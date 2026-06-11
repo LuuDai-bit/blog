@@ -14,6 +14,6 @@ class DeactivateAnnouncementJob
       name: "deactivate_announcement",
       current_time: Time.current
     }
-    RedisModel.Event.create(queue: 'default_jobs', parmas: params)
+    RedisModel.Event.create(queue: 'default_jobs', params: params)
   end
 end

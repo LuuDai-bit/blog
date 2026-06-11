@@ -24,7 +24,7 @@ class GenerateReminderJob
         reminder_id: user_reminder.reminder_id,
         user_id: user_reminder.user_id
       }
-      RedisModel.Event.create(queue: 'default_jobs', parmas: params)
+      RedisModel.Event.create(queue: 'default_jobs', params: params)
     end
 
     JobLog.create(job_name: self.class.name)
