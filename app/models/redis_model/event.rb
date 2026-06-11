@@ -5,7 +5,8 @@ module RedisModel
     EXPIRE_TIME = 5 #seconds
 
     def self.create(queue:, params:)
-      queue = DEFAULT_JOB_KEY unless ALLOW_QUEUES.include?(queue)
+      return unless ALLOW_QUEUES.include?(queue)
+
       current_timestamp = Time.now.to_i
       key = "#{queue}:#{current_timestamp}"
 

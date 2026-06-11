@@ -25,7 +25,7 @@ class SyncViewsToPostJob
       name: "sync_views_to_post",
       post_views_key: redis.post_views
     }
-    RedisModel.Event.create(queue: 'default_jobs', params: params)
+    RedisModel::Event.create(queue: 'default_jobs', params: params)
   end
 
   private
