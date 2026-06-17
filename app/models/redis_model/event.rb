@@ -7,8 +7,8 @@ module RedisModel
     def self.create(queue:, params:)
       return unless ALLOW_QUEUES.include?(queue)
 
-      current_timestamp = Time.now.to_i
-      key = "#{queue}:#{current_timestamp}"
+      uuid = SecureRandom.uuid_v7
+      key = "#{queue}:#{uuid}"
 
       redis.client.set(key, params, ex: EXPIRE_TIME)
     end

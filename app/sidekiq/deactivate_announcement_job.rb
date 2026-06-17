@@ -11,9 +11,10 @@ class DeactivateAnnouncementJob
 
     # Newly job service. Testing
     params = {
-      name: "deactivate_announcement",
       current_time: Time.current
     }
-    RedisModel::Event.create(queue: 'default_jobs', params: params)
+    json_string_params = JSON.generate(params)
+    params_string = "deactivate_announcement_job:#{json_string_params}"
+    RedisModel::Event.create(queue: 'default_jobs', params: params_string)
   end
 end
