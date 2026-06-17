@@ -36,6 +36,7 @@ gem 'rails_icons'
 gem 'strong_migrations'
 gem 'twilio-ruby'
 gem 'lograge'
+gem 'uuid_v7'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
