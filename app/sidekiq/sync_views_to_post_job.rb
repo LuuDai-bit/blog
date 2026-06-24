@@ -1,7 +1,9 @@
 class SyncViewsToPostJob
+  # TODO: Deprecated. Will remove before the sidekiq service terminated
   include Sidekiq::Job
 
   def perform
+    # TODO: Deprecated. Will remove before the sidekiq service terminated
     view_hash = redis.client.hgetall(redis.post_views)
 
     update_attr = []
@@ -17,6 +19,13 @@ class SyncViewsToPostJob
     redis.client.del(redis.post_views)
 
     JobLog.create(job_name: self.class.name)
+
+    # Newly job service. Testing
+    params = {
+      name: "sync_views_to_post",
+      post_views_key: redis.post_views
+    }
+    RedisModel::Event.create(queue: 'default_jobs', params: params)
   end
 
   private

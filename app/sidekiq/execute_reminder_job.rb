@@ -1,4 +1,6 @@
+# TODO: Deprecated. Will remove before the sidekiq service terminated
 class ExecuteReminderJob
+  # TODO: Deprecated. Will remove before the sidekiq service terminated
   include Sidekiq::Job
 
   def perform(reminder_id, user_id)
