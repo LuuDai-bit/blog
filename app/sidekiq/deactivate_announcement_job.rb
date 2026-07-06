@@ -1,11 +1,7 @@
 class DeactivateAnnouncementJob
-  # TODO: Deprecated. Will remove before the sidekiq service terminated
-  include Sidekiq::Job
-
   def perform
     JobLog.create(job_name: self.class.name)
 
-    # Newly job service. Testing
     params = {
       current_time: Time.current
     }
