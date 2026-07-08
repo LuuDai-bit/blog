@@ -145,10 +145,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_08_020949) do
   end
 
   create_table "retry_events", force: :cascade do |t|
-    t.string "consumer_name"
     t.datetime "created_at", null: false
     t.string "event_id", null: false
-    t.integer "retry_count", default: 0, null: false
+    t.integer "retry_count", default: 1, null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_retry_events_on_event_id", unique: true
   end
