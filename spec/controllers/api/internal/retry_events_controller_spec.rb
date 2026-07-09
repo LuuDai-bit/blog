@@ -1,10 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Api::Internal::RetryEventsController, type: :controller do
+  let(:auth_token) { create(:auth_token) }
+
   describe 'POST #create' do
     subject { post :create, params: params }
 
-    let(:headers) { {} }
+    before do
+      request.headers['Token'] = auth_token.token
+    end
+
     context 'when success' do
       let(:event_id) { '1234test56' }
       let!(:job_log) { create(:job_log, job_name: 'test', event_id: event_id) }
