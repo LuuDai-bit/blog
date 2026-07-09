@@ -1,12 +1,10 @@
 class SyncViewsToPostJob
   def perform
-    JobLog.create(job_name: self.class.name)
-
-    # Newly job service. Testing
     params = {}
     json_string_params = JSON.generate(params)
     params_string = "sync_views_to_post_job^-#{json_string_params}"
-    RedisModel::Event.create(queue: 'default_jobs', params: params_string)
+    event_id = RedisModel::Event.create(queue: 'default_jobs', params: params_string)
+    JobLog.create(job_name: self.class.name, event_id: event_id)
   end
 
   private

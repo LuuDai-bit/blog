@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_17_010444) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_09_022642) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -96,6 +96,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_17_010444) do
 
   create_table "job_logs", force: :cascade do |t|
     t.datetime "created_at", null: false
+    t.string "event_id"
     t.string "job_name", null: false
     t.datetime "updated_at", null: false
   end
@@ -142,6 +143,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_17_010444) do
     t.datetime "target_date", default: "2026-01-02 09:05:15", null: false
     t.string "title"
     t.datetime "updated_at", null: false
+  end
+
+  create_table "retry_events", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "event_id", null: false
+    t.integer "retry_count", default: 1, null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_retry_events_on_event_id", unique: true
   end
 
   create_table "settings", force: :cascade do |t|

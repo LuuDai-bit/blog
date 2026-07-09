@@ -31,6 +31,8 @@ models:
       max_display: 3
   user:
     password: !ruby/regexp /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}\z/
+  retry_event:
+    max_retry: 20
 
 target:
   annually_posts_count: 12
