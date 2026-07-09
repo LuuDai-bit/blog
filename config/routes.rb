@@ -38,6 +38,12 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
 
+  namespace :api do
+    namespace :internal do
+      resources :retry_events, only: :create
+    end
+  end
+
   get '/:locale' => 'user/technical_posts#index'
 
   scope "(:locale)", locale: /en|vi/ do

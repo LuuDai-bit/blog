@@ -11,6 +11,8 @@ module RedisModel
       key = "#{queue}:#{uuid}"
 
       redis.client.set(key, params, ex: EXPIRE_TIME)
+
+      key
     end
   end
 end
