@@ -65,11 +65,11 @@ services:
     networks:
       - internal
 
-  sidekiq:
-    mem_limit: 250m
-    container_name: blog_sidekiq
+  cron:
+    mem_limit: 50m
+    container_name: blog_cron
     image: blog_image:latest
-    command: bash -c "service cron start && whenever && whenever --update-crontab && bundle exec sidekiq"
+    command: bash -c "whenever && whenever --update-crontab && sudo cron -f"
     volumes:
       - .:/blog
     depends_on:
