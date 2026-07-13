@@ -1,4 +1,4 @@
-FROM ruby:3.3.7-bookworm
+FROM ruby:3.3.11-slim
 
 ARG USERID
 ARG GROUPID
@@ -11,14 +11,16 @@ postgresql-client \
 imagemagick vim \
 sudo \
 cron \
-systemd
+systemd \
+libvips-dev \
+libyaml-dev
 
 RUN systemctl enable cron
 
 RUN mkdir ${APP_PATH}
 WORKDIR ${APP_PATH}
 
-RUN gem install bundler -no-rdoc -no-ri
+RUN gem install bundler -v 2.5.9 -no-rdoc -no-ri
 COPY Gemfile ${APP_PATH}/Gemfile
 COPY Gemfile.lock ${APP_PATH}/Gemfile.lock
 RUN bundle install -j 4

@@ -41,7 +41,7 @@ services:
     networks:
       - internal
 
-  # Only turn this service on for testing log only
+  # Only turn these services on for testing log only
   alloy:
     extra_hosts:
       - "host.docker.internal:host-gateway"
@@ -54,6 +54,30 @@ services:
       - ./log:/var/log/app
     env_file:
       - .env.docker
+
+  cron:
+    container_name: blog_cron
+    image: blog_image:latest
+    command: bash -c "whenever && whenever --update-crontab && sudo cron -f"
+    volumes:
+      - .:/blog
+    depends_on:
+      - postgres
+      - redis
+      - app
+    networks:
+      - internal
+    environment:
+      - RAILS_ENV=production
+      - REDIS_URL=redis://:Aa123456@redis:6379/1
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=Aa123456
+      - EVENT_REDIS_DB=2
+      - DB_HOST=postgres
+      - DB_PORT=5432
+    env_file:
+      - .env
 
 networks:
   internal:
