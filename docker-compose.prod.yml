@@ -66,7 +66,6 @@ services:
       - internal
 
   cron:
-    mem_limit: 50m
     container_name: blog_cron
     image: blog_image:latest
     command: bash -c "whenever && whenever --update-crontab && sudo cron -f"
