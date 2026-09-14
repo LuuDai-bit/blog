@@ -12,8 +12,7 @@ class User::TechnicalPostsController < User::UserController
   end
 
   def show
-    post_proxy = Blog::Cache::PostProxy.new(params[:id], I18n.locale)
-    @post = post_proxy.show
+    @post = Blog::Cache::PostProxy.show(params[:id], I18n.locale)
   end
 
   private

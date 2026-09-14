@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  include Cache
+  extend Cache
 
   has_rich_text :content
   has_rich_text :content_en
@@ -59,11 +59,11 @@ class Post < ApplicationRecord
     subject_en.present?
   end
 
-  def self.types
-    %w(TechnicalPost IdleTalk)
+  def self.show(id)
+    Post.by_locale.find_by(id: id, status: :publish)
   end
 
-  def self.show(post_id)
-    Post.by_locale.find_by(id: post_id, status: :publish)
+  def self.types
+    %w(TechnicalPost IdleTalk)
   end
 end

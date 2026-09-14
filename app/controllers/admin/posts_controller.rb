@@ -74,7 +74,6 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def destroy_cache(id)
-    post_proxy = Blog::Cache::PostProxy.new(id, I18n.locale)
-    post_proxy.destroy_cache(id)
+    Blog::Cache::PostProxy.destroy_cache(id)
   end
 end
