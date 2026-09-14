@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  include Cache
+
   has_rich_text :content
   has_rich_text :content_en
   has_many :post_categories, dependent: :destroy
@@ -59,5 +61,9 @@ class Post < ApplicationRecord
 
   def self.types
     %w(TechnicalPost IdleTalk)
+  end
+
+  def self.show(post_id)
+    Post.by_locale.find_by(id: post_id, status: :publish)
   end
 end

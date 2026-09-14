@@ -1,5 +1,34 @@
-class Blog::Cache::PostCache
+class Blog::Cache::PostProxy
+  include Cache
   include Blog::Supports::RedisKey
+
+  def initialize(post_id, locale)
+    @post_id = post_id
+    @locale = locale
+  end
+
+  def show
+    key = redis.post_cached(post_id, locale)
+    post_str = redis.client.get(key)
+
+    raise ActiveRecord::RecordNotFound if post_str == 'No content'
+
+    if post_str.present?
+      JSON.parse(post_str)
+    else
+      cached_post = set_post_cache(post_id, locale)
+      cached_post_key = fetch_cache_lock(post_id, locale)
+
+      while cached_post_key.present? && cached_post.blank?
+        cached_post_key = Blog::Cache::PostCache.new.fetch_cache_lock(post_id, locale)
+        cached_post = Blog::Cache::PostCache.new.fetch_post_cached(post_id, locale)
+      end
+
+      update_views(post_id)
+
+      return cached_post
+    end
+  end
 
   def fetch_post_cached(post_id, locale)
     key = redis.post_cached(post_id, locale)
@@ -19,7 +48,7 @@ class Blog::Cache::PostCache
     key = redis.post_caching(post_id, locale)
     redis.client.set(key, 1) unless redis.client.get(key)
 
-    post = Post.by_locale.find_by(id: post_id, status: :publish)
+    post = Post.show(post_id)
     if post.blank?
       redis.client.set(redis.post_cached(post_id, locale), 'No content', ex: 120)
 
@@ -52,6 +81,8 @@ class Blog::Cache::PostCache
   end
 
   private
+
+  attr_reader :post_id, :locale
 
   def redis
     @redis ||= Blog::RedisClient.new

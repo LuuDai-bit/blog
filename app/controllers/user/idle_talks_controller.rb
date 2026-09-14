@@ -14,7 +14,8 @@ class User::IdleTalksController < User::UserController
   end
 
   def show
-    cached_and_show
+    post_proxy = Blog::Cache::PostProxy.new(params[:id], I18n.locale)
+    @post = post_proxy.show
   end
 
   private

@@ -1,3 +1,5 @@
+# TODO: Deprecated
+
 module CachePost
   def cached_and_show
     cached_post = Blog::Cache::PostCache.new.fetch_post_cached(params[:id], I18n.locale)
