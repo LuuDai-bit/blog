@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  extend Cache
+
   has_rich_text :content
   has_rich_text :content_en
   has_many :post_categories, dependent: :destroy
@@ -55,6 +57,10 @@ class Post < ApplicationRecord
 
   def english_version_available?
     subject_en.present?
+  end
+
+  def self.show(id)
+    Post.by_locale.find_by(id: id, status: :publish)
   end
 
   def self.types

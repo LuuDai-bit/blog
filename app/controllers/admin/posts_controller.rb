@@ -47,7 +47,7 @@ class Admin::PostsController < Admin::AdminController
       end
     end
 
-    Blog::Cache::PostCache.new.destroy_cache(params[:id])
+    destroy_cache(params[:id])
   end
 
   def destroy
@@ -58,7 +58,7 @@ class Admin::PostsController < Admin::AdminController
       render :index
     end
 
-    Blog::Cache::PostCache.new.destroy_cache(params[:id])
+    destroy_cache(params[:id])
   end
 
   private
@@ -71,5 +71,9 @@ class Admin::PostsController < Admin::AdminController
     params.require(:post).permit(:subject, :subject_en, :content, :content_en,
                                  :status, :categories, :type)
                          .merge(user_id: current_user.id)
+  end
+
+  def destroy_cache(id)
+    Blog::Cache::PostProxy.destroy_cache(id)
   end
 end
