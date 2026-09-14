@@ -1,6 +1,4 @@
 class User::TechnicalPostsController < User::UserController
-  include CachePost
-
   def index
     @pagy, @posts = pagy(TechnicalPost.status_publish
                                       .by_subject(filter_params[:search_text])

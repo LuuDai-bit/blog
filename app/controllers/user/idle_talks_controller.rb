@@ -1,6 +1,4 @@
 class User::IdleTalksController < User::UserController
-  include CachePost
-
   def index
     @pagy, @posts = pagy(IdleTalk.status_publish
                                  .by_subject(filter_params[:search_text])
