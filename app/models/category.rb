@@ -46,6 +46,12 @@ class Category < ApplicationRecord
 
   before_save :adjust_highlight_order
 
+  Post.types.each do |pt|
+    define_method "#{pt.underscore}?" do
+      post_type == pt
+    end
+  end
+
   private
 
   def maximum_highlighted_categories

@@ -24,7 +24,11 @@
               <div>
                 <%= category.name %>
                 <% if category.highlighted? %>
-                  <span class="badge bg-warning text-dark ml-2">Highlighted (Order: <%= category.highlight_order %>)</span>
+                  <% if category.technical_post? %>
+                    <span class="badge bg-warning text-dark ml-2">Highlighted (Order: <%= category.highlight_order %>)</span>
+                  <% else %>
+                    <span class="badge bg-info text-dark ml-2">Highlighted (Order: <%= category.highlight_order %>)</span>
+                  <% end %>
                 <% end %>
               </div>
               <div>
