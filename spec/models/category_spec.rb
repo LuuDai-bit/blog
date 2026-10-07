@@ -11,7 +11,7 @@ RSpec.describe Category, type: :model do
   describe 'validations' do
     subject { create(:category) }
     it { should validate_presence_of(:name) }
-    it { should validate_uniqueness_of(:name) }
+    it { should validate_uniqueness_of(:name).scoped_to(:post_type) }
     it { should validate_numericality_of(:highlight_order).is_greater_than(0).is_less_than_or_equal_to(5).allow_nil }
   end
 
