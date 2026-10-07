@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_09_022642) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_07_012147) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -83,6 +83,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_09_022642) do
     t.integer "highlight_order"
     t.boolean "highlighted", default: false
     t.string "name", null: false
+    t.string "post_type", default: "TechnicalPost", null: false
     t.datetime "updated_at", null: false
   end
 
@@ -140,7 +141,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_09_022642) do
     t.string "notification_type", default: "email", null: false
     t.boolean "only_once", default: false, null: false
     t.integer "original_timezone", default: 0
-    t.datetime "target_date", default: "2026-01-02 09:05:15", null: false
+    t.datetime "target_date", default: "2024-08-04 06:57:53", null: false
     t.string "title"
     t.datetime "updated_at", null: false
   end
