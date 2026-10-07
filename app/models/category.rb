@@ -5,7 +5,7 @@ class Category < ApplicationRecord
   validates :name,
             presence: true,
             length: { minimun: 1, maximum: 50 },
-            uniqueness: true
+            uniqueness: { scope: :post_type }
   validates :highlight_order, numericality: { greater_than: 0, less_than_or_equal_to: 5 }, allow_nil: true
   validate :maximum_highlighted_categories
 
@@ -38,7 +38,19 @@ class Category < ApplicationRecord
     order(Arel.sql(sql))
   end
 
+  scope :by_post_type, -> (post_type) do
+    return if post_type.blank?
+
+    where(post_type: post_type)
+  end
+
   before_save :adjust_highlight_order
+
+  Post.types.each do |pt|
+    define_method "#{pt.underscore}?" do
+      post_type == pt
+    end
+  end
 
   private
 

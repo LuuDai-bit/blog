@@ -2,7 +2,7 @@ class Admin::CategoriesController < Admin::AdminController
   before_action :set_category, only: %i[edit update]
 
   def index
-    @pagy, @categories = pagy(Category.highlighted_and_id_ordered)
+    @pagy, @categories = pagy(Category.by_post_type(params[:post_type]).highlighted_and_id_ordered)
   end
 
   def edit; end

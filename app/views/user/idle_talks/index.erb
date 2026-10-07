@@ -35,7 +35,7 @@
   </div>
 </div>
 <!-- Highlighted Categories -->
-<% highlighted = Category.highlighted_ordered %>
+<% highlighted = Category.by_post_type('IdleTalk').highlighted_ordered %>
 <% if highlighted.present? %>
   <div class="container px-4 px-lg-5 mb-4">
     <div class="row gx-4 gx-lg-5 justify-content-center">

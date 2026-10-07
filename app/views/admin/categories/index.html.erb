@@ -5,13 +5,30 @@
   <% if @categories.present? %>
     <div class="row">
       <div class="col-12">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <%= link_to 'All', admin_categories_path, class: "nav-link #{ 'active' if params['post_type'].blank?}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'TechnicalPost', admin_categories_path(post_type: 'TechnicalPost'), class: "nav-link #{ 'active' if params['post_type'] == 'TechnicalPost'}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'IdleTalk', admin_categories_path(post_type: 'IdleTalk'), class: "nav-link #{ 'active' if params['post_type'] == 'IdleTalk'}" %>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12">
         <ul class="list-group">
           <% @categories.each do |category| %>
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <div>
                 <%= category.name %>
                 <% if category.highlighted? %>
-                  <span class="badge bg-warning text-dark ml-2">Highlighted (Order: <%= category.highlight_order %>)</span>
+                  <% if category.technical_post? %>
+                    <span class="badge bg-warning text-dark ml-2">Highlighted (Order: <%= category.highlight_order %>)</span>
+                  <% else %>
+                    <span class="badge bg-info text-dark ml-2">Highlighted (Order: <%= category.highlight_order %>)</span>
+                  <% end %>
                 <% end %>
               </div>
               <div>
