@@ -68,9 +68,9 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def post_params
-    params.require(:post).permit(:subject, :subject_en, :content, :content_en,
-                                 :status, :categories, :type)
-                         .merge(user_id: current_user.id)
+    params.require(:post).merge(user_id: current_user.id)
+                         .permit(:subject, :subject_en, :content, :content_en,
+                                 :status, :type, :user_id, :categories)
   end
 
   def destroy_cache(id)

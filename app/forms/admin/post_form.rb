@@ -20,12 +20,12 @@ class Admin::PostForm
   def categories=(attributes)
     @categories = []
     category_names = attributes.split(';')
-    exist_categories = Category.where(name: category_names)
+    exist_categories = Category.where(name: category_names, post_type: type)
 
     category_names.each do |name|
       category = exist_categories.detect { |c| c.name == name }
       if category.blank?
-        category = Category.new(name: name)
+        category = Category.new(name: name, post_type: type)
         if !category.valid?
           errors.add(:categories, category.errors.full_messages.first)
         end
