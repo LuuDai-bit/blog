@@ -141,7 +141,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_07_012147) do
     t.string "notification_type", default: "email", null: false
     t.boolean "only_once", default: false, null: false
     t.integer "original_timezone", default: 0
-    t.datetime "target_date", default: "2024-08-04 06:57:53", null: false
+    t.datetime "target_date", default: "2026-01-02 09:05:15", null: false
     t.string "title"
     t.datetime "updated_at", null: false
   end
