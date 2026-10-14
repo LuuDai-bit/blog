@@ -1,0 +1,292 @@
+.small-content-container {
+  margin: auto 30%;
+
+  label {
+    align-self: start;
+  }
+}
+
+.custom-alert {
+  background-color: red;
+  color: white;
+  margin: 0;
+}
+
+.notice {
+  background-color: var(--bs-gray-900);
+  color: white;
+  margin: 0;
+}
+
+.admin-container {
+  display: inline-block;
+  flex: 1;
+  margin: 0.5rem 1rem;
+  width: 70%;
+  max-height: 98vh;
+  overflow: auto;
+  min-height: 98vh;
+
+  .form-control {
+    border: 1px solid inherit !important;
+    border-radius: 5px;
+
+    &:focus {
+      border: 1px solid inherit !important;
+    }
+  }
+
+  label {
+    color: var(--btn-text-color) !important; // TODO: replace with variable
+  }
+}
+
+.flex-parent-container {
+  display: flex;
+  width: 100%;
+  background-color: var(--background-color);
+}
+
+.input-group-35vw {
+  width: 35vw !important;
+}
+
+.form-select {
+  &-time {
+    display: inline !important;
+    width: 30% !important;
+  }
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.error-feedback {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: red;
+}
+
+.content-input {
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.sticky {
+  position: fixed;
+  background-color: #e1cdb4;
+  width: 100%
+}
+
+.small-announcement {
+  color: #fff;
+  font-size: 14px;
+  font-weight: lighter;
+  font-style: italic;
+  margin-top: 1rem;
+
+  a {
+    color: #fff
+  }
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.error-message {
+  font-size: 15px;
+  color: red;
+  font-style: italic;
+}
+
+.mb-2rem {
+  margin-bottom: 2rem;
+}
+
+.announcements-popup {
+  font-size: 11px;
+  margin: 0;
+  border-radius: 10px 10px 10px 0;
+  padding: 3px 5px;
+  background-color: var(--bs-gray-900);
+  color: white;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.announcement-duration-option {
+  display: 'inline-block';
+  padding: 10px;
+  border: 1px solid var(--bs-gray-500);
+  margin: 1px;
+}
+
+.selected {
+  background-color: #0085A1;
+  color: #fff;
+}
+
+.text-truncate-2l {
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.table-layout-fixed {
+  table-layout: fixed;
+}
+
+.table {
+  thead {
+    tr {
+      th {
+        background-color: var(--tb-head-th-bg-color);
+      }
+    }
+  }
+
+  .button_to {
+    display: inline;
+  }
+}
+
+.custom-post-badge {
+  background-color: darkred !important;
+}
+
+.pagination-admin {
+  li {
+    a {
+      background-color: var(--background-color) !important;
+      color: var(--bs-secondary) !important;
+    }
+  }
+
+  li.active {
+    a {
+      background-color: var(--btn-bg-color) !important;
+      color: #212529 !important;
+    }
+  }
+
+  .disabled {
+    border-radius: 5px !important;
+  }
+}
+
+.pagination {
+  margin: auto;
+}
+
+.errors {
+  color: darkred;
+  font-size: 13px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.ml-1 {
+  margin-left: 5px;
+}
+
+.admin-title {
+  color: var(--title-text-color);
+}
+
+.btn,
+.btn-primary,
+.btn-light {
+  color: var(--btn-text-color) !important;
+
+  input {
+    color: var(--btn-text-color) !important;
+  }
+}
+
+.progress_bar_gold {
+  background-color: var(--primary-color) !important;
+  color: #333333 !important;
+}
+
+.main-container {
+  background: var(--main-bg-color);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.theme-option {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid var(--bs-gray-500);
+  margin: 1px;
+  border-radius: 5px;
+}
+
+.variables-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.variable-preview-card {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 12px;
+
+  .variable-name {
+    font-weight: bold;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+
+  .variable-format {
+    font-style: italic;
+  }
+}
+
+.disabled {
+  opacity: 0.6;
+  filter: grayscale(40%);
+  background-color: #cccccc !important;
+  color: #666666 !important;
+  border-color: #bbbbbb !important;
+
+  cursor: not-allowed !important;
+  pointer-events: none;
+  user-select: none;
+
+  transition: all 0.2s ease-in-out;
+}
+
+button svg,
+button icon {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .input-group-35vw {
+    width: 100% !important;
+  }
+
+  .form-select {
+    &-time {
+      display: inline !important;
+      width: 48% !important;
+    }
+  }
+}

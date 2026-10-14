@@ -1,0 +1,33 @@
+.sidebar-collapse-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .collapse-icon {
+    margin-left: auto;
+    font-size: 0.75rem;
+    transition: transform 0.2s;
+  }
+}
+
+.sidebar-collapse-group {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+
+  &.show {
+    max-height: 500px;
+  }
+
+  a {
+    padding-left: 2rem;
+  }
+}

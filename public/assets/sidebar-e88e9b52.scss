@@ -1,0 +1,72 @@
+/* The side navigation menu */
+.sidebar {
+  padding: 0;
+  width: 15%;
+  background-color: var(--sidebar-bg-color);
+  display: inline-block;
+  height: 100vh;
+  overflow: auto;
+
+  .danger-action {
+    color: #dc3545;
+  }
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #212529;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: var(--btn-hover-bg-color);
+  color: var(--btn-text-color);
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  /* hide sidebar by default on small screens; toggled via JS */
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    z-index: 1050;
+    overflow-y: auto;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.12);
+  }
+
+  .sidebar.open { display: block; }
+
+  /* hamburger toggle button */
+  .sidebar-toggle {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1100;
+    color: #212529;
+    font-size: 1.25rem;
+  }
+
+  .admin-container { margin-left: 0; }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: left;
+  }
+}

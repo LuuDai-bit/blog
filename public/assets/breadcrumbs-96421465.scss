@@ -1,0 +1,23 @@
+.bread-root-item {
+  font-weight: bold;
+  font-size: 13px;
+  color: var(--breadcrumb-text-color);
+
+  a {
+    color: var(--breadcrumb-text-color);
+  }
+}
+
+.bread-element-item {
+  font-weight: bold;
+  font-size: 13px;
+  color: var(--breadcrumb-text-color);
+
+  a {
+    color: var(--breadcrumb-text-color);
+  }
+
+  &:before {
+    content: " > ";
+  }
+}
