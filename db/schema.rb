@@ -97,9 +97,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_12_080842) do
 
   create_table "draft_posts", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.string "draft_subject"
-    t.string "draft_subject_en"
     t.bigint "post_id"
+    t.string "subject"
+    t.string "subject_en"
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_draft_posts_on_post_id"
   end

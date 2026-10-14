@@ -8,6 +8,8 @@
       <span id="saving" class="position-absolute text-muted" style="display: none; left: 135px"> saving... </span>
 
       <%= hidden_field_tag :post_id, @post.id %>
+      <%= hidden_field_tag :draft_post_id, @draft_post&.id %>
+      <%= hidden_field_tag :draft_post_url, admin_draft_posts_path %>
     <% end %>
   </div>
   <div class="row w-100">

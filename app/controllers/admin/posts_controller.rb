@@ -27,7 +27,9 @@ class Admin::PostsController < Admin::AdminController
     end
   end
 
-  def edit; end
+  def edit
+    @draft_post = @post.draft_post
+  end
 
   def update
     @post = ::Admin::PostForm.new(post_params.merge(id: params[:id]))

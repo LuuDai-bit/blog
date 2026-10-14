@@ -21,6 +21,7 @@ gem 'prometheus-client'
 gem 'propshaft'
 gem 'puma', '>= 6.4.3'
 gem 'rack', '~> 2.2'
+gem 'rack-cors'
 gem 'rails', '~> 8.0'
 gem 'sidekiq', ">= 7.2.4"
 gem 'stimulus-rails'
