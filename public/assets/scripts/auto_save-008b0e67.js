@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const saving = $('#saving');
   const postId = $($('#post_id')[0]).val();
-  const draftPostId = $('#draft_post_id').val();
 
   // Handle call update ajax to save post
   const savePost = () => {
@@ -30,7 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
       post_id: postId,
     }
 
-    let url = $('#draft_post_url').val()
+    const url = $('#draft_post_url').val()
+    const draftPostId = $('#draft_post_id').val();
     let method = 'POST'
     if (draftPostId) {
       url = `${url}/${draftPostId}`;
@@ -44,8 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
       data: { draft_post: post },
       dataType: 'json',
       cache: false,
-      success: () => {
+      success: (data) => {
         $(saving).hide();
+        const newDraftPostId = data['draft_post_id'];
+        if (newDraftPostId) $('#draft_post_id').val(newDraftPostId);
       }
     })
   };

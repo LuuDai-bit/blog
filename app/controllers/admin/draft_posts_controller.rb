@@ -8,7 +8,7 @@ class Admin::DraftPostsController < Admin::AdminController
     draft_post = DraftPost.new(draft_post_params)
 
     if draft_post.save
-      render json: { message: "Successfully created draft post" }, status: :created
+      render json: { message: "Successfully created draft post", draft_post_id: draft_post.id }, status: :created
     else
       error_msg = {
         message: "Failed to create draft post",
