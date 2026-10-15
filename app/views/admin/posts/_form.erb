@@ -3,7 +3,7 @@
     <% if action == 'update' %>
       <%= label_tag :auto_save do %>
         <span>Auto save</span>
-        <%= check_box_tag :auto_save, checked: true %>
+        <%= check_box_tag :auto_save, checked: @draft_post.blank? %>
       <% end %>
       <span id="saving" class="position-absolute text-muted" style="display: none; left: 135px"> saving... </span>
 
