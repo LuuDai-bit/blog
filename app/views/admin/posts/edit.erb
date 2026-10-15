@@ -1,6 +1,15 @@
 <h1 class="admin-title">Edit post</h1>
 
 <div class="main-container">
+  <div class="bg-warning text-center"
+       data-controller="draft-post-notification"
+       data-draft-post-notification-target="body">
+    <span>You have draft post</span>
+    <%= link_to 'Preview', '#', {class: 'btn btn-link'} %>
+    <button data-action="draft-post-notification#hide"
+            class="btn btn-link">Hide</button>
+  </div>
+
   <%= form_with url: admin_post_path(@post.id),
                 method: :patch,
                 scope: :post,
