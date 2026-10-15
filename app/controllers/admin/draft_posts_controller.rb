@@ -50,11 +50,14 @@ class Admin::DraftPostsController < Admin::AdminController
     original_post.content = @draft_post.content
     original_post.content_en = @draft_post.content_en
 
-    if original_post.save
-      redirect_to edit_admin_post_path(original_post)
-    else
-      render :show
+    ActiveRecord::Base.transaction do
+      original_post.save
+      DraftPost.where(post_id: original_post.id).destroy_all
     end
+
+    redirect_to edit_admin_post_path(original_post)
+  rescue StandardError
+    render :show
   end
 
   private
