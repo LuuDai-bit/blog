@@ -13,8 +13,6 @@ class Post < ApplicationRecord
   validates :subject, presence: true, length: { minimun: 1, maximum: 255 }
   validates :release_date, presence: true, if: Proc.new { |post| post.status_publish? }
 
-  after_save :destroy_draft_post
-
   enum :status, Settings.enum.post.status.to_h, prefix: true
 
   scope :order_by_views, ->(direction) do
@@ -68,11 +66,5 @@ class Post < ApplicationRecord
 
   def self.types
     %w(TechnicalPost IdleTalk)
-  end
-
-  private
-
-  def destroy_draft_post
-    draft_post.destroy
   end
 end
