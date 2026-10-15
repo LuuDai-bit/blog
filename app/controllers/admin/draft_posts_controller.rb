@@ -43,6 +43,6 @@ class Admin::DraftPostsController < Admin::AdminController
   private
 
   def draft_post_params
-    params.require(:draft_post).permit(:subject, :subject_en, :content, :content_en)
+    params.require(:draft_post).permit(:subject, :subject_en, :content, :content_en, :post_id)
   end
 end

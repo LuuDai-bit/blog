@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       subject_en: $('#post_subject_en').val(),
       content: $('#post_content').val(),
       content_en: $('#post_content_en').val(),
+      post_id: postId,
     }
 
     let url = $('#draft_post_url').val()
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       method: method,
       // accepts: 'application/json',
       url: url,
-      data: { draft_post: post, original_post_id: postId },
+      data: { draft_post: post },
       dataType: 'json',
       cache: false,
       success: () => {
