@@ -1,6 +1,6 @@
 class Admin::DraftPostsController < Admin::AdminController
   skip_before_action :verify_authenticity_token
-  before_action :load_draft_post, only: %i[show update destroy]
+  before_action :load_draft_post, only: %i[show update destroy apply]
 
   def show; end
 
@@ -38,7 +38,22 @@ class Admin::DraftPostsController < Admin::AdminController
     if @draft_post.destroy
       redirect_to edit_admin_post_path(@draft_post.post_id)
     else
-      render json: { message: "Failed to destroy" }, status: :bad_request
+      render :show
+    end
+  end
+
+  # Copy content of this draft post to original post and destroy draft post
+  def apply
+    original_post = @draft_post.post
+    original_post.subject = @draft_post.subject
+    original_post.subject_en = @draft_post.subject_en
+    original_post.content = @draft_post.content
+    original_post.content_en = @draft_post.content_en
+
+    if original_post.save
+      redirect_to edit_admin_post_path(original_post)
+    else
+      render :show
     end
   end
 
