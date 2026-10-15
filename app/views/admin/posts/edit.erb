@@ -5,7 +5,7 @@
        data-controller="draft-post-notification"
        data-draft-post-notification-target="body">
     <span>You have draft post</span>
-    <%= link_to 'Preview', '#', {class: 'btn btn-link'} %>
+    <%= link_to 'Preview', admin_draft_post_path, {class: 'btn btn-link'} %>
     <button data-action="draft-post-notification#hide"
             class="btn btn-link">Hide</button>
   </div>

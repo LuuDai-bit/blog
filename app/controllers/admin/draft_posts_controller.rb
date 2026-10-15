@@ -2,7 +2,7 @@ class Admin::DraftPostsController < Admin::AdminController
   skip_before_action :verify_authenticity_token
 
   def show
-
+    @draft_post = DraftPost.find_by_id(params[:id])
   end
 
   def create

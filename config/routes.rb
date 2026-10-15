@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     resources :feeds, only: %i[index] do
       patch '/mark_as_read', to: 'feeds#mark_as_read', on: :collection
     end
-    resources :draft_posts, only: %i[create update]
+    resources :draft_posts, only: %i[create update show]
   end
 
   namespace :gateway do
