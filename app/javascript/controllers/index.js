@@ -24,3 +24,6 @@ application.register("server-cost", ServerCostController)
 
 import VariableModalController from "controllers/variable_modal_controller"
 application.register("variable-modal", VariableModalController)
+
+import DraftPostNotificationController from "controllers/draft_post_notification_controller"
+application.register("draft-post-notification", DraftPostNotificationController)

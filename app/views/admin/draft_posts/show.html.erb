@@ -1,0 +1,30 @@
+<h1 class="admin-title">Post Detail</h1>
+
+<h3><%= @draft_post.subject %> - <%= @draft_post.subject_en %></h3>
+<p class="form-text text-muted">
+  <span>Created at: <%= format_datetime(@draft_post.created_at) %>&#8195;</span>
+  <span>Updated at: <%= format_datetime(@draft_post.updated_at) %>&#8195;</span>
+</p>
+<div class="row">
+  <div class="content-area col-sm">
+    <main class="trix-content site-main"><%= @draft_post.content %></main>
+  </div>
+
+  <div class="content-area col-sm border-start">
+    <main class="trix-content site-main"><%= @draft_post.content_en %></main>
+  </div>
+</div>
+
+<div class="border-top">
+  <div class="mt-2">
+    <%= link_to 'Apply',
+                apply_admin_draft_posts_path(id: @draft_post.id),
+                {class: 'btn btn-primary d-inline'} %>
+    <%= button_to 'Destroy',
+                  admin_draft_post_path(@draft_post),
+                  method: :delete,
+                  form: { style: "display:inline;" },
+                  class: 'btn btn-danger d-inline',
+                  data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>

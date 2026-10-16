@@ -49,7 +49,10 @@ class Admin::PostForm
     end
     post.categories = categories unless categories.nil?
     update_release_date(post)
-    post.save!
+    ActiveRecord::Base.transaction do
+      post.save!
+      DraftPost.where(post_id: post.id).destroy_all
+    end
   end
 
   def post_attributes

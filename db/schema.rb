@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_07_012147) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_12_080842) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -95,6 +95,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_07_012147) do
     t.string "vendor", null: false
   end
 
+  create_table "draft_posts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "post_id"
+    t.string "subject"
+    t.string "subject_en"
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_draft_posts_on_post_id"
+  end
+
   create_table "job_logs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "event_id"
@@ -141,7 +150,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_07_012147) do
     t.string "notification_type", default: "email", null: false
     t.boolean "only_once", default: false, null: false
     t.integer "original_timezone", default: 0
-    t.datetime "target_date", default: "2024-08-04 06:57:53", null: false
+    t.datetime "target_date", default: "2026-01-02 09:05:15", null: false
     t.string "title"
     t.datetime "updated_at", null: false
   end
@@ -202,6 +211,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_07_012147) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "announcements", "users"
+  add_foreign_key "draft_posts", "posts"
   add_foreign_key "post_categories", "categories"
   add_foreign_key "post_categories", "posts"
   add_foreign_key "posts", "users"

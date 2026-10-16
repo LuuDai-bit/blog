@@ -26,19 +26,28 @@ document.addEventListener("DOMContentLoaded", function () {
       subject_en: $('#post_subject_en').val(),
       content: $('#post_content').val(),
       content_en: $('#post_content_en').val(),
-      status: $($('#post_status_publish')[0]).is(':checked') ? 'publish' : 'draft'
+      post_id: postId,
+    }
+
+    let url = $('#draft_post_url').val()
+    const draftPostId = $('#draft_post_id').val();
+    let method = 'POST'
+    if (draftPostId) {
+      url = `${url}/${draftPostId}`;
+      method = 'PATCH';
     }
 
     $.ajax({
-      method: 'PATCH',
+      method: method,
       // accepts: 'application/json',
-      url: "/admin/posts/" + postId,
-      data: { post: post },
+      url: url,
+      data: { draft_post: post },
       dataType: 'json',
-
       cache: false,
-      success: () => {
+      success: (data) => {
         $(saving).hide();
+        const newDraftPostId = data['draft_post_id'];
+        if (newDraftPostId) $('#draft_post_id').val(newDraftPostId);
       }
     })
   };
